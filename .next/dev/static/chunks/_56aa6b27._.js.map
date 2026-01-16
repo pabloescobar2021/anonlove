@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/%D0%95%D0%BB%D0%B5%D0%BD%D0%B0/Desktop/next.js/my-next-app/utils/supabase/supabase.ts"],"sourcesContent":["import { createClient } from \"@supabase/supabase-js\";\r\n\r\nexport const supabase = createClient(\r\n  process.env.NEXT_PUBLIC_SUPABASE_URL!,\r\n  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!\r\n);"],"names":[],"mappings":";;;;AAGE;AAHF;;AAEO,MAAM,WAAW,IAAA,0LAAY"}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/%D0%95%D0%BB%D0%B5%D0%BD%D0%B0/Desktop/next.js/my-next-app/app/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { supabase } from \"@/utils/supabase/supabase\";\n\nexport default async function Page() {\n  const {data: products} = await supabase.from(\"products\").select(\"*\");\n\n  return (\n    <ul>\n      {products?.map((product) => (\n        <li>{product}</li>\n      ))}\n    </ul>\n  )\n}\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,eAAe;IAC5B,MAAM,EAAC,MAAM,QAAQ,EAAC,GAAG,MAAM,4IAAQ,CAAC,IAAI,CAAC,YAAY,MAAM,CAAC;IAEhE,qBACE,6LAAC;kBACE,UAAU,IAAI,CAAC,wBACd,6LAAC;0BAAI;;;;;;;;;;;AAIb;KAV8B"}}]
+}

@@ -1,0 +1,394 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/utils/supabase/supabase.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "supabase",
+    ()=>supabase
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$esm$2f$wrapper$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/esm/wrapper.mjs [app-client] (ecmascript)");
+;
+const supabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$esm$2f$wrapper$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createClient"])(("TURBOPACK compile-time value", "https://mungyvxudhncvxjqtjeo.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11bmd5dnh1ZGhuY3Z4anF0amVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMTg5OTIsImV4cCI6MjA3ODY5NDk5Mn0.iNayNX_cNsAwJ0N_c69JdLJmoTL7WAt0B5CWItF_tLw"));
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/hooks/useInfiniteScroll.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useInfiniteScroll",
+    ()=>useInfiniteScroll
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _s = __turbopack_context__.k.signature();
+;
+function useInfiniteScroll({ onLoadMore, enabled, rootMargin = "200px" }) {
+    _s();
+    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useInfiniteScroll.useEffect": ()=>{
+            if (!enabled) return;
+            if (!ref.current) return;
+            const observer = new IntersectionObserver({
+                "useInfiniteScroll.useEffect": ([entire])=>{
+                    if (entire.isIntersecting) {
+                        onLoadMore();
+                    }
+                }
+            }["useInfiniteScroll.useEffect"], {
+                rootMargin
+            });
+            observer.observe(ref.current);
+            return ({
+                "useInfiniteScroll.useEffect": ()=>observer.disconnect()
+            })["useInfiniteScroll.useEffect"];
+        }
+    }["useInfiniteScroll.useEffect"], [
+        onLoadMore,
+        enabled,
+        rootMargin
+    ]);
+    return ref;
+}
+_s(useInfiniteScroll, "8uVE59eA/r6b92xF80p7sH8rXLk=");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/hooks/useCart.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useCart",
+    ()=>useCart
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var _s = __turbopack_context__.k.signature();
+"use client";
+;
+function useCart() {
+    _s();
+    const [cart, setCart] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [isLoaded, setIsLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Загрузка корзины из localStorage при монтировании
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useCart.useEffect": ()=>{
+            const savedCart = localStorage.getItem("cart");
+            if (savedCart) {
+                try {
+                    setCart(JSON.parse(savedCart));
+                } catch (e) {
+                    console.error("Ошибка при парсинге сохранённой корзины:", e);
+                }
+            }
+            setIsLoaded(true);
+        }
+    }["useCart.useEffect"], []);
+    // Сохранение в localStorage при изменении
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useCart.useEffect": ()=>{
+            if (isLoaded) {
+                localStorage.setItem("cart", JSON.stringify(cart));
+            }
+        }
+    }["useCart.useEffect"], [
+        cart,
+        isLoaded
+    ]);
+    const addToCart = (product)=>{
+        setCart((prevCart)=>{
+            const existingItem = prevCart.find((item)=>item.id === product.id);
+            if (existingItem) {
+                return prevCart.map((item)=>item.id === product.id ? {
+                        ...item,
+                        quantity: item.quantity + 1
+                    } : item);
+            } else {
+                return [
+                    ...prevCart,
+                    {
+                        ...product,
+                        quantity: 1
+                    }
+                ];
+            }
+        });
+    };
+    const updateQuantity = (productId, quantity)=>{
+        setCart((prevCart)=>{
+            if (quantity <= 0) {
+                removeFromCart(productId);
+                return prevCart;
+            }
+            return prevCart.map((item)=>item.id === productId ? {
+                    ...item,
+                    quantity
+                } : item);
+        });
+    };
+    const clearCart = ()=>{
+        setCart([]);
+    };
+    const removeFromCart = (productId)=>{
+        setCart((prevCart)=>prevCart.filter((item)=>item.id !== productId));
+    };
+    const getItemCount = ()=>{
+        return cart.reduce((total, item)=>total + item.quantity, 0);
+    };
+    return {
+        cart,
+        addToCart,
+        updateQuantity,
+        clearCart,
+        removeFromCart,
+        getItemCount
+    };
+}
+_s(useCart, "ZKIDLF/4AnbzpKHzE5ZhCT+s9GY=");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/app/catalog/Products.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Products
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/utils/supabase/supabase.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useInfiniteScroll$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/useInfiniteScroll.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/useCart.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+"use client";
+;
+;
+;
+;
+;
+function Products({ initialProducts, pageSize }) {
+    _s();
+    const { addToCart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCart"])();
+    const [adding, setAdding] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const handleAdd = (p)=>{
+        addToCart({
+            id: p.id,
+            name: p.name,
+            image: p.main_image ?? null
+        });
+        setAdding((s)=>({
+                ...s,
+                [p.id]: true
+            }));
+        setTimeout(()=>setAdding((s)=>({
+                    ...s,
+                    [p.id]: false
+                })), 700);
+    };
+    const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialProducts);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [hasMore, setHasMore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialProducts.length === pageSize);
+    const lastIdRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(initialProducts.length > 0 ? Number(initialProducts[initialProducts.length - 1].id) : 0);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Products.useEffect": ()=>{
+            setProducts([]);
+            lastIdRef.current = 0;
+            setHasMore(true);
+            fetchNextPage(true);
+        }
+    }["Products.useEffect"], [
+        search
+    ]);
+    const fetchNextPage = async (isFirst = false)=>{
+        if (loading || !hasMore) return;
+        setLoading(true);
+        let query = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("products").select("*").order("id", {
+            ascending: true
+        }).limit(pageSize);
+        if (search.trim()) {
+            query = query.ilike("name", `%${search}%`);
+        }
+        if (!isFirst && lastIdRef.current !== 0) {
+            query = query.gt("id", lastIdRef.current);
+        }
+        const { data } = await query;
+        if (!data || data.length === 0) {
+            setHasMore(false);
+            setLoading(false);
+            return;
+        }
+        lastIdRef.current = data[data.length - 1].id;
+        setProducts((p)=>{
+            const map = new Map(p.map((item)=>[
+                    item.id,
+                    item
+                ]));
+            data.forEach((item)=>map.set(item.id, item));
+            return Array.from(map.values());
+        });
+        if (data.length < pageSize) setHasMore(false);
+        setLoading(false);
+    };
+    const loaderRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useInfiniteScroll$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInfiniteScroll"])({
+        onLoadMore: fetchNextPage,
+        enabled: hasMore && !loading
+    });
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                value: search,
+                onChange: (e)=>setSearch(e.target.value),
+                placeholder: "Поиск товаров...",
+                className: "border p-2 w-full m-2"
+            }, void 0, false, {
+                fileName: "[project]/app/catalog/Products.tsx",
+                lineNumber: 103,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6",
+                children: products.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                        className: "bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-lg transition",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: `/product/${p.id}`,
+                                className: "block",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-full h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: p.main_image ?? "https://imgholder.ru/600x300/8493a8/adb9ca&text=no+photo&font=kelson",
+                                        alt: p.name,
+                                        className: "w-full h-full object-cover"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/catalog/Products.tsx",
+                                        lineNumber: 115,
+                                        columnNumber: 33
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/app/catalog/Products.tsx",
+                                    lineNumber: 114,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/catalog/Products.tsx",
+                                lineNumber: 113,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "p-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                        className: "text-sm font-medium text-gray-900 dark:text-gray-100 line-clamp-2",
+                                        children: p.name
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/catalog/Products.tsx",
+                                        lineNumber: 124,
+                                        columnNumber: 29
+                                    }, this),
+                                    p.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "mt-2 text-sm text-gray-600 dark:text-gray-300",
+                                        children: p.description
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/catalog/Products.tsx",
+                                        lineNumber: 127,
+                                        columnNumber: 47
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-4 flex items-center justify-between",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-lg font-semibold text-indigo-600 dark:text-indigo-400",
+                                                children: p.price != null ? `${p.price} ₽` : "—"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/catalog/Products.tsx",
+                                                lineNumber: 130,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>handleAdd(p),
+                                                className: "ml-4 inline-flex items-center px-3 py-1 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300",
+                                                "aria-pressed": !!adding[p.id],
+                                                children: adding[p.id] ? "Добавлено" : "В корзину"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/catalog/Products.tsx",
+                                                lineNumber: 134,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/catalog/Products.tsx",
+                                        lineNumber: 129,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/catalog/Products.tsx",
+                                lineNumber: 123,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, p.id, true, {
+                        fileName: "[project]/app/catalog/Products.tsx",
+                        lineNumber: 112,
+                        columnNumber: 21
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/app/catalog/Products.tsx",
+                lineNumber: 110,
+                columnNumber: 13
+            }, this),
+            loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-center mt-4",
+                children: "Загрузка..."
+            }, void 0, false, {
+                fileName: "[project]/app/catalog/Products.tsx",
+                lineNumber: 148,
+                columnNumber: 25
+            }, this),
+            !hasMore && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-center mt-4",
+                children: "Больше продуктов нет"
+            }, void 0, false, {
+                fileName: "[project]/app/catalog/Products.tsx",
+                lineNumber: 149,
+                columnNumber: 26
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: loaderRef,
+                className: "h-10"
+            }, void 0, false, {
+                fileName: "[project]/app/catalog/Products.tsx",
+                lineNumber: 152,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/catalog/Products.tsx",
+        lineNumber: 101,
+        columnNumber: 9
+    }, this);
+}
+_s(Products, "oRlzi3rP53BiAjH3hfETYWTt594=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useCart$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCart"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useInfiniteScroll$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInfiniteScroll"]
+    ];
+});
+_c = Products;
+var _c;
+__turbopack_context__.k.register(_c, "Products");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+]);
+
+//# sourceMappingURL=_37a2cb54._.js.map

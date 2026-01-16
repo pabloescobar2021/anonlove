@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/%D0%95%D0%BB%D0%B5%D0%BD%D0%B0/Desktop/next.js/my-next-app/app/anonlove/things/data.ts"],"sourcesContent":["\r\nexport const size = {\r\n    width: 200,\r\n    height: 200,\r\n}\r\n\r\nexport const step = {\r\n    s: 20,\r\n    c: 10\r\n}\r\n\r\n"],"names":[],"mappings":";;;;;;AACO,MAAM,OAAO;IAChB,OAAO;IACP,QAAQ;AACZ;AAEO,MAAM,OAAO;IAChB,GAAG;IACH,GAAG;AACP"}}]
+}

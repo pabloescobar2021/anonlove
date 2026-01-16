@@ -1,0 +1,9 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/anonlove/anonlovemain/page": "/anonlove/anonlovemain",
+  "/anonlove/auth/page": "/anonlove/auth",
+  "/anonlove/lovecard/page": "/anonlove/lovecard",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/"
+}

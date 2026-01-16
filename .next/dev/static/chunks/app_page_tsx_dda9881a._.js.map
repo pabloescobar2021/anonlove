@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/%D0%95%D0%BB%D0%B5%D0%BD%D0%B0/Desktop/next.js/my-next-app/app/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { supabase } from \"@/utils/supabase/supabase\";\n\nexport default async function Page() {\n  \n\n  return (\n    <ul>\n      {todos?.map((todo) => (\n        <li>{todo}</li>\n      ))}\n    </ul>\n  )\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAIe,eAAe;IAG5B,qBACE,6LAAC;kBACE,OAAO,IAAI,CAAC,qBACX,6LAAC;0BAAI;;;;;;;;;;;AAIb;KAV8B"}}]
+}

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/anonlove/layout,_N_T_/anonlove/lovecard/layout,_N_T_/anonlove/lovecard/page,_N_T_/anonlove/lovecard"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/anonlove/lovecard/__PAGE__",
+    "/anonlove/lovecard",
+    "/anonlove",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/%D0%95%D0%BB%D0%B5%D0%BD%D0%B0/Desktop/next.js/my-next-app/app/anonlove/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\nimport { useEffect, useState } from \"react\"\r\n\r\nimport { size } from \"./things/size\"\r\n\r\nexport default function AnonLoveMain() {\r\n\r\n\r\n    return (\r\n\r\n\r\n\r\n\r\n\r\n        <div\r\n            className=\"flex justify-center items-center bg-black h-full\"\r\n        >\r\n            <svg width={size.width} height={size.height} >\r\n                \r\n                <circle\r\n                    className=\"cursor-pointer\"\r\n                    cx=\"100\"\r\n                    cy=\"100\"\r\n                    r=\"90\"\r\n                    fill=\"red\"\r\n                    stroke=\"#fff\"\r\n                    strokeWidth={2}\r\n                    \r\n                >\r\n\r\n                </circle>\r\n            </svg>\r\n        </div>\r\n    )\r\n}"],"names":[],"mappings":";;;;;;;;;;AAAA;;;AAMe,SAAS;IAGpB,qBAMI,8OAAC;QACG,WAAU;kBAEV,cAAA,8OAAC;YAAI,OAAO,KAAK,KAAK;YAAE,QAAQ,KAAK,MAAM;sBAEvC,cAAA,8OAAC;gBACG,WAAU;gBACV,IAAG;gBACH,IAAG;gBACH,GAAE;gBACF,MAAK;gBACL,QAAO;gBACP,aAAa;;;;;;;;;;;;;;;;AAQjC"}}]
+}

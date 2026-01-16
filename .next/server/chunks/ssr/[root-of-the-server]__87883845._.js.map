@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../app/page.tsx"],"sourcesContent":["\nexport default async function Home() {\n  \n\nreturn (\n    <div className=\"p-6\">\n      \n      \n\n      \n\n    </div>\n  )}"],"names":[],"mappings":"qVACe,eAAe,IAG9B,MACI,CAAA,EAAA,EAAA,GAAA,EAAC,MAAA,CAAI,UAAU,OAOhB"}
