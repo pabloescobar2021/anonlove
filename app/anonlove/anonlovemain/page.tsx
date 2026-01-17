@@ -1,6 +1,8 @@
 "use client"
+
+export const dynamic = "force-dynamic";
+
 import { useState, useEffect, useRef, use } from "react"
-import { supabase } from "@/utils/supabase/alSupabase"
 import { useRouter } from "next/navigation";
 import { useAuth } from "../things/hooks/useAuth";
 import { useMessages, useDialogs } from "../things/hooks/useMessages";
