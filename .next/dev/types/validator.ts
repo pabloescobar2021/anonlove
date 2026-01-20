@@ -54,6 +54,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../app/anonlove/createcard/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/anonlove/createcard">> = Specific
+  const handler = {} as typeof import("../../../app/anonlove/createcard/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/anonlove/lovecard/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/anonlove/lovecard">> = Specific

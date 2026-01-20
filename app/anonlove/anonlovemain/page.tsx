@@ -50,6 +50,14 @@ export default function Page() {
         }
     }, [isOpen, replyToUserId])
 
+    // редирект если неавторизован
+    useEffect(() => {
+        if (authLoading) return;
+
+        if(!user){
+            router.replace('/anonlove/auth')
+        }
+    }, [user, authLoading,router])
 
     
     // проверка мобилки
@@ -71,35 +79,7 @@ export default function Page() {
 
     
     
-    const handleSendMessage = async () => {
-        const idInput = idRef.current?.value || ""
-        const text = textRef.current?.value || ""
-
-        if (!idInput || !text){
-            alert('все поля заполни, сладкий!')
-            return
-        }
-        
-        try {
-            if (isReply){
-                const sendMessage = replyToUserId?.isAnon
-                    ? { userId: replyToUserId?.id}
-                    : { publicId: replyToUserId?.id}
     
-                await send(sendMessage, text, isAnon)
-            }
-            else {
-                await send({publicId: idInput}, text, isAnon)
-            }
-
-            idRef.current!.value = ""
-            textRef.current!.value = ""
-            setIsOpen(false)
-        } catch (error: any) {
-            console.log(error.message || 'Error sending message');
-        }
-        
-    }
     
     const handleSignOut = async () => {
         await sighOut()
@@ -204,9 +184,10 @@ export default function Page() {
                     >
                         <AnimatedButton
                         openModal={() => {
-                            setreplyToUserId(null)
-                            setIsOpen(true)
-                            setIsReply(false)
+                            // setreplyToUserId(null)
+                            // setIsOpen(true)
+                            // setIsReply(false)
+                            router.push('createcard')
                         }}
                         >   
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 4h28v18H16l-8 7v-7H2Z"/></svg>
@@ -239,7 +220,7 @@ export default function Page() {
                     {activeDialog?.messages.map(message => {
                         const avatar = message.from_display_id.charAt(1).toUpperCase()
                         const nameLabel = message.from_display_id
-                        const bodyText = message.body //"тебе тут что то пришло, малышка"
+                        const bodyText: any = "тебе тут что то пришло, малышка"
                         const isMine = message.from_user === user?.id
 
                         return (
@@ -271,7 +252,7 @@ export default function Page() {
                                             {nameLabel}
                                         </span>
                                         <span className="small line-clamp-2">
-                                            {bodyText}
+                                            {``}
                                         </span>
                                     </div>
                                 </div>
@@ -348,7 +329,7 @@ export default function Page() {
 
                         <button 
                         className="bg-[#8f184f] text-white px-4 py-2 rounded-lg"
-                        type="button" onClick={handleSendMessage}>Отправить</button>
+                        type="button" >Отправить</button>
 
                         <button onClick={() => {setIsOpen(false)}} className="absolute top-1 right-2">X</button>
                     </form>
@@ -512,7 +493,7 @@ function AnimatedButton({
             </canvas>
             <button
                 ref={buttonRef}
-                onClick={openModal}
+                onClick={() => openModal()}
                 onMouseEnter={() => (isHovering.current = true)}
                 onMouseLeave={() => (isHovering.current = false)}
                 className="relative p-4 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2"

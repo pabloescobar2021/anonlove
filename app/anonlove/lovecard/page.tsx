@@ -10,6 +10,9 @@ import {useCurrentMessage} from "../things/hooks/useMessages"
 
 import { useRouter } from "next/navigation";
 
+import { ItemDto } from "../things/types/type";
+import { Message } from "../things/types/type";
+
 export default function AnonLoveMain() {
     const router = useRouter()
 
@@ -144,12 +147,43 @@ export default function AnonLoveMain() {
                                 ←
                             </button>
 
-                            <div 
-                            className="flex flex-col justify-center items-center border rounded-xl bg-black/80
-                                    border-white w-1/2 h-1/2 text-white p-6"
+                            {/* field */}
+                            <div
+                                className="relative border w-1/2 h-1/2 rounded-md bg-white overflow-hidden z-10"
                             >
-                                {message.body}
+                                {message?.body.map((item: ItemDto) => (
+                                    <div 
+                                        key={item.id}
+                                        className="flex text-black select-none relative"
+                                        style={{
+                                            position: "absolute",
+                                            left: item.x,
+                                            top: item.y,
+                                            width: item.w,
+                                            height: item.h,
+                                            fontSize: item.fontSize,
+                                        }}
+                                    
+                                    
+                                    >
+                                            <div className={`relative w-full h-full text-wrap wrap-break-word
+                                                            overflow-hidden`}> 
+                                                {item.content}
+
+                                                
+                                            </div>
+
+                                    </div>
+                                ))}
                             </div>
+                                <button 
+                                    className="p-2 mt-4 border rounded-2xl hover:bg-white/20 transition-all duration-200"
+                                    onClick={() => {
+                                        router.push(`createcard?to=${encodeURIComponent(message?.from_display_id ?? '')}`)
+                                    }}
+                                >
+                                    Ответка
+                                </button>   
                         </div>
 
                     </div>

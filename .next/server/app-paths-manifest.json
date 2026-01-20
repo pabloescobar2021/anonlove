@@ -3,6 +3,7 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/anonlove/anonlovemain/page": "app/anonlove/anonlovemain/page.js",
   "/anonlove/auth/page": "app/anonlove/auth/page.js",
+  "/anonlove/createcard/page": "app/anonlove/createcard/page.js",
   "/anonlove/lovecard/page": "app/anonlove/lovecard/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"

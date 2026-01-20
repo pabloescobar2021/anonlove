@@ -1,5 +1,6 @@
 import { supabase } from "@/utils/supabase/alSupabase";
 import { error } from "console";
+import { ItemDto } from "../types/type";
 
 export async function getInboxMessages(userId: string){
     const {data, error} = await supabase
@@ -57,7 +58,7 @@ export async function sendMessage({
     fromUserId: string,
     toUserId?: string,
     toPublicId?: string,
-    body: string,
+    body: ItemDto[],
     isAnon?: boolean
 }) {
     let receiverId = toUserId

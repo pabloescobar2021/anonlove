@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useMemo } from "react"
 import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+import { ItemDto, Message } from "../types/type"
+
 
 
 export function useMessages(userId: string | null) {
@@ -35,7 +37,7 @@ export function useMessages(userId: string | null) {
 
     const send = async (
         to: {publicId?: string, userId?: string}, 
-        body: string,
+        body: ItemDto[],
         isAnon?: boolean 
     ) => {
         if(!userId) throw new Error("User not logged in")
@@ -61,8 +63,15 @@ export function useMessages(userId: string | null) {
 
 }
 
-export function useCurrentMessage(userId: string | null, messageId: string | null) {
-    const [message, setMessage] = useState<any>(null)
+type UseCurrentMessageResult = {
+    message: Message | null,
+    loading: boolean
+}
+export function useCurrentMessage(
+    userId: string | null, 
+    messageId: string | null
+): UseCurrentMessageResult {
+    const [message, setMessage] = useState<Message | null>(null)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -89,16 +98,7 @@ export function useCurrentMessage(userId: string | null, messageId: string | nul
     }
 }
 
-type Message = {
-    id: string,
-    from_user: string,
-    to_user: string,
-    from_display_id: string,
-    to_display_id: string,
-    is_anon: boolean,
-    body: string,
-    created_at: string
-}
+
 
 type Dialog = {
     userId: string,

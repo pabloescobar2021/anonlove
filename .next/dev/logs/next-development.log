@@ -1,3 +1,5 @@
-[00:00:02.537] Server  LOG      ✓ Ready in 1818ms
-[00:00:08.328] Browser ERROR   [next-auth][error][CLIENT_FETCH_ERROR] 
-https://next-auth.js.org/errors#client_fetch_error Unexpected token '<', "<!DOCTYPE "... is not valid JSON {"error":{"message":"Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON","name":"SyntaxError","stack":"SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"},"message":"Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON","url":"/api/auth/session"}
+[00:00:03.850] Server  LOG      ✓ Ready in 2.7s
+[00:03:33.662] Server  LOG      ○ Compiling /anonlove/auth ...
+[00:04:25.548] Server  LOG      ✓ Compiled in 130ms
+[00:04:34.357] Server  LOG      ✓ Compiled in 97ms
+[00:04:38.028] Server  LOG      ✓ Compiled in 98ms

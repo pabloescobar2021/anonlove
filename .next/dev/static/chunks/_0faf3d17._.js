@@ -19,7 +19,9 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "default",
-    ()=>AuthPage
+    ()=>AuthPage,
+    "dynamic",
+    ()=>dynamic
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -28,6 +30,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupab
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+const dynamic = "force-dynamic";
 ;
 ;
 ;
@@ -70,7 +73,7 @@ function AuthPage() {
                     className: "border rounded-md p-1 text-center"
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 52,
+                    lineNumber: 53,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -80,7 +83,7 @@ function AuthPage() {
                     className: "border rounded-md p-1 text-center"
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 59,
+                    lineNumber: 60,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -95,7 +98,7 @@ function AuthPage() {
                             children: "Заходи, кись!"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 73,
+                            lineNumber: 74,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -103,13 +106,13 @@ function AuthPage() {
                             children: "👉👈"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 76,
+                            lineNumber: 77,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 66,
+                    lineNumber: 67,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -125,7 +128,7 @@ function AuthPage() {
                             children: "Или зарегистрируйся :3!"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 90,
+                            lineNumber: 91,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -133,19 +136,19 @@ function AuthPage() {
                             children: "👉👈"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 93,
+                            lineNumber: 94,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 82,
+                    lineNumber: 83,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/anonlove/auth/page.tsx",
-            lineNumber: 45,
+            lineNumber: 46,
             columnNumber: 13
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
             className: "flex flex-col gap-2",
@@ -160,7 +163,7 @@ function AuthPage() {
                     className: "border rounded-md p-1 text-center"
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 106,
+                    lineNumber: 107,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -170,7 +173,7 @@ function AuthPage() {
                     className: "border rounded-md p-1 text-center"
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 113,
+                    lineNumber: 114,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -186,7 +189,7 @@ function AuthPage() {
                             children: "Или зарегистрируйся :3!"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 128,
+                            lineNumber: 129,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -194,13 +197,13 @@ function AuthPage() {
                             children: "👉👈"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 131,
+                            lineNumber: 132,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 120,
+                    lineNumber: 121,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -216,7 +219,7 @@ function AuthPage() {
                             children: "Заходи, кись!"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 145,
+                            lineNumber: 146,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -224,24 +227,24 @@ function AuthPage() {
                             children: "👉👈"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/auth/page.tsx",
-                            lineNumber: 148,
+                            lineNumber: 149,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/anonlove/auth/page.tsx",
-                    lineNumber: 137,
+                    lineNumber: 138,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/anonlove/auth/page.tsx",
-            lineNumber: 100,
+            lineNumber: 101,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/anonlove/auth/page.tsx",
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 9
     }, this);
 }

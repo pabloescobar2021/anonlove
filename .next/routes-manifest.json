@@ -52,6 +52,12 @@
       "namedRegex": "^/anonlove/auth(?:/)?$"
     },
     {
+      "page": "/anonlove/createcard",
+      "regex": "^/anonlove/createcard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/anonlove/createcard(?:/)?$"
+    },
+    {
       "page": "/anonlove/lovecard",
       "regex": "^/anonlove/lovecard(?:/)?$",
       "routeKeys": {},
