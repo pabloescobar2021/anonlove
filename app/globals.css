@@ -19,8 +19,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2a2525;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
 
     /* Переменные для скроллбара - темная тема */
     --scrollbar-track: #1e293b;
