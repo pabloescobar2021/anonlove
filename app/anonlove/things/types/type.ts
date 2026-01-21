@@ -27,6 +27,16 @@ export type ItemDto = {
     scaleY?: number,
     rotation?: number,
 }
+export function itemDtoToItem(dto: ItemDto): Item {
+    return {
+        ...dto, 
+        isEditing: 'none', 
+        isSelected: false
+    }
+}
+export function itemDtoListToItems(dtos: ItemDto[]): Item[] {
+  return dtos.map(itemDtoToItem)
+}
 
 export type Message = {
     id: string,
@@ -38,4 +48,14 @@ export type Message = {
     to_user: string,
     from_display_id: string,
     to_display_id: string,
+}
+
+export type UiMessage = Omit<Message, "body"> & {
+    body: Item[]
+}
+
+export type Viewport ={
+    scale: number,
+    offsetX: number,
+    offsetY: number
 }

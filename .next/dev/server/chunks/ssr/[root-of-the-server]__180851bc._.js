@@ -278,7 +278,7 @@ function useDialogs(inboxMessages, sentMessages, myUserId) {
             if (msg.from_display_id === 'A') {
                 displayId = 'Anon';
             } else {
-                displayId = msg.from_display_id;
+                displayId = msg.to_display_id;
             }
             if (!map.has(dialogUserId)) {
                 map.set(dialogUserId, {
@@ -574,6 +574,7 @@ function CreateCardPage({ initialData }) {
     const [messageId, setMessageId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null) // получаем из url
     ;
     const [isReply, setIsReply] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const isMobile = useCheckMobile();
     const { user, profile, loading: authLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$things$2f$hooks$2f$useAuth$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAuth"])();
     const { inbox, sent, sendMessage: send, loading: messageLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$things$2f$hooks$2f$useMessages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessages"])(user?.id || null);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -617,7 +618,7 @@ function CreateCardPage({ initialData }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `relative flex flex-col justify-center items-center h-full`,
+        className: `relative flex flex-col justify-center items-center h-full overflow-hidden`,
         style: {
             backgroundColor: bgStyle
         },
@@ -680,7 +681,7 @@ function CreateCardPage({ initialData }) {
                             }
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                            lineNumber: 125,
+                            lineNumber: 126,
                             columnNumber: 29
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: `relative w-full h-full text-wrap wrap-break-word flex 
@@ -715,12 +716,12 @@ function CreateCardPage({ initialData }) {
                                                             d: "M4 8h24M4 16h24M4 24h24"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                            lineNumber: 166,
+                                                            lineNumber: 167,
                                                             columnNumber: 131
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                        lineNumber: 159,
+                                                        lineNumber: 160,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -734,23 +735,23 @@ function CreateCardPage({ initialData }) {
                                                             children: "Удалить"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                            lineNumber: 171,
+                                                            lineNumber: 172,
                                                             columnNumber: 53
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                        lineNumber: 167,
+                                                        lineNumber: 168,
                                                         columnNumber: 49
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                lineNumber: 158,
+                                                lineNumber: 159,
                                                 columnNumber: 45
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                            lineNumber: 155,
+                                            lineNumber: 156,
                                             columnNumber: 41
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -761,7 +762,7 @@ function CreateCardPage({ initialData }) {
                                             className: "absolute -right-1 bottom-1/2 translate-y-1/2 w-1 h-3 bg-white    border cursor-w-resize"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 182,
                                             columnNumber: 41
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -772,7 +773,7 @@ function CreateCardPage({ initialData }) {
                                             className: "absolute -top-1 left-1/2 -translate-x-1/2 w-3 h-1 bg-white    border cursor-s-resize"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                            lineNumber: 191,
+                                            lineNumber: 192,
                                             columnNumber: 41
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -783,7 +784,7 @@ function CreateCardPage({ initialData }) {
                                             className: "absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-1 bg-white    border cursor-s-resize"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                            lineNumber: 201,
+                                            lineNumber: 202,
                                             columnNumber: 41
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -794,29 +795,29 @@ function CreateCardPage({ initialData }) {
                                             className: "absolute -bottom-1.5 -right-1.5  w-2 h-2 bg-white    border cursor-se-resize"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 212,
                                             columnNumber: 41
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 153,
                                     columnNumber: 37
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                            lineNumber: 147,
+                            lineNumber: 148,
                             columnNumber: 29
                         }, this)
                     }, item.id, false, {
                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                        lineNumber: 99,
+                        lineNumber: 100,
                         columnNumber: 21
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                lineNumber: 90,
+                lineNumber: 91,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -827,32 +828,32 @@ function CreateCardPage({ initialData }) {
                     children: "Text"
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                    lineNumber: 231,
+                    lineNumber: 232,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                lineNumber: 229,
+                lineNumber: 230,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute left-0 inset-y-0 flex justify-center items-center    w-7 rounded-r-full bg-white/10 hover:bg-white/20 transition-cursor",
+                className: "absolute left-0  flex justify-center items-center    w-7 rounded-r-full bg-white/10 hover:bg-white/20 transition-cursor   md:inset-y-0   inset-y-60   ",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     onClick: ()=>router.push("anonlovemain"),
                     className: "w-full h-full",
                     children: `<`
                 }, void 0, false, {
                     fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                    lineNumber: 245,
+                    lineNumber: 251,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                lineNumber: 241,
+                lineNumber: 244,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute right-0 inset-y-0 flex justify-center items-center   w-7 rounded-l-full bg-white/10 hover:bg-white/20 transition-cursor",
+                className: "absolute right-0  flex justify-center items-center overflow-hidden   w-7 rounded-l-full bg-white/10 hover:bg-white/20 transition-cursor   md:inset-y-0   inset-y-60   ",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>{
@@ -862,16 +863,16 @@ function CreateCardPage({ initialData }) {
                         children: `...`
                     }, void 0, false, {
                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                        lineNumber: 257,
+                        lineNumber: 268,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `fixed inset-0 z-30 bg-black/50 transition-all duration-300
+                        className: `fixed inset-0 z-30 bg-black/50 transition-all duration-300 overflow-hidden
                                 ${rightPanelOpen ? "backdrop-blur-lg translate-x-0" : "backdrop-blur-none translate-x-full"}
                             `,
                         onMouseDown: (e)=>setRightPanelOpen(false),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "absolute right-0 inset-y-0 flex justify-center items-center w-[400px] bg-black/90 z-20",
+                            className: "absolute right-0 inset-y-0 flex justify-center items-center    md:w-[400px] w-full bg-black/90 z-20",
                             onMouseDown: (e)=>{
                                 e.stopPropagation();
                             },
@@ -893,7 +894,7 @@ function CreateCardPage({ initialData }) {
                                     `
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                        lineNumber: 281,
+                                        lineNumber: 293,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -909,7 +910,7 @@ function CreateCardPage({ initialData }) {
                                                 className: "bg-white/10 border rounded-md text-white"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                lineNumber: 293,
+                                                lineNumber: 305,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -917,13 +918,13 @@ function CreateCardPage({ initialData }) {
                                                 children: `Будешь анонимен? (потом можно изменить)`
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                                lineNumber: 300,
+                                                lineNumber: 312,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                        lineNumber: 292,
+                                        lineNumber: 304,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -933,7 +934,7 @@ function CreateCardPage({ initialData }) {
                                         children: "Отправить"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 315,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -942,35 +943,35 @@ function CreateCardPage({ initialData }) {
                                         children: `>`
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                        lineNumber: 311,
+                                        lineNumber: 323,
                                         columnNumber: 33
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                                lineNumber: 275,
+                                lineNumber: 287,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                            lineNumber: 269,
+                            lineNumber: 280,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                        lineNumber: 263,
+                        lineNumber: 274,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-                lineNumber: 253,
+                lineNumber: 261,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonlove/createcard/CreateCardClient.tsx",
-        lineNumber: 83,
+        lineNumber: 84,
         columnNumber: 9
     }, this);
 }

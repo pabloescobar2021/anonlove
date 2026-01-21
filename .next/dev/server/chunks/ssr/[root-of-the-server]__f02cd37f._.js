@@ -294,7 +294,7 @@ function useDialogs(inboxMessages, sentMessages, myUserId) {
             if (msg.from_display_id === 'A') {
                 displayId = 'Anon';
             } else {
-                displayId = msg.from_display_id;
+                displayId = msg.to_display_id;
             }
             if (!map.has(dialogUserId)) {
                 map.set(dialogUserId, {
@@ -395,12 +395,23 @@ function Page() {
     // ответ на сообщение
     const [replyToUserId, setreplyToUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); //id
     const [isReply, setIsReply] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [tab, setTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("inbox");
+    const [openProfile, setOpenProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     // свайп для мобилки
     const chatSwipe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSwipe"])({
         onSwipeRight: ()=>{
             if (!isMobile) return;
             setOpenChat(false);
+        }
+    });
+    // swipe close profile mobile
+    const profileSwipe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSwipe"])({
+        onSwipeLeft: ()=>{
+            if (!isMobile) return;
+            setOpenProfile(false);
+        },
+        onSwipeRight: ()=>{
+            if (!isMobile) return;
+            setOpenProfile(true);
         }
     });
     // автовставка id
@@ -449,117 +460,113 @@ function Page() {
             children: "Загрузка..."
         }, void 0, false, {
             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-            lineNumber: 91,
+            lineNumber: 102,
             columnNumber: 13
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative bg-black min-h-screen flex flex-col",
+        className: "relative bg-black min-h-screen flex flex-col overflow-hidden",
         children: [
-            user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                className: "bg-linear-to-b from-90% to-100% from-black to-[#8f184f]   text-white p-1 flex justify-between items-center shadow-md",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-3",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-lg font-bold",
-                                children: profile?.public_id.charAt(1).toUpperCase()
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                lineNumber: 104,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "font-semibold",
-                                    children: profile?.public_id
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 108,
-                                    columnNumber: 29
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                lineNumber: 107,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 103,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "bg-white/10 hover:bg-white/20 text-white px-4 py-1 rounded-md transition",
-                        onClick: handleSignOut,
-                        children: "Выйти"
-                    }, void 0, false, {
-                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 111,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 100,
-                columnNumber: 17
-            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                className: "bg-gray-900 text-white p-4 shadow-md",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    children: "Вы не залогинены"
-                }, void 0, false, {
-                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                    lineNumber: 120,
-                    columnNumber: 21
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 119,
-                columnNumber: 17
-            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "relative flex-1 text-white flex md:flex-row flex-col overflow-hidden",
+                ...!openChat ? profileSwipe : {},
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: `absolute inset-0 bg-[#12080b] 
-                                h-[calc(100vh-48px)] overflow-y-auto
+                                overflow-y-auto
                                 transition-transform duration-300 ease-out will-change-transform
                                 md:static md:translate-x-0 md:w-1/2
                                 ${isMobile && openChat ? "-translate-x-full" : "translate-x-0"}
                     `,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex w-full",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "bg-white/10 p-2 rounded-md w-full text-center flex justify-center items-center gap-1",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "medium",
-                                            children: "Чаты"
+                                className: "flex w-full relative bg-white/10 backdrop-blur-md",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>{
+                                                setOpenProfile(true);
+                                            },
+                                            className: "bg-white/20 w-8 h-8 rounded-full",
+                                            children: profile?.public_id.charAt(1).toUpperCase()
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 140,
-                                            columnNumber: 29
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: `w-3 h-3 rounded-full border transition bg-white border-white
-                                `
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 141,
+                                            lineNumber: 127,
                                             columnNumber: 29
                                         }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 137,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                        lineNumber: 126,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: " p-2 rounded-md w-full text-center flex justify-center items-center gap-1",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "medium",
+                                                children: "Чаты"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                                lineNumber: 137,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: `w-3 h-3 rounded-full border transition bg-white border-white
+                                `
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                                lineNumber: 138,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                        lineNumber: 134,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute bottom-1/2 translate-y-1/2 right-2",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedButton, {
+                                            openModal: ()=>{
+                                                router.push('createcard');
+                                            },
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                xmlns: "http://www.w3.org/2000/svg",
+                                                width: "14",
+                                                height: "14",
+                                                viewBox: "0 0 32 32",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                    fill: "none",
+                                                    stroke: "currentColor",
+                                                    strokeLinecap: "round",
+                                                    strokeLinejoin: "round",
+                                                    strokeWidth: "2",
+                                                    d: "M2 4h28v18H16l-8 7v-7H2Z"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                                    lineNumber: 152,
+                                                    columnNumber: 116
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                                lineNumber: 152,
+                                                columnNumber: 33
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                            lineNumber: 147,
+                                            columnNumber: 29
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                                        lineNumber: 144,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                lineNumber: 136,
+                                lineNumber: 124,
                                 columnNumber: 21
                             }, this),
                             dialogs.map((dialog)=>{
@@ -578,7 +585,7 @@ function Page() {
                                                 children: avatar
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                lineNumber: 161,
+                                                lineNumber: 169,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -589,99 +596,58 @@ function Page() {
                                                         children: title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 176,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-[10px] text-gray-400 absolute bottom-[0px] right-1 ",
+                                                        className: "text-[10px] text-gray-400 absolute bottom-0 right-1 ",
                                                         children: dialog.lastMessage.created_at.slice(11, 16)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 181,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 175,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 168,
                                         columnNumber: 33
                                     }, this)
                                 }, dialog.userId, false, {
                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 163,
                                     columnNumber: 29
                                 }, this);
-                            }),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute bottom-0 right-2",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedButton, {
-                                    openModal: ()=>{
-                                        // setreplyToUserId(null)
-                                        // setIsOpen(true)
-                                        // setIsReply(false)
-                                        router.push('createcard');
-                                    },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        width: "16",
-                                        height: "16",
-                                        viewBox: "0 0 32 32",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            fill: "none",
-                                            stroke: "currentColor",
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: "2",
-                                            d: "M2 4h28v18H16l-8 7v-7H2Z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 193,
-                                            columnNumber: 112
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                        lineNumber: 193,
-                                        columnNumber: 29
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 185,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                lineNumber: 182,
-                                columnNumber: 21
-                            }, this)
+                            })
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 129,
+                        lineNumber: 117,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ...isMobile ? chatSwipe : {},
                         className: `
                         absolute inset-0 bg-[#12080b] 
-                        h-[calc(100vh-48px)] overflow-y-auto
+                        overflow-y-auto
                         transition-transform duration-300 ease-in-out will-change-transform
                         md:static md:translate-x-0 md:w-1/2
                         ${openChat ? "translate-x-0" : "translate-x-full"}
                     `,
                         children: [
                             isMobile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "absolute top-2 left-2 bg-[#8f1850f0] w-10 h-10 text-center rounded-full z-10",
+                                className: " bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10",
                                 onClick: ()=>setOpenChat(false),
                                 children: "←"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                lineNumber: 211,
+                                lineNumber: 206,
                                 columnNumber: 25
                             }, this),
                             activeDialog?.messages.map((message)=>{
@@ -705,7 +671,7 @@ function Page() {
                                                     children: avatar
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 240,
+                                                    lineNumber: 235,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -716,7 +682,7 @@ function Page() {
                                                             children: nameLabel
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 251,
+                                                            lineNumber: 246,
                                                             columnNumber: 41
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -724,19 +690,19 @@ function Page() {
                                                             children: ``
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 254,
+                                                            lineNumber: 249,
                                                             columnNumber: 41
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 250,
+                                                    lineNumber: 245,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 233,
+                                            lineNumber: 228,
                                             columnNumber: 33
                                         }, this),
                                         !isMine && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -764,153 +730,109 @@ function Page() {
                                                             d: "M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 270,
                                                             columnNumber: 49
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                             d: "m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 276,
+                                                            lineNumber: 271,
                                                             columnNumber: 49
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 274,
+                                                    lineNumber: 269,
                                                     columnNumber: 45
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                lineNumber: 273,
+                                                lineNumber: 268,
                                                 columnNumber: 41
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 257,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-full mx-auto bg-white/20 h-[1px]"
+                                            className: "w-full mx-auto bg-white/20 h-px"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                            lineNumber: 282,
+                                            lineNumber: 277,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, message.id, true, {
                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 222,
                                     columnNumber: 29
                                 }, this);
                             })
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 199,
+                        lineNumber: 194,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 125,
+                lineNumber: 112,
                 columnNumber: 13
             }, this),
-            isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute md:w-[400px] w-full h-[300px] bg-black z-50    rounded-lg flex border-2 border-[#8f184f]   top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                    className: "relative flex flex-col justify-center items-center gap-2 mx-auto w-full",
-                    onSubmit: (e)=>{
-                        e.preventDefault();
-                    },
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                            ref: idRef,
-                            type: "text",
-                            placeholder: "id няшки",
-                            disabled: isReply,
-                            className: `p-2 border-2 rounded-lg 
-                                ${isReply ? 'opacity-50' : 'opacity-100'}`
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 303,
-                            columnNumber: 25
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                            ref: textRef,
-                            type: "text",
-                            placeholder: "Текст",
-                            className: "p-2 border-2 rounded-lg "
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 314,
-                            columnNumber: 25
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex justify-center items-center",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "checkbox",
-                                    id: "anon",
-                                    name: "anon",
-                                    checked: isAnon,
-                                    onChange: (e)=>{
-                                        setIsAnon(e.target.checked);
-                                    }
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 321,
-                                    columnNumber: 29
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    htmlFor: "anon",
-                                    children: `анонимно (увидит только id)`
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                    lineNumber: 326,
-                                    columnNumber: 29
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 320,
-                            columnNumber: 25
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "bg-[#8f184f] text-white px-4 py-2 rounded-lg",
-                            type: "button",
-                            children: "Отправить"
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 330,
-                            columnNumber: 25
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ...isMobile ? profileSwipe : {},
+                className: `flex flex-1 flex-col items-center absolute inset-0 bg-black/50 transition-transform duration-150 ease-in-out will-change-transform
+                        ${openProfile ? "translate-x-0" : "-translate-x-full "}
+                    `,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-white/20 backdrop-blur-2xl w-full flexC p-2 rounded-b-2xl",
+                        children: profile?.public_id
+                    }, void 0, false, {
+                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                        lineNumber: 295,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "text-red-500",
                             onClick: ()=>{
-                                setIsOpen(false);
+                                handleSignOut();
                             },
-                            className: "absolute top-1 right-2",
-                            children: "X"
+                            children: "Выйти"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 334,
-                            columnNumber: 25
+                            lineNumber: 302,
+                            columnNumber: 21
                         }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                    lineNumber: 299,
-                    columnNumber: 21
-                }, this)
-            }, void 0, false, {
+                    }, void 0, false, {
+                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                        lineNumber: 301,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute h-40 top-1/2 -translate-y-1/2 right-0 bg-white/20 backdrop-blur-2xl flexC p-1    animate-pulse rounded-l-2xl   ",
+                        onClick: ()=>setOpenProfile(false),
+                        children: `>`
+                    }, void 0, false, {
+                        fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
+                        lineNumber: 312,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 295,
-                columnNumber: 17
+                lineNumber: 289,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-        lineNumber: 98,
+        lineNumber: 109,
         columnNumber: 9
     }, this);
 }
@@ -963,7 +885,7 @@ function AnimatedButton({ children, openModal }) {
                 particles.push({
                     x: Math.random() * w,
                     y: Math.random() * h,
-                    radius: 4,
+                    radius: 1,
                     alpha: 1,
                     life: 1,
                     vx: Math.cos(angle) * speed,
@@ -1024,7 +946,7 @@ function AnimatedButton({ children, openModal }) {
                 className: "absolute w-full h-full pointer-events-none z-1"
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 489,
+                lineNumber: 473,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1032,17 +954,17 @@ function AnimatedButton({ children, openModal }) {
                 onClick: ()=>openModal(),
                 onMouseEnter: ()=>isHovering.current = true,
                 onMouseLeave: ()=>isHovering.current = false,
-                className: "relative p-4 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2",
+                className: "relative flex items-center justify-center p-2 h-8 w-15 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2",
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 494,
+                lineNumber: 478,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-        lineNumber: 488,
+        lineNumber: 472,
         columnNumber: 9
     }, this);
 }

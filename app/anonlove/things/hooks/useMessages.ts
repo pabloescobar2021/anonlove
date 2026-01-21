@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react"
 import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
-import { ItemDto, Message } from "../types/type"
+import { ItemDto, Item, Message, UiMessage, itemDtoListToItems } from "../types/type"
 
 
 
@@ -64,14 +64,15 @@ export function useMessages(userId: string | null) {
 }
 
 type UseCurrentMessageResult = {
-    message: Message | null,
+    message: UiMessage | null,
     loading: boolean
 }
 export function useCurrentMessage(
     userId: string | null, 
-    messageId: string | null
+    messageId: string | null,
+    isMine?: string | null
 ): UseCurrentMessageResult {
-    const [message, setMessage] = useState<Message | null>(null)
+    const [message, setMessage] = useState<UiMessage | null>(null)
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -80,8 +81,11 @@ export function useCurrentMessage(
         const loadMessage = async () => {
             setLoading(true)
             try{
-                const data = await getCurrentMessage(messageId, userId)
-                setMessage(data)
+                const data = await getCurrentMessage(messageId, userId, isMine)
+                setMessage({
+                    ...data,
+                    body: itemDtoListToItems(data.body) 
+                })
             } catch (error) {
                 console.error("Error loading messages:", error)
             } finally {

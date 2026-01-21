@@ -8,6 +8,9 @@ import { useAuth } from "../things/hooks/useAuth";
 import { useMessages, useDialogs } from "../things/hooks/useMessages";
 import { sighOut } from "../things/utils/auth";
 import { useSwipe } from "../things/hooks/useSwipe";
+import { useCheckMobile } from "../things/hooks/checkMobile";
+
+
 
 export default function Page() {
     const router = useRouter();
@@ -21,7 +24,7 @@ export default function Page() {
     const activeDialog = dialogs.find((d) => d.userId === activeDialogId);
 
     const [openChat, setOpenChat] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const isMobile = useCheckMobile()
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -33,13 +36,24 @@ export default function Page() {
     const [replyToUserId, setreplyToUserId] = useState<{id: string; isAnon: boolean} | null>(null); //id
     const [isReply, setIsReply] = useState(false);
 
-    const [tab, setTab] = useState<"inbox" | "sent">("inbox");
+    const [openProfile, setOpenProfile] = useState(false);
 
     // свайп для мобилки
     const chatSwipe = useSwipe({
         onSwipeRight: () => {
             if (!isMobile) return;
             setOpenChat(false)
+        }
+    })
+    // swipe close profile mobile
+    const profileSwipe = useSwipe({
+        onSwipeLeft: () => {
+            if (!isMobile) return;
+            setOpenProfile(false)
+        },
+        onSwipeRight: () => {
+            if (!isMobile) return;
+            setOpenProfile(true)
         }
     })
     
@@ -60,16 +74,7 @@ export default function Page() {
     }, [user, authLoading,router])
 
     
-    // проверка мобилки
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-        checkMobile()
-        window.addEventListener("resize", checkMobile)
-
-        return () => window.removeEventListener("resize", checkMobile)
-    }, [])
+    
 
     useEffect(() => {
         if(!isMobile){
@@ -95,47 +100,39 @@ export default function Page() {
     }
 
     return (
-        <div className="relative bg-black min-h-screen flex flex-col">
-            {user ? (
-                <header 
-                    className="bg-linear-to-b from-90% to-100% from-black to-[#8f184f]
-                            text-white p-1 flex justify-between items-center shadow-md">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-lg font-bold">
-                            {profile?.public_id.charAt(1).toUpperCase()}
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="font-semibold">{profile?.public_id}</span>
-                        </div>
-                    </div>
-                    <button
-                        className="bg-white/10 hover:bg-white/20 text-white px-4 py-1 rounded-md transition"
-                        onClick={handleSignOut}
-                    >
-                        Выйти
-                    </button>
-                </header>
-            ) : (
-                <header className="bg-gray-900 text-white p-4 shadow-md">
-                    <span>Вы не залогинены</span>
-                </header>
-            )}
+        <div className="relative bg-black min-h-screen flex flex-col overflow-hidden">
 
             {/* сообщения */}
             <main 
                 className="relative flex-1 text-white flex md:flex-row flex-col overflow-hidden"
+                {...(!openChat ? profileSwipe : {})}
+                onClick={() => {
+                    if(openProfile) setOpenProfile(false)
+                }}
             >
                 {/* ДИАЛОГИ */}
-                <div className={`absolute inset-0 bg-[#12080b] 
-                                h-[calc(100vh-48px)] overflow-y-auto
-                                transition-transform duration-300 ease-out will-change-transform
-                                md:static md:translate-x-0 md:w-1/2
-                                ${isMobile && openChat ? "-translate-x-full" : "translate-x-0"}
-                    `}>
+                <div 
+                    className={`absolute inset-0 bg-[#12080b] 
+                            overflow-y-auto
+                            transition-transform duration-300 ease-out will-change-transform
+                            md:static md:translate-x-0 md:w-1/2
+                            ${isMobile && openChat ? "-translate-x-full" : "translate-x-0"}
+                        `}
+                    
+                    >
 
-                    <div className="flex w-full">
+                    <div className="flex w-full relative bg-white/10 backdrop-blur-md">
+
+                        <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center">
+                            <button 
+                                onClick={() => {setOpenProfile(true)}}
+                                className="bg-white/20 w-8 h-8 rounded-full">
+                                {profile?.public_id.charAt(1).toUpperCase()}
+                            </button>
+                        </div>
+
                         <button 
-                            className="bg-white/10 p-2 rounded-md w-full text-center flex justify-center items-center gap-1"
+                            className=" p-2 rounded-md w-full text-center flex justify-center items-center gap-1"
                         >
                             <span className="medium">Чаты</span>
                             <span 
@@ -144,7 +141,19 @@ export default function Page() {
                             />
                         </button>
 
-                        
+                        <div
+                            className="absolute bottom-1/2 translate-y-1/2 right-2"
+                        >
+                           {/* кнопка написать */}
+                            <AnimatedButton
+                                openModal={() => {
+                                    router.push(`createcard?type=send`);
+                                }}
+                            >   
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 4h28v18H16l-8 7v-7H2Z"/></svg>
+                            </AnimatedButton>
+                        </div>
+
                     </div>
 
                     {dialogs.map((dialog) => {
@@ -170,7 +179,7 @@ export default function Page() {
                                             {title}
                                         </span>
 
-                                        <span className="text-[10px] text-gray-400 absolute bottom-[0px] right-1 ">
+                                        <span className="text-[10px] text-gray-400 absolute bottom-0 right-1 ">
                                             {dialog.lastMessage.created_at.slice(11,16)}
                                         </span>
                                     </div>
@@ -179,20 +188,7 @@ export default function Page() {
                         )
                     })}
 
-                    <div
-                        className="absolute bottom-0 right-2"
-                    >
-                        <AnimatedButton
-                        openModal={() => {
-                            // setreplyToUserId(null)
-                            // setIsOpen(true)
-                            // setIsReply(false)
-                            router.push('createcard')
-                        }}
-                        >   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 4h28v18H16l-8 7v-7H2Z"/></svg>
-                        </AnimatedButton>
-                    </div>
+                    
                 </div>
                 
                 {/* ===== ЧАТ ===== */}
@@ -200,7 +196,7 @@ export default function Page() {
                     {...(isMobile ? chatSwipe : {})}
                     className={`
                         absolute inset-0 bg-[#12080b] 
-                        h-[calc(100vh-48px)] overflow-y-auto
+                        overflow-y-auto
                         transition-transform duration-300 ease-in-out will-change-transform
                         md:static md:translate-x-0 md:w-1/2
                         ${openChat ? "translate-x-0" : "translate-x-full"}
@@ -209,7 +205,7 @@ export default function Page() {
                     {/* Кнопка назад (ТОЛЬКО мобилка) */}
                     {isMobile && (
                         <button
-                            className="absolute top-2 left-2 bg-[#8f1850f0] w-10 h-10 text-center rounded-full z-10"
+                            className=" bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
                             onClick={() => setOpenChat(false)}
                         >
                             ← 
@@ -222,6 +218,7 @@ export default function Page() {
                         const nameLabel = message.from_display_id
                         const bodyText: any = "тебе тут что то пришло, малышка"
                         const isMine = message.from_user === user?.id
+                        const messageId = message.from_display_id === "Anon" ? message.from_user : message.from_display_id
 
                         return (
                             <div
@@ -234,7 +231,9 @@ export default function Page() {
                                     className={`flex items-center gap-2 p-2 cursor-pointer max-w-[80%]
                                         ${isMine ? "flex-row-reverse text-right" : "flex-row"}
                                     `}
-                                    onClick={() => router.push(`lovecard#${message.id}`)}
+                                    onClick={() => {
+                                        router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
+                                    }}
                                 >
                                     {/* avatar */}
                                     <div
@@ -262,12 +261,8 @@ export default function Page() {
                                     <button
                                         className="absolute top-1/2 right-1 -translate-y-1/2"
                                         onClick={() => {
-                                            setreplyToUserId({
-                                                id: message.from_display_id || message.from_user,
-                                                isAnon: message.is_anon
-                                            })
-                                            setIsReply(true)
-                                            setIsOpen(true)
+                                            router.push(`createcard?isMine=${isMine}&type=send&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
+
                                         }}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14">
@@ -279,7 +274,7 @@ export default function Page() {
                                     </button>
                                 )}
 
-                                <div className="w-full mx-auto bg-white/20 h-[1px]" />
+                                <div className="w-full mx-auto bg-white/20 h-px" />
                             </div>
                         )
                     })}
@@ -290,51 +285,45 @@ export default function Page() {
                 
             </main>
 
-            {/* modalka */}
-            {isOpen && (
-                <div 
-                    className="absolute md:w-[400px] w-full h-[300px] bg-black z-50 
-                                rounded-lg flex border-2 border-[#8f184f]
-                                top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> 
-                    <form 
-                        className="relative flex flex-col justify-center items-center gap-2 mx-auto w-full"
-                        onSubmit={(e) => {e.preventDefault()}}
-                        >
-                        <input
-                            ref={idRef}
-                            type="text" 
-                            placeholder="id няшки" 
-                            disabled={isReply}
-                            className={`p-2 border-2 rounded-lg 
-                                ${isReply 
-                                    ? 'opacity-50'
-                                    : 'opacity-100'
-                                }`}
-                            />
-                        <input 
-                            ref={textRef}
-                            type="text" 
-                            placeholder="Текст" 
-                            className="p-2 border-2 rounded-lg "
-                            />
-                        <div className="flex justify-center items-center">
-                            <input
-                                type="checkbox" id="anon" name="anon"
-                                checked={isAnon}
-                                onChange={(e) => {setIsAnon(e.target.checked)}}
-                            />
-                            <label htmlFor="anon">{`анонимно (увидит только id)`}</label>
-                        </div>
-                        
+            {/* profile left side */}
 
-                        <button 
-                        className="bg-[#8f184f] text-white px-4 py-2 rounded-lg"
-                        type="button" >Отправить</button>
-
-                        <button onClick={() => {setIsOpen(false)}} className="absolute top-1 right-2">X</button>
-                    </form>
+            <div
+                {...(isMobile ? profileSwipe : {})}
+                className={`flex flex-1 flex-col items-center absolute bg-black/50 backdrop-blur-md transition-transform duration-150 ease-in-out will-change-transform
+                    ${openProfile ? "translate-x-0" : "-translate-x-full "}
+                    ${isMobile ? "inset-0" : "w-1/3 h-full"}
+                    `}
+                onClick={(e) => {
+                    e.stopPropagation()
+                }}
+            >
+                <div
+                    className="bg-white/20 backdrop-blur-2xl w-full flexC p-2 rounded-b-2xl"
+                >
+                    {profile?.public_id} 
                 </div>
-            )}
+
+                <div className="absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl">
+                    <button
+                        className="text-red-500"
+                        onClick={() => {
+                            handleSignOut()
+                        }}
+                    >
+                        Выйти
+                    </button>
+                </div>
+
+                <button
+                    className="absolute h-40 top-1/2 -translate-y-1/2 right-0 bg-white/20 backdrop-blur-2xl flexC p-1 
+                            animate-pulse rounded-l-2xl
+                    "
+                    onClick={() => setOpenProfile(false)}
+                >
+                    {`>`}
+                </button>
+
+            </div>
         </div>
     )
 
@@ -415,7 +404,7 @@ function AnimatedButton({
                 particles.push({
                     x: Math.random() * w,
                     y: Math.random() * h,
-                    radius: 4,
+                    radius: 1,
                     alpha: 1,
                     life: 1,
                     vx: Math.cos(angle) * speed,
@@ -496,7 +485,7 @@ function AnimatedButton({
                 onClick={() => openModal()}
                 onMouseEnter={() => (isHovering.current = true)}
                 onMouseLeave={() => (isHovering.current = false)}
-                className="relative p-4 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2"
+                className="relative flex items-center justify-center p-2 h-8 w-15 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2"
             >
                 {children}
             </button>

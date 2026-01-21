@@ -294,7 +294,7 @@ function useDialogs(inboxMessages, sentMessages, myUserId) {
             if (msg.from_display_id === 'A') {
                 displayId = 'Anon';
             } else {
-                displayId = msg.from_display_id;
+                displayId = msg.to_display_id;
             }
             if (!map.has(dialogUserId)) {
                 map.set(dialogUserId, {

@@ -69,6 +69,13 @@ label {
   height: 100vh;  /* запасной вариант */
 }
 
+.flexC {
+  @apply 
+  flex 
+  items-center 
+  justify-center
+}
+
 
 
 
