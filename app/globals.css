@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2a2525;
+    --foreground: #ededed;
 
   /* Переменные для скроллбара - светлая тема */
   --scrollbar-track: #f1f5f9;
@@ -19,8 +19,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #2a2525;
+    --foreground: #ededed;
 
     /* Переменные для скроллбара - темная тема */
     --scrollbar-track: #1e293b;
