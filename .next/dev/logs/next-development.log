@@ -1,2 +1,751 @@
-[00:00:02.702] Server  LOG      ✓ Ready in 2s
-[00:00:09.488] Server  LOG      ○ Compiling /anonlove/auth ...
+[00:00:05.027] Server  LOG      ✓ Ready in 3.8s
+[00:00:08.066] Server  LOG      ○ Compiling /anonlove/anonlovemain ...
+[00:01:43.838] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:01:43.858] Server  LOG      ✓ Compiled in 156ms
+[00:04:42.021] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:04:42.037] Server  LOG      ✓ Compiled in 693ms
+[00:05:53.717] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:05:53.720] Server  LOG      ✓ Compiled in 196ms
+[00:06:48.605] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:48.955] Server  LOG      ✓ Compiled in 124ms
+[00:07:13.593] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:07:13.612] Server  LOG      ✓ Compiled in 272ms
+[00:07:55.780] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:07:55.801] Server  LOG      ✓ Compiled in 127ms
+[00:08:07.161] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:08:07.163] Server  LOG      ✓ Compiled in 211ms
+[00:09:49.957] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:09:49.978] Server  LOG      ✓ Compiled in 164ms
+[00:10:09.834] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:10.069] Server  LOG      ✓ Compiled in 127ms
+[00:10:28.708] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:28.725] Server  LOG      ✓ Compiled in 123ms
+[00:10:32.468] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:32.473] Server  LOG      ✓ Compiled in 137ms
+[00:10:40.889] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. overscrollBehavior overscrollbehavior
+[00:10:40.889] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. touchAction touchaction
+[00:11:05.665] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. overscrollBehavior overscrollbehavior
+[00:11:05.666] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. touchAction touchaction
+[00:13:05.350] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:13:05.369] Server  LOG      ✓ Compiled in 114ms
+[00:13:13.447] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. overscrollBehavior overscrollbehavior
+[00:13:13.447] Browser ERROR   React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element. touchAction touchaction
+[00:13:58.084] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:13:58.102] Server  LOG      ✓ Compiled in 119ms
+[00:15:44.390] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/anonlove/anonlovemain/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:44.396] Server  LOG      ✓ Compiled in 122ms
+[00:26:30.540] Server  LOG      ✓ Compiled in 441ms
+[00:30:23.134] Server  LOG      ✓ Compiled in 881ms
+[00:30:43.435] Server  LOG      ✓ Compiled in 160ms
+[00:30:55.226] Server  LOG      ✓ Compiled in 148ms
+[00:31:09.379] Server  LOG      ✓ Compiled in 149ms
+[00:31:34.952] Server  LOG      ✓ Compiled in 181ms
+[00:31:43.314] Server  LOG      ✓ Compiled in 184ms
+[00:31:51.129] Server  LOG      ✓ Compiled in 129ms
+[00:32:00.466] Server  LOG      ✓ Compiled in 148ms
+[00:32:06.925] Server  LOG      ✓ Compiled in 151ms
+[00:32:16.147] Server  LOG      ✓ Compiled in 98ms
+[00:32:17.498] Server  LOG      ✓ Compiled in 145ms
+[00:32:20.932] Server  LOG      ✓ Compiled in 99ms
+[00:32:27.347] Server  LOG      ✓ Compiled in 128ms
+[00:32:38.112] Server  LOG      ✓ Compiled in 92ms
+[00:32:46.571] Server  LOG      ✓ Compiled in 124ms
+[00:33:15.463] Server  LOG      ✓ Compiled in 112ms
+[00:33:25.742] Server  LOG      ✓ Compiled in 175ms
+[00:33:29.500] Server  LOG      ✓ Compiled in 217ms
+[00:33:30.150] Server  LOG      ✓ Compiled in 128ms
+[00:33:37.833] Server  LOG      ✓ Compiled in 158ms
+[00:34:08.336] Server  LOG      ✓ Compiled in 182ms
+[00:34:11.641] Server  LOG      ✓ Compiled in 125ms
+[00:34:38.396] Server  LOG      ✓ Compiled in 91ms
+[00:34:54.819] Server  LOG      ✓ Compiled in 96ms
+[00:35:00.807] Server  LOG      ✓ Compiled in 80ms
+[00:35:12.741] Server  LOG      ✓ Compiled in 91ms
+[00:35:17.999] Server  LOG      ✓ Compiled in 125ms
+[00:35:38.368] Server  LOG      ✓ Compiled in 202ms
+[00:35:44.567] Server  LOG      ✓ Compiled in 143ms
+[00:35:52.320] Server  LOG      ✓ Compiled in 126ms
+[04:43:40.382] Browser ERROR   {}
+[04:44:14.924] Server  LOG      ✓ Compiled in 152ms
+[04:44:17.496] Server  LOG      ✓ Compiled in 124ms
+[04:46:27.447] Server  LOG      ✓ Compiled in 358ms
+[04:46:28.879] Server  LOG      ✓ Compiled in 114ms
+[04:47:02.769] Server  LOG      ✓ Compiled in 101ms
+[04:47:21.202] Server  LOG      ✓ Compiled in 76ms
+[04:48:54.182] Server  LOG      ✓ Compiled in 91ms
+[04:49:18.092] Server  LOG      ✓ Compiled in 77ms
+[04:49:58.232] Server  LOG      ✓ Compiled in 83ms
+[04:50:46.073] Server  LOG      ✓ Compiled in 82ms
+[04:51:09.000] Server  LOG      ✓ Compiled in 92ms
+[04:51:48.504] Server  LOG      ✓ Compiled in 102ms
+[04:51:59.619] Server  LOG      ✓ Compiled in 86ms
+[04:52:21.013] Server  LOG      ✓ Compiled in 86ms
+[04:52:37.065] Server  LOG      ✓ Compiled in 112ms
+[04:52:40.217] Server  LOG      ✓ Compiled in 87ms
+[04:52:58.882] Server  LOG      ✓ Compiled in 209ms
+[04:53:06.795] Server  LOG      ✓ Compiled in 86ms
+[04:53:25.022] Server  LOG      ✓ Compiled in 166ms
+[04:53:37.962] Server  LOG      ✓ Compiled in 131ms
+[04:54:01.253] Server  LOG      ✓ Compiled in 92ms
+[04:54:12.572] Server  LOG      ✓ Compiled in 82ms
+[04:54:17.350] Server  LOG      ✓ Compiled in 75ms
+[04:54:27.336] Server  LOG      ✓ Compiled in 86ms
+[04:54:52.154] Server  LOG      ✓ Compiled in 84ms
+[04:55:17.362] Server  LOG      ✓ Compiled in 83ms
+[04:56:23.104] Server  LOG      ✓ Compiled in 78ms
+[04:56:23.447] Browser ERROR   Functions are not valid as a React child. This may happen if you return %s instead of <%s /> from render. Or maybe you meant to call this function rather than return it.
+  <%s>{%s}</%s> Component Component button Component button
+[04:57:01.464] Server  LOG      ✓ Compiled in 75ms
+[04:57:15.786] Server  LOG      ✓ Compiled in 80ms
+[04:57:22.843] Server  LOG      ✓ Compiled in 83ms
+[04:57:47.283] Server  LOG      ✓ Compiled in 104ms
+[04:57:57.613] Server  LOG      ✓ Compiled in 79ms
+[04:58:49.391] Server  LOG      ✓ Compiled in 70ms
+[04:59:16.310] Server  LOG      ✓ Compiled in 76ms
+[04:59:22.979] Server  LOG      ✓ Compiled in 99ms
+[04:59:56.145] Server  LOG      ✓ Compiled in 87ms
+[05:00:01.288] Server  LOG      ✓ Compiled in 81ms
+[05:00:24.400] Server  LOG      ✓ Compiled in 71ms
+[05:00:26.938] Server  LOG      ✓ Compiled in 88ms
+[05:01:11.694] Server  LOG      ✓ Compiled in 103ms
+[05:01:23.973] Server  LOG      ✓ Compiled in 71ms
+[05:02:17.031] Server  LOG      ✓ Compiled in 88ms
+[05:02:22.915] Server  LOG      ✓ Compiled in 87ms
+[05:02:35.431] Server  LOG      ✓ Compiled in 94ms
+[05:02:37.856] Server  LOG      ✓ Compiled in 82ms
+[05:02:42.545] Server  LOG      ✓ Compiled in 83ms
+[05:03:09.213] Server  LOG      ✓ Compiled in 72ms
+[05:03:16.627] Server  LOG      ✓ Compiled in 100ms
+[05:03:32.440] Server  LOG      ✓ Compiled in 83ms
+[05:03:35.588] Server  LOG      ✓ Compiled in 76ms
+[05:03:38.534] Server  LOG      ✓ Compiled in 79ms
+[05:03:40.458] Server  LOG      ✓ Compiled in 75ms
+[05:03:46.191] Server  LOG      ✓ Compiled in 99ms
+[05:03:53.233] Server  LOG      ✓ Compiled in 80ms
+[05:03:55.806] Server  LOG      ✓ Compiled in 107ms
+[05:04:19.449] Server  LOG      ✓ Compiled in 82ms
+[05:04:23.188] Server  LOG      ✓ Compiled in 88ms
+[05:04:32.027] Server  LOG      ✓ Compiled in 88ms
+[05:04:48.944] Server  LOG      ✓ Compiled in 188ms
+[05:04:54.937] Server  LOG      ✓ Compiled in 116ms
+[05:05:11.473] Server  LOG      ✓ Compiled in 82ms
+[05:05:43.659] Server  LOG      ✓ Compiled in 129ms
+[05:06:09.059] Server  LOG      ✓ Compiled in 157ms
+[05:06:15.780] Server  LOG      ✓ Compiled in 92ms
+[05:06:31.420] Server  LOG      ✓ Compiled in 80ms
+[05:06:38.129] Server  LOG      ✓ Compiled in 76ms
+[05:07:16.126] Server  LOG      ✓ Compiled in 97ms
+[05:07:34.452] Server  LOG      ✓ Compiled in 85ms
+[05:07:50.905] Server  LOG      ✓ Compiled in 89ms
+[05:07:57.547] Server  LOG      ✓ Compiled in 76ms
+[05:08:01.252] Server  LOG      ✓ Compiled in 100ms
+[05:08:26.293] Server  LOG      ✓ Compiled in 133ms
+[05:08:33.247] Server  LOG      ✓ Compiled in 121ms
+[05:08:36.915] Server  LOG      ✓ Compiled in 118ms
+[05:08:38.822] Server  LOG      ✓ Compiled in 99ms
+[05:09:01.237] Server  LOG      ✓ Compiled in 94ms
+[05:09:54.645] Server  LOG      ✓ Compiled in 73ms
+[05:10:04.645] Server  LOG      ✓ Compiled in 90ms
+[05:10:22.727] Server  LOG      ✓ Compiled in 88ms
+[05:10:27.370] Server  LOG      ✓ Compiled in 82ms
+[05:10:39.293] Server  LOG      ✓ Compiled in 106ms
+[05:11:02.118] Server  LOG      ✓ Compiled in 95ms
+[05:11:07.022] Server  LOG      ✓ Compiled in 76ms
+[05:11:12.491] Server  LOG      ✓ Compiled in 109ms
+[05:11:22.937] Server  LOG      ✓ Compiled in 90ms
+[05:12:03.642] Server  LOG      ✓ Compiled in 85ms
+[05:12:09.012] Server  LOG      ✓ Compiled in 90ms
+[05:12:33.450] Server  LOG      ✓ Compiled in 85ms
+[05:12:37.162] Server  LOG      ✓ Compiled in 121ms
+[05:12:43.281] Server  LOG      ✓ Compiled in 76ms
+[05:12:47.294] Server  LOG      ✓ Compiled in 81ms
+[05:12:55.048] Server  LOG      ✓ Compiled in 148ms
+[05:13:05.335] Server  LOG      ✓ Compiled in 94ms
+[05:13:27.416] Server  LOG      ✓ Compiled in 80ms
+[05:13:34.561] Server  LOG      ✓ Compiled in 83ms
+[05:13:37.559] Server  LOG      ✓ Compiled in 113ms
+[05:13:42.920] Server  LOG      ✓ Compiled in 79ms
+[05:13:47.994] Server  LOG      ✓ Compiled in 76ms
+[05:14:13.462] Server  LOG      ✓ Compiled in 89ms
+[05:14:22.245] Server  LOG      ✓ Compiled in 82ms
+[05:14:25.383] Server  LOG      ✓ Compiled in 77ms
+[05:14:30.083] Server  LOG      ✓ Compiled in 74ms
+[05:14:33.557] Server  LOG      ✓ Compiled in 74ms
+[05:14:50.339] Server  LOG      ✓ Compiled in 94ms
+[05:15:43.402] Server  LOG      ✓ Compiled in 113ms
+[05:15:54.534] Server  LOG      ✓ Compiled in 79ms
+[05:15:57.642] Server  LOG      ✓ Compiled in 82ms
+[05:17:58.015] Server  LOG      ✓ Compiled in 81ms
+[05:18:15.355] Server  LOG      ✓ Compiled in 84ms
+[05:19:03.993] Server  LOG      ✓ Compiled in 79ms
+[05:19:35.131] Server  LOG      ✓ Compiled in 77ms
+[05:20:00.984] Server  LOG      ✓ Compiled in 103ms
+[05:20:27.188] Server  LOG      ✓ Compiled in 85ms
+[05:24:18.183] Server  LOG      ✓ Compiled in 199ms
+[05:24:18.464] Browser ERROR   uncaughtError: ReferenceError: item is not defined
+[05:24:45.208] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:24:45.212] Server  LOG      ✓ Compiled in 108ms
+[05:24:45.454] Browser ERROR   uncaughtError: ReferenceError: item is not defined
+[05:24:46.334] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__9c26d716._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[05:24:46.338] Server  ERROR    ⨯ ReferenceError: item is not defined
+[05:24:50.459] Browser ERROR   uncaughtError: ReferenceError: item is not defined
+[05:24:55.266] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:24:55.281] Server  LOG      ✓ Compiled in 225ms
+[05:24:55.849] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__9c26d716._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[05:24:55.850] Server  ERROR    ⨯ ReferenceError: item is not defined
+[05:24:58.458] Browser ERROR   uncaughtError: ReferenceError: item is not defined
+[05:25:04.191] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:25:04.567] Server  LOG      ✓ Compiled in 90ms
+[05:27:14.246] Server  LOG      ✓ Compiled in 127ms
+[05:27:14.459] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:62:12
+Parsing ecmascript source code failed
+  60 |       onClick={}
+  61 |     >
+> 62 |       {item.isEditing === "text" ? (
+     |            ^
+  63 |         <input
+  64 |           autoFocus
+  65 |           value={item.content}
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:27:14.459] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:61:5
+Parsing ecmascript source code failed
+  59 |       }}
+  60 |       onClick={}
+> 61 |     >
+     |     ^
+  62 |       {item.isEditing === "text" ? (
+  63 |         <input
+  64 |           autoFocus
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:27:18.450] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:62:12
+Parsing ecmascript source code failed
+  60 |       onClick={}
+  61 |     >
+> 62 |       {item.isEditing === "text" ? (
+     |            ^
+  63 |         <input
+  64 |           autoFocus
+  65 |           value={item.content}
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:27:18.450] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:61:5
+Parsing ecmascript source code failed
+  59 |       }}
+  60 |       onClick={}
+> 61 |     >
+     |     ^
+  62 |       {item.isEditing === "text" ? (
+  63 |         <input
+  64 |           autoFocus
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:27:48.459] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:63:12
+Parsing ecmascript source code failed
+  61 |       onClick={}
+  62 |     >
+> 63 |       {item.isEditing === "text" ? (
+     |            ^
+  64 |         <input
+  65 |           autoFocus
+  66 |           value={item.content}
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:27:48.459] Browser ERROR   ./app/anonlove/createcard/components/all.tsx:62:5
+Parsing ecmascript source code failed
+  60 |       }}
+  61 |       onClick={}
+> 62 |     >
+     |     ^
+  63 |       {item.isEditing === "text" ? (
+  64 |         <input
+  65 |           autoFocus
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/all.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/all.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[05:28:27.087] Server  LOG      ✓ Compiled in 141ms
+[05:29:16.953] Server  LOG      ✓ Compiled in 93ms
+[05:30:10.334] Server  LOG      ✓ Compiled in 200ms
+[05:30:15.963] Server  LOG      ✓ Compiled in 85ms
+[05:34:25.347] Server  LOG      ✓ Compiled in 84ms
+[05:34:29.916] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[05:34:57.635] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[05:36:24.761] Server  LOG      ✓ Compiled in 199ms
+[05:36:28.140] Server  ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[05:36:29.940] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[05:38:39.531] Server  LOG      ✓ Compiled in 499ms
+[05:38:40.459] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[05:39:56.366] Server  LOG      ✓ Compiled in 107ms
+[05:41:48.004] Server  LOG      ✓ Compiled in 94ms
+[05:43:00.361] Browser ERROR   uncaughtError: ReferenceError: onChange is not defined
+[05:43:08.727] Server  LOG      ✓ Compiled in 96ms
+[05:44:32.397] Server  LOG      ✓ Compiled in 97ms
+[05:45:18.035] Server  LOG      ✓ Compiled in 94ms
+[05:45:42.884] Server  LOG      ✓ Compiled in 89ms
+[05:45:43.185] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[05:47:25.511] Server  LOG      ✓ Compiled in 103ms
+[05:47:26.480] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[05:47:39.138] Server  LOG      ✓ Compiled in 361ms
+[05:47:39.444] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[05:47:45.556] Server  LOG      ✓ Compiled in 83ms
+[05:48:08.325] Server  LOG      ✓ Compiled in 87ms
+[05:48:15.541] Server  LOG      ✓ Compiled in 213ms
+[05:48:22.072] Server  LOG      ✓ Compiled in 83ms
+[05:48:22.447] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[05:48:29.566] Server  LOG      ✓ Compiled in 87ms
+[05:49:30.316] Server  LOG      ✓ Compiled in 104ms
+[05:52:08.109] Server  LOG      ✓ Compiled in 231ms
+[05:53:16.513] Server  LOG      ✓ Compiled in 172ms
+[05:56:33.733] Server  LOG      ✓ Compiled in 156ms
+[05:57:02.407] Server  LOG      ✓ Compiled in 167ms
+[05:58:01.241] Server  LOG      ✓ Compiled in 104ms
+[05:59:00.885] Server  LOG      ✓ Compiled in 92ms
+[06:01:03.552] Server  LOG      ✓ Compiled in 96ms
+[06:01:26.725] Server  LOG      ✓ Compiled in 88ms
+[06:02:35.939] Server  LOG      ✓ Compiled in 80ms
+[06:04:59.751] Server  LOG      ✓ Compiled in 86ms
+[06:05:26.009] Server  LOG      ✓ Compiled in 84ms
+[06:11:43.799] Server  LOG      ✓ Compiled in 153ms
+[06:12:36.175] Server  LOG      ✓ Compiled in 152ms
+[06:12:45.549] Server  LOG      ✓ Compiled in 94ms
+[06:12:51.121] Server  LOG      ✓ Compiled in 83ms
+[06:13:16.107] Server  LOG      ✓ Compiled in 113ms
+[06:13:52.939] Server  LOG      ✓ Compiled in 101ms
+[06:13:57.285] Server  LOG      ✓ Compiled in 89ms
+[06:14:37.554] Server  LOG      ✓ Compiled in 87ms
+[06:14:38.489] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[06:15:17.536] Server  LOG      ✓ Compiled in 89ms
+[06:16:04.701] Browser LOG     SEND PAYLOAD [{"color":"#9d8585","content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}]
+[06:16:15.614] Browser LOG     Querying message: {"messageId":"02f43430-73d0-4b5f-b81b-abfa62d85995","userId":"fc081777-4fab-494f-a714-6c3e7f360d2f"}
+[06:16:15.975] Browser LOG     Query result: {"data":{"body":[{"color":"#9d8585","content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-01-28T13:04:28.671795+00:00","from_display_id":"#EMYWSB","from_display_name":"1234567","from_user":"fc081777-4fab-494f-a714-6c3e7f360d2f","id":"02f43430-73d0-4b5f-b81b-abfa62d85995","is_anon":false,"is_checked":false,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":0},"error":null}
+[06:18:05.409] Server  LOG      ✓ Compiled in 119ms
+[06:19:58.749] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:23:06.673] Server  LOG      ✓ Compiled in 216ms
+[06:23:18.168] Server  LOG      ✓ Compiled in 92ms
+[06:23:36.677] Server  LOG      ✓ Compiled in 89ms
+[06:23:37.450] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[06:23:58.375] Server  LOG      ✓ Compiled in 120ms
+[06:24:15.791] Server  LOG      ✓ Compiled in 86ms
+[06:24:50.379] Server  LOG      ✓ Compiled in 98ms
+[06:25:06.817] Server  LOG      ✓ Compiled in 79ms
+[06:25:21.922] Server  LOG      ✓ Compiled in 99ms
+[06:27:19.571] Server  LOG      ✓ Compiled in 95ms
+[06:27:31.279] Server  LOG      ✓ Compiled in 83ms
+[06:28:43.697] Server  LOG      ✓ Compiled in 108ms
+[06:28:46.391] Server  LOG      ✓ Compiled in 91ms
+[06:29:49.593] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:29:50.723] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:29:56.736] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:29:57.822] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:29:58.587] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:29:59.669] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:30:17.188] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:30:17.709] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:30:18.725] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:30:19.737] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:30:23.969] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:33:31.838] Server  LOG      ✓ Compiled in 130ms
+[06:33:40.512] Server  LOG      ✓ Compiled in 75ms
+[06:33:49.469] Server  LOG      ✓ Compiled in 162ms
+[06:33:50.452] Browser ERROR   ./app/anonlove/createcard/components/Redactor.tsx:74:39
+Parsing ecmascript source code failed
+  72 |                         <input 
+  73 |                             type="text"
+> 74 |                             className=inputStyle
+     |                                       ^^^^^^^^^^
+  75 |                             value={size}
+  76 |                             onChange={(e) => setSize(e.target.value)}
+  77 |                             onBlur={() => {
+
+Expected '</', got 'inputStyle'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[06:33:51.073] Server  LOG      ✓ Compiled in 95ms
+[06:34:50.147] Server  LOG      ✓ Compiled in 100ms
+[06:34:56.751] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:35:16.413] Server  LOG      ✓ Compiled in 345ms
+[06:35:32.811] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:35:34.295] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[06:36:06.274] Server  LOG      ✓ Compiled in 189ms
+[06:36:15.402] Server  LOG      ✓ Compiled in 102ms
+[06:36:30.621] Server  LOG      ✓ Compiled in 88ms
+[06:36:31.118] Server  LOG      ✓ Compiled in 98ms
+[06:36:34.241] Server  LOG      ✓ Compiled in 91ms
+[06:36:42.884] Server  LOG      ✓ Compiled in 81ms
+[06:36:45.208] Server  LOG      ✓ Compiled in 89ms
+[06:36:51.630] Server  LOG      ✓ Compiled in 189ms
+[06:37:23.383] Server  LOG      ✓ Compiled in 81ms
+[06:37:32.038] Server  LOG      ✓ Compiled in 93ms
+[06:37:32.812] Server  LOG      ✓ Compiled in 120ms
+[06:38:08.048] Server  LOG      ✓ Compiled in 186ms
+[06:38:16.363] Server  LOG      ✓ Compiled in 82ms
+[06:38:34.568] Server  LOG      ✓ Compiled in 79ms
+[06:38:39.212] Server  LOG      ✓ Compiled in 90ms
+[06:38:51.496] Server  LOG      ✓ Compiled in 80ms
+[06:39:48.330] Server  LOG      ✓ Compiled in 112ms
+[06:40:55.038] Server  LOG      ✓ Compiled in 102ms
+[06:41:00.316] Server  LOG      ✓ Compiled in 90ms
+[06:42:29.397] Server  LOG      ✓ Compiled in 95ms
+[06:43:14.601] Server  LOG      ✓ Compiled in 90ms
+[06:49:43.918] Server  LOG      ✓ Compiled in 327ms
+[06:51:01.080] Server  LOG      ✓ Compiled in 127ms
+[06:51:18.744] Server  LOG      ✓ Compiled in 115ms
+[06:52:06.249] Server  LOG      ✓ Compiled in 538ms
+[06:52:15.184] Server  LOG      ✓ Compiled in 689ms
+[06:52:26.130] Server  LOG      ✓ Compiled in 114ms
+[06:53:55.006] Server  LOG      ✓ Compiled in 133ms
+[06:54:54.139] Server  LOG      ✓ Compiled in 400ms
+[06:55:13.155] Browser ERROR   `NaN` is an invalid value for the `%s` css style property. fontSize
+[06:55:48.391] Server  LOG      ✓ Compiled in 160ms
+[06:56:09.648] Server  LOG      ✓ Compiled in 96ms
+[06:56:32.479] Browser ERROR   Received NaN for the `%s` attribute. If this is expected, cast the value to a string. value
+[06:57:33.331] Server  LOG      ✓ Compiled in 295ms
+[06:58:12.668] Server  LOG      ✓ Compiled in 98ms
+[07:08:30.142] Server  LOG      ✓ Compiled in 189ms
+[07:08:30.457] Browser ERROR   ./app/anonlove/createcard/components/Redactor.tsx:143:18
+Parsing ecmascript source code failed
+  141 |                     onDoubleClick={() => open(false)}
+  142 |                     onMouseDown={}
+> 143 |                 />
+      |                  ^
+  144 |             </div>
+  145 |
+  146 |         </div>
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[07:09:18.314] Server  LOG      ✓ Compiled in 137ms
+[07:09:42.062] Server  LOG      ✓ Compiled in 108ms
+[07:17:32.140] Server  LOG      ✓ Compiled in 245ms
+[07:20:24.164] Server  LOG      ✓ Compiled in 181ms
+[07:20:24.448] Browser ERROR   ./app/anonlove/createcard/components/Redactor.tsx:55:25
+Parsing ecmascript source code failed
+  53 |         
+  54 |     }
+> 55 |     const hanldeStart = ()
+     |                         ^^
+  56 |         
+  57 |
+  58 |     return (
+
+Parenthesized expression cannot be empty
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[07:21:16.451] Browser ERROR   ./app/anonlove/createcard/components/Redactor.tsx:55:26
+Parsing ecmascript source code failed
+  53 |         
+  54 |     }
+> 55 |     const handldeStart = ()
+     |                          ^^
+  56 |         
+  57 |
+  58 |     return (
+
+Parenthesized expression cannot be empty
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[07:21:31.518] Server  LOG      ✓ Compiled in 165ms
+[07:21:32.447] Browser ERROR   ./app/anonlove/createcard/components/Redactor.tsx:55:26
+Parsing ecmascript source code failed
+  53 |         
+  54 |     }
+> 55 |     const handldeStart = (e: MouseEvent)
+     |                          ^^^^^^^^^^^^^^^
+  56 |         
+  57 |
+  58 |     return (
+
+Unexpected line break between arrow head and arrow
+
+Import traces:
+  Client Component Browser:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonlove/createcard/components/Redactor.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/anonlove/createcard/CreateCardClient.tsx [Server Component]
+    ./app/anonlove/createcard/page.tsx [Server Component]
+[07:21:37.854] Server  LOG      ✓ Compiled in 111ms
+[07:22:13.322] Server  LOG      ✓ Compiled in 189ms
+[07:23:00.302] Server  LOG      ✓ Compiled in 177ms
+[07:23:41.470] Server  LOG      ✓ Compiled in 99ms
+[07:25:18.700] Server  LOG      ✓ Compiled in 206ms
+[07:25:19.437] Server  LOG      ✓ Compiled in 110ms
+[07:27:37.410] Server  LOG      ✓ Compiled in 136ms
+[07:27:38.480] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[07:28:03.164] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:28:03.165] Server  LOG      ✓ Compiled in 610ms
+[07:28:37.561] Server  LOG      ✓ Compiled in 188ms
+[07:29:12.989] Server  LOG      ✓ Compiled in 109ms
+[07:29:55.211] Server  LOG      ✓ Compiled in 111ms
+[07:30:01.893] Server  LOG      ✓ Compiled in 134ms
+[07:30:26.173] Server  LOG      ✓ Compiled in 93ms
+[07:33:11.158] Server  LOG      ✓ Compiled in 91ms
+[07:33:48.129] Server  LOG      ✓ Compiled in 170ms
+[07:33:51.746] Server  LOG      ✓ Compiled in 103ms
+[07:34:15.527] Server  LOG      ✓ Compiled in 117ms
+[07:34:27.721] Server  LOG      ✓ Compiled in 107ms
+[07:34:54.650] Server  LOG      ✓ Compiled in 238ms
+[07:35:05.507] Server  LOG      ✓ Compiled in 180ms
+[07:35:12.614] Server  LOG      ✓ Compiled in 113ms
+[07:36:02.699] Server  LOG      ✓ Compiled in 100ms
+[07:38:21.849] Server  LOG      ✓ Compiled in 220ms
+[07:39:08.470] Server  LOG      ✓ Compiled in 221ms
+[07:39:23.715] Server  LOG      ✓ Compiled in 94ms
+[07:39:27.459] Server  LOG      ✓ Compiled in 96ms
+[07:39:41.671] Server  LOG      ✓ Compiled in 84ms
+[07:39:49.612] Server  LOG      ✓ Compiled in 137ms
+[07:40:10.180] Server  LOG      ✓ Compiled in 138ms
+[07:40:34.324] Server  LOG      ✓ Compiled in 237ms
+[07:41:41.267] Server  LOG      ✓ Compiled in 441ms
+[08:01:31.200] Server  LOG      ✓ Compiled in 464ms
+[08:01:38.556] Server  LOG      ✓ Compiled in 113ms
+[08:01:54.180] Server  LOG      ✓ Compiled in 183ms
+[08:06:56.741] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:06:58.867] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:07:00.845] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:11:26.478] Server  LOG      ✓ Compiled in 296ms
+[08:11:27.449] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object]] [27.602034725722735, #a93d3d, -0.010385072170187637]
+[08:11:33.465] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:11:34.887] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:11:35.684] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:11:36.669] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:13.882] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:34.425] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:35.000] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:36.819] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:38.824] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:40.007] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:40.840] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:41.834] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:55.835] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:56.560] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:57.167] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:57.924] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:12:58.747] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:00.051] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:00.796] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:04.014] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:04.733] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:05.713] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:07.084] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:09.924] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:10.707] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:16.747] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:17.881] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:22.636] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:13:23.805] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:20:35.629] Server  LOG      ✓ Compiled in 674ms
+[08:20:51.765] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:20:53.159] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:20:54.375] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:20:55.146] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:21:30.498] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[08:25:20.009] Server  LOG      ✓ Compiled in 1495ms
+[08:25:56.355] Server  LOG      ✓ Compiled in 225ms
+[08:26:05.323] Server  LOG      ✓ Compiled in 164ms
+[08:27:40.274] Server  LOG      ✓ Compiled in 219ms
+[08:28:37.061] Server  LOG      ✓ Compiled in 942ms
+[08:28:46.840] Server  LOG      ✓ Compiled in 288ms
+[08:29:18.789] Server  LOG      ✓ Compiled in 1096ms
+[08:29:53.755] Server  LOG      ✓ Compiled in 415ms
+[08:30:18.078] Server  LOG      ✓ Compiled in 969ms
+[08:30:26.189] Server  LOG      ✓ Compiled in 126ms
+[08:32:58.938] Server  LOG      ✓ Compiled in 1070ms
+[08:32:59.830] Browser ERROR   uncaughtError: ReferenceError: gap is not defined
+[08:33:24.802] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[08:33:24.813] Server  LOG      ✓ Compiled in 159ms
+[08:33:40.577] Server  LOG      ✓ Compiled in 697ms
+[08:34:14.149] Server  LOG      ✓ Compiled in 556ms
+[08:34:23.406] Server  LOG      ✓ Compiled in 131ms
+[08:34:31.412] Server  LOG      ✓ Compiled in 110ms
+[08:36:02.369] Server  LOG      ✓ Compiled in 226ms
+[08:36:21.075] Server  LOG      ✓ Compiled in 104ms
+[08:36:26.744] Server  LOG      ✓ Compiled in 130ms
+[08:36:58.267] Server  LOG      ✓ Compiled in 153ms
+[08:37:01.672] Server  LOG      ✓ Compiled in 86ms
+[08:37:20.605] Server  LOG      ✓ Compiled in 88ms
+[08:37:37.355] Server  LOG      ✓ Compiled in 95ms
+[08:38:03.165] Server  LOG      ✓ Compiled in 89ms
+[08:38:23.984] Server  LOG      ✓ Compiled in 92ms
+[08:39:31.184] Server  LOG      ✓ Compiled in 92ms
+[08:40:42.213] Server  LOG      ✓ Compiled in 1442ms
+[08:40:45.507] Server  LOG      ✓ Compiled in 122ms
+[08:40:52.513] Server  LOG      ✓ Compiled in 86ms
+[08:42:38.732] Server  LOG      ✓ Compiled in 178ms
+[08:43:20.895] Server  LOG      ✓ Compiled in 384ms
+[08:44:21.545] Server  LOG      ✓ Compiled in 368ms
+[08:45:13.780] Server  LOG      ✓ Compiled in 658ms
+[08:45:14.363] Server  LOG      ✓ Compiled in 135ms
+[08:47:44.803] Server  LOG      ✓ Compiled in 528ms
+[08:47:51.180] Server  LOG      ✓ Compiled in 211ms
+[08:48:07.757] Server  LOG      ✓ Compiled in 106ms
+[08:48:32.131] Server  LOG      ✓ Compiled in 669ms
+[08:48:44.071] Server  LOG      ✓ Compiled in 98ms
+[08:49:16.426] Server  LOG      ✓ Compiled in 2.1s
+[08:49:39.187] Server  LOG      ✓ Compiled in 1220ms
+[08:51:18.574] Server  LOG      ✓ Compiled in 768ms
+[08:51:49.051] Server  LOG      ✓ Compiled in 560ms
+[08:52:17.984] Server  LOG      ✓ Compiled in 142ms
+[08:53:02.711] Server  LOG      ✓ Compiled in 2.3s
+[08:53:26.012] Server  LOG      ✓ Compiled in 584ms
+[08:53:34.597] Server  LOG      ✓ Compiled in 114ms
+[08:53:37.034] Server  LOG      ✓ Compiled in 163ms
+[08:55:56.040] Server  LOG      ✓ Compiled in 1882ms
+[08:58:36.365] Server  LOG      ✓ Compiled in 587ms
+[08:59:58.884] Server  LOG      ✓ Compiled in 161ms
+[09:00:33.368] Server  LOG      ✓ Compiled in 176ms
+[09:01:03.834] Server  LOG      ✓ Compiled in 96ms
+[09:01:24.356] Server  LOG      ✓ Compiled in 86ms
+[09:05:46.039] Server  LOG      ✓ Compiled in 205ms
+[09:05:48.869] Server  LOG      ✓ Compiled in 119ms
+[09:06:24.904] Server  LOG      ✓ Compiled in 96ms
+[09:06:29.733] Server  LOG      ✓ Compiled in 80ms
+[09:06:55.676] Server  LOG      ✓ Compiled in 75ms
+[09:07:03.024] Server  LOG      ✓ Compiled in 83ms
+[09:07:06.882] Server  LOG      ✓ Compiled in 89ms
+[09:07:26.096] Server  LOG      ✓ Compiled in 92ms
+[09:07:33.730] Server  LOG      ✓ Compiled in 123ms
+[09:08:43.809] Server  LOG      ✓ Compiled in 80ms
+[09:08:50.134] Server  LOG      ✓ Compiled in 83ms
+[09:08:56.389] Server  LOG      ✓ Compiled in 115ms
+[09:09:03.158] Server  LOG      ✓ Compiled in 93ms
+[09:09:10.605] Server  LOG      ✓ Compiled in 131ms
+[09:12:12.199] Server  LOG      ✓ Compiled in 209ms
+[09:13:07.716] Server  LOG      ✓ Compiled in 89ms
+[09:13:26.647] Server  LOG      ✓ Compiled in 115ms
+[09:13:28.329] Server  LOG      ✓ Compiled in 95ms
+[09:13:58.786] Server  LOG      ✓ Compiled in 83ms
+[09:16:05.664] Server  LOG      ✓ Compiled in 97ms
+[09:16:15.420] Server  LOG      ✓ Compiled in 78ms
+[09:16:28.597] Server  LOG      ✓ Compiled in 89ms

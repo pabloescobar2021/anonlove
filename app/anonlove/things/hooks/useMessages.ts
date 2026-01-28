@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect, useMemo } from "react"
+import { supabase } from "@/utils/supabase/alSupabase"
 import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
 import { ItemDto, Item, Message, UiMessage, itemDtoListToItems } from "../types/type"
+import { parseBackendDate } from "../utils/parseDate"
 
 
 
@@ -41,16 +43,42 @@ export function useMessages(userId: string | null) {
         isAnon?: boolean 
     ) => {
         if(!userId) throw new Error("User not logged in")
+
+        let receiverId = to.userId
+
+        if (!receiverId){
+            if(!to.publicId) throw new Error("Не указан пользователь, малыш")
+
+            const {data: receiver, error: userError} = await supabase
+                .from("users") 
+                .select("id_user")
+                .eq("public_id", to.publicId)
+                .single()
+            if(userError || !receiver){
+                throw new Error("Пользователь не найден, кись")
+            }
+            receiverId = receiver.id_user
+        }
         
-        await sendMessage({
-            fromUserId: userId,
-            toUserId: to.userId,
-            toPublicId: to.publicId, 
-            body, 
-            isAnon
+        const {data, error} = await supabase.rpc("toggle_anonymous", {
+            p_from: userId, 
+            p_to: receiverId, 
+            p_is_anon: isAnon
         })
+        if(error) throw error
+
+        const {error: errorMsg} = await supabase
+            .from("messages")
+            .insert({
+                from_user: userId, 
+                to_user: receiverId, 
+                body
+            })
+        if(errorMsg) throw errorMsg
 
         await loadMessage()
+
+        return data
     }
 
     return {
@@ -73,7 +101,7 @@ export function useCurrentMessage(
     isMine?: string | null
 ): UseCurrentMessageResult {
     const [message, setMessage] = useState<UiMessage | null>(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         if (!userId || !messageId) return
@@ -104,24 +132,35 @@ export function useCurrentMessage(
 
 
 
-type Dialog = {
+export type Dialog = {
     userId: string,
     displayId: string,
 
-    lastMessage: Message,
-    messages: Message[],
-    count: number
+    lastMessage: MessageUI,
+    messages: MessageUI[],
+    count: number,
+    rating?: number
+}
+
+type MessageUI = Omit<Message, "created_at"> & {
+    created_at: Date
 }
 
 export function useDialogs(
     inboxMessages: Message[],
     sentMessages: Message[],
-    myUserId: string
+    myUserId: string,
+    myPublicId: string
 ) {
     const dialogs = useMemo<Dialog[]>(() => {
         const map = new Map<string, Dialog>()
 
-        const allMessages = [...inboxMessages, ...sentMessages]
+        const allMessages:MessageUI[] = [...inboxMessages, ...sentMessages].map(
+            msg => ({
+                ...msg,
+                created_at: parseBackendDate(msg.created_at)
+            })
+        )
 
         for (const msg of allMessages){
             const dialogUserId = msg.from_user === myUserId
@@ -132,7 +171,9 @@ export function useDialogs(
             if(msg.from_display_id === 'A'){
                 displayId = 'Anon'
             } else{ 
-                displayId = msg.from_display_id
+                displayId = msg.from_display_id === myPublicId
+                    ? msg.to_display_id
+                    : msg.from_display_id
             }
 
             if(!map.has(dialogUserId)) {
@@ -142,17 +183,15 @@ export function useDialogs(
 
                     lastMessage: msg,
                     messages: [msg],
-                    count: 1
+                    count: 1,
+                    rating: msg.to_user_rating
                 })
             } else{
                 const dialog = map.get(dialogUserId)!
                 dialog.messages.push(msg)
                 dialog.count++
 
-                if(
-                    new Date(msg.created_at) >
-                    new Date(dialog.lastMessage.created_at)
-                ){
+                if(msg.created_at > dialog.lastMessage.created_at){
                     dialog.lastMessage = msg
                 }
             }
@@ -160,8 +199,8 @@ export function useDialogs(
 
         return Array.from(map.values()).sort(
             (a,b) =>
-                new Date(b.lastMessage.created_at).getTime() -
-                new Date(a.lastMessage.created_at).getTime()
+                b.lastMessage.created_at.getTime() -
+                a.lastMessage.created_at.getTime()
         )
     }, [inboxMessages, sentMessages, myUserId])
 

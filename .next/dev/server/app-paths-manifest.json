@@ -1,3 +1,4 @@
 {
-  "/anonlove/auth/page": "app/anonlove/auth/page.js"
+  "/anonlove/anonlovemain/page": "app/anonlove/anonlovemain/page.js",
+  "/anonlove/createcard/page": "app/anonlove/createcard/page.js"
 }

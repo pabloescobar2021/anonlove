@@ -6,6 +6,7 @@ export type Item = {
     y: number,
     w: number,
     h: number,
+    color?: string,
     fontSize?: number,
     scaleX?: number,
     scaleY?: number,
@@ -43,6 +44,8 @@ export type Message = {
     body: ItemDto[],
     created_at: string,
     is_anon: boolean,
+    is_checked: boolean,
+    to_user_rating: number,
     
     from_user: string,
     to_user: string,

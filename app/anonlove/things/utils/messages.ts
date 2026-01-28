@@ -1,7 +1,7 @@
 import { supabase } from "@/utils/supabase/alSupabase";
 import { error } from "console";
 import { ItemDto } from "../types/type";
-
+// to_user:users(id_user, rating)
 export async function getInboxMessages(userId: string){
     const {data, error} = await supabase
         .from("messages_safe")
@@ -17,7 +17,7 @@ export async function getInboxMessages(userId: string){
         return {
             ...msg,
             displayId: (anonSetting || msg.is_anon) ? "Anon" : msg.from_public_id,
-            username: (anonSetting || msg.is_anon) ? "Anon" : msg.from_username
+            username: (anonSetting || msg.is_anon) ? "Anon" : msg.from_username,
         }
     })
 
@@ -78,19 +78,13 @@ export async function sendMessage({
         receiverId = receiver.id_user
     }
 
-    const {error: settingError} = await supabase
-        .from("user_anonymous_settings")
-        .upsert(
-            [{
-                from_user_id: fromUserId,
-                to_user_id: receiverId,
-                is_anon: isAnon
-            }], 
-            { 
-                onConflict: 'from_user_id,to_user_id'
-            }
-        );
-    if(settingError) throw settingError
+    const {data: toggle, error: toggleError} = await supabase.rpc("toggle_anonymous", {
+                p_from: fromUserId, 
+                p_to: receiverId, 
+                p_is_anon: isAnon
+            })
+
+    if(toggleError) throw toggleError
 
     const {error: messageError} = await supabase
         .from("messages")
@@ -100,4 +94,6 @@ export async function sendMessage({
             body,
         })
     if(messageError) throw messageError
+
+    return toggle
 }

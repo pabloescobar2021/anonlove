@@ -5,10 +5,15 @@ export const dynamic = "force-dynamic";
 import { useState, useEffect, useRef, use } from "react"
 import { useRouter } from "next/navigation";
 import { useAuth } from "../things/hooks/useAuth";
-import { useMessages, useDialogs } from "../things/hooks/useMessages";
+import { useMessages, useDialogs, Dialog } from "../things/hooks/useMessages";
 import { sighOut } from "../things/utils/auth";
 import { useSwipe } from "../things/hooks/useSwipe";
 import { useCheckMobile } from "../things/hooks/checkMobile";
+import {parseBackendDate, parseDate} from "../things/utils/parseDate"
+import {ModalProfile} from "../modal/modalProfile"
+import { useMessageRead } from "../things/hooks/useCheckMsg";
+import { ReadIndicator } from "../createcard/components/ReadIndicator"; // индикатор прочтения сообзения
+import { Rating } from "../createcard/components/Rating";
 
 
 
@@ -17,26 +22,37 @@ export default function Page() {
 
     const {user, profile, loading: authLoading} = useAuth();
     
-    const {inbox, sent, sendMessage: send, loading: messageLoading} = useMessages(user?.id || null);
+    const {inbox, sent, sendMessage: send, loading: messageLoading, refresh} = useMessages(user?.id || null);
 
-    const dialogs = useDialogs(inbox, sent, user?.id || "");
+    const dialogs = useDialogs(inbox, sent, user?.id || "", profile?.public_id || "");
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
-    const activeDialog = dialogs.find((d) => d.userId === activeDialogId);
+    const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
+
+    const { markAsRead } = useMessageRead() // индикатор прочтения
 
     const [openChat, setOpenChat] = useState(false);
     const isMobile = useCheckMobile()
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [openProfile, setOpenProfile] = useState(false); // profile слева
 
-    const idRef = useRef<HTMLInputElement>(null);
-    const textRef = useRef<HTMLInputElement>(null);
-    const [isAnon, setIsAnon] = useState(false);
+    //открыл чат и записал
+    const [activeChatUserId, setActiveChatUserId] = useState<string | null>(null);
 
-    // ответ на сообщение
-    const [replyToUserId, setreplyToUserId] = useState<{id: string; isAnon: boolean} | null>(null); //id
-    const [isReply, setIsReply] = useState(false);
+    const [openModalProfile, setOpenModalProfile] = useState(false); // state модалка профиля
 
-    const [openProfile, setOpenProfile] = useState(false);
+    const styleToNotSwipe: React.CSSProperties = {
+        overscrollBehavior: 'contain',
+        touchAction: 'pan-y'
+    }
+
+    useEffect(() => {
+        if (!activeDialogId){
+            setActiveDialog(null)
+            return
+        }
+        const found = dialogs.find(d => d.userId === activeDialogId) || null
+        setActiveDialog(found)
+    }, [dialogs, activeDialogId])
 
     // свайп для мобилки
     const chatSwipe = useSwipe({
@@ -56,13 +72,7 @@ export default function Page() {
             setOpenProfile(true)
         }
     })
-    
-    // автовставка id
-    useEffect(() => {
-        if (isOpen && idRef.current) {
-            idRef.current.value = replyToUserId?.id || ''
-        }
-    }, [isOpen, replyToUserId])
+
 
     // редирект если неавторизован
     useEffect(() => {
@@ -74,7 +84,6 @@ export default function Page() {
     }, [user, authLoading,router])
 
     
-    
 
     useEffect(() => {
         if(!isMobile){
@@ -82,8 +91,6 @@ export default function Page() {
         }
     }, [isMobile])
 
-    
-    
     
     
     const handleSignOut = async () => {
@@ -94,13 +101,15 @@ export default function Page() {
     if (authLoading) {
         return (
             <div className="bg-black min-h-screen flex items-center justify-center text-white">
-                Загрузка...
+                ЗагрузОчка...
             </div>
         );
     }
 
     return (
-        <div className="relative bg-black min-h-screen flex flex-col overflow-hidden">
+        <div 
+            className="relative bg-black min-h-screen max-h-screen flex flex-col overflow-hidden "
+            >
 
             {/* сообщения */}
             <main 
@@ -117,28 +126,31 @@ export default function Page() {
                             transition-transform duration-300 ease-out will-change-transform
                             md:static md:translate-x-0 md:w-1/2
                             ${isMobile && openChat ? "-translate-x-full" : "translate-x-0"}
+                            ${isMobile ? "" : "border-r border-[#d91c558b]"}
                         `}
+                    
+                    style={styleToNotSwipe}
                     
                     >
 
                     <div className="flex w-full relative bg-white/10 backdrop-blur-md">
 
-                        <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center">
+                        <div 
+                            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center
+                                        hover:bg-white/20 transition-colors
+                            ">
+
                             <button 
                                 onClick={() => {setOpenProfile(true)}}
-                                className="bg-white/20 w-8 h-8 rounded-full">
-                                {profile?.public_id.charAt(1).toUpperCase()}
+                                className="w-8 h-8 rounded-full flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32"><title>Menu SVG Icon</title><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h24M4 16h24M4 24h24"/></svg>
                             </button>
                         </div>
 
                         <button 
-                            className=" p-2 rounded-md w-full text-center flex justify-center items-center gap-1"
+                            className="p-2 rounded-md w-full text-center flex justify-center items-center "
                         >
                             <span className="medium">Чаты</span>
-                            <span 
-                                className={`w-3 h-3 rounded-full border transition bg-white border-white
-                                `}
-                            />
                         </button>
 
                         <div
@@ -159,30 +171,41 @@ export default function Page() {
                     {dialogs.map((dialog) => {
                         const avatar = dialog.displayId.charAt(1).toUpperCase()
                         const title = dialog.displayId
+                        const timeSend = parseDate(dialog.lastMessage.created_at)
                             
                         return(
                             <button
                                 key={dialog.userId}
-                                className="border border-[#8f18504e] p-2 rounded-lg w-full"
-                                onClick={() => {setActiveDialogId(dialog.userId), setOpenChat(true)}}
+                                className=" p-2 rounded-lg w-full"
+                                onClick={() => {
+                                    setActiveDialogId(dialog.userId), 
+                                    setOpenChat(true),
+                                    setActiveChatUserId(dialog.displayId)
+                                }}
                             > 
-                                <div className="flex p-2 items-center gap-2 relative">
+                                <div className={`flex p-3 items-center relative gap-2  rounded-2xl transition-colors
+                                    ${(dialog.userId !== activeDialogId && !isMobile) ? "bg-[#5b5b5ba2]" : "bg-[#949494a2]"}
+                                    `}>
                                     <span
                                         className="flex bg-red-500 w-8 h-8 items-center justify-center rounded-full text-lg font-bold"
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            setOpenModalProfile(true)
+                                            // setActiveDialogId(dialog.userId)
+                                        }}
                                     >
                                         {avatar}
                                     </span>
 
-                                    <div className="">
-                                        <span className="font-semibold"
-                                        >
-                                            {title}
-                                        </span>
+                                    <span className="font-semibold"
+                                    >
+                                        {title}
+                                    </span>
 
-                                        <span className="text-[10px] text-gray-400 absolute bottom-0 right-1 ">
-                                            {dialog.lastMessage.created_at.slice(11,16)}
-                                        </span>
-                                    </div>
+                                    <p className="text-[10px] flexC text-center text-gray-400 h-10
+                                            absolute bottom-1/2 translate-y-1/2  right-2 ">
+                                        {timeSend}
+                                    </p>
                                 </div>
                             </button>  
                         )
@@ -195,89 +218,150 @@ export default function Page() {
                 <div 
                     {...(isMobile ? chatSwipe : {})}
                     className={`
-                        absolute inset-0 bg-[#12080b] 
+                        absolute inset-0 bg-[#12080b]
                         overflow-y-auto
                         transition-transform duration-300 ease-in-out will-change-transform
                         md:static md:translate-x-0 md:w-1/2
                         ${openChat ? "translate-x-0" : "translate-x-full"}
                     `}>
 
-                    {/* Кнопка назад (ТОЛЬКО мобилка) */}
-                    {isMobile && (
-                        <button
-                            className=" bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
-                            onClick={() => setOpenChat(false)}
-                        >
-                            ← 
-                        </button>
-                    )}
-                    
-
-                    {activeDialog?.messages.map(message => {
-                        const avatar = message.from_display_id.charAt(1).toUpperCase()
-                        const nameLabel = message.from_display_id
-                        const bodyText: any = "тебе тут что то пришло, малышка"
-                        const isMine = message.from_user === user?.id
-                        const messageId = message.from_display_id === "Anon" ? message.from_user : message.from_display_id
-
-                        return (
-                            <div
-                                key={message.id}
-                                className={`flex flex-col relative w-full transition hover:bg-white/10
-                                    ${isMine ? "items-end" : "items-start"}
-                                `}
+                    {/* header mobile */}
+                    {isMobile ? (
+                        <div className="sticky top-0 w-full grid grid-cols-3 items-center z-20">
+                            <button
+                                className="flex justify-center items-center  bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
+                                onClick={() => setOpenChat(false)}
                             >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"/>
+                                </svg>
+                            </button>
+
+                            <button
+                                className="bg-white/10 backdrop-blur-2xl m-2  h-8 rounded-full"
+                            >
+                                {activeChatUserId}
+                            </button>
+
+                            <button
+                                className="flex justify-center items-center justify-self-end bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
+                                onClick={() => {
+                                    router.push(`createcard?type=send&to=${encodeURIComponent(activeChatUserId ?? '')}`)
+
+                                }}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 14 14">
+                                    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"/>
+                                        <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"/>
+                                    </g>
+                                </svg>
+                            </button>
+
+                        </div>
+                    ): (
+                        <div className={`w-full  p-2 rounded-b-2xl bg-[#7959631c]
+                                ${activeDialog ? "flexC": "hidden"} 
+                        `}>
+
+                            <div className="flexC bg-white/10 rounded-full w-28 select-none"> 
+                                {activeChatUserId}
+                                <Rating value={activeDialog?.rating}></Rating>
+                            </div>
+                            
+
+                        </div>
+                    )}
+
+                    
+                    <div className="p-2 space-y-2">
+                        {activeDialog?.messages.map(message => {
+                            const avatar = message.from_display_id.charAt(1).toUpperCase()
+                            const nameLabel = message.from_display_id
+                            const bodyText: any = "тебе тут что то пришло, малышка"
+                            const isMine = message.from_user === user?.id
+                            const date = parseDate(message.created_at)
+
+                            return (
                                 <div
-                                    className={`flex items-center gap-2 p-2 cursor-pointer max-w-[80%]
-                                        ${isMine ? "flex-row-reverse text-right" : "flex-row"}
+                                    key={message.id}
+                                    className={`flex flex-col relative w-full transition hover:bg-white/10
+                                        ${isMine ? "items-end" : "items-start"}
                                     `}
-                                    onClick={() => {
-                                        router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
-                                    }}
                                 >
-                                    {/* avatar */}
                                     <div
-                                        className="md:w-10 md:h-10 w-8 h-8
-                                                rounded-full bg-red-500
-                                                flex items-center justify-center
-                                                text-lg font-bold shrink-0"
-                                    >
-                                        {avatar}
-                                    </div>
-
-                                    {/* text */}
-                                    <div className="flex flex-col">
-                                        <span className="font-semibold medium">
-                                            {nameLabel}
-                                        </span>
-                                        <span className="small line-clamp-2">
-                                            {``}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* reply button — только для чужих сообщений */}
-                                {!isMine && (
-                                    <button
-                                        className="absolute top-1/2 right-1 -translate-y-1/2"
+                                        className={`flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
+                                            ${isMine ? "bg-[#ff00666d]" : "bg-white/50"}
+                                        `}
                                         onClick={() => {
-                                            router.push(`createcard?isMine=${isMine}&type=send&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
-
+                                            if(!isMine && !message.is_checked){
+                                                markAsRead(message.id, user?.id!).then(() => {
+                                                    setActiveDialog(d => d && ({
+                                                        ...d,
+                                                        messages: d.messages.map(m => m.id === message.id ? {...m, is_checked: true} : m)
+                                                    }))
+                                                })
+                                            }
+                                            router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
                                         }}
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14">
-                                            <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"/>
-                                                <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"/>
-                                            </g>
-                                        </svg>
-                                    </button>
-                                )}
+                                        <div className="flexC gap-2"> 
+                                        {/* avatar */}
+                                            <div
+                                                className="md:w-6 md:h-6 w-8 h-8
+                                                        rounded-full bg-red-500
+                                                        flex items-center justify-center
+                                                        text-md font-bold shrink-0"
+                                            >
+                                                {avatar}
+                                            </div>
 
-                                <div className="w-full mx-auto bg-white/20 h-px" />
-                            </div>
-                        )
-                    })}
+                                        {/* text */}
+                                            <div className="flex flex-col">
+                                                <span className="font-semibold medium">
+                                                    {nameLabel}
+                                                </span>
+                                                <span className="small line-clamp-2">
+                                                    {``}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        {/* date */}
+                                        <div className="text-[9px] text-[#cdcdcd] "> 
+                                            {date}
+                                        </div>
+
+                                        <ReadIndicator
+                                            isRead={message.is_checked}
+                                            isMine={isMine}
+                                        />
+
+                                    </div>
+
+                                    {/* reply button — только для чужих сообщений */}
+                                    {!isMine && (
+                                        <button
+                                            className="absolute top-1/2 right-1 -translate-y-1/2"
+                                            onClick={() => {
+                                                router.push(`createcard?isMine=${isMine}&type=send&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
+
+                                            }}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14">
+                                                <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"/>
+                                                    <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"/>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                    )}
+
+                                    {/* <div className="w-full mx-auto bg-white/20 h-px" /> */}
+                                </div>
+                            )
+                        })}
+                    </div>
 
                     
                 </div>
@@ -286,7 +370,6 @@ export default function Page() {
             </main>
 
             {/* profile left side */}
-
             <div
                 {...(isMobile ? profileSwipe : {})}
                 className={`flex flex-1 flex-col items-center absolute bg-black/50 backdrop-blur-md transition-transform duration-150 ease-in-out will-change-transform
@@ -324,6 +407,15 @@ export default function Page() {
                 </button>
 
             </div>
+
+            {/* modal profile */}
+            <ModalProfile 
+            isOpen={openModalProfile} 
+            onClose={() => {setOpenModalProfile(false)}}
+            fromUser={user?.id}
+            toUser={activeDialog || undefined}
+            refresh={() => refresh()}
+            />
         </div>
     )
 
