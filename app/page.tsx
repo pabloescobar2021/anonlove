@@ -1,13 +1,12 @@
+import { Suspense } from "react";
+import MainPage from "./main";
+import { Metadata } from "next";
 
-export default async function Home() {
-  
 
-return (
-    <div className="p-6">
-      
-      
-
-      
-
-    </div>
-  )}
+export default function Page() {
+    return (
+        <Suspense fallback={null}>
+            <MainPage></MainPage>
+        </Suspense>
+    )
+}

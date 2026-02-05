@@ -13,19 +13,14 @@ module.exports = mod;
 
 __turbopack_context__.n(__turbopack_context__.i("[project]/app/layout.tsx [app-rsc] (ecmascript)"));
 }),
-"[project]/app/anonlove/anonlovemain/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
+"[project]/app/anonlove/anonlovemain/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
-import * as clientProxy from "./page.tsx" with {
-    "__turbopack-helper__": "true",
-    "turbopack-transition": "next-ecmascript-client-reference"
-};
-__turbopack_context__.n(clientProxy);
+const e = new Error("Could not parse module '[project]/app/anonlove/anonlovemain/page.tsx', file not found");
+e.code = 'MODULE_UNPARSABLE';
+throw e;
 }),
 "[project]/app/anonlove/anonlovemain/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
 
 __turbopack_context__.n(__turbopack_context__.i("[project]/app/anonlove/anonlovemain/page.tsx [app-rsc] (ecmascript)"));
 }),
 ];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__79450ab1._.js.map
