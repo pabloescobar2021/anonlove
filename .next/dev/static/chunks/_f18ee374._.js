@@ -2116,7 +2116,8 @@ function Page() {
                                             ref: msgRef,
                                             className: `relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
                                             ${isMine ? "bg-[#ff00666d]" : "bg-white/50"}
-                                            ${selectTouched === message.id ? "scale-105" : ""}
+                                            ${selectTouched === message.id && isMobile ? "scale-105" : ""}
+                                            ${selectTouched === message.id && !isMobile ? "border-r" : ""}
                                         `,
                                             onClick: (e)=>{
                                                 if (isChoose) {
@@ -2150,6 +2151,7 @@ function Page() {
                                                 e.preventDefault();
                                                 const target = e.currentTarget;
                                                 const rect = target.getBoundingClientRect();
+                                                setSelectTouched(message.id);
                                                 setAction({
                                                     message,
                                                     rect,
@@ -2183,7 +2185,7 @@ function Page() {
                                                             children: avatar
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 422,
+                                                            lineNumber: 424,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2194,7 +2196,7 @@ function Page() {
                                                                     children: nameLabel
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                                    lineNumber: 433,
+                                                                    lineNumber: 435,
                                                                     columnNumber: 49
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2202,19 +2204,19 @@ function Page() {
                                                                     children: ``
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                                    lineNumber: 436,
+                                                                    lineNumber: 438,
                                                                     columnNumber: 49
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                            lineNumber: 432,
+                                                            lineNumber: 434,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 420,
+                                                    lineNumber: 422,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2222,7 +2224,7 @@ function Page() {
                                                     children: date
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 443,
+                                                    lineNumber: 445,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$createcard$2f$components$2f$ReadIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ReadIndicator"], {
@@ -2230,7 +2232,7 @@ function Page() {
                                                     isMine: isMine
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 447,
+                                                    lineNumber: 449,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2241,7 +2243,7 @@ function Page() {
                                             `
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                                                    lineNumber: 452,
+                                                    lineNumber: 454,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
@@ -2288,7 +2290,7 @@ function Page() {
                         children: profile?.public_id
                     }, void 0, false, {
                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 486,
+                        lineNumber: 488,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2301,12 +2303,12 @@ function Page() {
                             children: "Выйти"
                         }, void 0, false, {
                             fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                            lineNumber: 493,
+                            lineNumber: 495,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 492,
+                        lineNumber: 494,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2315,13 +2317,13 @@ function Page() {
                         children: `>`
                     }, void 0, false, {
                         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                        lineNumber: 503,
+                        lineNumber: 505,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 476,
+                lineNumber: 478,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ModalProfile"], {
@@ -2334,7 +2336,7 @@ function Page() {
                 refresh: ()=>refresh()
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 515,
+                lineNumber: 517,
                 columnNumber: 13
             }, this),
             action && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonlove$2f$anonlovemain$2f$components$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MessageActionRoot"], {
@@ -2351,7 +2353,7 @@ function Page() {
                         ])
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 525,
+                lineNumber: 527,
                 columnNumber: 17
             }, this)
         ]
@@ -2491,7 +2493,7 @@ function AnimatedButton({ children, openModal }) {
                 className: "absolute w-full h-full pointer-events-none z-1"
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 689,
+                lineNumber: 691,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2503,13 +2505,13 @@ function AnimatedButton({ children, openModal }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-                lineNumber: 694,
+                lineNumber: 696,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonlove/anonlovemain/page.tsx",
-        lineNumber: 688,
+        lineNumber: 690,
         columnNumber: 9
     }, this);
 }

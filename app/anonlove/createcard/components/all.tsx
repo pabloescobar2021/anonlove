@@ -207,7 +207,9 @@ export function RightField({
     idRef,anonRef,
     isRecieve,
     routeTo,
-    userError
+    userError,
+    to,
+    dialogs
 
 }: {
     rightPanelOpen: boolean
@@ -227,12 +229,16 @@ export function RightField({
     isRecieve: boolean
     routeTo: (v: string | null) => void
     userError: string | null
+    to: string | null
+    dialogs: any[]
 }) {
     const [inputValue, setInputValue] = useState(userId || "");
     useEffect(() => {
         if(!userId) return
         setInputValue(userId || "")
     },[userId])
+
+    const [isMsgMenuOpen, setIsMsgMenuOpen] = useState(false)
 
     return (
         <div
@@ -264,25 +270,68 @@ export function RightField({
                         </button>
                     </div>
                 ):(
-                    <form 
+                    <form   
                         className="relative flex flex-col w-full justify-center items-center"
                         onSubmit={(e) => {
                             e.preventDefault()
                         }}
                         >
-                        <input
-                            ref={idRef}
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
-                            onBlur={() => setUserId(inputValue)}
-                            disabled={isReply}
-                            type="text"
-                            placeholder="ID кисы"
-                            className={`p-2 mb-4 w-1/2 bg-white/10 border rounded-md text-white
-                                    ${isReply && "opacity-50"}
-                                    ${userError && "border-red-500"}
+
+                        {/* помощь с выбором кому написать */}
+                        {to === null && (
+                          <div 
+                            className={`absolute bottom-full flex items-center justify-start flex-col rounded-md
+                                      overflow-y-auto gap-1
+                                      w-1/2 mb-10 transition-all duration-300 ease-in-out
+                                      ${isMsgMenuOpen ? "opacity-100 h-20" : " h-0 opacity-0"}
                             `}
-                        />
+                          >
+                            {dialogs.map((d,index) => (
+                              <button
+                                key={index}
+                                className="p-1 w-full 
+                                bg-linear-to-br from-white/5 to-white/9 border-b border-white/20 backdrop-blur-md
+                                rounded-full shadow-2xl
+                                hover:from-white/10 hover:to-white/20
+                                "
+                                onClick={(e) => {
+                                  setInputValue(d.to_display_id)
+                                }}
+                              >
+                                {d.to_display_id}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                        {/* ----- */}
+
+                        <div className="relative w-full flexC">
+                            <input
+                                ref={idRef}
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                onBlur={() => {setUserId(inputValue)}}
+                                disabled={isReply}
+                                type="text"
+                                placeholder="ID кисы"
+                                className={`p-2 mb-4 w-1/2 bg-white/10 border rounded-md text-white
+                                        ${isReply && "opacity-50"}
+                                        ${userError && "border-red-500"}
+                                `}
+                            >
+                            </input>
+                            {to === null && (
+                              <button
+                                className="absolute left-1/2 bottom-full -translate-x-1/2
+                                bg-white/10 h-2 w-10 rounded-t-2xl p-2
+                                flexC
+                                "
+                                onClick={() =>{setIsMsgMenuOpen(prev => !prev)}}
+                              >
+                                ...
+                              </button>
+                            )}
+                        </div>
 
                         {userError && (
                           <p className="text-red-400 text-xs mb-3">

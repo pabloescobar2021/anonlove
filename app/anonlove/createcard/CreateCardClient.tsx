@@ -11,6 +11,7 @@ import { useMessages } from "../things/hooks/useMessages";
 import {useCurrentMessage} from "../things/hooks/useMessages"
 import { useSetAnon } from "../things/hooks/useSetAnon";
 import { getId } from "../things/utils/getId";
+import { useGetDialogUsers } from "../things/hooks/useGetDialogUsers";
 
 import { Item } from "../things/types/type";
 
@@ -71,10 +72,9 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
         canToggle: true
     })
     const [userError, setUserError] = useState<string | null>(null)
+    const { dialogs, loading: dialogsLoading, error: dialogsError } = useGetDialogUsers(user?.id || null);
 
     
-
-
     useEffect(() => {
         if (to){
             setItems([])
@@ -257,6 +257,8 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                         router.push(`createcard?type=send&to=${encodeURIComponent(id ?? '')}`)
                     }}
                     userError={userError}
+                    to={to}
+                    dialogs={dialogs}
                 />
 
     

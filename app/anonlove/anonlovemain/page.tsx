@@ -372,7 +372,8 @@ export default function Page() {
                                         ref={msgRef}
                                         className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
                                             ${isMine ? "bg-[#ff00666d]" : "bg-white/50"}
-                                            ${selectTouched === message.id ? "scale-105" : ""}
+                                            ${(selectTouched === message.id && isMobile) ? "scale-105" : ""}
+                                            ${(selectTouched === message.id && !isMobile) ? "border-r" : ""}
                                         `}
                                         onClick={(e) => {
                                             if(isChoose){
@@ -400,6 +401,7 @@ export default function Page() {
                                             e.preventDefault()
                                             const target = e.currentTarget as HTMLDivElement
                                             const rect = target.getBoundingClientRect()
+                                            setSelectTouched(message.id)
                                                 setAction({message, rect, type: 'desktop', isMine})
                                         }}
                                         onPointerDown={(e) =>{
