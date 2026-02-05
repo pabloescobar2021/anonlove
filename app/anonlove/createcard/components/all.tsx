@@ -17,6 +17,7 @@ type CanvasItemProps = {
   setMenuTextOpen: (v: boolean) => void
   isLoading: boolean
   setselectedItemId: (id: number) => void
+  setOpenRedactor: (v: boolean) => void
 }
 
 export function CanvasItem({
@@ -30,12 +31,17 @@ export function CanvasItem({
   ismenuTextOpen,
   setMenuTextOpen,
   isLoading,
-  setselectedItemId
+  setselectedItemId,
+  setOpenRedactor
 }: CanvasItemProps) {
+
+  const textItem = item.type === "text"
+  const gifItem = item.type === "gif"
+
   return (
     <div
       className={`flex text-black select-none relative
-        ${item.isSelected && item.isEditing !== "text" ? "border" : ""}
+        ${textItem && item.isSelected && item.isEditing !== "text" ? "border" : ""}
       `}
       style={{
         position: "absolute",
@@ -43,13 +49,15 @@ export function CanvasItem({
         top: item.y,
         width: item.w,
         height: item.h,
-        fontSize: item.fontSize,
-        color: item.color,
+        fontSize: textItem ? item.fontSize : undefined,
+        color: textItem ?item.color : undefined,
         cursor: canEdit ? (item.isSelected ? "move" : "pointer"): "cursor-allow",
         transform: `rotate(${item.rotation || 0}rad)`,
         transformOrigin: "center center"
       }}
-      onDoubleClick={() => onUpdate(item.id, { isEditing: "text" })}
+      onDoubleClick={() => {
+        if(item.type === 'text') onUpdate(item.id, { isEditing: "text" })
+      }}
       onMouseDown={e => {
         if(!canEdit) return
         startDrag(e, item)
@@ -62,9 +70,14 @@ export function CanvasItem({
       }}
       onClick={() => {
         setselectedItemId(item.id)
+        setOpenRedactor(true)
+      }}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if(e.key === 'Delete') onDelete(item)
       }}
     >
-      {item.isEditing === "text" ? (
+      {textItem && item.isEditing === "text" ? (
         <input
           autoFocus
           value={item.content}
@@ -80,7 +93,16 @@ export function CanvasItem({
             item.isSelected ? "" : "overflow-hidden"
           }`}
         >
-          {item.content}
+          {item.type === 'text' 
+          ? (
+            item.content
+          ):(
+            <img
+              src={item.src}
+              draggable={false}
+              className="w-full h-full object-contain"
+            />
+          )}
 
           {item.isSelected && (
             <>
@@ -220,7 +242,8 @@ export function RightField({
             onMouseDown={(e) => setRightPanelOpen(false)}
         >
             <div 
-                className="absolute right-0 inset-y-0 flex justify-center items-center 
+                className="absolute left-1/2 inset-y-0 -translate-x-1/2 
+                        flex justify-center items-center 
                         md:w-[400px] w-full bg-black/90 z-20"
                 onMouseDown={(e) => {
                     e.stopPropagation()
@@ -304,7 +327,7 @@ export function RightField({
                             "
                             onClick={() => setRightPanelOpen(false)}
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" transform="rotate(180)"><path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"/></svg>
                         </button>
             </div>
         </div>

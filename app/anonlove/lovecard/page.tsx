@@ -161,14 +161,12 @@ export default function AnonLoveMain() {
                                             top: item.y,
                                             width: item.w,
                                             height: item.h,
-                                            fontSize: item.fontSize,
                                         }}
                                     
                                     
                                     >
                                             <div className={`relative w-full h-full text-wrap wrap-break-word
                                                             overflow-hidden`}> 
-                                                {item.content}
 
                                                 
                                             </div>

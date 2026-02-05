@@ -1,43 +1,82 @@
-export type Item = {
+import { parseBackendDate } from "../utils/parseDate";
+
+export type BaseItem = {
     id: number;
-    type: "text",
-    content: string,
     x: number,
     y: number,
     w: number,
     h: number,
-    color?: string,
-    fontSize?: number,
     scaleX?: number,
     scaleY?: number,
     rotation?: number,
-    isEditing: string,
     isSelected?: boolean
 }
 
-export type ItemDto = {
-    id: number;
-    type: "text",
-    content: string,
+export type TextItem = BaseItem & {
+    type: "text"
+    content: string
+    fontSize?: number
+    color?: string
+    isEditing: string
+}
+
+export type GifItem = BaseItem & {
+    type: "gif",
+    src: string,
+    autoplay?: boolean
+    loop?: boolean
+}
+
+export type Item = TextItem | GifItem
+
+
+// DTO
+export type BaseItemDto = {
+    id: number
     x: number,
     y: number,
     w: number,
     h: number,
-    fontSize?: number,
     scaleX?: number,
     scaleY?: number,
-    rotation?: number,
+    rotation?: number
+    type: "text" | "gif"
 }
+export type TextItemDto = BaseItemDto & {
+    type: "text",
+    content: string,
+    fontSize?: number
+    color?: string
+}
+export type GifItemDto = BaseItemDto & {
+    type: "gif",
+    src: string,
+    autoplay?: boolean
+    loop?: boolean
+}
+export type ItemDto = TextItemDto | GifItemDto
+
+
+
 export function itemDtoToItem(dto: ItemDto): Item {
+    if(dto.type === 'text') {
+        return {
+            ...dto, 
+            isEditing: 'none', 
+            isSelected: false
+        }
+    }
+
     return {
         ...dto, 
-        isEditing: 'none', 
         isSelected: false
     }
 }
 export function itemDtoListToItems(dtos: ItemDto[]): Item[] {
   return dtos.map(itemDtoToItem)
 }
+
+
 
 export type Message = {
     id: string,
@@ -53,10 +92,21 @@ export type Message = {
     to_display_id: string,
 }
 
-export type UiMessage = Omit<Message, "body"> & {
+export type UiMessage = Omit<Message, "body" | 'created_at'> & {
     body: Item[]
+    created_at: Date
 }
 
+export function messageDtoToUiMessage(dto: Message): UiMessage {
+    return {
+        ...dto,
+        body: itemDtoListToItems(dto.body),
+        created_at: parseBackendDate(dto.created_at),
+    }
+}
+
+
+//viewport
 export type Viewport ={
     scale: number,
     offsetX: number,

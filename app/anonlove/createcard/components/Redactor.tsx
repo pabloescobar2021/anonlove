@@ -3,11 +3,12 @@ import { useState, useEffect, useRef } from "react"
 import { Item } from "../../things/types/type"
 import { useCheckMobile } from "../../things/hooks/checkMobile"
 
-export type ItemPatch = Partial<Pick<Item,
-    | "fontSize"
-    | "color"
-    | "rotation"
->>
+export type ItemPatch = Partial<{
+    content: string
+    fontSize: number
+    color: string
+    rotation: number
+}>
 
 type RedactorProps = {
     item: Item | null
@@ -37,16 +38,22 @@ export function Redactor({
 ) {
     const isMobile = useCheckMobile()
 
+    const [text,setText] = useState('')
     const [size, setSize] = useState('')
     const [color, setColor] = useState<string>('#000000')
     const [rotation, setRotation] = useState('')
     useEffect(() => {
-        if (item) {
+        if(!item){
+            open(false)
+        }
+
+        if (item?.type==='text') {
             setSize(formatNumber(item.fontSize, 1))
             setColor(item.color ?? "#000000")
-            setRotation(formatNumber(item.rotation, 1))
+            setRotation(formatNumber(radToDeg(item.rotation ?? 0)))
+            setText(item.content)
         } 
-    }, [item?.fontSize, item?.color, item?.rotation])
+    }, [item])
 
     const inputStyle = `
   w-14 px-2 py-1
@@ -89,33 +96,28 @@ export function Redactor({
         window.removeEventListener('touchmove', handleMouseMove)
         window.removeEventListener('touchend', handleMouseUp)
     }
+       
+    const radToDeg = (rad: number) => rad * 180 / Math.PI
+    const degToRad = (deg: number) => deg * Math.PI / 180
+    const rotateItem = (side: string) => {
+        if (!item) return
+
+        const currentDeg = Number(rotation) || 0
+        const nextdeg = side === 'left'
+        ? currentDeg - 90
+        : currentDeg + 90
+        setRotation(formatNumber(nextdeg))
+            onChange(item!.id, { rotation: degToRad(nextdeg) })
         
+    }
 
     return (
     <div className="z-50">
-        {/* open button */}
-        <div 
-            className={`absolute right-0 w-7 rounded-l-full 
-                backdrop-blur-mdtransition cursor-pointer
-                md:inset-y-0
-                inset-y-60
-                ${isOpen ? "hidden" : ""}
-                ${isMobile ? "bg-black/50" : "bg-white/10"}
-            `}
-        >
-            <button 
-                className="w-full h-full"
-                onClick={() => open(!isOpen)}
-            >
-                {`>`}
-            </button>
-        </div>
-
         {/* panel */}
         <div
             ref={panelRef}
-            className={`absolute right-0 inset-y-0 
-                bg-gradient-to-b from-[#3b0d10] to-[#220507] shadow-2xl
+            className={`absolute right-0 top-0
+                bg-linear-to-b from-black/30 to-black-40 shadow-2xl border border-white/10
                 z-50 transition-transform rounded-l-2xl
                 ${isOpen ? "traslate-x-0 " : "translate-x-full "}
             `}
@@ -124,6 +126,28 @@ export function Redactor({
             <div className="relative w-full h-full flex justify-center p-2">
 
                 <div className="flex flex-col gap-2 p-4">
+
+                    {/* text */}
+                    <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center">
+                        <input
+                            type="text"
+                            className={`${inputStyle} w-full`}
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                            onBlur={() =>
+                            item && onChange(item.id, { content: String(text) })
+                            }
+                            onKeyDown={(e) => {
+                                if(e.key === 'Enter'){
+                                    item && onChange(item.id, { content: String(text) })
+                                    
+                                }
+                            }}
+                        />
+                        </div>
+                    </div>
+
                     {/* Font size */}
                     <div className="flex items-center justify-between">
                         <span className="text-xs text-white/60">Size</span>
@@ -141,6 +165,7 @@ export function Redactor({
                         </div>
                     </div>
 
+                    {/* Color */}
                     <div className="flex items-center justify-between">
                         <span className="text-xs text-white/60">Color</span>
                         <input
@@ -162,10 +187,15 @@ export function Redactor({
                             className={inputStyle}
                             value={rotation}
                             onChange={(e) => setRotation(normalizeNumber(e.target.value))}
-                            onBlur={() =>
-                                item && onChange(item.id, { rotation: Number(rotation) })
-                            }
+                            onBlur={() =>{
+                                if(!item) return
+                                const deg = Number(rotation)
+                                if(Number.isNaN(deg)) return
+                                onChange(item.id, { rotation: degToRad(deg) })
+                            }}
                         />
+                        <button onClick={() => rotateItem('left')} className="text-xs text-white/40">{`<`}</button>
+                        <button onClick={() => rotateItem('right')} className="text-xs text-white/40">{`>`}</button>
                     </div>
 
                 </div>

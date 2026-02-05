@@ -3,14 +3,14 @@
 import { useState, useEffect, useMemo } from "react"
 import { supabase } from "@/utils/supabase/alSupabase"
 import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
-import { ItemDto, Item, Message, UiMessage, itemDtoListToItems } from "../types/type"
+import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
 import { parseBackendDate } from "../utils/parseDate"
 
 
 
 export function useMessages(userId: string | null) {
-    const [inbox, setInbox] = useState<any[]>([])
-    const [sent, setSent] = useState<any[]>([])
+    const [inbox, setInbox] = useState<UiMessage[]>([])
+    const [sent, setSent] = useState<UiMessage[]>([])
     const [loading, setLoading] = useState(true)
 
 
@@ -24,8 +24,8 @@ export function useMessages(userId: string | null) {
                 getSentMessages(userId)
             ])
 
-            setInbox(inboxData)
-            setSent(sentData)
+            setInbox(inboxData.map(messageDtoToUiMessage))
+            setSent(sentData.map(messageDtoToUiMessage))
         } catch (error) {
             console.error("Error loading messages:", error)
         } finally {
@@ -81,17 +81,36 @@ export function useMessages(userId: string | null) {
         return data
     }
 
+    const deleteMessage = async (messageId: string | string[]) => {
+        if (!messageId || (Array.isArray(messageId) && messageId.length === 0)) {
+            console.warn("Message ID is required")
+            return
+        }
+        const query = supabase.from('messages').delete()
+        
+        const {error} = Array.isArray(messageId)
+            ? await query.in('id', messageId)
+            : await query.eq('id', messageId)
+        
+        if(error) {
+            console.error("Failed to delete message:", error)
+            throw error
+        }
+        await loadMessage()
+    }
+
     return {
         inbox,
         sent,
         loading,
         sendMessage: send,
-        refresh: loadMessage
+        refresh: loadMessage,
+        deleteMessage
     }
 
 }
 
-type UseCurrentMessageResult = {
+type UseCurrentMessageResult = {    
     message: UiMessage | null,
     loading: boolean
 }
@@ -110,10 +129,7 @@ export function useCurrentMessage(
             setLoading(true)
             try{
                 const data = await getCurrentMessage(messageId, userId, isMine)
-                setMessage({
-                    ...data,
-                    body: itemDtoListToItems(data.body) 
-                })
+                setMessage(messageDtoToUiMessage(data))
             } catch (error) {
                 console.error("Error loading messages:", error)
             } finally {
@@ -136,31 +152,23 @@ export type Dialog = {
     userId: string,
     displayId: string,
 
-    lastMessage: MessageUI,
-    messages: MessageUI[],
+    lastMessage: UiMessage,
+    messages: UiMessage[],
     count: number,
     rating?: number
 }
 
-type MessageUI = Omit<Message, "created_at"> & {
-    created_at: Date
-}
 
 export function useDialogs(
-    inboxMessages: Message[],
-    sentMessages: Message[],
+    inboxMessages: UiMessage[],
+    sentMessages: UiMessage[],
     myUserId: string,
     myPublicId: string
 ) {
     const dialogs = useMemo<Dialog[]>(() => {
         const map = new Map<string, Dialog>()
 
-        const allMessages:MessageUI[] = [...inboxMessages, ...sentMessages].map(
-            msg => ({
-                ...msg,
-                created_at: parseBackendDate(msg.created_at)
-            })
-        )
+        const allMessages = [...inboxMessages, ...sentMessages]
 
         for (const msg of allMessages){
             const dialogUserId = msg.from_user === myUserId

@@ -14,6 +14,8 @@ import {ModalProfile} from "../modal/modalProfile"
 import { useMessageRead } from "../things/hooks/useCheckMsg";
 import { ReadIndicator } from "../createcard/components/ReadIndicator"; // индикатор прочтения сообзения
 import { Rating } from "../createcard/components/Rating";
+import { MessageActionRoot } from "./components/contextMenu/messagePanel";
+import { UiMessage } from "../things/types/type";
 
 
 
@@ -22,7 +24,7 @@ export default function Page() {
 
     const {user, profile, loading: authLoading} = useAuth();
     
-    const {inbox, sent, sendMessage: send, loading: messageLoading, refresh} = useMessages(user?.id || null);
+    const {inbox, sent, sendMessage: send, loading: messageLoading, refresh, deleteMessage} = useMessages(user?.id || null);
 
     const dialogs = useDialogs(inbox, sent, user?.id || "", profile?.public_id || "");
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
@@ -44,6 +46,23 @@ export default function Page() {
         overscrollBehavior: 'contain',
         touchAction: 'pan-y'
     }
+
+    // messagePanel
+    const msgRef = useRef<HTMLDivElement>(null) 
+    let timer = useRef<number | null>(null)
+    type ActionState = {
+        message: UiMessage,
+        rect: DOMRect,
+        type: 'desktop' | 'mobile',
+        isMine: boolean
+    } | null
+    const closeMenu = () => {setAction(null); setSelectTouched(null)} // закрытие меню
+    const cancelTouch = () => {clearInterval(timer.current!); setSelectTouched(null)} // отмена тача
+    const [action, setAction] = useState<ActionState>(null)
+    const [isChoose, setIsChoose] = useState(false) // начало выбора
+    const [choosenMsg, setChoosenMsg] = useState<any[]>([]) // выбранные
+    const [selectTouched, setSelectTouched] = useState<string | null>(null)
+    //
 
     useEffect(() => {
         if (!activeDialogId){
@@ -98,13 +117,62 @@ export default function Page() {
         router.push('/anonlove/auth')
     }
 
+
+    const handleDeleteMessage = async (id: string) => {
+        try {
+            if (!id) {
+                console.warn("No message ID provided")
+                return
+            }
+            await deleteMessage(id)
+            setAction(null)
+        } catch (error) {
+            console.error("Error deleting message:", error)
+        }
+    }
+    const handleDeleteManyMsg = async () => {
+        try {
+            await deleteMessage(choosenMsg)
+            setChoosenMsg([])
+            setIsChoose(false)
+        } catch (error) {
+            console.error("Error deleting message:", error)
+        }
+    }
+
+
+
+    const [loadingText, setLoadingText] = useState("")
+    useEffect(() => {
+        if (!authLoading) return
+        
+        let index = 0
+        const word = 'ЗагрузОчка...'
+        setLoadingText('')
+
+        const interval = setInterval(() => {
+            setLoadingText(prev => {
+                if(index >= word.length){
+                    index = 0
+                    return ''
+                }
+                const next = prev + word[index]
+                index++
+                return next
+            })
+        }, 50)
+
+        return () => clearInterval(interval)
+    }, [authLoading])
+    
     if (authLoading) {
         return (
             <div className="bg-black min-h-screen flex items-center justify-center text-white">
-                ЗагрузОчка...
+                {loadingText}
             </div>
         );
     }
+
 
     return (
         <div 
@@ -225,9 +293,9 @@ export default function Page() {
                         ${openChat ? "translate-x-0" : "translate-x-full"}
                     `}>
 
-                    {/* header mobile */}
-                    {isMobile ? (
-                        <div className="sticky top-0 w-full grid grid-cols-3 items-center z-20">
+                    {/* header чата */}
+                    {(activeChatUserId && !isChoose) && (
+                        <div className="sticky top-0 w-full grid grid-cols-3 items-center justify-center z-20">
                             <button
                                 className="flex justify-center items-center  bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
                                 onClick={() => setOpenChat(false)}
@@ -237,12 +305,12 @@ export default function Page() {
                                 </svg>
                             </button>
 
-                            <button
-                                className="bg-white/10 backdrop-blur-2xl m-2  h-8 rounded-full"
-                            >
+                            <div className="flexC mx-auto bg-white/10 backdrop-blur-2xl rounded-full p-1 select-none"> 
                                 {activeChatUserId}
-                            </button>
+                                <Rating value={activeDialog?.rating}></Rating>
+                            </div>
 
+                            {/* написать */}
                             <button
                                 className="flex justify-center items-center justify-self-end bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
                                 onClick={() => {
@@ -259,23 +327,34 @@ export default function Page() {
                             </button>
 
                         </div>
-                    ): (
-                        <div className={`w-full  p-2 rounded-b-2xl bg-[#7959631c]
-                                ${activeDialog ? "flexC": "hidden"} 
-                        `}>
-
-                            <div className="flexC bg-white/10 rounded-full w-28 select-none"> 
-                                {activeChatUserId}
-                                <Rating value={activeDialog?.rating}></Rating>
-                            </div>
+                    
+                    )}{isChoose && (
+                        <div className="sticky top-0 w-full flex items-start justify-between z-20 text-[15px] p-1
                             
+                        ">
+                            <button className="flexC prettyBtn "
+                                onClick={() => {
+                                    setIsChoose(false)
+                                    setChoosenMsg([])
+                                }}
+                            > 
+                                Назад
+                            </button>
 
+                            <button className="flexC prettyBtn"
+                                onClick={() => {
+                                    handleDeleteManyMsg()
+                                }}
+                            >
+                                Удалить
+                            </button>
                         </div>
                     )}
+                    
 
                     
-                    <div className="p-2 space-y-2">
-                        {activeDialog?.messages.map(message => {
+                    <div className="relative p-2 space-y-2">
+                        {activeDialog?.messages.map((message,index) => {
                             const avatar = message.from_display_id.charAt(1).toUpperCase()
                             const nameLabel = message.from_display_id
                             const bodyText: any = "тебе тут что то пришло, малышка"
@@ -285,25 +364,58 @@ export default function Page() {
                             return (
                                 <div
                                     key={message.id}
-                                    className={`flex flex-col relative w-full transition hover:bg-white/10
+                                    className={`flex flex-col relative w-full transition hover:bg-white/10 select-none
                                         ${isMine ? "items-end" : "items-start"}
                                     `}
                                 >
                                     <div
-                                        className={`flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
+                                        ref={msgRef}
+                                        className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
                                             ${isMine ? "bg-[#ff00666d]" : "bg-white/50"}
+                                            ${selectTouched === message.id ? "scale-105" : ""}
                                         `}
-                                        onClick={() => {
-                                            if(!isMine && !message.is_checked){
-                                                markAsRead(message.id, user?.id!).then(() => {
-                                                    setActiveDialog(d => d && ({
-                                                        ...d,
-                                                        messages: d.messages.map(m => m.id === message.id ? {...m, is_checked: true} : m)
-                                                    }))
+                                        onClick={(e) => {
+                                            if(isChoose){
+                                                setChoosenMsg(prev => {
+                                                    if(prev.includes(message.id)){
+                                                        return prev.filter(id => id !== message.id)
+                                                    }else{
+                                                        return [...prev, message.id]
+                                                    }
                                                 })
+                                                return
+                                            }else{
+                                                if(!isMine && !message.is_checked){
+                                                    markAsRead(message.id, user?.id!).then(() => {
+                                                        setActiveDialog(d => d && ({
+                                                            ...d,
+                                                            messages: d.messages.map(m => m.id === message.id ? {...m, is_checked: true} : m)
+                                                        }))
+                                                    })
+                                                }
+                                                router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
                                             }
-                                            router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
                                         }}
+                                        onContextMenu={(e) => {
+                                            e.preventDefault()
+                                            const target = e.currentTarget as HTMLDivElement
+                                            const rect = target.getBoundingClientRect()
+                                                setAction({message, rect, type: 'desktop', isMine})
+                                        }}
+                                        onPointerDown={(e) =>{
+                                            if(isChoose) return
+                                            const target = e.currentTarget as HTMLDivElement
+                                            if(e.pointerType === 'touch'){
+                                                setSelectTouched(message.id)
+                                                timer.current = window.setTimeout(() => {
+                                                    const rect = target.getBoundingClientRect()
+                                                    setAction({message, rect, type: 'mobile', isMine})
+                                                },400)
+                                            }
+                                        }}
+                                        
+                                        onPointerCancel={() => cancelTouch()}
+                                        
                                     >
                                         <div className="flexC gap-2"> 
                                         {/* avatar */}
@@ -337,37 +449,28 @@ export default function Page() {
                                             isMine={isMine}
                                         />
 
+                                        <div 
+                                            className={`absolute w-3 h-3 rounded-full border
+                                            ${!isMine ? "-right-10" : "-left-10"}
+                                            ${isChoose ? 'opacity-100 ': 'opacity-0'}
+                                            ${choosenMsg.map(msg => msg).includes(message.id) ? "bg-white" : ""}
+                                            `}>
+                                            
+                                        </div>
+
                                     </div>
-
-                                    {/* reply button — только для чужих сообщений */}
-                                    {!isMine && (
-                                        <button
-                                            className="absolute top-1/2 right-1 -translate-y-1/2"
-                                            onClick={() => {
-                                                router.push(`createcard?isMine=${isMine}&type=send&to=${encodeURIComponent(message?.from_display_id ?? '')}`)
-
-                                            }}
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 14">
-                                                <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-                                                    <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"/>
-                                                    <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"/>
-                                                </g>
-                                            </svg>
-                                        </button>
-                                    )}
-
-                                    {/* <div className="w-full mx-auto bg-white/20 h-px" /> */}
+                                    
+                                    
                                 </div>
                             )
                         })}
                     </div>
+                        
 
                     
                 </div>
-
-                
             </main>
+
 
             {/* profile left side */}
             <div
@@ -416,7 +519,23 @@ export default function Page() {
             toUser={activeDialog || undefined}
             refresh={() => refresh()}
             />
+
+            {/* message panel */}
+            {action && (
+                <MessageActionRoot
+                    action={action!}
+                    onClose={() => {
+                        closeMenu()
+                        setSelectTouched(null)
+                    }}
+                    onDelete={handleDeleteMessage}
+                    isChose={setIsChoose}
+                    onChose={(id) => setChoosenMsg(prev => [...prev, id])}
+                />
+            )}
+            
         </div>
+        
     )
 
 }
