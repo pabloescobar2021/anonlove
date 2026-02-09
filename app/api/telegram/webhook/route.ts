@@ -10,7 +10,7 @@ export async function POST(req: Request){
     const chatId = message.from.id
     const text = message.text
 
-    if (text.startWith('/start reg_')) {
+    if (text.startsWith('/start reg_')) {
         const code = text.replace('start reg_', '')
 
         // Проверяем код
