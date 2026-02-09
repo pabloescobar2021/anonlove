@@ -212,7 +212,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupab
 async function getInboxMessages(userId) {
     const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from("messages_safe").select(`
             *
-            `).eq("to_user", userId).order("created_at", {
+            `).eq("to_user", userId).eq("is_visible_for_receiver", true).order("created_at", {
         ascending: true
     });
     if (error) throw error;
@@ -241,7 +241,7 @@ async function getCurrentMessage(messageId, userId, isMine) {
 }
 async function getSentMessages(userId) {
     const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from('messages_safe').select(`
-            *`).eq("from_user", userId).order("created_at", {
+            *`).eq("from_user", userId).eq("is_visible_to_sender", true).order("created_at", {
         ascending: true
     });
     if (error) throw error;
@@ -405,18 +405,18 @@ function useMessages(userId) {
         await loadMessage();
         return data;
     };
-    const deleteMessage = async (messageId)=>{
-        if (!messageId || Array.isArray(messageId) && messageId.length === 0) {
+    const deleteMessage = async (ids)=>{
+        if (!ids.length) {
             console.warn("Message ID is required");
             return;
         }
-        const query = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from('messages').delete();
-        const { error } = Array.isArray(messageId) ? await query.in('id', messageId) : await query.eq('id', messageId);
+        const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].rpc("hide_message_for_me", {
+            msg_id: ids
+        });
         if (error) {
             console.error("Failed to delete message:", error);
             throw error;
         }
-        await loadMessage();
     };
     return {
         inbox,

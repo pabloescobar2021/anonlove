@@ -9,6 +9,7 @@ export async function getInboxMessages(userId: string){
             *
             `)
         .eq("to_user", userId)
+        .eq("is_visible_for_receiver", true)
         .order("created_at", {ascending: true})
     if(error) throw error;  
 
@@ -43,6 +44,7 @@ export async function getSentMessages(userId: string) {
         .select(`
             *`)
         .eq("from_user", userId)
+        .eq("is_visible_to_sender", true)
         .order("created_at", {ascending: true})
     
     if(error) throw error

@@ -58,10 +58,6 @@ export function useContextMenuBehavior(
 
     const closeAnimated = () => {
         setVisible(false)
-        setPanelState(prev => ({
-            ...prev,
-            transform: isMine ? 'translateX(100%)' : 'translateX(-100%)'
-        }))
 
         setTimeout(() => {
             onClose?.()

@@ -36,7 +36,7 @@ export default function AuthPage() {
             console.error(error);
             return
         } 
-        router.push('anonlovemain')
+        router.push('/')
     }
 
     return (

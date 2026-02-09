@@ -112,3 +112,16 @@ export type Viewport ={
     offsetX: number,
     offsetY: number
 }
+
+
+
+export type Particle = {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  alpha: number
+  r: number
+  g: number
+  b: number
+}

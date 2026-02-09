@@ -222,7 +222,7 @@ function DesktopCM(props: Props) {
         {/* panel */}
         <div
             ref={panelRef}
-            className={`fixed z-50 transition-all duration-100 ease-out
+            className={`fixed z-50 transition-opacity duration-100 ease-in-out
                     flexC flex-col
                     bg-white/50 backdrop-blur-2xl 
                     border border-black/10 

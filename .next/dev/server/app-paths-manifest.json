@@ -1,5 +1,6 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/auth/page": "app/auth/page.js",
   "/createcard/page": "app/createcard/page.js",
   "/page": "app/page.js"
 }

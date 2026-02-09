@@ -110,6 +110,38 @@ label {
 }
 
 
+
+.message-wrapper{
+  overflow: hidden;
+  transition: 
+    height 260ms ease,
+    margin 260ms ease;
+  ;
+}
+.message--collapsing{
+  height: 0 !important;
+  margin: 0;
+}
+.message {
+  will-change: transform, opacity, filter;
+  transition:
+    transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 180ms ease-out,
+    filter 180ms ease-out;
+  ;
+}
+.message--deleting{
+  transform:
+    translate(140px) 
+    scale(0.8)
+    rotate(2deg)
+  ;
+  opacity: 0;
+  filter: blur(2px);
+}
+
+
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

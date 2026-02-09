@@ -1,0 +1,521 @@
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import { Dialog } from "../../things/hooks/useMessages";
+import { parseDate } from "../../things/utils/parseDate";
+import { ReadIndicator } from "../../createcard/components/ReadIndicator";
+import { Particle, UiMessage } from "../../things/types/type";
+import { Rating } from "../../createcard/components/Rating";
+import { useRouter } from "next/navigation";
+import { MessageActionRoot } from "../../contextMenu/messagePanel";
+import { AnimatedButton } from "../AnimatedButton";
+import { useMessageRead } from "@/app/things/hooks/useCheckMsg";
+import { useDeleteMessage } from "../useDeleteMessage";
+import { useSwipe } from "@/app/things/hooks/useSwipe";
+import { DialogResizehandler } from "../DialogResizehandler";
+import { useShatterMessage } from "../useShatterMessage";
+
+export type Props = {
+    userId: string | undefined;
+    dialogs: Dialog[];
+    setOpenProfile: (open: boolean) => void;
+    setOpenModalProfile: (open: boolean) => void;
+    setOpenChat: (open: boolean) => void;
+    openChat: boolean;
+    isMobile: boolean;
+    deleteMessage: (id: string[]) => Promise<void>;
+    refresh: () => Promise<void>;
+}
+
+export function ManagerChat(props: Props) {
+    const router = useRouter();
+
+    const {
+        userId,
+        dialogs,
+        setOpenProfile,
+        setOpenModalProfile,
+        setOpenChat,
+        openChat,
+        isMobile,
+    } = props;
+
+    const [activeChatUserId, setActiveChatUserId] = useState<string | null>(null);
+    const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
+    const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
+
+    const { markAsRead } = useMessageRead();
+
+    // messagePanel
+    const msgRef = useRef<HTMLDivElement>(null);
+    let timer = useRef<number | null>(null);
+    type ActionState = {
+        message: UiMessage;
+        rect: DOMRect;
+        type: "desktop" | "mobile";
+        isMine: boolean;
+    } | null;
+    const closeMenu = () => {
+        setAction(null);
+        setSelectTouched(null);
+    };
+    const cancelTouch = () => {
+        clearInterval(timer.current!);
+        setSelectTouched(null);
+    };
+    const [action, setAction] = useState<ActionState>(null);
+    const [isChoose, setIsChoose] = useState(false);
+    const [choosenMsg, setChoosenMsg] = useState<any[]>([]);
+    const [selectTouched, setSelectTouched] = useState<string | null>(null);
+    
+    // dialogResizeHandler (только для desktop)
+    const dialogPanelRef = useRef<HTMLDivElement>(null!);
+
+    const {canvasRef, shatterMessages} = useShatterMessage({})
+
+    // синхронизация activeDialog с dialogs
+    useEffect(() => {
+        if (!activeDialogId) {
+            setActiveDialog(null);
+            return;
+        }
+        const found = dialogs.find((d) => d.userId === activeDialogId) || null;
+        setActiveDialog(found);
+    }, [dialogs, activeDialogId]);
+
+    const { handleDeleteMessage } = useDeleteMessage({
+        setChoosenMsg, setAction,setIsChoose,choosenMsg,
+        deleteMessage: props.deleteMessage, refresh: props.refresh,
+    });
+
+
+    const [deletingMsg, setDeletingMsg] = useState<string[]>([]);
+    const wrapperRef = useRef<Record<string, HTMLDivElement | null>>({})
+    const bubbleRef = useRef<Record<string, HTMLDivElement | null>>({})
+    
+    const handleRemoveMsg = async (ids: string[]) => {
+        if (!ids.length) return
+
+        const bubbles = ids
+            .map((id) => bubbleRef.current[id])
+            .filter((el): el is HTMLDivElement => Boolean(el));
+        const wrappers = ids
+            .map((id) => wrapperRef.current[id])
+            .filter((el): el is HTMLDivElement => Boolean(el));
+
+        wrappers.forEach(el => {
+            el.style.height = `${el.offsetHeight}px`
+        })
+
+        shatterMessages(bubbles, async () => {
+            requestAnimationFrame(() => {
+                setDeletingMsg([...ids])
+            })  
+            await Promise.all(wrappers.map(el =>
+                new Promise<void>(resolve => {
+                    const onEnd = (e: TransitionEvent) => {
+                        if(e.propertyName !== 'height') return
+                        el.removeEventListener('transitionend', onEnd)
+                        resolve()
+                    }
+                    el.addEventListener('transitionend', onEnd)
+                })
+            ))   
+            await handleDeleteMessage(ids)
+            setChoosenMsg([])
+            setIsChoose(false)
+            setDeletingMsg([])       
+        })
+    } 
+
+    // swipe handlers для mobile
+    const profileSwipe = useSwipe({
+        onSwipeLeft: () => {
+            if (!isMobile) return;
+            setOpenProfile(false);
+        },
+        onSwipeRight: () => {
+            if (!isMobile) return;
+            setOpenProfile(true);
+        },
+    });
+    const chatSwipe = useSwipe({
+        onSwipeRight: () => {
+            if (!isMobile) return;
+            setOpenChat(false);
+        },
+    });
+
+    // при изменение разрешения автоматический ресайз
+    useLayoutEffect(() => {
+        if (!isMobile) {
+            dialogPanelRef.current.style.width = "50%"
+            return
+        };
+        if(isMobile){
+            dialogPanelRef.current.style.width = "100vw"
+            return
+        }
+    },[isMobile])
+  
+    return (
+        <main
+            className={`flex overflow-hidden bg-[#12080b] select-none ${isMobile ? "" : "h-screen"}`}
+            {...(isMobile && !openChat ? profileSwipe : {})}
+        >
+
+            {/* DIALOGS */}
+            <div
+                ref={dialogPanelRef}
+                className={`bg-[#12080b] overflow-y-auto overflow-x-hidden
+                    ${
+                        isMobile
+                            ? `absolute inset-0 transition-transform duration-300 ease-out will-change-transform ${
+                                  openChat ? "-translate-x-full" : "translate-x-0"
+                              }`
+                            : "relative w-1/2 border-r border-[#d91c558b]"
+                    }
+                `}
+                style={{
+                    overscrollBehavior: "contain",
+                    touchAction: "pan-y",
+                }}
+            >
+                {/* Header диалогов */}
+                <div className="flex w-full relative bg-white/10 backdrop-blur-md">
+                    <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center hover:bg-white/20 transition-colors">
+                        <button
+                            onClick={() => setOpenProfile(true)}
+                            className="w-8 h-8 rounded-full flex justify-center items-center"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M4 8h24M4 16h24M4 24h24"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <button className="p-2 rounded-md w-full text-center flex justify-center items-center">
+                        <span className="medium">Чаты</span>
+                    </button>
+
+                    <div className="absolute bottom-1/2 translate-y-1/2 right-2">
+                        <AnimatedButton
+                            openModal={() => {
+                                router.push(`createcard?type=send`);
+                            }}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 32 32"
+                            >
+                                <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M2 4h28v18H16l-8 7v-7H2Z"
+                                />
+                            </svg>
+                        </AnimatedButton>
+                    </div>
+                </div>
+
+                {/* Resize handler только для desktop */}
+                {!isMobile && <DialogResizehandler dialogPanelRef={dialogPanelRef} />}
+
+                {/* Список диалогов */}
+                {dialogs.map((dialog) => {
+                    const avatar = dialog.displayId.charAt(1).toUpperCase();
+                    const title = dialog.displayId;
+                    const timeSend = parseDate(dialog.lastMessage.created_at);
+                    const unread = dialog.messages.filter((el) => !el.is_checked && el.from_user !== userId).length;
+                    return (
+                        <button
+                            key={dialog.userId}
+                            className="p-2 rounded-lg w-full"
+                            onClick={() => {
+                                setActiveDialogId(dialog.userId);
+                                setActiveDialog(dialog);
+                                setActiveChatUserId(dialog.displayId);
+                                if (isMobile) setOpenChat(true);
+                            }}
+                        >
+                            <div
+                                className={`flex p-3 items-center relative gap-2 rounded-2xl transition-colors
+                                    ${
+                                        dialog.userId !== activeDialogId && !isMobile
+                                            ? "bg-[#5b5b5ba2]"
+                                            : "bg-[#949494a2]"
+                                    }
+                                `}
+                            >
+                                {/* AVATAR */}
+                                <span
+                                    className="flex bg-red-500 w-8 h-8 items-center justify-center rounded-full text-lg font-bold"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setOpenModalProfile(true);
+                                    }}
+                                >
+                                    {avatar}
+                                </span>
+
+                                {/* NAME */}
+                                <span className="font-semibold">{title}</span>
+
+                                <div className="absolute right-3 flex items-end flex-col text-[10px] text-gray-400 ">
+                                    {/* TIME */}
+                                    <p className="flexC text-center ">
+                                        {timeSend}
+                                    </p>
+                                    {/* UNREAD */}
+                                    {unread > 0 && (
+                                        <p className="flexC text-white text-center rounded-full bg-[#a41d1da2] w-5 h-5">
+                                            {unread}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        </button>
+                    );
+                })}
+            </div>
+
+            {/* MESSAGES */}
+            <div
+                className={`overflow-y-auto
+                    ${
+                        isMobile
+                            ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform ${
+                                  openChat ? "translate-x-0" : "translate-x-full"
+                              }`
+                            : "flex-1 flex flex-col"
+                    }
+                `}
+                {...(isMobile ? chatSwipe : {})}
+            >
+                {/* Header чата */}
+                {activeChatUserId && !isChoose && (
+                    <div className="sticky top-0 w-full grid grid-cols-3 items-center justify-center z-20">
+                        <button
+                            className={`flex justify-center items-center bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10
+                                ${isMobile ? '': 'opacity-0 pointer-events-none'}`}
+                            onClick={() => setOpenChat(false)}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"
+                                />
+                            </svg>
+                        </button>
+
+                        <div className="flexC mx-auto text-[15px] bg-white/10 backdrop-blur-2xl rounded-full px-2 p-1 select-none">
+                            {activeChatUserId}
+                            <Rating value={activeDialog?.rating}></Rating>
+                        </div>
+
+                        <button
+                            className="flex justify-center items-center justify-self-end bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
+                            onClick={() => {
+                                router.push(
+                                    `createcard?type=send&to=${encodeURIComponent(activeChatUserId ?? "")}`
+                                );
+                            }}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 14 14"
+                            >
+                                <g
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5" />
+                                    <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                )}
+                {/* header при выборе сообщений */}
+                {isChoose && (
+                    <div className="sticky top-0 w-full flex items-start justify-between z-20 text-[15px] p-1">
+                        <button
+                            className="flexC prettyBtn"
+                            onClick={() => {
+                                setIsChoose(false);
+                                setChoosenMsg([]);
+                            }}
+                        >
+                            Назад
+                        </button>
+
+                        <button className="flexC prettyBtn" 
+                            onClick={() => {
+                                handleRemoveMsg(choosenMsg)
+                            }}
+                        >
+                            Удалить
+                        </button>
+                    </div>
+                )}
+
+                {/* Список сообщений */}
+                <div className="relative p-2 space-y-2">
+                    {activeDialog?.messages.map((message) => {
+                        const avatar = message.from_display_id.charAt(1).toUpperCase();
+                        const nameLabel = message.from_display_id;
+                        const isMine = message.from_user === userId;
+                        const date = parseDate(message.created_at);
+
+                        return (
+                            <div
+                                key={message.id}
+                                ref={el => {(wrapperRef.current[message.id] = el)}}
+
+                                className={`flex flex-col relative w-full transition hover:bg-white/10 select-none
+                                    ${isMine ? "items-end" : "items-start"} 
+                                    message-wrapper ${deletingMsg.includes(message.id)  ? "message--collapsing" : ""}
+                                `}
+                            >
+                                <div
+                                    // ref={msgRef}
+                                    ref={el => {(bubbleRef.current[message.id] = el)}}
+                                    className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
+                                        ${!isMine ? "bg-[#ff00666d]" : "bg-white/50"}
+                                        ${selectTouched === message.id && isMobile ? "scale-105" : ""}
+                                        ${selectTouched === message.id && !isMobile ? (isMine ? "border-l" : "border-r") : ""}
+                                        message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
+                                    `}
+                                    onClick={(e) => {
+                                        if (isChoose) {
+                                            setChoosenMsg((prev) => {
+                                                if (prev.includes(message.id)) {
+                                                    return prev.filter((id) => id !== message.id);
+                                                } else {
+                                                    return [...prev, message.id];
+                                                }
+                                            });
+                                            return;
+                                        } else {
+                                            if (!isMine && !message.is_checked) {
+                                                markAsRead(message.id, userId!).then(() => {
+                                                    setActiveDialog(
+                                                        (d) =>
+                                                            d && {
+                                                                ...d,
+                                                                messages: d.messages.map((m) =>
+                                                                    m.id === message.id
+                                                                        ? { ...m, is_checked: true }
+                                                                        : m
+                                                                ),
+                                                            }
+                                                    );
+                                                });
+                                            }
+                                            router.push(
+                                                `createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? "")}`
+                                            );
+                                        }
+                                    }}
+                                    onContextMenu={(e) => {
+                                        if (isMobile) return;
+                                        e.preventDefault();
+                                        const target = e.currentTarget as HTMLDivElement;
+                                        const rect = target.getBoundingClientRect();
+                                        setSelectTouched(message.id);
+                                        setAction({ message, rect, type: "desktop", isMine });
+                                    }}
+                                    onPointerDown={(e) => {
+                                        if (!isMobile || isChoose) return;
+                                        const target = e.currentTarget as HTMLDivElement;
+                                        if (e.pointerType === "touch") {
+                                            setSelectTouched(message.id);
+                                            timer.current = window.setTimeout(() => {
+                                                const rect = target.getBoundingClientRect();
+                                                setAction({ message, rect, type: "mobile", isMine });
+                                            }, 400);
+                                        }
+                                    }}
+                                    onPointerCancel={() => cancelTouch()}
+                                >
+                                    <div className="flexC gap-2">
+                                        <div className="md:w-6 md:h-6 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-md font-bold shrink-0">
+                                            {avatar}
+                                        </div>
+
+                                        <div className="flex flex-col">
+                                            <span className="font-semibold medium">{nameLabel}</span>
+                                            <span className="small line-clamp-2">{``}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-[9px] text-[#cdcdcd]">{date}</div>
+
+                                    <ReadIndicator isRead={message.is_checked} isMine={isMine} />
+                                    
+                                    {isChoose && (
+                                        <div
+                                            className={`absolute w-3 h-3 rounded-full border
+                                                ${!isMine ? "-right-10" : "-left-10"}
+                                                ${isChoose ? "opacity-100 " : "opacity-0"}
+                                                ${choosenMsg.map((msg) => msg).includes(message.id) ? "bg-white" : ""}
+                                            `}
+                                        ></div>
+                                    )}
+
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <canvas
+                ref={canvasRef}
+                className="absolute top-0 left-0 pointer-events-none overflow-visible w-screen h-screen"
+                // style={{width: '100vw', height: '100vh'}}
+
+            />
+
+            {/* message panel */}
+            {action && (
+                <MessageActionRoot
+                    action={action!}
+                    onClose={() => {
+                        closeMenu();
+                        setSelectTouched(null);
+                    }}
+                    onDelete={(id) => {
+                        handleRemoveMsg([...choosenMsg, id])
+                    }}
+                    isChose={setIsChoose}
+                    onChose={(id) => setChoosenMsg((prev) => [...prev, id])}
+                />
+            )}
+        </main>
+    );
+}

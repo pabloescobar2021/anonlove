@@ -81,22 +81,19 @@ export function useMessages(userId: string | null) {
         return data
     }
 
-    const deleteMessage = async (messageId: string | string[]) => {
-        if (!messageId || (Array.isArray(messageId) && messageId.length === 0)) {
+    const deleteMessage = async (ids: string[] ) => {
+        if (!ids.length) {
             console.warn("Message ID is required")
             return
         }
-        const query = supabase.from('messages').delete()
         
-        const {error} = Array.isArray(messageId)
-            ? await query.in('id', messageId)
-            : await query.eq('id', messageId)
-        
+        const {error} = await supabase.rpc("hide_message_for_me", {
+            msg_id: ids
+        })
         if(error) {
             console.error("Failed to delete message:", error)
             throw error
         }
-        await loadMessage()
     }
 
     return {
