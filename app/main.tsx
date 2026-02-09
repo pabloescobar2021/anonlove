@@ -56,6 +56,16 @@ export default function MainPage() {
     const [selectTouched, setSelectTouched] = useState<string | null>(null)
     //
 
+    const startTelegramLink = async () => {
+        const res = await fetch("/api/telegram/start", {
+            method: "POST",
+            headers: {
+                "x-user-id": user?.id
+            }
+        })
+        const {url} = await res.json()
+        window.location.href = url
+    }
     
 
     useEffect(() => {
@@ -191,7 +201,16 @@ export default function MainPage() {
                     className="bg-white/20 backdrop-blur-2xl w-full flexC p-2 rounded-b-2xl"
                 >
                     {profile?.public_id} 
+
+                    
                 </div>
+
+                <button 
+                    className="p-2 bg-white/20 rounded-full m-2"
+                    onClick={(e) => startTelegramLink()}
+                >
+                    Привязать телеграмм
+                </button>
 
                 <div className="absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl">
                     <button

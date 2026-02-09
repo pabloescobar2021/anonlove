@@ -2733,6 +2733,16 @@ function MainPage() {
     ;
     const [selectTouched, setSelectTouched] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     //
+    const startTelegramLink = async ()=>{
+        const res = await fetch("/api/telegram/start", {
+            method: "POST",
+            headers: {
+                "x-user-id": user?.id
+            }
+        });
+        const { url } = await res.json();
+        window.location.href = url;
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MainPage.useEffect": ()=>{
             if (!activeDialogId) {
@@ -2848,12 +2858,12 @@ function MainPage() {
                 children: "ЗагруОчка..."
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 157,
+                lineNumber: 167,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/main.tsx",
-            lineNumber: 156,
+            lineNumber: 166,
             columnNumber: 13
         }, this);
     }
@@ -2871,7 +2881,7 @@ function MainPage() {
                 refresh: refresh
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 167,
+                lineNumber: 177,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2889,7 +2899,16 @@ function MainPage() {
                         children: profile?.public_id
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 190,
+                        lineNumber: 200,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "p-2 bg-white/20 rounded-full m-2",
+                        onClick: (e)=>startTelegramLink(),
+                        children: "Привязать телеграмм"
+                    }, void 0, false, {
+                        fileName: "[project]/app/main.tsx",
+                        lineNumber: 208,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2902,12 +2921,12 @@ function MainPage() {
                             children: "Выйти"
                         }, void 0, false, {
                             fileName: "[project]/app/main.tsx",
-                            lineNumber: 197,
+                            lineNumber: 216,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 196,
+                        lineNumber: 215,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2916,19 +2935,19 @@ function MainPage() {
                         children: `>`
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 207,
+                        lineNumber: 226,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 180,
+                lineNumber: 190,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/main.tsx",
-        lineNumber: 164,
+        lineNumber: 174,
         columnNumber: 9
     }, this);
 }

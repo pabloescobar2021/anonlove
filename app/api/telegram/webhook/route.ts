@@ -4,48 +4,53 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request){
     const update = await req.json()
     const message = update.message
-
-    if(!message?.text) return NextResponse.json({ok: true})
-    
     const chatId = message.from.id
     const text = message.text
 
-    if (text.startsWith('/start reg_')) {
-        const code = text.replace('start reg_', '')
+    if(!chatId || !text) return NextResponse.json({ok: true})
+    
+    if (!text.startsWith("/start link_")) return NextResponse.json({ ok: true });
 
-        // Проверяем код
-        const {data} = await supabase
-            .from('telegram_reg_codes')
-            .select('*')
-            .eq("code", code)
-            .single()
-        
-        if (!data){
-            await sendMessage(chatId, "Ссылка устарела")
-            return NextResponse.json({ok: true})
-        }
+    const code = text.replace('/start link_', '')
+    
+    const {data: codeData, error: codeError} = await supabase
+        .from("telegram_reg_codes")
+        .select("*")
+        .eq("code", code)
+        .single()
 
-        // создаем пользователя
-        await supabase.from("users").insert({
-            telegram_id: chatId,
-        })
-
-        // удаляем код
-        await supabase.from("telegram_reg_codes").delete().eq('code', code);
-
-        await sendMessage(chatId, "Регистрация прошла успешно")
+    if(codeError || !codeData) {
+        await sendMessage(chatId, "Код не найден")
+        return NextResponse.json({ok: true})
     }
 
+    const {error: userError} = await supabase
+        .from('users')
+        .update({
+            telegram_id: chatId
+        })
+        .eq("id_user", codeData.user_id)
+
+    if(userError){
+        console.error("Failed to update user:", userError)
+        await sendMessage(chatId, "Произошла ошибка, попробуйте позже")
+        return NextResponse.json({ok: true})
+    }
+
+    await supabase.from("telegram_reg_codes").delete().eq("code", code)
+
+    await sendMessage(chatId, "привязано")
     return NextResponse.json({ok: true})
 }
 
 async function sendMessage(chatId: number, text: string) {
+  try {
     await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text,
-        }),
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: chatId, text }),
     });
+  } catch (e) {
+    console.error("Failed to send TG message:", e);
+  }
 }

@@ -71,13 +71,20 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__
 ;
 ;
 ;
-async function POST() {
+async function POST(req) {
+    const userId = req.headers.get("x-user-id");
+    if (!userId) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+        error: "User not authenticated"
+    }, {
+        status: 401
+    });
     const code = __TURBOPACK__imported__module__$5b$externals$5d2f$crypto__$5b$external$5d$__$28$crypto$2c$__cjs$29$__["default"].randomUUID();
     await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabase"].from("telegram_reg_codes").insert({
-        code
+        code,
+        user_id: userId
     });
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-        url: `https://t.me/AnonLove_userBot?start=reg_${code}`
+        url: `https://t.me/AnonLove_userBot?start=link_${code}`
     });
 }
 }),
