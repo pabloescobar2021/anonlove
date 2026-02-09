@@ -99,6 +99,17 @@ label {
   focus:ring-black
 }
 
+.prettyBtnChat {
+  @apply
+  text-[14px] select-none z-10
+  backdrop-blur-2xl rounded-full
+  px-4 py-2
+  border border-white/10
+  bg-linear-to-br 
+  from-white/20 to-white/10
+  hover:from-white/20 hover:to-white/30
+}
+
 .prettyBtn {
   @apply 
   text-[14px] select-none
@@ -107,6 +118,14 @@ label {
   bg-linear-to-br 
   from-white/20 to-white/10
   hover:from-white/20 hover:to-white/30
+}
+
+.unreadMsg {
+  @apply
+  text-[9px] select-none font-semibold text-white
+  backdrop-blur-2xl rounded-full
+  w-5 h-5
+  border border-white/10
 }
 
 

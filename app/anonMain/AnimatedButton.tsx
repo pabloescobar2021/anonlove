@@ -155,7 +155,7 @@ export function AnimatedButton({
                 onClick={() => openModal()}
                 onMouseEnter={() => (isHovering.current = true)}
                 onMouseLeave={() => (isHovering.current = false)}
-                className="relative flex items-center justify-center p-2 h-8 w-15 bg-white/10 rounded-full hover:bg-white/40 transition-colors z-2"
+                className="relative flex items-center justify-center z-2"
             >
                 {children}
             </button>

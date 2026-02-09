@@ -32,7 +32,7 @@ export default function MainPage() {
 
     const [openProfile, setOpenProfile] = useState(false); // profile слева
 
-    const [openModalProfile, setOpenModalProfile] = useState(false); // state модалка профиля
+    
 
     const styleToNotSwipe: React.CSSProperties = {
         overscrollBehavior: 'contain',
@@ -168,7 +168,6 @@ export default function MainPage() {
                 userId={user?.id}
                 dialogs={dialogs}
                 setOpenProfile={setOpenProfile}
-                setOpenModalProfile={setOpenModalProfile}
                 setOpenChat={setOpenChat}
                 openChat={openChat}
                 isMobile={isMobile}
@@ -215,15 +214,6 @@ export default function MainPage() {
                 </button>
 
             </div>
-
-            {/* modal profile */}
-            <ModalProfile 
-            isOpen={openModalProfile} 
-            onClose={() => {setOpenModalProfile(false)}}
-            fromUser={user?.id}
-            toUser={activeDialog || undefined}
-            refresh={() => refresh()}
-            />
 
             
             

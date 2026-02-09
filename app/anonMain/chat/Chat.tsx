@@ -12,12 +12,12 @@ import { useDeleteMessage } from "../useDeleteMessage";
 import { useSwipe } from "@/app/things/hooks/useSwipe";
 import { DialogResizehandler } from "../DialogResizehandler";
 import { useShatterMessage } from "../useShatterMessage";
+import { ModalProfile } from "@/app/modal/modalProfile";
 
 export type Props = {
     userId: string | undefined;
     dialogs: Dialog[];
     setOpenProfile: (open: boolean) => void;
-    setOpenModalProfile: (open: boolean) => void;
     setOpenChat: (open: boolean) => void;
     openChat: boolean;
     isMobile: boolean;
@@ -27,22 +27,23 @@ export type Props = {
 
 export function ManagerChat(props: Props) {
     const router = useRouter();
-
     const {
         userId,
         dialogs,
         setOpenProfile,
-        setOpenModalProfile,
         setOpenChat,
         openChat,
         isMobile,
+        refresh
     } = props;
+    const { markAsRead } = useMessageRead();
 
     const [activeChatUserId, setActiveChatUserId] = useState<string | null>(null);
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
     const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
 
-    const { markAsRead } = useMessageRead();
+    // modalProfileUser
+    const [openModalProfile, setOpenModalProfile] = useState<Dialog | null>(null); // state модалка профиля
 
     // messagePanel
     const msgRef = useRef<HTMLDivElement>(null);
@@ -65,7 +66,8 @@ export function ManagerChat(props: Props) {
     const [isChoose, setIsChoose] = useState(false);
     const [choosenMsg, setChoosenMsg] = useState<any[]>([]);
     const [selectTouched, setSelectTouched] = useState<string | null>(null);
-    
+    ////////
+
     // dialogResizeHandler (только для desktop)
     const dialogPanelRef = useRef<HTMLDivElement>(null!);
 
@@ -180,35 +182,33 @@ export function ManagerChat(props: Props) {
                 }}
             >
                 {/* Header диалогов */}
-                <div className="flex w-full relative bg-white/10 backdrop-blur-md">
-                    <div className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/10 h-8 w-15 flex justify-center items-center hover:bg-white/20 transition-colors">
-                        <button
-                            onClick={() => setOpenProfile(true)}
-                            className="w-8 h-8 rounded-full flex justify-center items-center"
+                <div className="flex w-full relative backdrop-blur-md">
+                    <button
+                        onClick={() => setOpenProfile(true)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 prettyBtnChat"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 32 32"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                viewBox="0 0 32 32"
-                            >
-                                <path
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 8h24M4 16h24M4 24h24"
-                                />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <button className="p-2 rounded-md w-full text-center flex justify-center items-center">
-                        <span className="medium">Чаты</span>
+                            <path
+                                fill="none"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 8h24M4 16h24M4 24h24"
+                            />
+                        </svg>
                     </button>
 
-                    <div className="absolute bottom-1/2 translate-y-1/2 right-2">
+                    <button className="p-2 rounded-md w-full text-center flex justify-center items-center">
+                        <span className="medium font-semibold">Чаты</span>
+                    </button>
+
+                    <div className="absolute bottom-1/2 translate-y-1/2 right-2 prettyBtnChat">
                         <AnimatedButton
                             openModal={() => {
                                 router.push(`createcard?type=send`);
@@ -216,8 +216,8 @@ export function ManagerChat(props: Props) {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="14"
-                                height="14"
+                                width="16"
+                                height="16"
                                 viewBox="0 0 32 32"
                             >
                                 <path
@@ -263,31 +263,37 @@ export function ManagerChat(props: Props) {
                                 `}
                             >
                                 {/* AVATAR */}
-                                <span
-                                    className="flex bg-red-500 w-8 h-8 items-center justify-center rounded-full text-lg font-bold"
+                                <div
+                                    className={`flex w-8 h-8 items-center justify-center rounded-full text-lg font-bold transition-all
+                                        bg-linear-to-b from-red-500 to-red-700 backdrop-blur-md
+                                        hover:from-red-600 hover:to-red-800 hover:border hover:border-white/40
+                                    `}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        setOpenModalProfile(true);
+                                        setOpenModalProfile(dialog);
                                     }}
                                 >
-                                    {avatar}
-                                </span>
+                                    <span>
+                                        {avatar}
+                                    </span>
+                                </div>
 
                                 {/* NAME */}
                                 <span className="font-semibold">{title}</span>
 
-                                <div className="absolute right-3 flex items-end flex-col text-[10px] text-gray-400 ">
-                                    {/* TIME */}
-                                    <p className="flexC text-center ">
-                                        {timeSend}
+                                {/* TIME */}
+                                <p className="absolute right-2 top-3 flexC text-center text-gray-400 text-[10px]">
+                                    {timeSend}
+                                </p>
+                                {/* UNREAD */}
+                                {unread > 0 && (
+                                    <p 
+                                        className="absolute right-2 bottom-1 flexC text-center 
+                                        unreadMsg
+                                    ">
+                                        {unread}
                                     </p>
-                                    {/* UNREAD */}
-                                    {unread > 0 && (
-                                        <p className="flexC text-white text-center rounded-full bg-[#a41d1da2] w-5 h-5">
-                                            {unread}
-                                        </p>
-                                    )}
-                                </div>
+                                )}
                             </div>
                         </button>
                     );
@@ -296,22 +302,20 @@ export function ManagerChat(props: Props) {
 
             {/* MESSAGES */}
             <div
-                className={`overflow-y-auto
-                    ${
-                        isMobile
-                            ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform ${
-                                  openChat ? "translate-x-0" : "translate-x-full"
-                              }`
-                            : "flex-1 flex flex-col"
+                className={`overflow-y-auto bg-[#0e0406]
+                    ${isMobile
+                        ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform 
+                        ${openChat ? "translate-x-0" : "translate-x-full"}`
+                        : "flex-1 flex flex-col"
                     }
                 `}
                 {...(isMobile ? chatSwipe : {})}
             >
                 {/* Header чата */}
                 {activeChatUserId && !isChoose && (
-                    <div className="sticky top-0 w-full grid grid-cols-3 items-center justify-center z-20">
+                    <div className="sticky top-0 w-full flexC py-2 z-20">
                         <button
-                            className={`flex justify-center items-center bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10
+                            className={`flexC z-10 prettyBtnChat
                                 ${isMobile ? '': 'opacity-0 pointer-events-none'}`}
                             onClick={() => setOpenChat(false)}
                         >
@@ -328,13 +332,15 @@ export function ManagerChat(props: Props) {
                             </svg>
                         </button>
 
-                        <div className="flexC mx-auto text-[15px] bg-white/10 backdrop-blur-2xl rounded-full px-2 p-1 select-none">
+                        <div className="flexC mx-auto text-[15px] prettyBtnChat">
                             {activeChatUserId}
                             <Rating value={activeDialog?.rating}></Rating>
                         </div>
 
                         <button
-                            className="flex justify-center items-center justify-self-end bg-white/10 backdrop-blur-2xl m-2 w-15 h-8 text-center rounded-full z-10"
+                            className={`flexC prettyBtnChat
+                                ${isMobile ? "justify-self-center" : "justify-self-end w-20"}
+                            `}
                             onClick={() => {
                                 router.push(
                                     `createcard?type=send&to=${encodeURIComponent(activeChatUserId ?? "")}`
@@ -347,11 +353,7 @@ export function ManagerChat(props: Props) {
                                 height="16"
                                 viewBox="0 0 14 14"
                             >
-                                <g
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
+                                <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                                 >
                                     <path d="M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5" />
                                     <path d="m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z" />
@@ -384,8 +386,8 @@ export function ManagerChat(props: Props) {
                 )}
 
                 {/* Список сообщений */}
-                <div className="relative p-2 space-y-2">
-                    {activeDialog?.messages.map((message) => {
+                <div className="relative p-2 space-y-2 ">
+                    {activeDialog?.messages.map((message, i) => {
                         const avatar = message.from_display_id.charAt(1).toUpperCase();
                         const nameLabel = message.from_display_id;
                         const isMine = message.from_user === userId;
@@ -405,7 +407,9 @@ export function ManagerChat(props: Props) {
                                     // ref={msgRef}
                                     ref={el => {(bubbleRef.current[message.id] = el)}}
                                     className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
-                                        ${!isMine ? "bg-[#ff00666d]" : "bg-white/50"}
+                                        ${!isMine 
+                                            ? "bg-linear-to-b from-[#ff00666d] to-[#ec015f5d]" 
+                                            : "bg-linear-to-b from-white/60 to-white/40"}
                                         ${selectTouched === message.id && isMobile ? "scale-105" : ""}
                                         ${selectTouched === message.id && !isMobile ? (isMine ? "border-l" : "border-r") : ""}
                                         message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
@@ -516,6 +520,14 @@ export function ManagerChat(props: Props) {
                     onChose={(id) => setChoosenMsg((prev) => [...prev, id])}
                 />
             )}
+
+            {/* modal profile */}
+            <ModalProfile 
+                dialog={openModalProfile} 
+                onClose={() => {setOpenModalProfile(null)}}
+                fromUser={userId!}
+                refresh={() => refresh()}
+            />
         </main>
     );
 }

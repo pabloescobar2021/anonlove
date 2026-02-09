@@ -39,8 +39,22 @@ export default function AuthPage() {
         router.push('/')
     }
 
+    const startTelegramAuth = async () => {
+        const res = await fetch("/api/telegram/start", {method: "POST"});
+        const {url} = await res.json();
+        window.location.href = url
+    }
+
     return (
         <div className="flex justify-center items-center bg-black h-full">
+
+            <button 
+                className="bg-white/20 rounded-full p-2"
+                onClick={startTelegramAuth}
+            >
+                Войти через telegram
+            </button>
+
             {authType === "login" ? 
             
             <form
@@ -111,6 +125,7 @@ export default function AuthPage() {
                 className="border rounded-md p-1 text-center"
                 ></input>
 
+
                 <input 
                 ref={passRef}
                 type="password" 
@@ -158,7 +173,6 @@ export default function AuthPage() {
             }
             
 
-            
 
         </div>
     )

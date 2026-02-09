@@ -3,18 +3,16 @@ import { Dialog } from "../things/hooks/useMessages"
 import { useSetAnon } from "../things/hooks/useSetAnon";
 
 type ModalProfileProps = {
-  isOpen: boolean
+  dialog: Dialog | null
   onClose: () => void
   fromUser: string
-  toUser?: Dialog
   refresh: () => void
 }
 
 export function ModalProfile({
-  isOpen,
+  dialog,
   onClose,
   fromUser, 
-  toUser,
   refresh
 }: ModalProfileProps) {
     const [isAnon, setIsAnon] = useState(false);
@@ -24,10 +22,10 @@ export function ModalProfile({
 
 
     useEffect(() => {
-        if(!toUser || !fromUser || !isOpen) return
+        if(!fromUser || !dialog) return
 
         const load = async () => {
-            const data = await checkAnon(fromUser, toUser.userId)
+            const data = await checkAnon(fromUser, dialog.userId)
             if(!data) return
 
             setIsAnon(data.isAnon)
@@ -36,11 +34,11 @@ export function ModalProfile({
 
         load()
 
-    }, [isOpen,fromUser, toUser]);
+    }, [dialog,fromUser]);
 
-  if (!isOpen || !toUser) return null
 
-    
+  if (!dialog) return null
+
 
   return (
     <div
@@ -69,11 +67,11 @@ export function ModalProfile({
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-lg font-bold">
-              {toUser.displayId.charAt(1).toUpperCase()}
+              {dialog.displayId.charAt(1).toUpperCase()}
             </div>
 
             <div>
-              <div className="font-semibold">{toUser.displayId}</div>
+              <div className="font-semibold">{dialog.displayId}</div>
               <div className="text-xs text-white/50">Профиль пользователя</div>
             </div>
           </div>
@@ -94,7 +92,7 @@ export function ModalProfile({
             try {
                 await setAnon({
                     from_user_id: fromUser,
-                    to_user_id: toUser.userId,
+                    to_user_id: dialog.userId,
                     is_anon: isAnon
                 })
 
