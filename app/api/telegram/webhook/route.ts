@@ -1,4 +1,4 @@
-import { supabase } from "@/utils/supabase/alSupabase";
+import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request){
@@ -14,7 +14,7 @@ export async function POST(req: Request){
     
         const code = text.replace('/start link_', '')
         
-        const {data: codeData, error: codeError} = await supabase
+        const {data: codeData, error: codeError} = await supabaseAdmin
             .from("telegram_reg_codes")
             .select("*")
             .eq("code", code)
@@ -25,7 +25,7 @@ export async function POST(req: Request){
             return NextResponse.json({ok: true})
         }
     
-        const {error: userError} = await supabase
+        const {error: userError} = await supabaseAdmin
             .from('users')
             .update({
                 telegram_id: chatId
@@ -38,7 +38,7 @@ export async function POST(req: Request){
             return NextResponse.json({ok: true})
         }
     
-        await supabase.from("telegram_reg_codes").delete().eq("code", code)
+        await supabaseAdmin.from("telegram_reg_codes").delete().eq("code", code)
     
         await sendMessage(chatId, "привязано")
         return NextResponse.json({ok: true})

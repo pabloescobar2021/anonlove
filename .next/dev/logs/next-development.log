@@ -1,12 +1,9 @@
-[00:00:02.863] Server  LOG      ✓ Ready in 2.1s
-[00:00:10.642] Server  LOG      ○ Compiling /auth ...
-[01:02:41.009] Server  LOG      ✓ Compiled in 1263ms
-[01:02:48.186] Server  LOG      ✓ Compiled in 129ms
-[01:02:55.072] Server  LOG      ✓ Compiled in 125ms
-[01:03:14.604] Server  LOG      ✓ Compiled in 99ms
-[01:03:21.018] Server  LOG      ✓ Compiled in 379ms
-[01:03:52.526] Server  LOG      ✓ Compiled in 104ms
-[01:04:34.752] Server  LOG      ✓ Compiled in 591ms
-[01:05:01.692] Server  LOG      ✓ Compiled in 129ms
-[01:05:17.688] Server  LOG      ✓ Compiled in 102ms
-[01:05:55.575] Server  LOG      ✓ Compiled in 139ms
+[00:00:02.891] Server  LOG      ✓ Ready in 2.1s
+[00:00:06.063] Server  LOG      ○ Compiling / ...
+[00:00:11.497] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:00:14.703] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:00:20.417] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:00:54.645] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:54.649] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./utils/supabase/alSupabase.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:54.652] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:54.675] Server  LOG      ✓ Compiled in 150ms
