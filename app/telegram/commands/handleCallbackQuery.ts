@@ -11,7 +11,7 @@ export async function handleCallbackQuery(callbackQuery: any) {
         const {data: user, error} = await supabaseAdmin
             .from('users')
             .select('telegram_notifications')
-            .eq('telegram_id', chatId)
+            .eq('telegram_id', userId)
             .single()
         if(error || !user){
             await tgSend(chatId, "Сначала привяжи аккаунт")

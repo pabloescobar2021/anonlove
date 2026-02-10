@@ -9,15 +9,18 @@ import { handleCallbackQuery } from "@/app/telegram/commands/handleCallbackQuery
 export async function POST(req: Request){
     try{
         const update = await req.json()
-        const message = update.message
+        if(update.callback_query){
+            await handleCallbackQuery(update.callback_query)
+            return NextResponse.json({ok: true})
+        }
 
+        const message = update.message
         if(!message?.text){
             return NextResponse.json({ok: true})
         }
 
         const chatId = message.from.id
         const text = message.text.trim()
-        // const username = message.from.username
         if(text.startsWith("/start link_")){
             await handleStartLink(message)
         }
@@ -25,8 +28,6 @@ export async function POST(req: Request){
         const handler = tgCommandMap[text]
         if(handler){
             await handler(message)
-        }else if(update.callback_query){
-            await handleCallbackQuery(update.callback_query)
         }
         else{
             await tgSend(chatId, "Чё бля?")
