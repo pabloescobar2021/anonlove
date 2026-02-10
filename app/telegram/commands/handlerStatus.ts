@@ -24,6 +24,7 @@ export async function handlerStatus(message: TelegramMessage) {
 <b>👤 Твой профиль:</b> 
   
 <b>🆔 Telegram ID:</b> <code>${user.telegram_id}</code>
+<b>Статус привязки: ${user.telegram_id ? "Привязан" : "Не привязан"}</b>
 <b>👤 Username: </b> ${user.telegram_username ? `@${user.telegram_username}` : "Не указан"}
 <b>🔔 Уведомлени:я</b> ${user.telegram_notifications ? "Включены" : "Выключены"}
 <b>🌐 Сайт: </b> anonlove.vercel.app
@@ -32,8 +33,12 @@ export async function handlerStatus(message: TelegramMessage) {
     const toggleButton = [
         [
             {
-                text: user.telegram_notifications ? "Выключить" : "Включить ",
+                text: user.telegram_notifications ? "Выключить уведомления" : "Включить уведомления",
                 callback_data: `toggle_notif_${user.telegram_id}`
+            },
+            {
+                text: user.telegram_id ? "Отвязать аккаунт" : "",
+                callback_data: user.telegram_id && `remove_link_${user.telegram_id}`
             }
         ]
     ]
