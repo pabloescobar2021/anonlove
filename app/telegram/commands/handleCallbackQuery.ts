@@ -29,17 +29,22 @@ export async function handleCallbackQuery(callbackQuery: any) {
     }
 
     if(data === "remove_link"){
-    console.log("remove_link triggered, chatId:", chatId)
-    
-    const {error: updateError, count} = await supabaseAdmin
-        .from('users')
-        .update({telegram_id: null, telegram_username: null})
-        .eq('telegram_id', chatId)
-        .select() // добавь это
+        const confirmBtns = [[
+            {text: "Да, отвязать", callback_data: "remove_link_confirm"},
+            {text: "Назад", callback_data: "remove_link_cancel"}
+        ]]
+        await tgSend(chatId, "Вы точно хотите отвязать аккаунт?", "HTML" ,confirmBtns)  
+    }
+    if(data === "remove_link_confirm"){
+        const {error: updateError, count} = await supabaseAdmin
+            .from('users')
+            .update({telegram_id: null, telegram_username: null})
+            .eq('telegram_id', chatId)
+            .select() // добавь это
 
-    console.log("updateError:", updateError)
-    console.log("updated rows:", count)
-        
-    await tgSend(chatId, "Привязка удалена")
+        await tgSend(chatId, "Привязка удалена")
+    }
+    if(data === "remove_link_cancel"){
+        await tgSend(chatId, "Отменено")
     }
 }
