@@ -5,7 +5,7 @@ import type { TelegramMessage } from "../../type";
 export async function handleWrite(message: TelegramMessage) {
     const chatId = message.from.id
     const messageId = message.message_id
-    const parts = message.text.trim().split("")
+    const parts = message.text.trim().split(" ")
     const targetId = parts[1]
 
     if(!targetId) {
