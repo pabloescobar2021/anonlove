@@ -4,6 +4,7 @@ import { handleStartLink } from "@/app/telegram/commands/handleStartLink";
 import { tgCommandMap } from "@/app/telegram/commands/tgCommandMap";
 import { tgSend } from "@/app/telegram/tgSend";
 import { handleCallbackQuery } from "@/app/telegram/commands/handleCallbackQuery";
+import { handleWrite } from "@/app/telegram/commands/write/handleWrite";
 
 
 export async function POST(req: Request){
@@ -21,8 +22,14 @@ export async function POST(req: Request){
 
         const chatId = message.from.id
         const text = message.text.trim()
+
         if(text.startsWith("/start link_")){
             await handleStartLink(message)
+            return NextResponse.json({ok: true})
+        }
+        if(text.startsWith("/write ")){
+            await handleWrite(message)
+            return NextResponse.json({ok: true})
         }
         
         const handler = tgCommandMap[text]
