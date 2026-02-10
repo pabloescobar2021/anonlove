@@ -4,12 +4,12 @@ import type { TelegramMessage } from "../../type";
 
 export async function handleWrite(message: TelegramMessage) {
     const chatId = message.from.id
-    const messageId = message.message_id
     const parts = message.text.trim().split(" ")
     const targetId = parts[1]
 
     if(!targetId) {
-        await tgEdit(chatId, messageId, "Напишите /write <ID>")
+        await tgSend(chatId, "Напишите /write <ID>")
+        return
     }
 
     const {data: user, error} = await supabaseAdmin
@@ -18,7 +18,7 @@ export async function handleWrite(message: TelegramMessage) {
         .eq('public_id', targetId)
         .single()
     if(error || !user) {
-        await tgEdit(chatId, messageId,"Пользователь не найден")
+        await tgSend(chatId, "Пользователь не найден")
         return
     }
 
@@ -28,5 +28,5 @@ export async function handleWrite(message: TelegramMessage) {
         {text: "Перейти", url: url},
     ]]
 
-    await tgEdit(chatId, messageId, "Ссылка отправлена", "HTML", btns)
+    await tgSend(chatId, `Написать пользователю <code>${targetId}</code>`, "HTML", btns)
 }
