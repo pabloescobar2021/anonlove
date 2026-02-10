@@ -35,7 +35,7 @@ async function getCurrentUser() {
     return data.user;
 }
 async function getUserProfile(userId) {
-    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username").eq("id_user", userId).single();
+    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username, telegram_id").eq("id_user", userId).single();
     if (error) return null;
     return data;
 }
@@ -341,7 +341,7 @@ function useMessages(userId) {
         });
         if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
-        await fetch("/api/telegram/sendNotifyTg", {
+        fetch("/api/telegram/sendNotifyTg", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -2913,14 +2913,21 @@ function MainPage() {
                         lineNumber: 200,
                         columnNumber: 17
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    user && !profile.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "p-2 bg-white/20 rounded-full m-2",
                         onClick: (e)=>startTelegramLink(),
                         children: "Привязать телеграмм"
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 208,
-                        columnNumber: 17
+                        lineNumber: 211,
+                        columnNumber: 21
+                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "p-2 bg-white/20 rounded-full m-2",
+                        children: profile?.telegram_username
+                    }, void 0, false, {
+                        fileName: "[project]/app/main.tsx",
+                        lineNumber: 218,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl",
@@ -2932,12 +2939,12 @@ function MainPage() {
                             children: "Выйти"
                         }, void 0, false, {
                             fileName: "[project]/app/main.tsx",
-                            lineNumber: 216,
+                            lineNumber: 224,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 215,
+                        lineNumber: 223,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2946,7 +2953,7 @@ function MainPage() {
                         children: `>`
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 226,
+                        lineNumber: 234,
                         columnNumber: 17
                     }, this)
                 ]

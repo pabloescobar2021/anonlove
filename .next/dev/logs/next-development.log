@@ -32,3 +32,35 @@
 [00:44:22.775] Server  LOG      ✓ Compiled in 109ms
 [00:46:01.639] Server  LOG      ✓ Compiled in 148ms
 [00:46:20.078] Server  LOG      ✓ Compiled in 132ms
+[00:51:49.016] Server  LOG      ✓ Compiled in 718ms
+[00:55:31.750] Server  LOG      ✓ Compiled in 144ms
+[00:56:55.565] Server  LOG      ✓ Compiled in 163ms
+[00:56:57.391] Server  LOG      ✓ Compiled in 153ms
+[00:57:05.636] Server  LOG      ✓ Compiled in 96ms
+[00:57:51.809] Server  LOG      ✓ Compiled in 177ms
+[00:58:03.069] Server  LOG      ✓ Compiled in 134ms
+[01:00:11.945] Server  LOG      ✓ Compiled in 138ms
+[01:00:27.886] Server  LOG      ✓ Compiled in 179ms
+[01:01:04.455] Server  LOG      ✓ Compiled in 179ms
+[01:01:12.070] Server  LOG      ✓ Compiled in 839ms
+[01:09:22.039] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_id')
+[01:09:25.044] Server  LOG      ○ Compiling /auth ...
+[01:09:30.352] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_id')
+[01:10:04.488] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_id')
+[01:12:15.968] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:12:15.973] Server  LOG      ✓ Compiled in 390ms
+[01:12:26.005] Server  LOG      ✓ Compiled in 111ms
+[01:12:47.299] Server  LOG      ✓ Compiled in 136ms
+[01:12:52.340] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_id')
+[01:13:29.094] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:13:29.324] Server  LOG      ✓ Compiled in 98ms
+[01:13:30.220] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_id')
+[01:13:37.800] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:13:37.811] Server  LOG      ✓ Compiled in 178ms
+[01:13:38.950] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'username')
+[01:13:45.521] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:13:45.982] Server  LOG      ✓ Compiled in 142ms
+[01:13:46.691] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'telegram_username')
+[01:14:22.083] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:14:22.091] Server  LOG      ✓ Compiled in 105ms
+[01:16:35.638] Server  LOG      ✓ Compiled in 125ms

@@ -9,7 +9,7 @@ export async function getCurrentUser() {
 export async function getUserProfile(userId: string) {
     const {data, error} = await supabase
         .from("users")
-        .select("public_id, username")
+        .select("public_id, username, telegram_id")
         .eq("id_user", userId)
         .single()
     if(error) return null

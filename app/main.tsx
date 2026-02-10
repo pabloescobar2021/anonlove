@@ -205,12 +205,20 @@ export default function MainPage() {
                     
                 </div>
 
-                <button 
-                    className="p-2 bg-white/20 rounded-full m-2"
-                    onClick={(e) => startTelegramLink()}
-                >
-                    Привязать телеграмм
-                </button>
+                {/* telegram привязка или username */}
+                {(user) && !profile.telegram_username
+                ? (
+                    <button 
+                        className="p-2 bg-white/20 rounded-full m-2"
+                        onClick={(e) => startTelegramLink()}
+                    >
+                        Привязать телеграмм 
+                    </button>
+                ):(
+                    <button className="p-2 bg-white/20 rounded-full m-2">
+                        {profile?.telegram_username}
+                    </button>
+                )}
 
                 <div className="absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl">
                     <button

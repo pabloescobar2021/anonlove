@@ -7,6 +7,7 @@ export async function POST(req: Request){
         const message = update.message
         const chatId = message.from.id
         const text = message.text
+        const username = message.from.username
     
         if(!chatId || !text) return NextResponse.json({ok: true})
         
@@ -28,7 +29,8 @@ export async function POST(req: Request){
         const {error: userError} = await supabaseAdmin
             .from('users')
             .update({
-                telegram_id: chatId
+                telegram_id: chatId,
+                telegram_username: username
             })
             .eq("id_user", codeData.user_id)
     

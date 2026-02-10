@@ -76,7 +76,7 @@ export function useMessages(userId: string | null) {
         if(errorMsg) throw errorMsg
 
         // уведомляем о сообщении
-        await fetch("/api/telegram/sendNotifyTg", {
+        fetch("/api/telegram/sendNotifyTg", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
