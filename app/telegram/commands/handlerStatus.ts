@@ -21,11 +21,10 @@ export async function handlerStatus(message: TelegramMessage) {
     }
 
     const statusText = `
-<b>👤 Твой профиль</b>   
+<b>👤 Твой профиль:</b>   
+
 <b>Username: </b> ${user.telegram_username ? `@${user.telegram_username}` : "Не указан"}
-
 <b>🔔 Уведомления</b> ${user.telegram_notifications ? "Вкл." : "Выкл."}
-
 <b> Сайт: </b> anonlove.vercel.app
 `.trim()
 

@@ -8,5 +8,5 @@ export type tgCommandHandler = (msg: TelegramMessage) => Promise<void>;
 export const tgCommandMap: Record<string, tgCommandHandler> = {
     "/notifications": handleNotificationToggle,
     "/anonlove": handleToPage,
-    "status": handlerStatus
+    "/status": handlerStatus,
 }
