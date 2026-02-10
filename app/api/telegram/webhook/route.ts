@@ -1,8 +1,9 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 import { NextResponse } from "next/server";
-import { handleStartLink } from "@/app/telegram/handleStartLink";
-import { handleNotificationToggle } from "@/app/telegram/handleNotificationToggle";
+import { handleStartLink } from "@/app/telegram/commands/handleStartLink";
+import { tgCommandMap } from "@/app/telegram/commands/tgCommandMap";
 import { tgSend } from "@/app/telegram/tgSend";
+
 
 export async function POST(req: Request){
     try{
@@ -19,10 +20,11 @@ export async function POST(req: Request){
         if(text.startsWith("/start link_")){
             await handleStartLink(message)
         }
-        else if(text === '/notifications'){
-            await handleNotificationToggle(message)
-        }
-        else{
+        
+        const handler = tgCommandMap[text]
+        if(handler){
+            await handler(message)
+        }else{
             await tgSend(chatId, "Чё бля?")
         }
 

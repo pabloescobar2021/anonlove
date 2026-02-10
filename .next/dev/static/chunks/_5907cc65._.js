@@ -119,7 +119,7 @@ async function getCurrentUser() {
     return data.user;
 }
 async function getUserProfile(userId) {
-    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username").eq("id_user", userId).single();
+    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username, telegram_id, telegram_username").eq("id_user", userId).single();
     if (error) return null;
     return data;
 }
@@ -424,6 +424,17 @@ function useMessages(userId) {
             body
         });
         if (errorMsg) throw errorMsg;
+        // уведомляем о сообщении
+        fetch("/api/telegram/sendNotifyTg", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId: receiverId,
+                text: `Новое сообщение от ${userId}`
+            })
+        });
         await loadMessage();
         return data;
     };

@@ -1,5 +1,5 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin"
-import { tgSend } from "./tgSend"
+import { tgSend } from "../tgSend"
 
 export async function handleStartLink(message: any){
     const chatId = message.from.id
