@@ -1,3 +1,4 @@
 {
+  "/api/telegram/start/route": "app/api/telegram/start/route.js",
   "/page": "app/page.js"
 }

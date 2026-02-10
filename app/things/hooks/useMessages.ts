@@ -4,8 +4,7 @@ import { useState, useEffect, useMemo } from "react"
 import { supabase } from "@/utils/supabase/alSupabase"
 import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
 import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
-import { parseBackendDate } from "../utils/parseDate"
-
+import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
 
 
 export function useMessages(userId: string | null) {
@@ -75,6 +74,18 @@ export function useMessages(userId: string | null) {
                 body
             })
         if(errorMsg) throw errorMsg
+
+        // уведомляем о сообщении
+        await fetch("/api/telegram/sendNotifyTg", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ 
+                userId: receiverId, 
+                text: `Новое сообщение от ${userId}` 
+            })
+        })
 
         await loadMessage()
 

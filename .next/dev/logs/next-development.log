@@ -7,3 +7,28 @@
 [00:00:54.649] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./utils/supabase/alSupabase.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
 [00:00:54.652] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 [00:00:54.675] Server  LOG      ✓ Compiled in 150ms
+[00:26:01.571] Server  LOG      ✓ Compiled in 801ms
+[00:26:03.402] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:27:54.225] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:54.228] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/things/hooks/useMessages.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:54.231] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:27:54.234] Server  LOG      ✓ Compiled in 138ms
+[00:27:55.407] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:30:16.245] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:30:16.250] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/things/hooks/useMessages.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:16.254] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:30:16.265] Server  LOG      ✓ Compiled in 129ms
+[00:30:18.551] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:32:24.664] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.667] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/things/hooks/useMessages.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:32:24.671] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:32:24.674] Server  LOG      ✓ Compiled in 165ms
+[00:32:29.412] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:39:43.396] Browser ERROR   uncaughtError: Error: supabaseKey is required.
+[00:44:04.113] Server  LOG      ✓ Compiled in 609ms
+[00:44:04.139] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:44:04.141] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/things/hooks/useMessages.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:44:04.151] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:44:22.775] Server  LOG      ✓ Compiled in 109ms
+[00:46:01.639] Server  LOG      ✓ Compiled in 148ms
+[00:46:20.078] Server  LOG      ✓ Compiled in 132ms

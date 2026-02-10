@@ -340,6 +340,17 @@ function useMessages(userId) {
             body
         });
         if (errorMsg) throw errorMsg;
+        // уведомляем о сообщении
+        await fetch("/api/telegram/sendNotifyTg", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId: receiverId,
+                text: `Новое сообщение от ${userId}`
+            })
+        });
         await loadMessage();
         return data;
     };
