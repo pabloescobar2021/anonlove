@@ -35,7 +35,7 @@ async function getCurrentUser() {
     return data.user;
 }
 async function getUserProfile(userId) {
-    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username, telegram_id").eq("id_user", userId).single();
+    const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("public_id, username, telegram_id, telegram_username").eq("id_user", userId).single();
     if (error) return null;
     return data;
 }
@@ -2869,12 +2869,12 @@ function MainPage() {
                 children: "ЗагруОчка..."
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 167,
+                lineNumber: 166,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/main.tsx",
-            lineNumber: 166,
+            lineNumber: 165,
             columnNumber: 13
         }, this);
     }
@@ -2892,7 +2892,7 @@ function MainPage() {
                 refresh: refresh
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 177,
+                lineNumber: 176,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2910,7 +2910,7 @@ function MainPage() {
                         children: profile?.public_id
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 200,
+                        lineNumber: 199,
                         columnNumber: 17
                     }, this),
                     user && !profile.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2919,14 +2919,14 @@ function MainPage() {
                         children: "Привязать телеграмм"
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 211,
+                        lineNumber: 210,
                         columnNumber: 21
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "p-2 bg-white/20 rounded-full m-2",
                         children: profile?.telegram_username
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 218,
+                        lineNumber: 217,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2939,12 +2939,12 @@ function MainPage() {
                             children: "Выйти"
                         }, void 0, false, {
                             fileName: "[project]/app/main.tsx",
-                            lineNumber: 224,
+                            lineNumber: 223,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 223,
+                        lineNumber: 222,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2953,19 +2953,19 @@ function MainPage() {
                         children: `>`
                     }, void 0, false, {
                         fileName: "[project]/app/main.tsx",
-                        lineNumber: 234,
+                        lineNumber: 233,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 190,
+                lineNumber: 189,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/main.tsx",
-        lineNumber: 174,
+        lineNumber: 173,
         columnNumber: 9
     }, this);
 }

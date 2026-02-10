@@ -32,7 +32,6 @@ export default function MainPage() {
 
     const [openProfile, setOpenProfile] = useState(false); // profile слева
 
-    
 
     const styleToNotSwipe: React.CSSProperties = {
         overscrollBehavior: 'contain',
@@ -206,7 +205,7 @@ export default function MainPage() {
                 </div>
 
                 {/* telegram привязка или username */}
-                {(user) && !profile.telegram_username
+                {(user && !profile.telegram_username) 
                 ? (
                     <button 
                         className="p-2 bg-white/20 rounded-full m-2"

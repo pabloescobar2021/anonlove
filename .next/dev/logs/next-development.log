@@ -64,3 +64,29 @@
 [01:14:22.083] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 [01:14:22.091] Server  LOG      ✓ Compiled in 105ms
 [01:16:35.638] Server  LOG      ✓ Compiled in 125ms
+[01:26:00.280] Server  LOG      ✓ Compiled in 395ms
+[01:26:27.096] Server  LOG      ✓ Compiled in 127ms
+[01:27:07.394] Server  LOG      ✓ Compiled in 272ms
+[01:27:07.542] Browser LOG     797601302
+[01:27:07.542] Browser LOG     [2;38;2;124;124;124m%s[0m 797601302
+[01:27:07.543] Browser LOG     797601302
+[01:27:07.543] Browser LOG     [2;38;2;124;124;124m%s[0m 797601302
+[01:27:07.640] Browser LOG     797601302
+[01:27:07.640] Browser LOG     [2;38;2;124;124;124m%s[0m 797601302
+[01:27:08.200] Browser LOG     797601302
+[01:27:08.201] Browser LOG     [2;38;2;124;124;124m%s[0m 797601302
+[01:27:13.085] Server  LOG      ✓ Compiled in 166ms
+[01:27:13.379] Browser LOG     undefined
+[01:27:13.380] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:13.380] Browser LOG     undefined
+[01:27:13.380] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:13.528] Browser LOG     undefined
+[01:27:13.529] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:13.817] Browser LOG     undefined
+[01:27:13.817] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:32.650] Browser LOG     undefined
+[01:27:32.650] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:32.847] Browser LOG     undefined
+[01:27:32.847] Browser LOG     [2;38;2;124;124;124m%s[0m undefined
+[01:27:35.268] Server  LOG      ✓ Compiled in 204ms
+[01:27:48.628] Server  LOG      ✓ Compiled in 228ms
