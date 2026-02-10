@@ -18,9 +18,7 @@ export async function tgSend(
         await fetch (`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ 
-                body
-            }),
+            body: JSON.stringify(body),
         })
     } catch(e){
         console.error('Failed to send Telegram message:', e)
