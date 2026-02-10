@@ -28,15 +28,18 @@ export async function handleCallbackQuery(callbackQuery: any) {
         await tgSend(chatId, `Уведомления теперь ${newValue ? "включены" : "выключены"}`)
     }
 
-    if(data === "remove_link" ){
+    if(data === "remove_link"){
+    console.log("remove_link triggered, chatId:", chatId)
+    
+    const {error: updateError, count} = await supabaseAdmin
+        .from('users')
+        .update({telegram_id: null, telegram_username: null})
+        .eq('telegram_id', chatId)
+        .select() // добавь это
 
-        const {error: updateError} = await supabaseAdmin
-            .from('users')
-            .update({telegram_id: null, telegram_username: null})
-            .eq('telegram_id', chatId)
-
-        if(updateError) console.log("Error updating user:", updateError)
-            
-        await tgSend(chatId, "Привязка удалена")
+    console.log("updateError:", updateError)
+    console.log("updated rows:", count)
+        
+    await tgSend(chatId, "Привязка удалена")
     }
 }
