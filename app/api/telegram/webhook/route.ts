@@ -27,7 +27,7 @@ export async function POST(req: Request){
             await handleStartLink(message)
             return NextResponse.json({ok: true})
         }
-        if(text.startsWith("/write ")){
+        if(text.startsWith("/write")){
             await handleWrite(message)
             return NextResponse.json({ok: true})
         }
