@@ -8,7 +8,9 @@ export async function handleWrite(message: TelegramMessage) {
     const targetId = parts[1]
 
     if(!targetId) {
+        console.log("targetId is empty, sending help message to", chatId)
         await tgSend(chatId, "Напишите /write <ID>")
+        console.log("sent")
         return
     }
 
@@ -28,5 +30,5 @@ export async function handleWrite(message: TelegramMessage) {
         {text: "Перейти", url: url},
     ]]
 
-    await tgSend(chatId, `Написать пользователю <code>${targetId}</code>`, "HTML", btns)
+    await tgSend(chatId, `Создать анонимку <code>${targetId}</code>`, "HTML", btns)
 }
