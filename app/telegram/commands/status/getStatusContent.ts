@@ -6,7 +6,8 @@ export async function getStatusContent(chatId: number) {
             .select(`
                 telegram_id, 
                 telegram_notifications, 
-                telegram_username
+                telegram_username,
+                public_id
             `)
             .eq("telegram_id", chatId)
             .single()
@@ -16,7 +17,7 @@ export async function getStatusContent(chatId: number) {
     const text = `
 <b>👤 Твой профиль:</b> 
   
-<b>🆔 Telegram ID:</b> <code>${user.telegram_id}</code>
+<b>🆔 Anon ID:</b> <code>${user.public_id}</code>
 <b>Статус привязки: ${user.telegram_id ? "Привязан" : "Не привязан"}</b>
 <b>👤 Username: </b> ${user.telegram_username ? `@${user.telegram_username}` : "Не указан"}
 <b>🔔 Уведомлени:я</b> ${user.telegram_notifications ? "Включены" : "Выключены"}
