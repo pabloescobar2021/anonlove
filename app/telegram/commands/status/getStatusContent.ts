@@ -1,26 +1,19 @@
-import { tgSend } from "../tgSend";
-import type { TelegramMessage } from "../type";
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 
-export async function handlerStatus(message: TelegramMessage) {
-    const chatId = message.from.id
-
+export async function getStatusContent(chatId: number) {
     const {data: user, error} = await supabaseAdmin
-        .from("users")
-        .select(`
-            telegram_id, 
-            telegram_notifications, 
-            telegram_username
-        `)
-        .eq("telegram_id", chatId)
-        .single()
+            .from("users")
+            .select(`
+                telegram_id, 
+                telegram_notifications, 
+                telegram_username
+            `)
+            .eq("telegram_id", chatId)
+            .single()
+    
+        if(error || !user) return null
 
-    if(error || !user){
-        await tgSend(chatId, "Сначала привяжи аккаунт")
-        return
-    }
-
-    const statusText = `
+    const text = `
 <b>👤 Твой профиль:</b> 
   
 <b>🆔 Telegram ID:</b> <code>${user.telegram_id}</code>
@@ -30,7 +23,7 @@ export async function handlerStatus(message: TelegramMessage) {
 <b>🌐 Сайт: </b> anonlove.vercel.app
 `.trim()
 
-    const toggleButton = [
+    const buttons = [
         [
             {
                 text: user.telegram_notifications ? "Выключить уведомления" : "Включить уведомления",
@@ -44,5 +37,5 @@ export async function handlerStatus(message: TelegramMessage) {
         ]    
     ]
 
-    await tgSend(chatId, statusText, "HTML", toggleButton)
+    return {text, buttons}
 }

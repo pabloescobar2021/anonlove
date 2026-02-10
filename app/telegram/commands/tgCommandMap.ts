@@ -1,6 +1,6 @@
 import type { TelegramMessage } from "../type";
 import { handleNotificationToggle } from "./handleNotificationToggle";
-import { handlerStatus } from "./handlerStatus";
+import { handlerStatus } from "./status/handlerStatus";
 import { handleToPage } from "./HandlertoPage";
 
 export type tgCommandHandler = (msg: TelegramMessage) => Promise<void>;

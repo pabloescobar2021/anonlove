@@ -1,8 +1,10 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
-import { tgSend } from "../tgSend";
+import { tgSend, tgEdit } from "../tgSend";
+import { getStatusContent } from "./status/getStatusContent";
 
 export async function handleCallbackQuery(callbackQuery: any) {
     const chatId = callbackQuery.from.id
+    const messageId = callbackQuery.message.message_id
     const data = callbackQuery.data
 
     if (data.startsWith("toggle_notif")){
@@ -19,13 +21,13 @@ export async function handleCallbackQuery(callbackQuery: any) {
         }
 
         const newValue = !user.telegram_notifications
-
         await supabaseAdmin
             .from('users')
             .update({telegram_notifications: newValue})
             .eq('telegram_id', chatId)
 
-        await tgSend(chatId, `Уведомления теперь ${newValue ? "включены" : "выключены"}`)
+        const content = await getStatusContent(chatId)
+        if(content) await tgEdit(chatId, messageId, content.text, "HTML", content.buttons)
     }
 
     if(data === "remove_link"){
@@ -33,7 +35,7 @@ export async function handleCallbackQuery(callbackQuery: any) {
             {text: "Да, отвязать", callback_data: "remove_link_confirm"},
             {text: "Назад", callback_data: "remove_link_cancel"}
         ]]
-        await tgSend(chatId, "Вы точно хотите отвязать аккаунт?", "HTML" ,confirmBtns)  
+        await tgEdit(chatId, messageId,"Вы точно хотите отвязать аккаунт?", "HTML" ,confirmBtns)  
     }
     if(data === "remove_link_confirm"){
         const {error: updateError, count} = await supabaseAdmin
@@ -42,9 +44,10 @@ export async function handleCallbackQuery(callbackQuery: any) {
             .eq('telegram_id', chatId)
             .select() // добавь это
 
-        await tgSend(chatId, "Привязка удалена")
+        await tgEdit(chatId, messageId,"Привязка удалена")
     }
     if(data === "remove_link_cancel"){
-        await tgSend(chatId, "Отменено")
+        const content = await getStatusContent(chatId)  
+        if(content) await tgEdit(chatId, messageId, content.text, "HTML", content.buttons)
     }
 }
