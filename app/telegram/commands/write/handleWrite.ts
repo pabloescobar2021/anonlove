@@ -9,7 +9,7 @@ export async function handleWrite(message: TelegramMessage) {
 
     if(!targetId) {
         console.log("targetId is empty, sending help message to", chatId)
-        await tgSend(chatId, "Напишите `write <ID>`")
+        await tgSend(chatId, "Использование: /write <code>ID</code>", "HTML")
         console.log("sent")
         return
     }
