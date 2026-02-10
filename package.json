@@ -9,7 +9,8 @@
     "export": "next build && next export",
     "deploy": "gh-pages -d out -r https://github.com/pabloescobar2021/anonlove.git",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pushgit": "git add . && git commit -m 'update' && git push -u origin main"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
