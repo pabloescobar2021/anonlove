@@ -34,7 +34,7 @@ export async function handleCallbackQuery(callbackQuery: any) {
         await supabaseAdmin
             .from('users')
             .update({telegram_id: null, telegram_username: null})
-            .eq('id_user', userId)
+            .eq('telegram_id', userId)
         await tgSend(chatId, "Привязка удалена")
     }
 }
