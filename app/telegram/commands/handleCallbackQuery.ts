@@ -30,10 +30,13 @@ export async function handleCallbackQuery(callbackQuery: any) {
 
     if(data === "remove_link" ){
 
-        await supabaseAdmin
+        const {error: updateError} = await supabaseAdmin
             .from('users')
             .update({telegram_id: null, telegram_username: null})
             .eq('telegram_id', chatId)
+
+        if(updateError) console.log("Error updating user:", updateError)
+            
         await tgSend(chatId, "Привязка удалена")
     }
 }

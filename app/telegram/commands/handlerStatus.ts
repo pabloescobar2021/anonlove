@@ -36,11 +36,12 @@ export async function handlerStatus(message: TelegramMessage) {
                 text: user.telegram_notifications ? "Выключить уведомления" : "Включить уведомления",
                 callback_data: `toggle_notif_${user.telegram_id}`
             },
-            {
-                text: user.telegram_id ? "Отвязать аккаунт" : "",
-                callback_data: user.telegram_id && `remove_link`
-            }
-        ]
+
+            ...(user.telegram_id ? [{
+                text: "Отвязать аккаунт",
+                callback_data: "remove_link"
+            }]: [])
+        ]    
     ]
 
     await tgSend(chatId, statusText, "HTML", toggleButton)
