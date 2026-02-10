@@ -12,7 +12,7 @@ export async function sendTelegramNotification(userId: string, text:string){
     }
     const chatId = user.telegram_id
     
-
+    // бот шлет сообщение об уведомлении что пришло сообщение
     try{
         await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: "POST",

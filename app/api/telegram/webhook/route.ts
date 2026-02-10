@@ -1,48 +1,31 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 import { NextResponse } from "next/server";
+import { handleStartLink } from "@/app/telegram/handleStartLink";
+import { handleNotificationToggle } from "@/app/telegram/handleNotificationToggle";
+import { tgSend } from "@/app/telegram/tgSend";
 
 export async function POST(req: Request){
     try{
         const update = await req.json()
         const message = update.message
+
+        if(!message?.text){
+            return NextResponse.json({ok: true})
+        }
+
         const chatId = message.from.id
-        const text = message.text
-        const username = message.from.username
-    
-        if(!chatId || !text) return NextResponse.json({ok: true})
-        
-        if (!text.startsWith("/start link_")) return NextResponse.json({ ok: true });
-    
-        const code = text.replace('/start link_', '')
-        
-        const {data: codeData, error: codeError} = await supabaseAdmin
-            .from("telegram_reg_codes")
-            .select("*")
-            .eq("code", code)
-            .single()
-    
-        if(codeError || !codeData) {
-            await sendMessage(chatId, "Код не найден")
-            return NextResponse.json({ok: true})
+        const text = message.text.trim()
+        // const username = message.from.username
+        if(text.startsWith("/start link_")){
+            await handleStartLink(message)
         }
-    
-        const {error: userError} = await supabaseAdmin
-            .from('users')
-            .update({
-                telegram_id: chatId,
-                telegram_username: username
-            })
-            .eq("id_user", codeData.user_id)
-    
-        if(userError){
-            console.error("Failed to update user:", userError)
-            await sendMessage(chatId, "Произошла ошибка, попробуйте позже")
-            return NextResponse.json({ok: true})
+        else if(text === '/notifications'){
+            await handleNotificationToggle(message)
         }
-    
-        await supabaseAdmin.from("telegram_reg_codes").delete().eq("code", code)
-    
-        await sendMessage(chatId, "привязано")
+        else{
+            await tgSend(chatId, "Чё бля?")
+        }
+
         return NextResponse.json({ok: true})
     } catch(e){
         console.log("webhook error", e)
@@ -51,15 +34,3 @@ export async function POST(req: Request){
 }
 
 
-
-async function sendMessage(chatId: number, text: string) {
-  try {
-    await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: chatId, text }),
-    });
-  } catch (e) {
-    console.error("Failed to send TG message:", e);
-  }
-}
