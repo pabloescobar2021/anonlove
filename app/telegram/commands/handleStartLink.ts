@@ -1,7 +1,8 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin"
 import { tgSend } from "../tgSend"
+import type { TelegramMessage } from "../type"
 
-export async function handleStartLink(message: any){
+export async function handleStartLink(message: TelegramMessage){
     const chatId = message.from.id
     const username = message.from.username
     const text = message.text

@@ -1,7 +1,8 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
-import { tgSend } from "./tgSend";
+import { tgSend } from "../tgSend";
+import type { TelegramMessage } from "../type";
 
-export async function handleNotificationToggle(message: any) {
+export async function handleNotificationToggle(message: TelegramMessage) {
     const chatId = message.from.id
 
     const {data: user, error} = await supabaseAdmin
