@@ -89,6 +89,8 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -577,6 +579,10 @@
     margin-top: calc(var(--spacing) * 5);
   }
 
+  .mt-auto {
+    margin-top: auto;
+  }
+
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
@@ -670,6 +676,10 @@
 
   .h-30 {
     height: calc(var(--spacing) * 30);
+  }
+
+  .h-32 {
+    height: calc(var(--spacing) * 32);
   }
 
   .h-40 {
@@ -766,6 +776,10 @@
 
   .w-90 {
     width: calc(var(--spacing) * 90);
+  }
+
+  .w-96 {
+    width: calc(var(--spacing) * 96);
   }
 
   .w-auto {
@@ -1065,6 +1079,11 @@
     border-width: 2px;
   }
 
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+
   .border-r {
     border-right-style: var(--tw-border-style);
     border-right-width: 1px;
@@ -1154,6 +1173,16 @@
 
   .bg-\[\#8f1850f0\] {
     background-color: #8f1850f0;
+  }
+
+  .bg-\[\#229ED9\]\/20 {
+    background-color: #229ed933;
+    background-color: lab(60.8465% -17.6243 -39.9525 / .2);
+  }
+
+  .bg-\[\#229ED9\]\/30 {
+    background-color: #229ed94d;
+    background-color: lab(60.8465% -17.6243 -39.9525 / .3);
   }
 
   .bg-\[\#12080b\] {
@@ -1543,6 +1572,10 @@
     padding: calc(var(--spacing) * 6);
   }
 
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
@@ -1563,12 +1596,24 @@
     padding-block: calc(var(--spacing) * 2);
   }
 
+  .pt-6 {
+    padding-top: calc(var(--spacing) * 6);
+  }
+
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
   }
 
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+
   .text-center {
     text-align: center;
+  }
+
+  .text-left {
+    text-align: left;
   }
 
   .text-right {
@@ -1577,6 +1622,11 @@
 
   .font-mono {
     font-family: var(--font-geist-mono);
+  }
+
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
 
   .text-lg {
@@ -1633,6 +1683,10 @@
     white-space: nowrap;
   }
 
+  .text-\[\#229ED9\] {
+    color: #229ed9;
+  }
+
   .text-\[\#cdcdcd\] {
     color: #cdcdcd;
   }
@@ -1659,6 +1713,16 @@
 
   .text-white {
     color: var(--color-white);
+  }
+
+  .text-white\/30 {
+    color: #ffffff4d;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .text-white\/30 {
+      color: color-mix(in oklab, var(--color-white) 30%, transparent);
+    }
   }
 
   .text-white\/40 {
@@ -1899,6 +1963,11 @@
     user-select: none;
   }
 
+  .select-text {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
   @media (hover: hover) {
     .group-hover\:hidden:is(:where(.group):hover *) {
       display: none;
@@ -1979,6 +2048,18 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-red-500\/10:hover {
+      background-color: #fb2c361a;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-red-500\/10:hover {
+        background-color: color-mix(in oklab, var(--color-red-500) 10%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-red-600:hover {
       background-color: var(--color-red-600);
     }
@@ -1992,6 +2073,18 @@
     @supports (color: color-mix(in lab, red, red)) {
       .hover\:bg-white\/10:hover {
         background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-white\/15:hover {
+      background-color: #ffffff26;
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-white\/15:hover {
+        background-color: color-mix(in oklab, var(--color-white) 15%, transparent);
       }
     }
   }
@@ -2177,6 +2270,10 @@
     --tw-scale-y: 95%;
     --tw-scale-z: 95%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+
+  .active\:scale-\[0\.98\]:active {
+    scale: .98;
   }
 
   .disabled\:cursor-not-allowed:disabled {

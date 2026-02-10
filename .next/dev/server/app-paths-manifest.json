@@ -1,5 +1,6 @@
 {
   "/api/telegram/sendNotifyTg/route": "app/api/telegram/sendNotifyTg/route.js",
+  "/api/telegram/start/route": "app/api/telegram/start/route.js",
   "/auth/page": "app/auth/page.js",
   "/createcard/page": "app/createcard/page.js",
   "/page": "app/page.js"

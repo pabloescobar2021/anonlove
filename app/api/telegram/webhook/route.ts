@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { handleStartLink } from "@/app/telegram/commands/handleStartLink";
 import { tgCommandMap } from "@/app/telegram/commands/tgCommandMap";
 import { tgSend } from "@/app/telegram/tgSend";
+import { handleCallbackQuery } from "@/app/telegram/commands/handleCallbackQuery";
 
 
 export async function POST(req: Request){
@@ -24,7 +25,10 @@ export async function POST(req: Request){
         const handler = tgCommandMap[text]
         if(handler){
             await handler(message)
-        }else{
+        }else if(update.callback_query){
+            await handleCallbackQuery(update.callback_query)
+        }
+        else{
             await tgSend(chatId, "Чё бля?")
         }
 

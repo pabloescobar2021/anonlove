@@ -29,5 +29,14 @@ export async function handlerStatus(message: TelegramMessage) {
 <b>🌐 Сайт: </b> anonlove.vercel.app
 `.trim()
 
-    await tgSend(chatId, statusText, "HTML")
+    const toggleButton = [
+        [
+            {
+                text: user.telegram_notifications ? "Выключить" : "Включить ",
+                callback_data: `toggle_notif_${user.telegram_id}`
+            }
+        ]
+    ]
+
+    await tgSend(chatId, statusText, "HTML", toggleButton)
 }

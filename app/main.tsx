@@ -9,10 +9,8 @@ import { useMessages, useDialogs, Dialog } from "./things/hooks/useMessages";
 import { sighOut } from "./things/utils/auth";
 import { useSwipe } from "./things/hooks/useSwipe";
 import { useCheckMobile } from "./things/hooks/checkMobile";
-import {ModalProfile} from "./modal/modalProfile"
-import { MessageActionRoot } from "./contextMenu/messagePanel"; 
-import { UiMessage } from "./things/types/type";
 import { ManagerChat } from "./anonMain/chat/Chat";
+import { ProfilePanel } from "./anonMain/ProfileMenu";
 
 
 
@@ -38,22 +36,6 @@ export default function MainPage() {
         touchAction: 'pan-y'
     }
 
-    // messagePanel
-    const msgRef = useRef<HTMLDivElement>(null) 
-    let timer = useRef<number | null>(null)
-    type ActionState = {
-        message: UiMessage,
-        rect: DOMRect,
-        type: 'desktop' | 'mobile',
-        isMine: boolean
-    } | null
-    const closeMenu = () => {setAction(null); setSelectTouched(null)} // закрытие меню
-    const cancelTouch = () => {clearInterval(timer.current!); setSelectTouched(null)} // отмена тача
-    const [action, setAction] = useState<ActionState>(null)
-    const [isChoose, setIsChoose] = useState(false) // начало выбора
-    const [choosenMsg, setChoosenMsg] = useState<any[]>([]) // выбранные
-    const [selectTouched, setSelectTouched] = useState<string | null>(null)
-    //
 
     const startTelegramLink = async () => {
         const res = await fetch("/api/telegram/start", {
@@ -186,60 +168,17 @@ export default function MainPage() {
 
 
             {/* profile left side */}
-            <div
-                {...(isMobile ? profileSwipe : {})}
-                className={`flex flex-1 flex-col items-center absolute bg-black/50 backdrop-blur-md transition-transform duration-150 ease-in-out will-change-transform
-                    ${openProfile ? "translate-x-0" : "-translate-x-full "}
-                    ${isMobile ? "inset-0" : "w-1/3 h-full"}
-                    `}
-                onClick={(e) => {
-                    e.stopPropagation()
-                }}
-            >
-                <div
-                    className="bg-white/20 backdrop-blur-2xl w-full flexC p-2 rounded-b-2xl"
-                >
-                    {profile?.public_id} 
-
-                    
-                </div>
-
-                {/* telegram привязка или username */}
-                {(user && !profile.telegram_username) 
-                ? (
-                    <button 
-                        className="p-2 bg-white/20 rounded-full m-2"
-                        onClick={(e) => startTelegramLink()}
-                    >
-                        Привязать телеграмм 
-                    </button>
-                ):(
-                    <button className="p-2 bg-white/20 rounded-full m-2">
-                        {profile?.telegram_username}
-                    </button>
-                )}
-
-                <div className="absolute bottom-0 bg-white/10 p-2 backdrop-blur-md w-full flexC rounded-t-2xl">
-                    <button
-                        className="text-red-500"
-                        onClick={() => {
-                            handleSignOut()
-                        }}
-                    >
-                        Выйти
-                    </button>
-                </div>
-
-                <button
-                    className="absolute h-40 top-1/2 -translate-y-1/2 right-0 bg-white/20 backdrop-blur-2xl flexC p-1 
-                            animate-pulse rounded-l-2xl
-                    "
-                    onClick={() => setOpenProfile(false)}
-                >
-                    {`>`}
-                </button>
-
-            </div>
+            
+            <ProfilePanel 
+                open={openProfile}
+                isMobile={isMobile}
+                swipeProps={profileSwipe}
+                profile={profile}
+                user={user}
+                onClose={() => setOpenProfile(false)}
+                onSignOut={handleSignOut}
+                onTelegramLink={startTelegramLink}
+            />
 
             
             

@@ -53,7 +53,7 @@ __turbopack_context__.s([
     "tgSend",
     ()=>tgSend
 ]);
-async function tgSend(chatId, text) {
+async function tgSend(chatId, text, parseMode = "HTML") {
     try {
         await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: "POST",
@@ -62,7 +62,8 @@ async function tgSend(chatId, text) {
             },
             body: JSON.stringify({
                 chat_id: chatId,
-                text
+                text,
+                parse_mode: parseMode
             })
         });
     } catch (e) {
