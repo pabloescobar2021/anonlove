@@ -28,13 +28,12 @@ export async function handleCallbackQuery(callbackQuery: any) {
         await tgSend(chatId, `Уведомления теперь ${newValue ? "включены" : "выключены"}`)
     }
 
-    if(data.startsWith("remove_link")){
-        const userId = data.replace("remove_link_", "")
+    if(data === "remove_link" ){
 
         await supabaseAdmin
             .from('users')
             .update({telegram_id: null, telegram_username: null})
-            .eq('telegram_id', userId)
+            .eq('telegram_id', chatId)
         await tgSend(chatId, "Привязка удалена")
     }
 }

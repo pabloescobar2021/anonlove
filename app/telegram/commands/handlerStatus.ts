@@ -38,7 +38,7 @@ export async function handlerStatus(message: TelegramMessage) {
             },
             {
                 text: user.telegram_id ? "Отвязать аккаунт" : "",
-                callback_data: user.telegram_id && `remove_link_${user.telegram_id}`
+                callback_data: user.telegram_id && `remove_link`
             }
         ]
     ]
