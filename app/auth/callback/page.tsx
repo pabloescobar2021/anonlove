@@ -1,18 +1,30 @@
-'use client'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { supabase } from '@/utils/supabase/client'
+"use client"
 
-export default function AuthCallback() {
+import { useEffect } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { supabase } from "@/utils/supabase/alSupabase"
+
+export default function TelegramLogin() {
     const router = useRouter()
+    const searchParams = useSearchParams()
 
     useEffect(() => {
-        supabase.auth.onAuthStateChange((event, session) => {
-            if (event === 'SIGNED_IN' && session) {
-                router.replace('/')
+        const token = searchParams.get("token")
+        if (!token) return
+
+        const login = async () => {
+            const { error } = await supabase.auth.setSession({
+                access_token: token,
+                refresh_token: token,
+            })
+
+            if (!error) {
+                router.push("/")
             }
-        })
-    }, [router])
+        }
+
+        login()
+    }, [])
 
     return <div>Входим...</div>
 }
