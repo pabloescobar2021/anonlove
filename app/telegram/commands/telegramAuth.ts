@@ -1,38 +1,32 @@
+import crypto from "crypto"
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin"
 import { tgSend } from "../tgSend"
 import type { TelegramMessage } from "../type"
-import { SignJWT } from "jose"
 
 export async function telegramAuth(message: TelegramMessage) {
     const chatId = message.from.id
 
-    const {data: user} = await supabaseAdmin
-        .from('users')
-        .select('id_user')
-        .eq('telegram_id', chatId)
+    const { data: user } = await supabaseAdmin
+        .from("users")
+        .select("id_user") // UUID из auth.users
+        .eq("telegram_id", chatId)
         .single()
-    if(!user) {
-        await tgSend(chatId, "Давай зарегистрируемся")
+
+    if (!user) {
+        await tgSend(chatId, "Аккаунт не найден.")
         return
     }
 
-    try{
-        const secret = new TextEncoder().encode(process.env.SUPABASE_JWT_SECRET!)
-        const token = await new SignJWT({
-            role: 'authenticated',
-            aud: 'authenticated',
-        })
-            .setProtectedHeader({ alg: 'HS256' })
-            .setSubject(user.id_user)
-            .setIssuedAt()
-            .setExpirationTime('1h')
-            .sign(secret)
-        await tgSend(
-            chatId, 
-            `https://anonlove.vercel.app/auth/callback?token=${token}`
-        )
-    } catch(e){
-        console.error(e)
-        await tgSend(chatId, "Произошла ошибка")
-    }
+    const token = crypto.randomBytes(32).toString("hex")
+
+    await supabaseAdmin.from("login_tokens").insert({
+        user_id: user.id_user,
+        token,
+        expires_at: new Date(Date.now() + 2 * 60 * 1000), // 2 минуты
+    })
+
+    await tgSend(
+        chatId,
+        `Войти в аккаунт:\nhttps://anonlove.vercel.app/auth/telegram?token=${token}`
+    )
 }
