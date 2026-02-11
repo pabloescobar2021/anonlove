@@ -18,6 +18,9 @@ export async function telegramAuth(message: TelegramMessage) {
     const {data, error} = await supabaseAdmin.auth.admin.generateLink({
         type: 'magiclink',
         email: user.login,
+        options: {
+        redirectTo: 'https://anonlove.vercel.app' // сюда попадёт после входа
+        }
     })
 
     if(error || !data) {
