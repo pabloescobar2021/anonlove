@@ -16,17 +16,20 @@ export async function telegramAuth(message: TelegramMessage) {
     }
 
     const {data, error} = await supabaseAdmin.auth.admin.generateLink({
-        type: 'magiclink',
-        email: user.login,
-        options: {
-            redirectTo: 'https://anonlove.vercel.app/auth/callback' // сюда попадёт после входа
-        }
-    })
-
-    if(error || !data) {
-        await tgSend(chatId, "Что-то пошло не так, попробуй позже")
-        return
+    type: 'magiclink',
+    email: user.login,
+    options: {
+        redirectTo: 'https://anonlove.vercel.app/auth/callback'
     }
-    
-    await tgSend(chatId, `Войти в аккаунт: ${data.properties.action_link}`)
+})
+
+console.log('generated link:', data?.properties!.action_link)
+console.log('error:', error)
+
+if(error || !data) {
+    await tgSend(chatId, "Что-то пошло не так, попробуй позже")
+    return
+}
+
+await tgSend(chatId, `Войти в аккаунт: ${data.properties.action_link}`)
 }

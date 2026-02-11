@@ -1648,3 +1648,4 @@ Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 [05:02:19.701] Server  LOG      ✓ Compiled in 560ms
 [05:02:19.708] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 [05:04:02.802] Server  LOG      ✓ Compiled in 1686ms
+[05:08:53.133] Server  LOG      ✓ Compiled in 556ms
