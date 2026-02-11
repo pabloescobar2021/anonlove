@@ -80,14 +80,14 @@ export default function MainPage() {
 
 
     // редирект если неавторизован
-    useEffect(() => {
-        if (authLoading) return;
-        if (pathname === '/auth/callback') return; // не редиректим пока обрабатывается
+    // useEffect(() => {
+    //     if (authLoading) return;
+    //     if (pathname === '/auth/callback') return; // не редиректим пока обрабатывается
 
-        if(!user){
-            router.replace('/auth')
-        }
-    }, [user, authLoading, router, pathname])
+    //     if(!user){
+    //         router.replace('/auth')
+    //     }
+    // }, [user, authLoading, router, pathname])
 
     
 

@@ -2977,20 +2977,13 @@ function MainPage() {
         }["MainPage.useSwipe[profileSwipe]"]
     });
     // редирект если неавторизован
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "MainPage.useEffect": ()=>{
-            if (authLoading) return;
-            if (pathname === '/auth/callback') return; // не редиректим пока обрабатывается
-            if (!user) {
-                router.replace('/auth');
-            }
-        }
-    }["MainPage.useEffect"], [
-        user,
-        authLoading,
-        router,
-        pathname
-    ]);
+    // useEffect(() => {
+    //     if (authLoading) return;
+    //     if (pathname === '/auth/callback') return; // не редиректим пока обрабатывается
+    //     if(!user){
+    //         router.replace('/auth')
+    //     }
+    // }, [user, authLoading, router, pathname])
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "MainPage.useEffect": ()=>{
             if (!isMobile) {
@@ -3101,7 +3094,7 @@ function MainPage() {
         columnNumber: 9
     }, this);
 }
-_s(MainPage, "6UA+Ch7g/Hh1EPCNUEEKzC/8Q2s=", false, function() {
+_s(MainPage, "zfMvLcTD/OgoyE+ZyAv3imMOQvk=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"],

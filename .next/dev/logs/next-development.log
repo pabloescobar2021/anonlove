@@ -1647,3 +1647,4 @@ Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 [05:02:00.393] Browser ERROR   uncaughtError: ReferenceError: pathname is not defined
 [05:02:19.701] Server  LOG      ✓ Compiled in 560ms
 [05:02:19.708] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[05:04:02.802] Server  LOG      ✓ Compiled in 1686ms
