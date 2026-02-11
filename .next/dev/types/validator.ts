@@ -65,15 +65,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/auth/telegram/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/auth/telegram">> = Specific
-  const handler = {} as typeof import("../../../app/auth/telegram/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../../app/createcard/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/createcard">> = Specific
@@ -96,15 +87,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/test">> = Specific
   const handler = {} as typeof import("../../../app/test/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../app/api/telegram-login/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/telegram-login">> = Specific
-  const handler = {} as typeof import("../../../app/api/telegram-login/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
