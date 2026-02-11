@@ -1,20 +1,25 @@
 "use client"
 
 import { useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useSearchParams, useRouter } from "next/navigation"
 import { supabase } from "@/utils/supabase/alSupabase"
 
-export default function AuthCallback() {
-    const router = useRouter()
+export default function Callback() {
+  const params = useSearchParams()
+  const router = useRouter()
 
-    useEffect(() => {
-        const handle = async () => {
-            await supabase.auth.getSession()
-            router.push("/")
-        }
+  useEffect(() => {
+    const token = params.get("token")
 
-        handle()
-    }, [])
+    if (!token) return
 
-    return <div>Входим...</div>
+    supabase.auth.signInWithIdToken({
+      provider: "custom",
+      token
+    }).then(() => {
+      router.push("/")
+    })
+  }, [])
+
+  return <div>Авторизация...</div>
 }
