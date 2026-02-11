@@ -2,6 +2,7 @@ import type { TelegramMessage } from "../type";
 import { handleNotificationToggle } from "./handleNotificationToggle";
 import { handlerStatus } from "./status/handlerStatus";
 import { handleToPage } from "./HandlertoPage";
+import { telegramAuth } from "./telegramAuth";
 
 export type tgCommandHandler = (msg: TelegramMessage) => Promise<void>;
 
@@ -9,4 +10,5 @@ export const tgCommandMap: Record<string, tgCommandHandler> = {
     "/notifications": handleNotificationToggle,
     "/anonlove": handleToPage,
     "/status": handlerStatus,
+    "/signup": telegramAuth
 }

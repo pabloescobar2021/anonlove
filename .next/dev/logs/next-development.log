@@ -1,13 +1,1497 @@
-[00:00:02.873] Server  LOG      ✓ Ready in 2.1s
-[00:00:22.998] Server  LOG      ○ Compiling / ...
-[01:53:21.415] Server  LOG      ✓ Compiled in 380ms
-[01:54:49.991] Server  LOG      ✓ Compiled in 306ms
-[01:55:53.020] Server  LOG      ✓ Compiled in 139ms
-[01:57:04.403] Server  LOG      ✓ Compiled in 263ms
-[01:57:22.666] Server  LOG      ✓ Compiled in 85ms
-[02:00:11.141] Server  LOG      ✓ Compiled in 97ms
-[05:28:00.372] Browser LOG     Trying to mark as read: {"messageId":"a5f013c4-f118-4377-9e8b-4fe24e504fdb","userId":"c8439bf9-a5fe-4c93-9a7d-403600ca1361"}
-[05:28:00.773] Browser LOG     Querying message: {"messageId":"a5f013c4-f118-4377-9e8b-4fe24e504fdb","userId":"c8439bf9-a5fe-4c93-9a7d-403600ca1361"}
-[05:28:01.037] Browser LOG     Query result: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-01-24T16:32:10.317916+00:00","from_display_id":"#2F3E5A","from_display_name":"4124124124asd","from_user":"441afa8c-919d-461f-b871-2ea2e7aec169","id":"a5f013c4-f118-4377-9e8b-4fe24e504fdb","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#J8VPRQ","to_display_name":"yasosu1","to_user":"c8439bf9-a5fe-4c93-9a7d-403600ca1361","to_user_rating":0},"error":null}
-[05:28:28.434] Browser LOG     Querying message: {"messageId":"a5f013c4-f118-4377-9e8b-4fe24e504fdb","userId":"c8439bf9-a5fe-4c93-9a7d-403600ca1361"}
-[05:28:28.619] Browser LOG     Query result: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-01-24T16:32:10.317916+00:00","from_display_id":"#2F3E5A","from_display_name":"4124124124asd","from_user":"441afa8c-919d-461f-b871-2ea2e7aec169","id":"a5f013c4-f118-4377-9e8b-4fe24e504fdb","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#J8VPRQ","to_display_name":"yasosu1","to_user":"c8439bf9-a5fe-4c93-9a7d-403600ca1361","to_user_rating":0},"error":null}
+[00:00:02.884] Server  LOG      ✓ Ready in 1975ms
+[00:00:05.904] Server  ERROR    ⨯ ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+
+[00:00:07.725] Browser ERROR   uncaughtError: Error: ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+
+[00:00:07.898] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:08.018] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:21.379] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:36.495] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:38.684] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:39.929] Server  ERROR    ⨯ ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+
+[00:00:40.217] Browser ERROR   uncaughtError: Error: ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+
+[00:00:40.441] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:40.441] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:00:43.378] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:01:56.368] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:01:57.379] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `flexC`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:02:04.487] Server  LOG      ✓ Compiled in 567ms
+[00:02:50.058] Server  LOG      ✓ Compiled in 311ms
+[00:02:57.276] Server  LOG      ✓ Compiled in 447ms
+[00:03:12.821] Server  LOG      ✓ Compiled in 373ms
+[00:03:19.258] Server  LOG      ✓ Compiled in 142ms
+[00:03:19.413] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `hover:brightness-`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:03:34.697] Server  LOG      ✓ Compiled in 247ms
+[00:03:34.849] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `hover:brightness-`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:03:45.475] Server  LOG      ✓ Compiled in 306ms
+[00:03:55.598] Server  LOG      ✓ Compiled in 397ms
+[00:04:17.690] Server  LOG      ✓ Compiled in 121ms
+[00:04:17.832] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `dura`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[00:04:36.047] Server  LOG      ✓ Compiled in 272ms
+[00:05:32.581] Server  LOG      ✓ Compiled in 304ms
+[00:05:53.187] Server  LOG      ✓ Compiled in 222ms
+[00:05:56.379] Server  LOG      ✓ Compiled in 230ms
+[00:08:44.673] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:08:44.699] Server  LOG      ✓ Compiled in 228ms
+[00:08:45.014] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:45.019] Server  ERROR    ⨯ TypeError: messages.map is not a function
+[00:08:46.372] Browser ERROR   uncaughtError: TypeError: messages.map is not a function
+[00:09:31.060] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:31.065] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:09:31.070] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:31.087] Server  LOG      ✓ Compiled in 407ms
+[00:10:06.940] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:07.145] Server  LOG      ✓ Compiled in 130ms
+[00:10:19.961] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:10:20.144] Server  LOG      ✓ Compiled in 133ms
+[00:11:07.411] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:07.437] Server  LOG      ✓ Compiled in 218ms
+[00:11:29.255] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:29.282] Server  LOG      ✓ Compiled in 100ms
+[00:11:39.853] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:40.154] Server  LOG      ✓ Compiled in 118ms
+[00:12:43.256] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:43.283] Server  LOG      ✓ Compiled in 134ms
+[00:12:51.231] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:51.240] Server  LOG      ✓ Compiled in 120ms
+[00:13:09.811] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:13:09.821] Server  LOG      ✓ Compiled in 106ms
+[00:13:53.210] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:13:53.603] Server  LOG      ✓ Compiled in 111ms
+[00:14:11.511] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:11.529] Server  LOG      ✓ Compiled in 96ms
+[00:14:25.005] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:25.014] Server  LOG      ✓ Compiled in 108ms
+[00:14:36.976] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:36.998] Server  LOG      ✓ Compiled in 132ms
+[00:14:43.625] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:44.049] Server  LOG      ✓ Compiled in 130ms
+[00:14:54.710] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:14:54.890] Server  LOG      ✓ Compiled in 250ms
+[00:15:07.553] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:07.562] Server  LOG      ✓ Compiled in 123ms
+[00:15:11.456] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:11.467] Server  LOG      ✓ Compiled in 185ms
+[00:15:21.919] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:15:21.940] Server  LOG      ✓ Compiled in 367ms
+[00:16:17.236] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:16:17.264] Server  LOG      ✓ Compiled in 208ms
+[00:16:33.024] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:16:33.050] Server  LOG      ✓ Compiled in 206ms
+[00:19:41.082] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:41.091] Server  LOG      ✓ Compiled in 184ms
+[00:19:46.333] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:46.496] Server  LOG      ✓ Compiled in 148ms
+[00:20:04.138] Server  LOG      ✓ Compiled in 146ms
+[00:20:04.376] Browser ERROR   ./app/auth/page.tsx:95:5
+Parsing ecmascript source code failed
+  93 |                 typePretty("Введите номер телефона"
+  94 |
+> 95 |     },[chosenTypeSighIn])
+     |     ^
+  96 |
+  97 |     const enterBtn = () => {
+  98 |         if(inputRef.current){
+
+Expected ',', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[00:20:09.339] Server  LOG      ✓ Compiled in 155ms
+[00:20:10.367] Browser ERROR   ./app/auth/page.tsx:96:6
+Parsing ecmascript source code failed
+  94 |             }
+  95 |
+> 96 |     },[chosenTypeSighIn])
+     |      ^
+  97 |
+  98 |     const enterBtn = () => {
+  99 |         if(inputRef.current){
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[00:20:39.033] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:21:34.851] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:21:35.013] Server  LOG      ✓ Compiled in 123ms
+[00:23:01.077] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:23:01.266] Server  LOG      ✓ Compiled in 155ms
+[00:23:25.299] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:23:25.324] Server  LOG      ✓ Compiled in 170ms
+[00:27:15.113] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:15.121] Server  LOG      ✓ Compiled in 105ms
+[00:27:32.647] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:32.808] Server  LOG      ✓ Compiled in 137ms
+[00:27:42.825] Server  LOG      ✓ Compiled in 158ms
+[00:27:57.010] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:27:57.167] Server  LOG      ✓ Compiled in 124ms
+[00:28:11.154] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:28:11.161] Server  LOG      ✓ Compiled in 201ms
+[00:28:41.536] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:28:41.544] Server  LOG      ✓ Compiled in 136ms
+[00:28:45.495] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
+[00:29:05.622] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:29:05.627] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:29:05.630] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:29:05.646] Server  LOG      ✓ Compiled in 175ms
+[00:29:18.606] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:29:18.627] Server  LOG      ✓ Compiled in 146ms
+[00:29:38.111] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:29:38.443] Server  LOG      ✓ Compiled in 134ms
+[00:30:01.996] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:02.185] Server  LOG      ✓ Compiled in 138ms
+[00:30:15.524] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:15.726] Server  LOG      ✓ Compiled in 163ms
+[00:30:20.712] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:20.722] Server  LOG      ✓ Compiled in 149ms
+[00:30:31.655] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:31.678] Server  LOG      ✓ Compiled in 158ms
+[00:30:40.056] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:40.411] Server  LOG      ✓ Compiled in 118ms
+[00:30:48.643] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:30:48.661] Server  LOG      ✓ Compiled in 136ms
+[00:33:58.252] Server  LOG      ✓ Compiled in 309ms
+[00:34:44.913] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:34:44.916] Server  LOG      ✓ Compiled in 102ms
+[00:34:49.426] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:34:49.684] Server  LOG      ✓ Compiled in 123ms
+[00:35:06.785] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:35:06.964] Server  LOG      ✓ Compiled in 115ms
+[00:35:22.932] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:35:23.083] Server  LOG      ✓ Compiled in 94ms
+[00:37:21.379] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:37:21.384] Server  LOG      ✓ Compiled in 135ms
+[00:41:17.112] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:41:17.115] Server  LOG      ✓ Compiled in 306ms
+[00:41:22.171] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:41:22.178] Server  LOG      ✓ Compiled in 520ms
+[00:41:38.583] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:41:38.610] Server  LOG      ✓ Compiled in 114ms
+[00:43:38.201] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:43:38.400] Server  LOG      ✓ Compiled in 115ms
+[00:48:12.717] Server  LOG      ✓ Compiled in 490ms
+[00:48:12.730] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:48:49.671] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:48:49.675] Server  LOG      ✓ Compiled in 618ms
+[00:52:12.207] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:52:12.218] Server  LOG      ✓ Compiled in 199ms
+[00:53:14.291] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:53:14.318] Server  LOG      ✓ Compiled in 215ms
+[00:53:14.783] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:53:14.788] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:53:16.370] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:53:32.218] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:32.222] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:53:32.225] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:32.407] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:53:32.410] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:53:32.443] Server  LOG      ✓ Compiled in 115ms
+[00:53:34.370] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:53:57.131] Server  LOG      ✓ Compiled in 360ms
+[00:53:57.136] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:57.140] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:53:57.143] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:57.429] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:53:57.432] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:53:58.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:55:11.388] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:11.392] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:11.394] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:11.575] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:55:11.576] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:55:11.597] Server  LOG      ✓ Compiled in 177ms
+[00:55:13.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:55:23.410] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:23.416] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:23.420] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:23.435] Server  LOG      ✓ Compiled in 159ms
+[00:55:23.878] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:55:23.883] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:55:25.370] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:55:32.867] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:32.871] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:32.875] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:32.901] Server  LOG      ✓ Compiled in 219ms
+[00:55:33.455] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:55:33.459] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:55:35.381] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:55:43.951] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:43.956] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:43.959] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:43.962] Server  LOG      ✓ Compiled in 120ms
+[00:55:44.163] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:55:44.168] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:55:45.382] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:56:45.358] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:45.361] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:45.364] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:45.383] Server  LOG      ✓ Compiled in 142ms
+[00:56:45.673] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:56:45.677] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:56:47.372] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:57:39.058] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:57:39.062] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:57:39.065] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:57:39.083] Server  LOG      ✓ Compiled in 220ms
+[00:57:39.291] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:57:39.294] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:57:41.370] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:58:31.838] Server  LOG      ✓ Compiled in 314ms
+[00:58:32.369] Browser ERROR   ./app/auth/page.tsx:67:27
+Parsing ecmascript source code failed
+  65 |     const typingRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  66 |
+> 67 |     const addBotMessage = (text: string, masked = false)
+     |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  68 |     
+  69 |     const botTypping = () => {
+  70 |         if(step === 1){
+
+Unexpected line break between arrow head and arrow
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[00:58:33.974] Server  LOG      ✓ Compiled in 327ms
+[00:58:34.411] Browser ERROR   ./app/auth/page.tsx:67:57
+Parsing ecmascript source code failed
+  65 |     const typingRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  66 |
+> 67 |     const addBotMessage = (text: string, masked = false){
+     |                                                         ^
+  68 |         
+  69 |     }
+  70 |     
+
+Expected '=>', got '{'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[00:58:40.586] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:58:40.591] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:58:40.595] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:58:40.609] Server  LOG      ✓ Compiled in 156ms
+[00:58:40.863] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:58:40.866] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:58:43.370] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:59:17.695] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:17.701] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:59:17.704] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:17.720] Server  LOG      ✓ Compiled in 150ms
+[00:59:18.613] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:59:18.619] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:59:20.365] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[00:59:55.912] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:55.917] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:59:55.920] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:59:55.961] Server  LOG      ✓ Compiled in 238ms
+[00:59:56.424] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:59:56.428] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[00:59:59.374] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:00:42.359] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:00:42.364] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:00:42.367] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:00:42.385] Server  LOG      ✓ Compiled in 177ms
+[01:00:42.809] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:00:42.812] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:00:46.365] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:01:31.545] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:01:31.570] Server  LOG      ✓ Compiled in 386ms
+[01:01:31.807] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:01:31.815] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:01:34.366] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:02:00.042] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:00.046] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:00.049] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:00.057] Server  LOG      ✓ Compiled in 117ms
+[01:02:00.291] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:02:00.294] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:02:01.367] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:02:09.478] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:09.482] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:09.485] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:09.503] Server  LOG      ✓ Compiled in 253ms
+[01:02:09.663] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:02:09.667] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:02:11.549] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:02:18.120] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:18.124] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:18.126] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:18.528] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:02:18.537] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:02:18.580] Server  LOG      ✓ Compiled in 150ms
+[01:02:19.496] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:02:38.176] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:38.181] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:02:38.185] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:38.202] Server  LOG      ✓ Compiled in 250ms
+[01:02:38.508] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:02:38.513] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:02:38.542] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/app_globals_71f961d1.css
+[01:02:40.365] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:03:05.972] Server  LOG      ✓ Compiled in 336ms
+[01:03:05.988] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:05.994] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:03:05.998] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:06.580] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:03:06.584] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:03:08.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:03:37.654] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:37.658] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:03:37.661] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:37.903] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:03:37.907] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:03:37.931] Server  LOG      ✓ Compiled in 227ms
+[01:03:39.393] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:03:46.866] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:46.872] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:03:46.878] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:46.882] Server  LOG      ✓ Compiled in 384ms
+[01:03:47.125] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:03:47.130] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:03:48.367] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:04:12.471] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:12.476] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:04:12.479] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:12.498] Server  LOG      ✓ Compiled in 143ms
+[01:04:12.668] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:04:12.671] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:04:14.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:04:23.672] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:23.678] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:04:23.681] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:23.844] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:04:23.849] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:04:23.874] Server  LOG      ✓ Compiled in 189ms
+[01:04:25.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:04:38.778] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:38.781] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:04:38.784] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:38.947] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:04:38.948] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:04:38.967] Server  LOG      ✓ Compiled in 114ms
+[01:04:40.375] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:04:47.280] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:47.286] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:04:47.288] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:47.305] Server  LOG      ✓ Compiled in 165ms
+[01:04:47.955] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:04:47.967] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:04:50.376] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:04:51.986] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:51.989] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:04:51.993] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:04:51.997] Server  LOG      ✓ Compiled in 184ms
+[01:04:52.649] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:04:52.653] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:04:54.401] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:05:49.546] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:05:49.550] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:05:49.553] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:05:49.559] Server  LOG      ✓ Compiled in 442ms
+[01:05:49.942] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:49.947] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:05:51.375] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:06:17.116] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:17.128] Server  LOG      ✓ Compiled in 211ms
+[01:06:17.328] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:06:17.337] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:06:17.400] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/app_auth_authStyle_001a26d6.css
+[01:06:17.400] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/app_globals_71f961d1.css
+[01:06:19.372] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:06:22.448] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:22.534] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:06:22.538] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:06:22.565] Server  LOG      ✓ Compiled in 184ms
+[01:06:23.477] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:06:35.370] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:35.375] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:06:35.378] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:35.397] Server  LOG      ✓ Compiled in 126ms
+[01:06:35.758] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:06:35.766] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:06:38.376] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:06:48.077] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:48.081] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:06:48.083] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:06:48.102] Server  LOG      ✓ Compiled in 115ms
+[01:06:48.271] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:06:48.272] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:06:49.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:07:58.769] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:58.772] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:07:58.776] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:07:58.779] Server  LOG      ✓ Compiled in 136ms
+[01:07:59.235] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:07:59.239] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:08:00.374] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:08:40.635] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:08:40.638] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:08:40.642] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:08:40.669] Server  LOG      ✓ Compiled in 237ms
+[01:08:40.965] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:08:40.968] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:08:42.399] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:08:52.335] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:08:52.339] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:08:52.342] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:08:52.361] Server  LOG      ✓ Compiled in 228ms
+[01:08:52.826] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:08:52.831] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:08:54.369] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:09:19.241] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:19.247] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:09:19.248] Server  LOG      ✓ Compiled in 128ms
+[01:09:19.251] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:19.687] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:09:19.692] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:09:21.353] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:21.358] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:09:21.359] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:09:21.361] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:22.804] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:09:22.809] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:09:22.888] Server  LOG      ✓ Compiled in 709ms
+[01:09:24.379] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:09:32.019] Server  LOG      ✓ Compiled in 295ms
+[01:09:32.021] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:32.027] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:09:32.032] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:32.427] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:09:32.431] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:09:32.470] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/app_globals_71f961d1.css
+[01:09:32.553] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:09:32.558] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:09:34.371] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:09:46.851] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:46.856] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:09:46.860] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:46.881] Server  LOG      ✓ Compiled in 157ms
+[01:09:47.031] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__b97961a7._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:09:47.035] Server  ERROR    ⨯ ReferenceError: chosenTypeSighIn is not defined
+[01:09:48.368] Browser ERROR   uncaughtError: ReferenceError: chosenTypeSighIn is not defined
+[01:10:14.044] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:10:14.049] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:10:14.054] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:10:14.067] Server  LOG      ✓ Compiled in 278ms
+[01:10:29.083] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:10:29.090] Server  LOG      ✓ Compiled in 167ms
+[01:10:48.845] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:10:49.162] Server  LOG      ✓ Compiled in 145ms
+[01:11:02.029] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:11:02.053] Server  LOG      ✓ Compiled in 248ms
+[01:11:09.237] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:11:09.262] Server  LOG      ✓ Compiled in 440ms
+[01:11:42.251] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:11:42.273] Server  LOG      ✓ Compiled in 450ms
+[01:12:03.338] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:03.344] Server  LOG      ✓ Compiled in 119ms
+[01:12:16.781] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:16.806] Server  LOG      ✓ Compiled in 116ms
+[01:12:26.027] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:26.046] Server  LOG      ✓ Compiled in 154ms
+[01:12:33.421] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:33.449] Server  LOG      ✓ Compiled in 627ms
+[01:12:37.731] Server  LOG      ✓ Compiled in 453ms
+[01:12:37.751] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:50.930] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:50.954] Server  LOG      ✓ Compiled in 127ms
+[01:12:56.711] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:12:56.862] Server  LOG      ✓ Compiled in 103ms
+[01:13:44.946] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:13:44.970] Server  LOG      ✓ Compiled in 112ms
+[01:13:58.915] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:13:58.940] Server  LOG      ✓ Compiled in 133ms
+[01:14:21.640] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:14:21.666] Server  LOG      ✓ Compiled in 143ms
+[01:14:30.627] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:14:30.653] Server  LOG      ✓ Compiled in 419ms
+[01:14:35.950] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:14:35.959] Server  LOG      ✓ Compiled in 118ms
+[01:14:39.702] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:14:39.880] Server  LOG      ✓ Compiled in 191ms
+[01:15:04.324] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:15:04.334] Server  LOG      ✓ Compiled in 148ms
+[01:15:24.668] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:15:24.679] Server  LOG      ✓ Compiled in 578ms
+[01:15:44.954] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:15:44.963] Server  LOG      ✓ Compiled in 151ms
+[01:15:56.550] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:15:56.576] Server  LOG      ✓ Compiled in 315ms
+[01:16:01.878] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:16:02.338] Server  LOG      ✓ Compiled in 111ms
+[01:16:14.892] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:16:15.069] Server  LOG      ✓ Compiled in 175ms
+[01:16:26.640] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:16:27.003] Server  LOG      ✓ Compiled in 157ms
+[01:16:58.204] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:16:58.230] Server  LOG      ✓ Compiled in 142ms
+[01:17:13.229] Server  LOG      ✓ Compiled in 204ms
+[01:17:13.269] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:17:53.826] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:17:53.836] Server  LOG      ✓ Compiled in 520ms
+[01:18:01.136] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:18:01.142] Server  LOG      ✓ Compiled in 178ms
+[01:19:55.960] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:19:56.233] Server  LOG      ✓ Compiled in 170ms
+[01:20:06.136] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:20:06.305] Server  LOG      ✓ Compiled in 214ms
+[01:20:12.344] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:20:12.355] Server  LOG      ✓ Compiled in 390ms
+[01:20:35.471] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:20:35.474] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:20:35.487] Server  LOG      ✓ Compiled in 585ms
+[01:22:09.427] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:22:09.438] Server  LOG      ✓ Compiled in 229ms
+[01:22:17.635] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:22:17.662] Server  LOG      ✓ Compiled in 239ms
+[01:22:30.405] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:22:30.429] Server  LOG      ✓ Compiled in 125ms
+[01:22:46.386] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:22:46.593] Server  LOG      ✓ Compiled in 125ms
+[01:23:54.622] Server  LOG      ✓ Compiled in 555ms
+[01:23:54.634] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:24:13.582] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:24:13.602] Server  LOG      ✓ Compiled in 248ms
+[01:24:21.995] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:24:22.005] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:24:22.187] Server  LOG      ✓ Compiled in 241ms
+[01:24:40.206] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:24:40.594] Server  LOG      ✓ Compiled in 138ms
+[01:24:58.725] Server  LOG      ✓ Compiled in 561ms
+[01:24:59.376] Browser ERROR   ./app/auth/page.tsx:211:26
+Parsing ecmascript source code failed
+  209 |                         {(isTyping || isLoading) && (
+  210 |                             
+> 211 |                         )}
+      |                          ^
+  212 |                     </div>
+  213 |
+  214 |                     <div 
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:25:10.859] Server  LOG      ✓ Compiled in 197ms
+[01:25:11.365] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:25:25.282] Server  LOG      ✓ Compiled in 938ms
+[01:25:25.347] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:26:30.029] Server  LOG      ✓ Compiled in 743ms
+[01:26:30.369] Browser ERROR   ./app/auth/page.tsx:211:49
+Parsing ecmascript source code failed
+  209 |                         {(isTyping || isLoading) && (
+  210 |                             <span className="flex gap-[3px] items-center">
+> 211 |                                 {[0,1,2].map(i) => (
+      |                                                 ^^
+  212 |                                     
+  213 |                                 )}
+  214 |                             </span>
+
+Expected '</', got '=>'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:26:52.528] Server  LOG      ✓ Compiled in 171ms
+[01:26:53.376] Browser ERROR   ./app/auth/page.tsx:213:34
+Parsing ecmascript source code failed
+  211 |                                 {[0,1,2].map(i => (
+  212 |                                     
+> 213 |                                 ))}
+      |                                  ^
+  214 |                             </span>
+  215 |                         )}
+  216 |                     </div>
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:27:02.556] Server  LOG      ✓ Compiled in 147ms
+[01:27:02.578] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:27:04.460] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `AuthPage`. 
+[01:27:13.540] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:27:13.561] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:27:13.565] Server  LOG      ✓ Compiled in 401ms
+[01:27:28.252] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:27:28.262] Server  LOG      ✓ Compiled in 197ms
+[01:28:07.038] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:28:07.064] Server  LOG      ✓ Compiled in 369ms
+[01:28:39.127] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:28:39.150] Server  LOG      ✓ Compiled in 126ms
+[01:28:45.504] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:28:45.514] Server  LOG      ✓ Compiled in 120ms
+[01:28:56.850] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:28:56.860] Server  LOG      ✓ Compiled in 275ms
+[01:29:08.550] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:29:08.567] Server  LOG      ✓ Compiled in 166ms
+[01:29:24.326] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:29:24.330] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:29:24.371] Server  LOG      ✓ Compiled in 337ms
+[01:30:05.702] Server  LOG      ✓ Compiled in 671ms
+[01:30:05.728] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:10.626] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:10.648] Server  LOG      ✓ Compiled in 654ms
+[01:30:14.430] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:14.458] Server  LOG      ✓ Compiled in 480ms
+[01:30:28.700] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:28.890] Server  LOG      ✓ Compiled in 198ms
+[01:30:41.751] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:41.757] Server  LOG      ✓ Compiled in 212ms
+[01:30:59.856] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:30:59.867] Server  LOG      ✓ Compiled in 643ms
+[01:31:06.486] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:31:06.684] Server  LOG      ✓ Compiled in 198ms
+[01:31:21.693] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:31:21.715] Server  LOG      ✓ Compiled in 190ms
+[01:31:25.926] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:31:25.931] Server  LOG      ✓ Compiled in 548ms
+[01:31:33.241] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:31:33.262] Server  LOG      ✓ Compiled in 174ms
+[01:32:28.660] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:32:28.665] Server  LOG      ✓ Compiled in 574ms
+[01:32:50.049] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:32:50.070] Server  LOG      ✓ Compiled in 689ms
+[01:32:58.528] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:32:58.537] Server  LOG      ✓ Compiled in 165ms
+[01:33:09.170] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:33:09.555] Server  LOG      ✓ Compiled in 221ms
+[01:34:40.090] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:34:40.095] Server  LOG      ✓ Compiled in 623ms
+[01:35:14.682] Server  LOG      ✓ Compiled in 677ms
+[01:35:14.854] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:35:33.365] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:35:33.587] Server  LOG      ✓ Compiled in 208ms
+[01:35:42.172] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:35:42.390] Server  LOG      ✓ Compiled in 124ms
+[01:35:52.940] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:35:52.960] Server  LOG      ✓ Compiled in 324ms
+[01:36:42.275] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:36:42.297] Server  LOG      ✓ Compiled in 182ms
+[01:36:54.440] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:36:54.464] Server  LOG      ✓ Compiled in 319ms
+[01:37:02.012] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:37:02.023] Server  LOG      ✓ Compiled in 442ms
+[01:37:24.779] Server  LOG      ✓ Compiled in 224ms
+[01:37:24.954] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:38:03.220] Server  LOG      ✓ Compiled in 1228ms
+[01:38:03.296] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:38:26.201] Server  LOG      ✓ Compiled in 261ms
+[01:38:26.205] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:39:42.268] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:39:42.281] Server  LOG      ✓ Compiled in 227ms
+[01:40:19.985] Server  LOG      ✓ Compiled in 634ms
+[01:40:46.365] Server  LOG      ✓ Compiled in 307ms
+[01:40:47.374] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `bg`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[01:41:50.368] Browser ERROR   ./app/auth/authStyle.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\auth\authStyle.css:1:1: Cannot apply unknown utility class `bg`
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/auth/authStyle.css [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+[01:42:10.768] Server  LOG      ✓ Compiled in 472ms
+[01:43:23.068] Server  LOG      ✓ Compiled in 457ms
+[01:43:29.399] Server  LOG      ✓ Compiled in 292ms
+[01:43:47.515] Server  LOG      ✓ Compiled in 311ms
+[01:44:11.112] Server  LOG      ✓ Compiled in 301ms
+[01:44:33.889] Server  LOG      ✓ Compiled in 270ms
+[01:44:37.051] Server  LOG      ✓ Compiled in 254ms
+[01:44:42.301] Server  LOG      ✓ Compiled in 261ms
+[01:44:44.310] Server  LOG      ✓ Compiled in 265ms
+[01:44:47.606] Server  LOG      ✓ Compiled in 268ms
+[01:44:50.213] Server  LOG      ✓ Compiled in 344ms
+[01:45:08.431] Server  LOG      ✓ Compiled in 431ms
+[01:45:08.691] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:46:10.810] Server  LOG      ✓ Compiled in 10.2s
+[01:47:27.737] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:47:27.755] Server  LOG      ✓ Compiled in 340ms
+[01:48:35.130] Server  LOG      ✓ Compiled in 230ms
+[01:48:35.379] Browser ERROR   ./app/auth/page.tsx:144:5
+Parsing ecmascript source code failed
+  142 |         setIsShowBtns(false
+  143 |
+> 144 |     const enterBtn = async () => {
+      |     ^^^^^
+  145 |         if (isTyping || isLoading || inputDisabled) return;
+  146 |         const input = inputRef.current?.value.trim()
+  147 |         if(!input) return
+
+Expected ',', got 'const'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:48:37.260] Server  LOG      ✓ Compiled in 159ms
+[01:48:37.366] Browser ERROR   ./app/auth/page.tsx:426:2
+Parsing ecmascript source code failed
+  424 |         </div>
+  425 |     )
+> 426 | }
+      |  ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:48:41.918] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:49:02.425] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:49:02.620] Server  LOG      ✓ Compiled in 130ms
+[01:49:07.545] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:49:07.865] Server  LOG      ✓ Compiled in 110ms
+[01:49:49.360] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:49:49.820] Server  LOG      ✓ Compiled in 98ms
+[01:51:01.033] Server  LOG      ✓ Compiled in 556ms
+[01:51:01.376] Browser ERROR   ./app/auth/page.tsx:148:5
+Parsing ecmascript source code failed
+  146 |         const {error} = flow === "login"
+  147 |             ? await supabase.auth.signInWithPassword
+> 148 |     }
+      |     ^
+  149 |         
+  150 |
+  151 |     const enterBtn = async () => {
+
+Expected ':', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:51:07.365] Browser ERROR   ./app/auth/page.tsx:148:5
+Parsing ecmascript source code failed
+  146 |         const {error} = flow === "login"
+  147 |             ? await supabase.auth.signInWithPassword({email, password: pass})
+> 148 |     }
+      |     ^
+  149 |         
+  150 |
+  151 |     const enterBtn = async () => {
+
+Expected ':', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[01:51:12.585] Server  LOG      ✓ Compiled in 255ms
+[01:51:12.589] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:51:19.802] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:51:19.814] Server  LOG      ✓ Compiled in 115ms
+[01:51:26.829] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:51:26.841] Server  LOG      ✓ Compiled in 117ms
+[01:51:42.915] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:51:43.178] Server  LOG      ✓ Compiled in 127ms
+[01:52:01.873] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:52:02.055] Server  LOG      ✓ Compiled in 194ms
+[01:52:21.629] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:52:22.003] Server  LOG      ✓ Compiled in 225ms
+[01:52:34.422] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:52:34.450] Server  LOG      ✓ Compiled in 199ms
+[01:52:37.844] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:52:37.993] Server  LOG      ✓ Compiled in 123ms
+[01:52:59.847] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:53:00.050] Server  LOG      ✓ Compiled in 113ms
+[01:53:16.307] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:53:16.492] Server  LOG      ✓ Compiled in 128ms
+[01:53:35.368] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:53:35.681] Server  LOG      ✓ Compiled in 108ms
+[01:53:51.855] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:53:52.272] Server  LOG      ✓ Compiled in 128ms
+[01:53:59.354] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:53:59.372] Server  LOG      ✓ Compiled in 134ms
+[01:54:09.288] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:54:09.774] Server  LOG      ✓ Compiled in 114ms
+[01:54:12.229] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:54:12.399] Server  LOG      ✓ Compiled in 116ms
+[01:54:55.432] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:54:56.156] Server  LOG      ✓ Compiled in 142ms
+[01:55:37.411] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:55:37.443] Server  LOG      ✓ Compiled in 493ms
+[01:55:39.389] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:55:39.677] Server  LOG      ✓ Compiled in 174ms
+[01:55:50.039] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:55:50.234] Server  LOG      ✓ Compiled in 145ms
+[01:56:00.401] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:56:00.758] Server  LOG      ✓ Compiled in 104ms
+[01:56:05.643] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:56:05.655] Server  LOG      ✓ Compiled in 100ms
+[01:56:19.701] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:56:19.879] Server  LOG      ✓ Compiled in 127ms
+[01:56:51.756] Server  LOG      ○ Compiling / ...
+[01:58:47.548] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:58:48.121] Server  LOG      ✓ Compiled in 269ms
+[01:59:24.184] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:59:24.380] Server  LOG      ✓ Compiled in 138ms
+[02:00:06.417] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:00:06.441] Server  LOG      ✓ Compiled in 182ms
+[02:01:10.881] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:01:10.993] Server  LOG      ✓ Compiled in 128ms
+[02:03:41.526] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:03:41.534] Server  LOG      ✓ Compiled in 394ms
+[02:03:43.410] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:03:44.029] Server  LOG      ✓ Compiled in 185ms
+[02:04:58.112] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:04:58.492] Server  LOG      ✓ Compiled in 177ms
+[02:06:53.451] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:06:53.479] Server  LOG      ✓ Compiled in 138ms
+[02:07:27.238] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:07:27.250] Server  LOG      ✓ Compiled in 1723ms
+[02:07:39.957] Server  LOG      ✓ Compiled in 109ms
+[02:07:44.305] Server  LOG      ✓ Compiled in 109ms
+[02:08:33.123] Server  LOG      ✓ Compiled in 113ms
+[02:08:34.823] Server  LOG      ✓ Compiled in 107ms
+[02:08:40.139] Server  LOG      ✓ Compiled in 141ms
+[02:08:59.214] Server  LOG      ✓ Compiled in 120ms
+[02:09:25.369] Server  LOG      ✓ Compiled in 114ms
+[02:09:28.628] Server  LOG      ✓ Compiled in 108ms
+[02:09:50.032] Server  LOG      ✓ Compiled in 129ms
+[02:10:27.316] Server  LOG      ✓ Compiled in 111ms
+[02:10:48.611] Server  LOG      ✓ Compiled in 939ms
+[02:11:01.870] Server  LOG      ✓ Compiled in 260ms
+[02:11:12.478] Server  LOG      ✓ Compiled in 203ms
+[02:11:24.372] Server  LOG      ✓ Compiled in 238ms
+[02:11:45.936] Server  LOG      ✓ Compiled in 239ms
+[02:11:48.904] Server  LOG      ✓ Compiled in 246ms
+[02:12:08.764] Server  LOG      ✓ Compiled in 213ms
+[02:12:13.015] Server  LOG      ✓ Compiled in 225ms
+[02:12:43.775] Server  LOG      ✓ Compiled in 228ms
+[02:12:58.762] Server  LOG      ✓ Compiled in 218ms
+[02:13:06.365] Server  LOG      ✓ Compiled in 266ms
+[02:13:16.717] Server  LOG      ✓ Compiled in 200ms
+[02:14:29.084] Server  LOG      ✓ Compiled in 680ms
+[02:15:29.930] Server  LOG      ✓ Compiled in 251ms
+[02:15:30.367] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[02:15:34.126] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:15:34.339] Server  LOG      ✓ Compiled in 236ms
+[02:16:03.006] Server  LOG      ✓ Compiled in 110ms
+[02:16:05.293] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__6a0ae9db._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:16:05.297] Server  ERROR    ⨯ ReferenceError: window is not defined
+[02:16:11.597] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__6a0ae9db._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[02:16:11.601] Server  ERROR    ⨯ ReferenceError: window is not defined
+[02:16:25.364] Server  LOG      ✓ Compiled in 543ms
+[02:17:02.167] Server  LOG      ✓ Compiled in 227ms
+[02:17:35.460] Server  LOG      ✓ Compiled in 187ms
+[02:17:47.087] Server  LOG      ✓ Compiled in 102ms
+[02:18:33.186] Server  LOG      ✓ Compiled in 108ms
+[02:18:37.547] Server  LOG      ✓ Compiled in 110ms
+[02:18:44.729] Server  LOG      ✓ Compiled in 165ms
+[02:21:44.664] Server  LOG      ✓ Compiled in 197ms
+[02:22:09.711] Server  LOG      ✓ Compiled in 94ms
+[02:22:30.522] Server  LOG      ✓ Compiled in 106ms
+[02:23:09.568] Server  LOG      ✓ Compiled in 102ms
+[02:23:43.399] Server  LOG      ✓ Compiled in 108ms
+[02:23:45.203] Server  LOG      ✓ Compiled in 115ms
+[02:23:49.216] Server  LOG      ✓ Compiled in 107ms
+[02:24:09.828] Server  LOG      ✓ Compiled in 112ms
+[02:25:07.165] Server  LOG      ✓ Compiled in 163ms
+[02:25:17.472] Server  LOG      ✓ Compiled in 124ms
+[02:25:31.897] Server  LOG      ✓ Compiled in 93ms
+[02:25:45.645] Server  LOG      ✓ Compiled in 111ms
+[02:26:12.215] Server  LOG      ✓ Compiled in 123ms
+[02:26:17.383] Server  LOG      ✓ Compiled in 117ms
+[02:26:43.697] Server  LOG      ✓ Compiled in 112ms
+[02:27:00.091] Server  LOG      ✓ Compiled in 105ms
+[02:27:00.378] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[02:27:47.632] Server  LOG      ✓ Compiled in 221ms
+[02:28:04.712] Server  LOG      ✓ Compiled in 122ms
+[02:28:08.416] Server  LOG      ✓ Compiled in 143ms
+[02:28:14.577] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.577] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.577] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:28:14.578] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:29:00.701] Server  LOG      ✓ Compiled in 97ms
+[02:29:30.046] Server  LOG      ✓ Compiled in 229ms
+[02:29:30.368] Browser ERROR   ./app/auth/AnimatedBg.tsx:54:18
+Parsing ecmascript source code failed
+  52 |             />
+  53 |
+> 54 |             <div className="wave-layer2"></div>
+     |                  ^^^^^^^^^
+  55 |             <div className="wave-layer3"></div>
+  56 |     )
+  57 | }
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/AnimatedBg.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/AnimatedBg.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[02:30:37.958] Server  LOG      ✓ Compiled in 125ms
+[02:30:38.374] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [true] []
+[02:32:04.417] Server  LOG      ✓ Compiled in 112ms
+[02:32:07.513] Server  LOG      ✓ Compiled in 120ms
+[02:32:37.270] Server  LOG      ✓ Compiled in 97ms
+[02:33:19.709] Server  LOG      ✓ Compiled in 124ms
+[02:34:29.400] Server  LOG      ✓ Compiled in 102ms
+[02:35:40.118] Server  LOG      ✓ Compiled in 158ms
+[02:35:49.818] Server  LOG      ✓ Compiled in 94ms
+[02:37:13.683] Server  LOG      ✓ Compiled in 360ms
+[02:37:37.278] Server  LOG      ✓ Compiled in 223ms
+[02:38:15.290] Server  LOG      ✓ Compiled in 137ms
+[02:39:10.086] Server  LOG      ✓ Compiled in 138ms
+[02:39:20.631] Server  LOG      ✓ Compiled in 116ms
+[02:39:38.812] Server  LOG      ✓ Compiled in 129ms
+[02:39:39.371] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:39:39.371] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:39:39.371] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:39:39.371] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:39:39.371] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [] [()=>{
+            if (isAnimatingRef.current) return;
+            isAnimatingRef.current = true;
+            const circle = ref.current;
+            if (!circle) return;
+            const pos = randomPos();
+        }]
+[02:40:06.466] Server  LOG      ✓ Compiled in 116ms
+[02:40:28.740] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:40:28.742] Browser ERROR   uncaughtError: ReferenceError: intervalref is not defined
+[02:40:28.742] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:40:28.742] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:40:28.742] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:40:28.742] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[02:40:28.746] Server  LOG      ✓ Compiled in 133ms
+[02:41:05.888] Server  LOG      ✓ Compiled in 228ms
+[02:41:16.788] Server  LOG      ✓ Compiled in 150ms
+[02:41:43.534] Server  LOG      ✓ Compiled in 116ms
+[02:41:52.270] Server  LOG      ✓ Compiled in 131ms
+[02:42:17.657] Server  LOG      ✓ Compiled in 113ms
+[02:42:23.792] Server  LOG      ✓ Compiled in 138ms
+[02:42:34.544] Server  LOG      ✓ Compiled in 106ms
+[02:43:06.038] Server  LOG      ✓ Compiled in 219ms
+[02:43:14.671] Server  LOG      ✓ Compiled in 108ms
+[02:44:07.099] Server  LOG      ✓ Compiled in 116ms
+[02:44:09.059] Server  LOG      ✓ Compiled in 101ms
+[02:44:20.810] Server  LOG      ✓ Compiled in 111ms
+[02:44:39.509] Server  LOG      ✓ Compiled in 120ms
+[02:44:50.768] Server  LOG      ✓ Compiled in 93ms
+[02:45:01.912] Server  LOG      ✓ Compiled in 137ms
+[02:45:25.744] Server  LOG      ✓ Compiled in 123ms
+[02:45:33.540] Server  LOG      ✓ Compiled in 103ms
+[02:46:32.091] Server  LOG      ✓ Compiled in 144ms
+[02:46:36.722] Server  LOG      ✓ Compiled in 289ms
+[02:46:39.158] Server  LOG      ✓ Compiled in 127ms
+[02:46:39.844] Server  LOG      ✓ Compiled in 95ms
+[02:49:30.280] Server  LOG      ✓ Compiled in 135ms
+[02:51:38.609] Server  LOG      ✓ Compiled in 347ms
+[02:51:44.619] Server  LOG      ✓ Compiled in 113ms
+[02:51:54.907] Server  LOG      ✓ Compiled in 112ms
+[02:51:55.835] Server  LOG      ✓ Compiled in 113ms
+[02:53:10.425] Server  LOG      ✓ Compiled in 344ms
+[02:53:42.858] Server  LOG      ✓ Compiled in 108ms
+[02:54:21.829] Server  LOG      ✓ Compiled in 98ms
+[02:54:54.914] Server  LOG      ✓ Compiled in 143ms
+[02:55:30.792] Server  LOG      ✓ Compiled in 110ms
+[02:55:34.247] Server  LOG      ✓ Compiled in 138ms
+[02:55:49.976] Server  LOG      ✓ Compiled in 107ms
+[02:55:56.429] Server  LOG      ✓ Compiled in 99ms
+[02:56:55.730] Server  LOG      ✓ Compiled in 122ms
+[02:57:12.680] Server  LOG      ✓ Compiled in 103ms
+[02:57:17.629] Server  LOG      ✓ Compiled in 124ms
+[02:58:07.812] Server  LOG      ✓ Compiled in 116ms
+[02:58:33.021] Server  LOG      ✓ Compiled in 132ms
+[03:00:49.108] Server  LOG      ✓ Compiled in 104ms
+[03:01:17.208] Server  LOG      ✓ Compiled in 119ms
+[03:02:05.328] Server  LOG      ✓ Compiled in 111ms
+[03:02:18.475] Server  LOG      ✓ Compiled in 256ms
+[03:02:45.917] Server  LOG      ✓ Compiled in 136ms
+[03:03:17.334] Server  LOG      ✓ Compiled in 125ms
+[03:03:31.149] Server  LOG      ✓ Compiled in 127ms
+[03:04:35.212] Server  LOG      ✓ Compiled in 128ms
+[03:05:01.917] Server  LOG      ✓ Compiled in 117ms
+[03:05:03.191] Server  LOG      ✓ Compiled in 121ms
+[03:05:09.779] Server  LOG      ✓ Compiled in 121ms
+[03:05:30.933] Server  LOG      ✓ Compiled in 124ms
+[03:05:56.118] Server  LOG      ✓ Compiled in 182ms
+[03:07:23.025] Server  LOG      ✓ Compiled in 126ms
+[03:07:33.818] Server  LOG      ✓ Compiled in 117ms
+[03:08:04.803] Server  LOG      ✓ Compiled in 131ms
+[03:08:44.500] Server  LOG      ✓ Compiled in 104ms
+[03:09:28.187] Server  LOG      ✓ Compiled in 245ms
+[03:09:28.195] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:14:18.919] Server  LOG      ✓ Compiled in 139ms
+[03:14:47.870] Server  LOG      ✓ Compiled in 132ms
+[03:15:18.898] Server  LOG      ✓ Compiled in 109ms
+[03:15:41.704] Server  LOG      ✓ Compiled in 104ms
+[03:16:58.347] Server  LOG      ✓ Compiled in 107ms
+[03:17:27.664] Server  LOG      ✓ Compiled in 127ms
+[03:17:30.543] Server  LOG      ✓ Compiled in 127ms
+[03:17:36.686] Server  LOG      ✓ Compiled in 211ms
+[03:17:37.379] Browser ERROR   uncaughtError: ReferenceError: intervalRef is not defined
+[03:17:49.889] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:17:49.907] Server  LOG      ✓ Compiled in 134ms
+[03:17:50.483] Browser ERROR   uncaughtError: ReferenceError: randomPos is not defined
+[03:17:51.379] Browser ERROR   uncaughtError: ReferenceError: randomPos is not defined
+[03:17:55.656] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:17:55.908] Server  ERROR   C:\Users\Елена\Desktop\next.js\anonlove\.next\dev\server\chunks\ssr\[root-of-the-server]__6a0ae9db._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[03:17:55.918] Server  ERROR    ⨯ ReferenceError: ref is not defined
+[03:17:55.952] Server  LOG      ✓ Compiled in 110ms
+[03:17:57.371] Browser ERROR   uncaughtError: ReferenceError: ref is not defined
+[03:18:23.377] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:18:23.405] Server  LOG      ✓ Compiled in 275ms
+[03:19:05.821] Server  LOG      ✓ Compiled in 130ms
+[03:19:27.243] Server  LOG      ✓ Compiled in 128ms
+[03:19:39.058] Server  LOG      ✓ Compiled in 143ms
+[03:19:51.000] Server  LOG      ✓ Compiled in 112ms
+[03:20:35.472] Server  LOG      ✓ Compiled in 119ms
+[03:20:40.028] Server  LOG      ✓ Compiled in 165ms
+[03:20:52.816] Server  LOG      ✓ Compiled in 131ms
+[03:22:20.736] Server  LOG      ✓ Compiled in 131ms
+[03:22:39.328] Server  LOG      ✓ Compiled in 119ms
+[03:22:40.491] Server  LOG      ✓ Compiled in 122ms
+[03:22:46.915] Server  LOG      ✓ Compiled in 109ms
+[03:23:35.819] Server  LOG      ✓ Compiled in 103ms
+[03:23:47.282] Server  LOG      ✓ Compiled in 111ms
+[03:24:09.370] Server  LOG      ✓ Compiled in 126ms
+[03:24:15.420] Server  LOG      ✓ Compiled in 167ms
+[03:24:23.003] Server  LOG      ✓ Compiled in 117ms
+[03:24:34.313] Server  LOG      ✓ Compiled in 233ms
+[03:24:35.379] Browser ERROR   ./app/auth/AnimatedBg.tsx:86:12
+Parsing ecmascript source code failed
+  84 |
+  85 | export function AnimatedBg() {
+> 86 |     return (
+     |            ^
+> 87 |         
+     | ^^^^^^^^
+> 88 |     )
+     | ^^^^^^
+  89 | }
+
+Parenthesized expression cannot be empty
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/AnimatedBg.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/AnimatedBg.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[03:24:40.728] Server  LOG      ✓ Compiled in 122ms
+[03:25:05.794] Server  LOG      ✓ Compiled in 107ms
+[03:25:06.379] Browser ERROR   ./app/auth/AnimatedBg.tsx:90:14
+Parsing ecmascript source code failed
+  88 |             {CIRCLES.map((c, i) => (
+  89 |                 
+> 90 |             ))}
+     |              ^
+  91 |         </>
+  92 |     )
+  93 | }
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/AnimatedBg.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/AnimatedBg.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[03:25:20.379] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `AuthPage`.  It was passed a child from AnimatedBg.
+[03:25:34.593] Server  LOG      ✓ Compiled in 114ms
+[03:27:58.666] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:27:58.874] Server  LOG      ✓ Compiled in 148ms
+[03:28:11.641] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:28:11.672] Server  LOG      ✓ Compiled in 216ms
+[03:28:22.489] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:28:22.499] Server  LOG      ✓ Compiled in 734ms
+[03:28:29.609] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:28:29.866] Server  LOG      ✓ Compiled in 658ms
+[03:28:29.871] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:28:44.043] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:28:44.077] Server  LOG      ✓ Compiled in 819ms
+[03:29:06.722] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:29:06.735] Server  LOG      ✓ Compiled in 129ms
+[03:30:08.861] Server  LOG      ✓ Compiled in 451ms
+[03:32:00.957] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:32:00.962] Server  LOG      ✓ Compiled in 190ms
+[03:32:13.258] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:32:13.282] Server  LOG      ✓ Compiled in 582ms
+[03:32:40.192] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:32:40.214] Server  LOG      ✓ Compiled in 238ms
+[03:33:08.847] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:33:08.886] Server  LOG      ✓ Compiled in 732ms
+[03:33:19.581] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:33:19.600] Server  LOG      ✓ Compiled in 157ms
+[03:33:24.934] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:33:24.940] Server  LOG      ✓ Compiled in 158ms
+[03:34:27.560] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:34:27.609] Server  LOG      ✓ Compiled in 377ms
+[03:48:20.689] Server  LOG      ✓ Compiled in 462ms
+[03:49:23.734] Server  LOG      ✓ Compiled in 177ms
+[03:56:06.721] Server  LOG      ✓ Compiled in 1307ms
+[03:56:06.804] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:56:06.847] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:56:30.814] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:56:31.006] Server  LOG      ✓ Compiled in 113ms
+[03:56:49.319] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:56:49.331] Server  LOG      ✓ Compiled in 115ms
+[04:13:11.541] Server  LOG      ✓ Compiled in 833ms
+[04:13:37.528] Server  LOG      ✓ Compiled in 195ms
+[04:14:02.256] Server  LOG      ✓ Compiled in 251ms
+[04:14:24.348] Server  LOG      ✓ Compiled in 145ms
+[04:14:47.006] Server  LOG      ✓ Compiled in 185ms
+[04:15:13.407] Server  LOG      ✓ Compiled in 210ms
