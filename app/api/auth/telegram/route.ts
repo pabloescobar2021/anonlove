@@ -100,7 +100,6 @@ export async function GET(req: NextRequest) {
   }
 
   // Редиректим юзера — Supabase сам установит сессию через этот URL
-  const confirmUrl = `https://anonlove.vercel.app/auth/v1/verify?token=${linkData.properties.hashed_token}&type=magiclink&redirect_to=https://anonlove.vercel.app/`;
-
+const confirmUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/auth/v1/verify?token=${linkData.properties.hashed_token}&type=magiclink&redirect_to=https://anonlove.vercel.app/`;
   return NextResponse.redirect(confirmUrl);
 }
