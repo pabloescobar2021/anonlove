@@ -19,7 +19,7 @@ export async function telegramAuth(message: TelegramMessage) {
         type: 'magiclink',
         email: user.login,
         options: {
-        redirectTo: 'https://anonlove.vercel.app' // сюда попадёт после входа
+            redirectTo: 'https://anonlove.vercel.app/auth/callback' // сюда попадёт после входа
         }
     })
 

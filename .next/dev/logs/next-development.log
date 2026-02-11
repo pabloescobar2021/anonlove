@@ -1495,3 +1495,148 @@ Check the render method of `AuthPage`.  It was passed a child from AnimatedBg.
 [04:14:24.348] Server  LOG      ✓ Compiled in 145ms
 [04:14:47.006] Server  LOG      ✓ Compiled in 185ms
 [04:15:13.407] Server  LOG      ✓ Compiled in 210ms
+[04:32:02.015] Server  LOG      ✓ Compiled in 382ms
+[04:32:27.831] Server  LOG      ✓ Compiled in 190ms
+[04:32:49.478] Server  LOG      ✓ Compiled in 187ms
+[04:33:49.694] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:49.889] Server  LOG      ✓ Compiled in 202ms
+[04:33:52.103] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.205] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.255] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.317] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.360] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.385] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:52.386] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:52.386] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:52.394] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.437] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.480] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.520] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.565] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.646] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.893] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:52.951] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:53.010] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:53.074] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:53.132] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:53.257] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:53.559] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.916] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.928] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.931] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.971] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.974] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.992] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:55.999] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.013] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.039] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.042] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.056] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.065] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.068] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.090] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.164] Browser ERROR   uncaughtError: Error: ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+
+[04:33:56.176] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.180] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.182] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.189] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.221] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.225] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.228] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.280] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.295] Server  ERROR    ⨯ Error: The Middleware file "/middleware" must export a function named `middleware` or a default function.
+[04:33:56.367] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:56.367] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:33:56.367] Browser ERROR   ./middleware.ts
+Middleware is missing expected function export name
+This function is what Next.js runs for every request handled by this middleware.
+
+Why this happens:
+- The file exists but doesn't export a function.
+- The export is not a function (e.g., an object or constant).
+- There's a syntax error preventing the export from being recognized.
+
+To fix it:
+- Ensure this file has either a default or "middleware" function export.
+
+Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[04:34:12.623] Server  LOG      ✓ Compiled in 389ms
+[04:37:22.350] Server  LOG      ✓ Compiled in 753ms
+[04:37:22.362] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[04:37:22.411] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[04:37:29.059] Server  LOG      ✓ Compiled in 153ms
+[04:39:40.040] Server  LOG      ✓ Compiled in 154ms
