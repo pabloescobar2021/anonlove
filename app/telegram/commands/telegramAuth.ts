@@ -6,9 +6,10 @@ import type { TelegramMessage } from "../type"
 export async function telegramAuth(message: TelegramMessage) {
     const chatId = message.from.id
 
-
-    await tgSend(
-        chatId,
-        `Войти в аккаунт:\nhttps://anonlove.vercel.app/api/auth/telegram`
-    )
+    await tgSend(chatId, "Войдите на сайт:", "HTML", [[
+        {
+            text: "🔐 Войти / Зарегистрироваться",
+            login_url: { url: "https://anonlove.vercel.app/api/auth/telegram" }
+        }
+    ]])
 }
