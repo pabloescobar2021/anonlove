@@ -1,10 +1,12 @@
-import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin"
+// import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin"
 import { tgSend } from "../tgSend"
 import type { TelegramMessage } from "../type"
+import { getSupabaseAdmin } from "@/utils/supabase/sadmin"
 
 export async function telegramAuth(message: TelegramMessage) {
     const chatId = message.from.id
 
+    const supabaseAdmin = getSupabaseAdmin()
     const {data: user} = await supabaseAdmin
         .from('users')
         .select('login')

@@ -1829,3 +1829,5 @@ Conflicting route and page at /auth/callback: route at /auth/callback/route and 
 [05:19:17.477] Server  LOG      ✓ Compiled in 339ms
 [05:22:54.739] Server  LOG      ✓ Compiled in 817ms
 [05:26:16.765] Server  LOG      ✓ Compiled in 2s
+[05:36:51.268] Server  LOG      ✓ Compiled in 443ms
+[05:38:03.835] Server  LOG      ✓ Compiled in 237ms
