@@ -1828,3 +1828,4 @@ An issue occurred while preparing your Next.js app
 Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
 [05:19:17.477] Server  LOG      ✓ Compiled in 339ms
 [05:22:54.739] Server  LOG      ✓ Compiled in 817ms
+[05:26:16.765] Server  LOG      ✓ Compiled in 2s
