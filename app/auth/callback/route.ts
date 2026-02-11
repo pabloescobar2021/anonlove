@@ -6,6 +6,9 @@ export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
 
+    console.log('searchParams:', Object.fromEntries(searchParams)) // что пришло
+  console.log('code:', code)
+
   if (code) {
     const cookieStore = await cookies()
     const supabase = createServerClient(
@@ -25,7 +28,9 @@ export async function GET(request: NextRequest) {
       }
     )
 
-    await supabase.auth.exchangeCodeForSession(code)
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code)
+    console.log('exchange result:', data, error) // успешно ли обменялось
+    
   }
 
   return NextResponse.redirect(`${origin}/`)
