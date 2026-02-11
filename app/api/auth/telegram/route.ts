@@ -1,91 +1,106 @@
-import crypto from "crypto"
-import { NextResponse } from "next/server"
-import jwt from "jsonwebtoken"
-import { SignJWT } from "jose"
-import { createClient } from "@supabase/supabase-js"
+import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+import * as crypto from "crypto";
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
-
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url)
-
-  const data: Record<string, string> = {}
-  searchParams.forEach((value, key) => {
-    data[key] = value
-  })
-
-  const hash = data.hash
-  delete data.hash
-
-  // 1️⃣ Проверка подписи Telegram
-  const secret = crypto
-    .createHash("sha256")
-    .update(process.env.TELEGRAM_BOT_TOKEN!)
-    .digest()
-
-  const checkString = Object.keys(data)
+// Верификация подписи от Telegram (официальный алгоритм)
+function verifyTelegramAuth(data: Record<string, string>, botToken: string): boolean {
+  const { hash, ...rest } = data;
+  
+  const checkString = Object.keys(rest)
     .sort()
-    .map(key => `${key}=${data[key]}`)
-    .join("\n")
+    .map((k) => `${k}=${rest[k]}`)
+    .join("\n");
+
+  const secretKey = crypto
+    .createHash("sha256")
+    .update(botToken)
+    .digest();
 
   const hmac = crypto
-    .createHmac("sha256", secret)
+    .createHmac("sha256", secretKey)
     .update(checkString)
-    .digest("hex")
+    .digest("hex");
 
-  if (hmac !== hash) {
-    return NextResponse.json({ error: "Invalid hash" }, { status: 401 })
+  // Проверяем подпись и что данным не больше 10 минут
+  const isValid = hmac === hash;
+  const isFresh = (Date.now() / 1000 - parseInt(rest.auth_date)) < 600;
+  
+  return isValid && isFresh;
+}
+
+export async function GET(req: NextRequest) {
+  const params = Object.fromEntries(req.nextUrl.searchParams.entries());
+  
+  const isValid = verifyTelegramAuth(params, process.env.TELEGRAM_BOT_TOKEN!);
+  if (!isValid) {
+    return NextResponse.json({ error: "Invalid Telegram auth" }, { status: 401 });
   }
 
-  const telegramId = data.id
+  const telegramId = params.id;
+  const firstName = params.first_name;
+  const username = params.username;
 
-  // 2️⃣ Проверяем пользователя
-  const { data: user } = await supabaseAdmin
+  // Supabase Admin client (service role — только на сервере!)
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
+  // Ищем юзера по telegram_id в твоей таблице users
+  const { data: existingUser } = await supabase
     .from("users")
-    .select("*")
+    .select("id_user, login")
     .eq("telegram_id", telegramId)
-    .single()
+    .single();
 
-  let userId: string
+  let userId: string;
+  let userEmail: string;
 
-  if (!user) {
-    // 3️⃣ Создаём пользователя
-    const email = `${telegramId}@telegram.local`
-    const password = crypto.randomBytes(32).toString("hex")
-
-    const { data: newUser } = await supabaseAdmin.auth.admin.createUser({
-      email,
-      password,
-      email_confirm: true
-    })
-
-    await supabaseAdmin
-      .from("users")
-      .insert({
-        id: newUser.user!.id,
-        telegram_id: telegramId,
-        username: data.username
-      })
-
-    userId = newUser.user!.id
+  if (existingUser) {
+    // Юзер уже есть — логиним
+    userId = existingUser.id_user;
+    userEmail = existingUser.login;
   } else {
-    userId = user.id
+    // Новый юзер — регистрируем
+    // Генерируем email в твоём формате
+    const login = username || `tg_${telegramId}`;
+    userEmail = `${login}@example.com`;
+    const tempPassword = crypto.randomBytes(32).toString("hex");
+
+    const { data: newAuthUser, error: signUpError } = await supabase.auth.admin.createUser({
+      email: userEmail,
+      password: tempPassword,
+      email_confirm: true, // сразу подтверждаем, без письма
+    });
+
+    if (signUpError || !newAuthUser.user) {
+      return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
+    }
+
+    userId = newAuthUser.user.id;
+
+    // Сохраняем telegram_id в твою таблицу users
+    await supabase.from("users").upsert({
+      id_user: userId,
+      login: userEmail,
+      telegram_id: telegramId,
+      telegram_username: username,
+      first_name: firstName,
+    });
   }
 
-  // 4️⃣ Генерируем Supabase JWT
-  const token = jwt.sign(
-    {
-      sub: userId,
-      role: "authenticated"
-    },
-    process.env.SUPABASE_JWT_SECRET!,
-    { expiresIn: "1h" }
-  )
+  // Создаём магическую ссылку для входа (она одноразовая и краткосрочная)
+  const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
+    type: "magiclink",
+    email: userEmail,
+  });
 
-  return NextResponse.redirect(
-    `https://yourdomain.com/auth/callback?token=${token}`
-  )
+  if (linkError || !linkData.properties?.hashed_token) {
+    return NextResponse.json({ error: "Failed to generate link" }, { status: 500 });
+  }
+
+  // Редиректим юзера — Supabase сам установит сессию через этот URL
+  const confirmUrl = `https://anonlove.vercel.app/auth/v1/verify?token=${linkData.properties.hashed_token}&type=magiclink&redirect_to=https://anonlove.vercel.app/`;
+
+  return NextResponse.redirect(confirmUrl);
 }

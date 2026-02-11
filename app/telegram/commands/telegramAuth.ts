@@ -9,6 +9,6 @@ export async function telegramAuth(message: TelegramMessage) {
 
     await tgSend(
         chatId,
-        `Войти в аккаунт:\nhttps://anonlove.vercel.app/auth/telegram`
+        `Войти в аккаунт:\nhttps://anonlove.vercel.app/api/auth/telegram`
     )
 }
