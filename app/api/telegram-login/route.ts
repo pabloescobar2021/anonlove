@@ -34,7 +34,7 @@ export async function POST(req: Request) {
             type: "magiclink",
             email: (await supabaseAdmin.auth.admin.getUserById(loginToken.user_id)).data.user?.email!,
             options: {
-                redirectTo: "https://anonlove.vercel.app/auth/telegram",
+                redirectTo: "https://anonlove.vercel.app/auth/callback",
             },
         })
 
