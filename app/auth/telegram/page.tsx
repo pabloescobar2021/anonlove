@@ -1,32 +1,36 @@
 "use client"
 
-import { useEffect } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useSearchParams } from "next/navigation"
+import { useState } from "react"
 
 export default function TelegramLogin() {
-    const router = useRouter()
     const searchParams = useSearchParams()
+    const token = searchParams.get("token")
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        const token = searchParams.get("token")
+    const handleLogin = async () => {
         if (!token) return
+        setLoading(true)
 
-        const login = async () => {
-            const res = await fetch("/api/telegram-login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token }),
-            })
+        const res = await fetch("/api/telegram-login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token }),
+        })
 
-            const data = await res.json()
+        const data = await res.json()
 
-            if (data.action_link) {
-                window.location.href = data.action_link
-            }
+        if (data.action_link) {
+            window.location.href = data.action_link
         }
+    }
 
-        login()
-    }, [])
-
-    return <div>Входим...</div>
+    return (
+        <div>
+            <h2>Вход через Telegram</h2>
+            <button onClick={handleLogin} disabled={loading}>
+                {loading ? "Входим..." : "Войти"}
+            </button>
+        </div>
+    )
 }
