@@ -1,7 +1,7 @@
 "use client"
 
 // export const dynamic = "force-dynamic";
-
+import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef, use } from "react"
 import { useRouter } from "next/navigation";
 import { useAuth } from "./things/hooks/useAuth";
@@ -16,6 +16,7 @@ import { ProfilePanel } from "./anonMain/ProfileMenu";
 
 export default function MainPage() {
     const router = useRouter();
+    const pathname = usePathname()
 
     const {user, profile, loading: authLoading} = useAuth();
     
@@ -81,11 +82,12 @@ export default function MainPage() {
     // редирект если неавторизован
     useEffect(() => {
         if (authLoading) return;
+        if (pathname === '/auth/callback') return; // не редиректим пока обрабатывается
 
         if(!user){
             router.replace('/auth')
         }
-    }, [user, authLoading,router])
+    }, [user, authLoading, router, pathname])
 
     
 

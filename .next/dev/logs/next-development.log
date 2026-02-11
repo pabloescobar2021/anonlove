@@ -1643,3 +1643,7 @@ Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 [04:44:46.770] Server  LOG      ✓ Compiled in 717ms
 [04:47:30.008] Server  LOG      ✓ Compiled in 308ms
 [04:48:32.542] Server  LOG      ✓ Compiled in 195ms
+[05:01:59.205] Server  LOG      ✓ Compiled in 807ms
+[05:02:00.393] Browser ERROR   uncaughtError: ReferenceError: pathname is not defined
+[05:02:19.701] Server  LOG      ✓ Compiled in 560ms
+[05:02:19.708] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
