@@ -1649,3 +1649,181 @@ Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 [05:02:19.708] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
 [05:04:02.802] Server  LOG      ✓ Compiled in 1686ms
 [05:08:53.133] Server  LOG      ✓ Compiled in 556ms
+[05:19:10.259] Server  LOG      ✓ Compiled in 957ms
+[05:19:11.078] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.362] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.422] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.476] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.523] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.574] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.613] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.666] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.736] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.782] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.824] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.865] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.910] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:11.953] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.018] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.062] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.109] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.151] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.196] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.247] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.274] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.275] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:12.306] Server  ERROR    ⨯ ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:12.633] Browser ERROR   uncaughtError: Error: ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+
+
+[05:19:13.368] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:13.368] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:13.368] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:13.368] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:13.368] Browser ERROR   ./app
+An issue occurred while preparing your Next.js app
+Conflicting route and page at /auth/callback: route at /auth/callback/route and page at /auth/callback/page
+[05:19:17.477] Server  LOG      ✓ Compiled in 339ms
