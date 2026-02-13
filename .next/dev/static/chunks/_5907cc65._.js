@@ -2747,7 +2747,7 @@ function CreateCardPage({ initialData }) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "CreateCardPage.useEffect": ()=>{
             if (messageId && type === "recieve") {
-                fetch("api/messages/mark-read", {
+                fetch("/api/messages/mark-read", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -2757,13 +2757,14 @@ function CreateCardPage({ initialData }) {
                         toUserId: to
                     })
                 }).catch({
-                    "CreateCardPage.useEffect": (err)=>console.log(err)
+                    "CreateCardPage.useEffect": (err)=>console.log(err, "Failed to mark as read:")
                 }["CreateCardPage.useEffect"]);
             }
         }
     }["CreateCardPage.useEffect"], [
         messageId,
-        type
+        type,
+        to
     ]);
     // проверка на анон
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
