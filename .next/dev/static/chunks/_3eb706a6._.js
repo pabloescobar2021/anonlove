@@ -354,7 +354,15 @@ function useMessages(userId) {
             },
             body: JSON.stringify({
                 userId: receiverId,
-                text: `Новое сообщение от ${userId} https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
+                text: `Новое сообщение от ${userId}`,
+                button: [
+                    [
+                        {
+                            text: "Открыть",
+                            url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
+                        }
+                    ]
+                ]
             })
         });
         await loadMessage();

@@ -1,7 +1,11 @@
 import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 import { tgSend } from "./tgSend";
 
-export async function sendTelegramNotification(userId: string, text:string){
+export async function sendTelegramNotification(
+    userId: string, 
+    text:string, 
+    button?: {text: string, url: string, callback_data?: string}[][]
+){
     const {data: user, error} = await supabaseAdmin
         .from("users")
         .select("telegram_id, telegram_notifications")
@@ -15,6 +19,6 @@ export async function sendTelegramNotification(userId: string, text:string){
     
     // бот шлет сообщение об уведомлении что пришло сообщение
     if(user.telegram_notifications){
-        await tgSend(chatId, text)
+        await tgSend(chatId, text, "HTML", button)
     }
 }
