@@ -13,6 +13,7 @@ import { useSwipe } from "@/app/things/hooks/useSwipe";
 import { DialogResizehandler } from "../DialogResizehandler";
 import { useShatterMessage } from "../useShatterMessage";
 import { ModalProfile } from "@/app/modal/modalProfile";
+import { HelperMsg } from "./HelperMsg";
 
 export type Props = {
     userId: string | undefined;
@@ -163,7 +164,7 @@ export function ManagerChat(props: Props) {
             className={`flex overflow-hidden bg-[#12080b] select-none ${isMobile ? "" : "h-screen"}`}
             {...(isMobile && !openChat ? profileSwipe : {})}
         >
-
+            
             {/* DIALOGS */}
             <div
                 ref={dialogPanelRef}
@@ -235,7 +236,7 @@ export function ManagerChat(props: Props) {
 
                 {/* Resize handler только для desktop */}
                 {!isMobile && <DialogResizehandler dialogPanelRef={dialogPanelRef} />}
-
+                
                 {/* Список диалогов */}
                 {dialogs.map((dialog) => {
                     const avatar = dialog.displayId.charAt(1).toUpperCase();
@@ -298,6 +299,12 @@ export function ManagerChat(props: Props) {
                         </button>
                     );
                 })}
+
+                {/* StartHelper */}
+                {dialogs.length === 0 && (
+                    <HelperMsg
+                />
+            )}
             </div>
 
             {/* MESSAGES */}

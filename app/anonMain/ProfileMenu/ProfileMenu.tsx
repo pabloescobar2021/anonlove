@@ -3,6 +3,7 @@ import { useClickOutside } from "../../things/hooks/useClickOutside"
 import { useAccountChange } from "../../things/hooks/useAccountChange"
 import { Notify } from "../../things/components/Notify"
 import { PersonalMenu } from "./menus/PersonalMenu"
+import { AnonLoveGuide } from "../chat/HelperMsg"
 type ProfilePanelProps = {
   open: boolean
   isMobile?: boolean
@@ -113,6 +114,12 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
     setNameMenuOpen
   }
 
+  const btns_main = [
+    {t: "Личные данные", value: "personal"},
+    {t: "Настройки", value: "settings"},
+    {t: "Помощь", value: "help"},
+  ]
+
   return (
     <div
       {...(isMobile ? swipeProps : {})}
@@ -199,10 +206,7 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
           ) : null}
 
           <div className="flex flex-col items-start gap-2 w-full">
-            {[
-              {t: "Личные данные", value: "personal"},
-              {t: "Настройки", value: "settings"},
-            ].map((item, i) => (
+            {btns_main.map((item, i) => (
               <button 
                 key={i} 
                 className={`border border-white/10 rounded-full px-1 py-1 w-full hover:bg-white/10 transition-colors`}
@@ -224,6 +228,11 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
           state={personalState}
           actions={personalActions}
         />
+      )}
+
+      {/* help */}
+      {nameMenuOpen === "help" && (
+        <AnonLoveGuide onClose={() => setNameMenuOpen(null)} />
       )}
           
 

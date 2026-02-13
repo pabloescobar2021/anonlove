@@ -2144,17 +2144,17 @@ function ManagerChat(props) {
                                         d: "M4 8h24M4 16h24M4 24h24"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 197,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 190,
+                                    lineNumber: 191,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 186,
+                                lineNumber: 187,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2164,12 +2164,12 @@ function ManagerChat(props) {
                                     children: "Чаты"
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 209,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 207,
+                                lineNumber: 208,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2192,35 +2192,35 @@ function ManagerChat(props) {
                                             d: "M2 4h28v18H16l-8 7v-7H2Z"
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 223,
+                                            lineNumber: 224,
                                             columnNumber: 33
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 218,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 212,
+                                    lineNumber: 213,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 211,
+                                lineNumber: 212,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 185,
+                        lineNumber: 186,
                         columnNumber: 17
                     }, this),
                     !isMobile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$DialogResizehandler$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogResizehandler"], {
                         dialogPanelRef: dialogPanelRef
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 237,
+                        lineNumber: 238,
                         columnNumber: 31
                     }, this),
                     dialogs.map((dialog)=>{
@@ -2254,12 +2254,12 @@ function ManagerChat(props) {
                                             children: avatar
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 276,
+                                            lineNumber: 277,
                                             columnNumber: 37
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 267,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2267,7 +2267,7 @@ function ManagerChat(props) {
                                         children: title
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 283,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2275,7 +2275,7 @@ function ManagerChat(props) {
                                         children: timeSend
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 286,
                                         columnNumber: 33
                                     }, this),
                                     unread > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2283,25 +2283,25 @@ function ManagerChat(props) {
                                         children: unread
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 290,
+                                        lineNumber: 291,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 256,
+                                lineNumber: 257,
                                 columnNumber: 29
                             }, this)
                         }, dialog.userId, false, {
                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                            lineNumber: 246,
+                            lineNumber: 247,
                             columnNumber: 25
                         }, this);
                     })
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 168,
+                lineNumber: 169,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2328,17 +2328,17 @@ function ManagerChat(props) {
                                         d: "M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 328,
+                                        lineNumber: 329,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 322,
+                                    lineNumber: 323,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 317,
+                                lineNumber: 318,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2349,13 +2349,13 @@ function ManagerChat(props) {
                                         value: activeDialog?.rating
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 337,
+                                        lineNumber: 338,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 335,
+                                lineNumber: 336,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2380,36 +2380,36 @@ function ManagerChat(props) {
                                                 d: "M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 358,
+                                                lineNumber: 359,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                 d: "m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 359,
+                                                lineNumber: 360,
                                                 columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 356,
+                                        lineNumber: 357,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 350,
+                                    lineNumber: 351,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 340,
+                                lineNumber: 341,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 316,
+                        lineNumber: 317,
                         columnNumber: 21
                     }, this),
                     isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2424,7 +2424,7 @@ function ManagerChat(props) {
                                 children: "Назад"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 368,
+                                lineNumber: 369,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2435,13 +2435,13 @@ function ManagerChat(props) {
                                 children: "Удалить"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 378,
+                                lineNumber: 379,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 367,
+                        lineNumber: 368,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2537,7 +2537,7 @@ function ManagerChat(props) {
                                                     children: avatar
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                    lineNumber: 470,
+                                                    lineNumber: 471,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2548,7 +2548,7 @@ function ManagerChat(props) {
                                                             children: nameLabel
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                            lineNumber: 475,
+                                                            lineNumber: 476,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2556,19 +2556,19 @@ function ManagerChat(props) {
                                                             children: ``
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                            lineNumber: 476,
+                                                            lineNumber: 477,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                    lineNumber: 474,
+                                                    lineNumber: 475,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 469,
+                                            lineNumber: 470,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2576,7 +2576,7 @@ function ManagerChat(props) {
                                             children: date
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 480,
+                                            lineNumber: 481,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$ReadIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ReadIndicator"], {
@@ -2584,7 +2584,7 @@ function ManagerChat(props) {
                                             isMine: isMine
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 482,
+                                            lineNumber: 483,
                                             columnNumber: 37
                                         }, this),
                                         isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2595,30 +2595,30 @@ function ManagerChat(props) {
                                             `
                                         }, void 0, false, {
                                             fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 485,
+                                            lineNumber: 486,
                                             columnNumber: 41
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 406,
+                                    lineNumber: 407,
                                     columnNumber: 33
                                 }, this)
                             }, message.id, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 397,
+                                lineNumber: 398,
                                 columnNumber: 29
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 389,
+                        lineNumber: 390,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 304,
+                lineNumber: 305,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
@@ -2626,7 +2626,7 @@ function ManagerChat(props) {
                 className: "absolute top-0 left-0 pointer-events-none overflow-visible w-screen h-screen"
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 501,
+                lineNumber: 502,
                 columnNumber: 13
             }, this),
             action && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MessageActionRoot"], {
@@ -2648,7 +2648,7 @@ function ManagerChat(props) {
                         ])
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 510,
+                lineNumber: 511,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ModalProfile"], {
@@ -2660,13 +2660,13 @@ function ManagerChat(props) {
                 refresh: ()=>refresh()
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 525,
+                lineNumber: 526,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-        lineNumber: 162,
+        lineNumber: 163,
         columnNumber: 9
     }, this);
 }
