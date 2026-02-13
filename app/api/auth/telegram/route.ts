@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
     // Новый юзер — регистрируем
     // Генерируем email в твоём формате
     const login = username || `tg_${telegramId}`;
-    userEmail = `${login}new@example.com`;
+    userEmail = `${login}news@example.com`;
     const tempPassword = crypto.randomBytes(32).toString("hex");
 
     const { data: newAuthUser, error: signUpError } = await supabaseAdmin.auth.admin.createUser({
@@ -75,12 +75,14 @@ export async function GET(req: NextRequest) {
     userId = newAuthUser.user.id;
 
     // Сохраняем telegram_id в твою таблицу users
-    await supabaseAdmin.from("users")
+    await supabaseAdmin
+      .from("users")
       .update({
         telegram_id: telegramId,
         telegram_username: username,
         username: username,
       })
+      .eq("id_user", userId)
   }
 
   // Создаём магическую ссылку для входа (она одноразовая и краткосрочная)
