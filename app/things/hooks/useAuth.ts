@@ -8,6 +8,12 @@ export function useAuth() {
     const [profile, setProfile] = useState<any>(null)
     const [loading, setLoading] = useState(true)
 
+    const refreshProfile = async () => {
+        if(!user) return
+        const profileData = await getUserProfile(user.id)
+        setProfile(profileData)
+    }
+
     useEffect(() => {
         const loadUser = async () => {
             try {
@@ -41,5 +47,5 @@ export function useAuth() {
         }
     },[])
 
-    return {user,profile,loading}
+    return {user,profile,loading, refreshProfile}
 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import * as crypto from "crypto";
+import { supabaseAdmin } from "@/utils/supabase/supabaseAdmin";
 
 // Верификация подписи от Telegram (официальный алгоритм)
 function verifyTelegramAuth(data: Record<string, string>, botToken: string): boolean {
@@ -40,14 +41,8 @@ export async function GET(req: NextRequest) {
   const firstName = params.first_name;
   const username = params.username;
 
-  // Supabase Admin client (service role — только на сервере!)
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   // Ищем юзера по telegram_id в твоей таблице users
-  const { data: existingUser } = await supabase
+  const { data: existingUser } = await supabaseAdmin
     .from("users")
     .select("id_user, login")
     .eq("telegram_id", telegramId)
@@ -67,7 +62,7 @@ export async function GET(req: NextRequest) {
     userEmail = `${login}@example.com`;
     const tempPassword = crypto.randomBytes(32).toString("hex");
 
-    const { data: newAuthUser, error: signUpError } = await supabase.auth.admin.createUser({
+    const { data: newAuthUser, error: signUpError } = await supabaseAdmin.auth.admin.createUser({
       email: userEmail,
       password: tempPassword,
       email_confirm: true, // сразу подтверждаем, без письма
@@ -80,17 +75,17 @@ export async function GET(req: NextRequest) {
     userId = newAuthUser.user.id;
 
     // Сохраняем telegram_id в твою таблицу users
-    await supabase.from("users").upsert({
+    await supabaseAdmin.from("users").upsert({
       id_user: userId,
       login: userEmail,
       telegram_id: telegramId,
       telegram_username: username,
-      first_name: firstName,
+      username: firstName,
     });
   }
 
   // Создаём магическую ссылку для входа (она одноразовая и краткосрочная)
-  const { data: linkData, error: linkError } = await supabase.auth.admin.generateLink({
+  const { data: linkData, error: linkError } = await supabaseAdmin.auth.admin.generateLink({
     type: "magiclink",
     email: userEmail,
   });

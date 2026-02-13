@@ -113,26 +113,81 @@ export default function AuthPage() {
         setIsLoading(true)
         typePretty("Проверяю...")
 
-        const email = `${login}@example.com`;
+        if (flow === "login"){
+            const { data: userData, error: userError } = await supabase
+                .from("users")
+                .select("login")
+                .eq("username", login)
+                .single();
 
-        const {error} = flow === "login"
-            ? await supabase.auth.signInWithPassword({email, password: pass})
-            : await supabase.auth.signUp({email, password: pass})
+            if(!userData || userError){
+                setIsLoading(false)
+                const msg = "Пользователь не найден 😕"
+                typePretty("Ошибка")
+                await botSay(msg, 600)
+                await botSay("Попробуйте еще раз", 1000)
+    
+                setCredetial({})
+                setStep(3)
+                setInputDisabled(false)
+                inputRef.current?.focus()
+                return
+            }
+            const {error} = await supabase.auth.signInWithPassword({
+                email: userData!.login, 
+                password: pass
+            })
+            if(error){
+                setIsLoading(false)
+                typePretty("Ошибка")
+                await botSay("Неправильный логин или пароль 😕", 600)
+                await botSay("Попробуйте еще раз", 1000)
+                setCredetial({})
+                setStep(3)
+                setInputDisabled(false)
+                inputRef.current?.focus()
+                return
+            }
+
+            }else {
+                const {data: existingUser} = await supabase
+                    .from("users")
+                    .select("login")
+                    .eq("username", login)
+                    .single();
+                if(existingUser){
+                    setIsLoading(false)
+                    typePretty("Ошибка")
+                    await botSay("Этот логин уже занят 😕", 600)
+                    await botSay("Попробуйте другой", 1000)
+                    setCredetial({})
+                    setStep(3)
+                    setInputDisabled(false)
+                    inputRef.current?.focus()
+                    return
+                }
+
+                const email = `${login}@example.com`
+                const {data, error} = await supabase.auth.signUp({email, password: pass})
+
+                if(error || !data.user){
+                    setIsLoading(false)
+                    const msg = "Ошибка регистрации. Попробуйте еще раз 😕"
+                    typePretty("Ошибка")
+                    await botSay(msg, 600)
+                    await botSay("Попробуйте еще раз", 1000)
+
+                    setCredetial({})
+                    setStep(3)
+                    setInputDisabled(false)
+                    inputRef.current?.focus()
+                    return
+                }
+            }
+        
+
         setIsLoading(false)
-        if(error){
-            const msg = flow === "login"
-                ? "Неправильный логин или пароль 😕"
-                : "Ошибка регистрации. Попробуйте еще раз 😕"
-            typePretty("Ошибка")
-            await botSay(msg, 600)
-            await botSay("Попробуйте еще раз", 1000)
-
-            setCredetial({})
-            setStep(3)
-            setInputDisabled(false)
-            inputRef.current?.focus()
-            return
-        }
+        
         await typePretty(flow === "login" ? "Добро пожаловать! 🎉" : "Регистрация прошла успешно! 🎉")
         await botSay(
             flow === "login" ? "Входим..." : "Регистрация прошла успешно! Входим...",

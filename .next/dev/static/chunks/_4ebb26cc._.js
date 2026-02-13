@@ -2689,17 +2689,71 @@ __turbopack_context__.s([
     ()=>ProfilePanel
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useClickOutside$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/things/hooks/useClickOutside.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+;
 ;
 const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClose, onSignOut, onTelegramLink })=>{
+    _s();
+    const contentRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const prevMenuRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const passwordInputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const divPassRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [nameMenuOpen, setNameMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [isChangePassword, setIsChangePassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useClickOutside$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useClickOutside"])(divPassRef, {
+        "ProfilePanel.useClickOutside": ()=>{
+            setIsChangePassword(false);
+        }
+    }["ProfilePanel.useClickOutside"]);
+    const toggleChangePass = ()=>{
+        setIsChangePassword((prev)=>!prev);
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ProfilePanel.useEffect": ()=>{
+            if (isChangePassword) {
+                passwordInputRef.current?.focus();
+                passwordInputRef.current?.select();
+            }
+        }
+    }["ProfilePanel.useEffect"], [
+        isChangePassword
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"])({
+        "ProfilePanel.useLayoutEffect": ()=>{
+            const el = contentRef.current;
+            if (!el) return;
+            const prev = prevMenuRef.current;
+            const next = nameMenuOpen;
+            if (prev === next) return;
+            // стартовое состояние
+            el.style.opacity = "0";
+            el.style.transform = "translateX(20px)";
+            requestAnimationFrame({
+                "ProfilePanel.useLayoutEffect": ()=>{
+                    el.style.transition = "all 200ms ease";
+                    el.style.opacity = "1";
+                    el.style.transform = "translateX(0px)";
+                }
+            }["ProfilePanel.useLayoutEffect"]);
+            prevMenuRef.current = next;
+        }
+    }["ProfilePanel.useLayoutEffect"], [
+        nameMenuOpen
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ...isMobile ? swipeProps : {},
+        ref: divPassRef,
         className: `
         absolute flex flex-col
         bg-black/40 backdrop-blur-xl
         transition-transform duration-200 ease-out
         will-change-transform
         ${open ? "translate-x-0" : "-translate-x-full"}
-        ${isMobile ? "inset-0" : "w-96 h-full"}
+        ${isMobile ? "inset-0" : "w-96 h-full rounded-r-2xl"}
       `,
         onClick: (e)=>e.stopPropagation(),
         children: [
@@ -2711,7 +2765,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: profile?.public_id?.[0] ?? "?"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                        lineNumber: 44,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2719,7 +2773,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: "Профиль"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                        lineNumber: 48,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2730,116 +2784,239 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                        lineNumber: 52,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                lineNumber: 41,
+                lineNumber: 88,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            !nameMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-col gap-3 p-4",
-                children: !profile?.telegram_username && user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                    onClick: onTelegramLink,
-                    className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10 hover:bg-white/15   transition-colors   text-left   active:scale-[0.98]   ",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-10 h-10 rounded-full bg-[#229ED9]/20 flex items-center justify-center text-[#229ED9]",
-                            children: "✈️"
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                            lineNumber: 72,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col flex-1",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "font-medium",
-                                    children: "Привязать Telegram"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                                    lineNumber: 77,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-xs text-white/50",
-                                    children: "Для уведомлений и входа"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                                    lineNumber: 80,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                            lineNumber: 76,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-white/30",
-                            children: `>`
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                            lineNumber: 85,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                    lineNumber: 61,
-                    columnNumber: 11
-                }, ("TURBOPACK compile-time value", void 0)) : profile?.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10   ",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-10 h-10 rounded-full bg-[#229ED9]/30 flex items-center justify-center text-[#229ED9]",
-                            children: "✓"
-                        }, void 0, false, {
-                            fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                            lineNumber: 95,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "font-medium",
-                                    children: [
-                                        "@",
-                                        profile.telegram_username
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                                    lineNumber: 100,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0)),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-xs text-white/50",
-                                    children: "Telegram привязан"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                                    lineNumber: 103,
-                                    columnNumber: 15
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                            lineNumber: 99,
-                            columnNumber: 13
-                        }, ("TURBOPACK compile-time value", void 0))
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                    lineNumber: 88,
-                    columnNumber: 11
-                }, ("TURBOPACK compile-time value", void 0)) : null
-            }, void 0, false, {
+                children: [
+                    !profile?.telegram_username && user ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: onTelegramLink,
+                        className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10 hover:bg-white/15   transition-colors   text-left   active:scale-[0.98]   ",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-10 h-10 rounded-full bg-[#229ED9]/20 flex items-center justify-center text-[#229ED9]",
+                                children: "✈️"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 120,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col flex-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-medium",
+                                        children: "Привязать Telegram"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                        lineNumber: 125,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs text-white/50",
+                                        children: "Для уведомлений и входа"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                        lineNumber: 128,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 124,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-white/30",
+                                children: `>`
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 133,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 109,
+                        columnNumber: 13
+                    }, ("TURBOPACK compile-time value", void 0)) : profile?.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10   ",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-10 h-10 rounded-full bg-[#229ED9]/30 flex items-center justify-center text-[#229ED9]",
+                                children: "✓"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 143,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-medium",
+                                        children: [
+                                            "@",
+                                            profile.telegram_username
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                        lineNumber: 148,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-xs text-white/50",
+                                        children: "Telegram привязан"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                        lineNumber: 151,
+                                        columnNumber: 17
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 147,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 136,
+                        columnNumber: 13
+                    }, ("TURBOPACK compile-time value", void 0)) : null,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col items-start gap-2 w-full",
+                        children: [
+                            {
+                                t: "Личные данные",
+                                value: "personal"
+                            },
+                            {
+                                t: "Настройки",
+                                value: "settings"
+                            }
+                        ].map((item, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: `btnWP px-1 py-1 w-full`,
+                                onClick: ()=>{
+                                    setNameMenuOpen(item.value);
+                                },
+                                children: item.t
+                            }, i, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 163,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 158,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                lineNumber: 58,
-                columnNumber: 7
+                lineNumber: 106,
+                columnNumber: 9
+            }, ("TURBOPACK compile-time value", void 0)),
+            nameMenuOpen === "personal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `flexC flex-col gap-3 p-4 relative 
+        `,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "absolute top-1 left-1",
+                        onClick: ()=>setNameMenuOpen(null),
+                        children: "X"
+                    }, void 0, false, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 183,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative w-full mt-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "absolute left-4 -top-2 prettyLabelInput",
+                                children: "Логин"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 186,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                className: "prettyInput pt-4 px-4",
+                                type: "text",
+                                value: profile?.username,
+                                readOnly: true
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 187,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 185,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative w-full mt-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "absolute left-4 -top-2 prettyLabelInput",
+                                children: "Пароль"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 191,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white/50 hover:text-white/80",
+                                onClick: ()=>toggleChangePass(),
+                                children: "Изменить"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 192,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                type: "text",
+                                value: password,
+                                disabled: !isChangePassword,
+                                ref: passwordInputRef,
+                                onChange: (e)=>{
+                                    setPassword(e.target.value);
+                                },
+                                className: `prettyInput pt-4 px-4 ${isChangePassword ? "" : ""}`
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 196,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "absolute btnWP px-2 -bottom-10 left-1/2 -translate-x-1/2",
+                                children: "Изменить"
+                            }, void 0, false, {
+                                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                                lineNumber: 202,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                        lineNumber: 190,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/anonMain/ProfileMenu.tsx",
+                lineNumber: 180,
+                columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-auto p-4 border-t border-white/10",
@@ -2849,12 +3026,12 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                     children: "Выйти"
                 }, void 0, false, {
                     fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                    lineNumber: 114,
+                    lineNumber: 210,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                lineNumber: 113,
+                lineNumber: 209,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2863,16 +3040,21 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                 children: `>`
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-                lineNumber: 128,
+                lineNumber: 224,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonMain/ProfileMenu.tsx",
-        lineNumber: 28,
+        lineNumber: 74,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
+_s(ProfilePanel, "zRso9PBF2luZBR4yizK3SNYbdqY=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useClickOutside$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useClickOutside"]
+    ];
+});
 _c = ProfilePanel;
 var _c;
 __turbopack_context__.k.register(_c, "ProfilePanel");

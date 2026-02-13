@@ -10,7 +10,7 @@ import { sighOut } from "./things/utils/auth";
 import { useSwipe } from "./things/hooks/useSwipe";
 import { useCheckMobile } from "./things/hooks/checkMobile";
 import { ManagerChat } from "./anonMain/chat/Chat";
-import { ProfilePanel } from "./anonMain/ProfileMenu";
+import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
 
 
 
@@ -18,7 +18,7 @@ export default function MainPage() {
     const router = useRouter();
     const pathname = usePathname()
 
-    const {user, profile, loading: authLoading} = useAuth();
+    const {user, profile, loading: authLoading, refreshProfile} = useAuth();
     
     const {inbox, sent, sendMessage: send, loading: messageLoading, refresh, deleteMessage} = useMessages(user?.id || null);
 
@@ -180,6 +180,7 @@ export default function MainPage() {
                 onClose={() => setOpenProfile(false)}
                 onSignOut={handleSignOut}
                 onTelegramLink={startTelegramLink}
+                refreshProfile={refreshProfile}
             />
 
             

@@ -1844,3 +1844,1990 @@ Conflicting route and page at /auth/callback: route at /auth/callback/route and 
 [13:27:12.623] Server  LOG      ✓ Compiled in 173ms
 [13:27:59.641] Server  LOG      ✓ Compiled in 193ms
 [13:30:56.633] Server  LOG      ✓ Compiled in 272ms
+[15:33:20.346] Browser ERROR   {}
+[15:33:20.568] Browser ERROR   {}
+[15:33:20.983] Browser ERROR   {}
+[45:13:35.849] Server  LOG      ✓ Compiled in 1411ms
+[45:53:28.216] Server  LOG      ✓ Compiled in 561ms
+[45:53:43.597] Server  LOG      ✓ Compiled in 190ms
+[45:53:51.897] Server  LOG      ✓ Compiled in 167ms
+[45:54:56.899] Server  LOG      ✓ Compiled in 278ms
+[45:54:57.366] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:111:74
+Parsing ecmascript source code failed
+  109 |
+  110 |         <div>
+> 111 |           {["Личные данные", "Настройки"].map(item) => (
+      |                                                                          ^^
+  112 |             
+  113 |           )}
+  114 |         </div>
+
+Expected '</', got '=>'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[45:55:35.453] Server  LOG      ✓ Compiled in 133ms
+[45:55:36.364] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `ProfilePanel`. 
+[45:55:47.209] Server  LOG      ✓ Compiled in 177ms
+[45:56:04.577] Server  LOG      ✓ Compiled in 133ms
+[45:56:13.769] Server  LOG      ✓ Compiled in 117ms
+[45:57:34.307] Server  LOG      ✓ Compiled in 400ms
+[45:57:45.220] Server  LOG      ✓ Compiled in 151ms
+[45:57:58.922] Server  LOG      ✓ Compiled in 364ms
+[45:58:05.479] Server  LOG      ✓ Compiled in 159ms
+[45:59:12.865] Server  LOG      ✓ Compiled in 358ms
+[45:59:15.584] Server  LOG      ✓ Compiled in 257ms
+[45:59:24.688] Server  LOG      ✓ Compiled in 148ms
+[45:59:35.144] Server  LOG      ✓ Compiled in 113ms
+[45:59:44.559] Server  LOG      ✓ Compiled in 101ms
+[45:59:46.572] Server  LOG      ✓ Compiled in 145ms
+[46:01:08.456] Server  LOG      ✓ Compiled in 121ms
+[46:01:13.574] Server  LOG      ✓ Compiled in 121ms
+[46:01:43.019] Server  LOG      ✓ Compiled in 231ms
+[46:01:57.227] Server  LOG      ✓ Compiled in 239ms
+[46:02:21.341] Server  LOG      ✓ Compiled in 347ms
+[46:03:21.593] Server  LOG      ✓ Compiled in 365ms
+[46:04:28.472] Server  LOG      ✓ Compiled in 239ms
+[46:04:29.378] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:114:52
+Parsing ecmascript source code failed
+  112 |
+  113 |         <div className="flex flex-col items-start gap-2 w-full">
+> 114 |           {[{t: "Личные данные", onC:  },
+      |                                                    ^
+  115 |            "Настройки"
+  116 |           ].map((item, i) => (
+  117 |             <button className={`btnWP px-1 py-1 w-full`}>
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:06:47.376] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:114:52
+Parsing ecmascript source code failed
+  112 |
+  113 |         <div className="flex flex-col items-start gap-2 w-full">
+> 114 |           {[{t: "Личные данные", onC:  },
+      |                                                    ^
+  115 |            "Настройки"
+  116 |           ].map((item, i) => (
+  117 |             <button className={`btnWP px-1 py-1 w-full`}>
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:07:08.367] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:114:52
+Parsing ecmascript source code failed
+  112 |
+  113 |         <div className="flex flex-col items-start gap-2 w-full">
+> 114 |           {[{t: "Личные данные", onC:  },
+      |                                                    ^
+  115 |            "Настройки"
+  116 |           ].map((item, i) => (
+  117 |             <button className={`btnWP px-1 py-1 w-full`}>
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:07:20.377] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:114:52
+Parsing ecmascript source code failed
+  112 |
+  113 |         <div className="flex flex-col items-start gap-2 w-full">
+> 114 |           {[{t: "Личные данные", onC:  },
+      |                                                    ^
+  115 |            "Настройки"
+  116 |           ].map((item, i) => (
+  117 |             <button className={`btnWP px-1 py-1 w-full`}>
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:07:57.377] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:115:52
+Parsing ecmascript source code failed
+  113 |         <div className="flex flex-col items-start gap-2 w-full">
+  114 |           {[
+> 115 |             {t: "Личные данные", onC:  },
+      |                                                    ^
+  116 |             {t: "Личные данные", onC:  }
+  117 |           ].map((item, i) => (
+  118 |             <button className={`btnWP px-1 py-1 w-full`}>
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:08:33.749] Server  LOG      ✓ Compiled in 494ms
+[46:08:35.121] Browser ERROR   uncaughtError: Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+[46:08:42.147] Browser ERROR   uncaughtError: Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+[46:09:03.483] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:09:03.499] Server  LOG      ✓ Compiled in 572ms
+[46:09:05.849] Browser ERROR   uncaughtError: ReferenceError: setNameMenuOpen is not defined
+[46:09:08.101] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:09:08.127] Server  LOG      ✓ Compiled in 189ms
+[46:09:10.366] Browser ERROR   uncaughtError: Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+[46:10:38.521] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:10:38.555] Server  LOG      ✓ Compiled in 269ms
+[46:10:41.367] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `ProfilePanel`. 
+[46:11:17.848] Server  LOG      ✓ Compiled in 270ms
+[46:11:52.178] Server  LOG      ✓ Compiled in 197ms
+[46:12:05.582] Server  LOG      ✓ Compiled in 111ms
+[46:12:19.555] Server  LOG      ✓ Compiled in 118ms
+[46:12:30.494] Server  LOG      ✓ Compiled in 112ms
+[46:13:33.421] Server  LOG      ✓ Compiled in 133ms
+[46:14:04.842] Server  LOG      ✓ Compiled in 149ms
+[46:14:07.793] Server  LOG      ✓ Compiled in 112ms
+[46:14:42.294] Server  LOG      ✓ Compiled in 189ms
+[46:15:41.927] Server  LOG      ✓ Compiled in 289ms
+[46:15:48.018] Server  LOG      ✓ Compiled in 262ms
+[46:17:03.274] Server  LOG      ✓ Compiled in 155ms
+[46:17:23.088] Server  LOG      ✓ Compiled in 144ms
+[46:17:53.644] Server  LOG      ✓ Compiled in 118ms
+[46:18:13.036] Server  LOG      ✓ Compiled in 288ms
+[46:18:33.554] Server  LOG      ✓ Compiled in 159ms
+[46:19:05.247] Server  LOG      ✓ Compiled in 1139ms
+[46:19:06.374] Browser ERROR   ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Users\Елена\Desktop\next.js\anonlove\app\globals.css:1:1: Cannot apply unknown utility class ``
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Root.error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (C:\Users\Елена\Desktop\next.js\anonlove\node_modules\@tailwindcss\postcss\dist\index.js:10:6912)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+[46:19:17.039] Server  LOG      ✓ Compiled in 354ms
+[46:19:28.513] Server  LOG      ✓ Compiled in 337ms
+[46:19:34.419] Server  LOG      ✓ Compiled in 212ms
+[46:19:50.002] Server  LOG      ✓ Compiled in 426ms
+[46:20:33.450] Server  LOG      ✓ Compiled in 375ms
+[46:20:44.786] Server  LOG      ✓ Compiled in 199ms
+[46:20:52.950] Server  LOG      ✓ Compiled in 190ms
+[46:21:01.077] Server  LOG      ✓ Compiled in 411ms
+[46:21:09.123] Server  LOG      ✓ Compiled in 416ms
+[46:21:20.986] Server  LOG      ✓ Compiled in 417ms
+[46:21:23.935] Server  LOG      ✓ Compiled in 386ms
+[46:21:26.133] Server  LOG      ✓ Compiled in 333ms
+[46:21:47.525] Server  LOG      ✓ Compiled in 203ms
+[46:21:53.724] Server  LOG      ✓ Compiled in 158ms
+[46:22:39.332] Server  LOG      ✓ Compiled in 288ms
+[46:23:38.825] Server  LOG      ✓ Compiled in 302ms
+[46:24:33.132] Server  LOG      ✓ Compiled in 298ms
+[46:25:56.320] Server  LOG      ✓ Compiled in 419ms
+[46:26:56.796] Server  LOG      ✓ Compiled in 219ms
+[46:27:33.934] Server  LOG      ✓ Compiled in 702ms
+[46:27:36.100] Server  LOG      ✓ Compiled in 227ms
+[46:27:51.596] Server  LOG      ✓ Compiled in 191ms
+[46:28:07.871] Server  LOG      ✓ Compiled in 186ms
+[46:28:11.974] Server  LOG      ✓ Compiled in 244ms
+[46:28:29.764] Server  LOG      ✓ Compiled in 176ms
+[46:29:45.284] Server  LOG      ✓ Compiled in 166ms
+[46:29:58.814] Server  LOG      ✓ Compiled in 194ms
+[46:29:59.380] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:144:12
+Parsing ecmascript source code failed
+  142 |           <span>Логин пользователя</span>
+  143 |           <input className="prettyInput" type="text" value={profile?.username ?? ""} readOnly />
+> 144 |           />
+      |            ^
+  145 |         </div>
+  146 |       )}
+  147 |
+
+Unexpected token. Did you mean `{'>'}` or `&gt;`?
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:30:11.845] Server  LOG      ✓ Compiled in 185ms
+[46:30:12.735] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[46:30:30.683] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[46:31:02.319] Server  LOG      ✓ Compiled in 485ms
+[46:31:06.642] Server  LOG      ✓ Compiled in 235ms
+[46:32:12.533] Server  LOG      ✓ Compiled in 185ms
+[46:32:20.332] Server  LOG      ✓ Compiled in 595ms
+[46:32:44.776] Server  LOG      ✓ Compiled in 211ms
+[46:32:46.320] Server  LOG      ✓ Compiled in 273ms
+[46:37:01.204] Server  LOG      ✓ Compiled in 1052ms
+[46:41:16.019] Server  LOG      ✓ Compiled in 776ms
+[46:41:31.855] Server  LOG      ✓ Compiled in 614ms
+[46:41:32.369] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:31:9
+Parsing ecmascript source code failed
+  29 |   const [nameMenuOpen, setNameMenuOpen] = useState<string | null>(null)
+  30 |
+> 31 |   const changeMenu () => {
+     |         ^^^^^^^^^^
+  32 |     
+  33 |   }
+  34 |
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:41:32.370] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:31:20
+Parsing ecmascript source code failed
+  29 |   const [nameMenuOpen, setNameMenuOpen] = useState<string | null>(null)
+  30 |
+> 31 |   const changeMenu () => {
+     |                    ^
+  32 |     
+  33 |   }
+  34 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[46:41:44.871] Server  LOG      ✓ Compiled in 272ms
+[46:46:51.237] Server  LOG      ✓ Compiled in 593ms
+[46:46:51.375] Browser ERROR   uncaughtError: Error: input is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.
+[46:46:55.802] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:46:56.702] Server  LOG      ✓ Compiled in 228ms
+[46:47:02.556] Server  LOG      ✓ Compiled in 186ms
+[46:47:09.431] Server  LOG      ✓ Compiled in 201ms
+[46:47:13.141] Browser ERROR   uncaughtError: Error: input is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.
+[46:47:35.475] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:47:36.256] Server  LOG      ✓ Compiled in 204ms
+[46:47:46.921] Server  LOG      ✓ Compiled in 629ms
+[46:47:48.053] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:47:48.054] Browser ERROR   uncaughtError: Error: input is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.
+[46:47:49.334] Server  LOG      ✓ Compiled in 225ms
+[46:47:53.896] Browser ERROR   uncaughtError: Error: input is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.
+[46:48:27.086] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[46:48:27.131] Server  LOG      ✓ Compiled in 202ms
+[46:48:34.299] Server  LOG      ✓ Compiled in 195ms
+[46:48:41.814] Server  LOG      ✓ Compiled in 216ms
+[46:50:00.877] Server  LOG      ✓ Compiled in 553ms
+[46:50:17.716] Server  LOG      ✓ Compiled in 215ms
+[46:52:06.101] Server  LOG      ✓ Compiled in 194ms
+[46:52:11.107] Server  LOG      ✓ Compiled in 206ms
+[46:52:17.683] Server  LOG      ✓ Compiled in 197ms
+[46:52:21.723] Server  LOG      ✓ Compiled in 177ms
+[46:52:30.329] Server  LOG      ✓ Compiled in 161ms
+[46:52:51.611] Server  LOG      ✓ Compiled in 384ms
+[46:53:07.960] Server  LOG      ✓ Compiled in 283ms
+[46:53:12.215] Server  LOG      ✓ Compiled in 254ms
+[46:53:15.493] Server  LOG      ✓ Compiled in 205ms
+[46:53:30.686] Server  LOG      ✓ Compiled in 357ms
+[46:53:34.109] Server  LOG      ✓ Compiled in 241ms
+[46:53:47.304] Server  LOG      ✓ Compiled in 238ms
+[46:54:09.287] Server  LOG      ✓ Compiled in 207ms
+[46:54:22.729] Server  LOG      ✓ Compiled in 168ms
+[46:54:25.445] Server  LOG      ✓ Compiled in 182ms
+[46:54:26.144] Server  LOG      ✓ Compiled in 206ms
+[46:54:29.787] Server  LOG      ✓ Compiled in 407ms
+[46:55:18.888] Server  LOG      ✓ Compiled in 1371ms
+[46:55:22.499] Server  LOG      ✓ Compiled in 212ms
+[46:55:27.401] Server  LOG      ✓ Compiled in 425ms
+[46:55:33.275] Server  LOG      ✓ Compiled in 195ms
+[46:55:43.526] Server  LOG      ✓ Compiled in 450ms
+[46:56:04.184] Server  LOG      ✓ Compiled in 294ms
+[46:56:04.795] Server  LOG      ✓ Compiled in 190ms
+[46:56:22.473] Server  LOG      ✓ Compiled in 174ms
+[46:56:28.681] Server  LOG      ✓ Compiled in 191ms
+[46:57:00.436] Server  LOG      ✓ Compiled in 201ms
+[46:57:59.979] Server  LOG      ✓ Compiled in 201ms
+[46:58:14.239] Server  LOG      ✓ Compiled in 186ms
+[46:58:27.419] Server  LOG      ✓ Compiled in 588ms
+[46:58:40.037] Server  LOG      ✓ Compiled in 319ms
+[46:59:27.819] Server  LOG      ✓ Compiled in 193ms
+[46:59:56.936] Server  LOG      ✓ Compiled in 184ms
+[47:00:38.152] Server  LOG      ✓ Compiled in 255ms
+[47:00:44.177] Server  LOG      ✓ Compiled in 219ms
+[47:00:46.369] Server  LOG      ✓ Compiled in 343ms
+[47:00:49.781] Server  LOG      ✓ Compiled in 184ms
+[47:01:58.283] Server  LOG      ✓ Compiled in 342ms
+[47:02:18.114] Server  LOG      ✓ Compiled in 822ms
+[47:02:33.700] Server  LOG      ✓ Compiled in 1001ms
+[47:02:46.776] Server  LOG      ✓ Compiled in 2.5s
+[47:03:00.146] Server  LOG      ✓ Compiled in 553ms
+[47:03:54.539] Server  LOG      ✓ Compiled in 434ms
+[47:04:15.817] Server  LOG      ✓ Compiled in 201ms
+[47:04:25.886] Server  LOG      ✓ Compiled in 229ms
+[47:04:32.258] Server  LOG      ✓ Compiled in 349ms
+[47:04:41.333] Server  LOG      ✓ Compiled in 357ms
+[47:05:00.916] Server  LOG      ✓ Compiled in 579ms
+[47:05:12.749] Server  LOG      ✓ Compiled in 223ms
+[47:05:38.943] Server  LOG      ✓ Compiled in 627ms
+[47:05:45.909] Server  LOG      ✓ Compiled in 325ms
+[47:06:02.735] Server  LOG      ✓ Compiled in 266ms
+[47:06:20.183] Server  LOG      ✓ Compiled in 517ms
+[47:07:38.557] Server  LOG      ✓ Compiled in 225ms
+[47:08:00.765] Server  LOG      ✓ Compiled in 393ms
+[47:08:13.172] Server  LOG      ✓ Compiled in 206ms
+[47:08:19.007] Server  LOG      ✓ Compiled in 174ms
+[47:10:13.282] Server  LOG      ✓ Compiled in 126ms
+[47:10:31.645] Server  LOG      ✓ Compiled in 101ms
+[47:10:47.414] Server  LOG      ✓ Compiled in 101ms
+[47:11:08.621] Server  LOG      ✓ Compiled in 110ms
+[47:11:26.607] Server  LOG      ✓ Compiled in 105ms
+[47:11:42.168] Server  LOG      ✓ Compiled in 104ms
+[47:12:31.052] Server  LOG      ✓ Compiled in 120ms
+[47:12:41.629] Server  LOG      ✓ Compiled in 111ms
+[47:12:51.016] Server  LOG      ✓ Compiled in 113ms
+[47:12:59.767] Server  LOG      ✓ Compiled in 111ms
+[47:13:02.819] Server  LOG      ✓ Compiled in 114ms
+[47:13:04.385] Server  LOG      ✓ Compiled in 105ms
+[47:13:09.449] Server  LOG      ✓ Compiled in 123ms
+[47:13:15.435] Server  LOG      ✓ Compiled in 104ms
+[47:13:36.768] Server  LOG      ✓ Compiled in 123ms
+[47:13:55.884] Server  LOG      ✓ Compiled in 403ms
+[47:14:06.851] Server  LOG      ✓ Compiled in 251ms
+[47:14:14.657] Server  LOG      ✓ Compiled in 113ms
+[47:14:24.252] Server  LOG      ✓ Compiled in 137ms
+[47:14:25.584] Server  LOG      ✓ Compiled in 497ms
+[47:15:03.758] Server  LOG      ✓ Compiled in 150ms
+[47:15:11.438] Server  LOG      ✓ Compiled in 139ms
+[47:15:13.322] Browser ERROR   You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+[47:15:46.259] Server  LOG      ✓ Compiled in 156ms
+[47:16:13.413] Server  LOG      ✓ Compiled in 124ms
+[47:16:14.370] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:178:47
+Parsing ecmascript source code failed
+  176 |             <button className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-white/50 hover:text-white/80">Изменить</button>
+  177 |             <input className="prettyInput pt-4 px-4" type="text" value={password} readOnly={isChangePassword} ref={passwordInputRef}
+> 178 |               onChange={(e) => {setPassword(e.)}}
+      |                                               ^
+  179 |             /> 
+  180 |           </div>
+  181 |
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[47:16:24.727] Server  LOG      ✓ Compiled in 103ms
+[47:16:34.510] Server  LOG      ✓ Compiled in 122ms
+[47:16:47.122] Server  LOG      ✓ Compiled in 120ms
+[47:17:21.182] Server  LOG      ✓ Compiled in 98ms
+[47:18:06.352] Server  LOG      ✓ Compiled in 113ms
+[47:18:19.469] Server  LOG      ✓ Compiled in 135ms
+[47:19:11.462] Server  LOG      ✓ Compiled in 199ms
+[47:19:35.891] Server  LOG      ✓ Compiled in 353ms
+[47:20:20.229] Server  LOG      ✓ Compiled in 187ms
+[47:20:36.738] Server  LOG      ✓ Compiled in 205ms
+[47:20:38.887] Server  LOG      ✓ Compiled in 201ms
+[47:20:47.298] Server  LOG      ✓ Compiled in 169ms
+[47:22:12.407] Server  LOG      ✓ Compiled in 427ms
+[47:22:20.384] Server  LOG      ✓ Compiled in 123ms
+[47:23:02.592] Server  LOG      ✓ Compiled in 107ms
+[47:23:16.032] Server  LOG      ✓ Compiled in 110ms
+[47:23:43.358] Server  LOG      ✓ Compiled in 120ms
+[47:24:26.655] Server  LOG      ✓ Compiled in 608ms
+[47:24:45.935] Server  LOG      ✓ Compiled in 169ms
+[47:24:58.250] Server  LOG      ✓ Compiled in 129ms
+[47:25:28.270] Server  LOG      ✓ Compiled in 149ms
+[47:25:39.205] Server  LOG      ✓ Compiled in 102ms
+[47:25:41.419] Server  LOG      ✓ Compiled in 206ms
+[47:26:45.060] Server  LOG      ✓ Compiled in 105ms
+[47:27:00.652] Server  LOG      ✓ Compiled in 148ms
+[47:27:26.003] Server  LOG      ✓ Compiled in 521ms
+[47:29:05.254] Server  LOG      ✓ Compiled in 216ms
+[47:29:42.305] Server  LOG      ✓ Compiled in 133ms
+[47:30:52.921] Server  LOG      ✓ Compiled in 569ms
+[47:31:14.956] Server  LOG      ✓ Compiled in 298ms
+[47:31:21.403] Server  LOG      ✓ Compiled in 300ms
+[47:31:41.117] Server  LOG      ✓ Compiled in 125ms
+[47:31:58.022] Server  LOG      ✓ Compiled in 220ms
+[47:32:04.987] Server  LOG      ✓ Compiled in 171ms
+[47:33:33.202] Server  LOG      ✓ Compiled in 135ms
+[47:33:42.683] Server  LOG      ✓ Compiled in 313ms
+[47:34:10.015] Server  LOG      ✓ Compiled in 125ms
+[47:34:10.377] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[47:35:05.365] Server  LOG      ✓ Compiled in 361ms
+[47:35:28.007] Server  LOG      ✓ Compiled in 448ms
+[47:35:41.836] Server  LOG      ✓ Compiled in 169ms
+[47:36:49.491] Server  LOG      ✓ Compiled in 153ms
+[47:38:19.565] Server  LOG      ✓ Compiled in 208ms
+[47:39:19.907] Server  LOG      ✓ Compiled in 333ms
+[47:41:14.981] Server  LOG      ✓ Compiled in 111ms
+[47:41:22.758] Server  LOG      ✓ Compiled in 135ms
+[47:42:14.636] Server  LOG      ✓ Compiled in 146ms
+[47:42:35.831] Server  LOG      ✓ Compiled in 761ms
+[47:42:42.404] Server  LOG      ✓ Compiled in 207ms
+[47:42:47.592] Server  LOG      ✓ Compiled in 189ms
+[47:42:49.094] Server  LOG      ✓ Compiled in 250ms
+[47:42:51.335] Server  LOG      ✓ Compiled in 188ms
+[47:43:32.122] Server  LOG      ✓ Compiled in 112ms
+[47:43:44.053] Server  LOG      ✓ Compiled in 109ms
+[47:43:56.588] Server  LOG      ✓ Compiled in 316ms
+[47:44:00.352] Server  LOG      ✓ Compiled in 582ms
+[47:45:27.932] Server  LOG      ✓ Compiled in 129ms
+[47:45:36.225] Server  LOG      ✓ Compiled in 134ms
+[47:46:53.827] Server  LOG      ✓ Compiled in 314ms
+[47:47:12.582] Server  LOG      ✓ Compiled in 156ms
+[47:47:29.314] Server  LOG      ✓ Compiled in 148ms
+[47:47:38.658] Server  LOG      ✓ Compiled in 165ms
+[47:49:15.849] Server  LOG      ✓ Compiled in 172ms
+[47:50:23.220] Server  LOG      ✓ Compiled in 856ms
+[47:51:14.127] Server  LOG      ✓ Compiled in 334ms
+[47:52:33.545] Server  LOG      ✓ Compiled in 138ms
+[47:53:03.027] Server  LOG      ✓ Compiled in 138ms
+[47:54:16.434] Server  LOG      ✓ Compiled in 150ms
+[47:54:26.659] Server  LOG      ✓ Compiled in 182ms
+[47:54:45.318] Server  LOG      ✓ Compiled in 139ms
+[47:54:54.033] Server  LOG      ✓ Compiled in 130ms
+[47:55:24.248] Server  LOG      ✓ Compiled in 132ms
+[47:56:25.834] Server  LOG      ✓ Compiled in 140ms
+[47:56:29.989] Server  LOG      ✓ Compiled in 138ms
+[47:57:19.547] Server  LOG      ✓ Compiled in 425ms
+[47:58:08.874] Server  LOG      ✓ Compiled in 1536ms
+[47:59:25.867] Server  LOG      ✓ Compiled in 273ms
+[48:00:05.483] Browser ERROR   {"__isAuthError":true,"code":"email_address_invalid","name":"AuthApiError","status":400}
+[48:00:24.530] Browser ERROR   {"__isAuthError":true,"code":"email_address_invalid","name":"AuthApiError","status":400}
+[48:01:04.489] Browser ERROR   {"__isAuthError":true,"code":"email_address_invalid","name":"AuthApiError","status":400}
+[48:49:43.271] Server  LOG      ✓ Compiled in 603ms
+[48:50:14.536] Server  LOG      ✓ Compiled in 247ms
+[48:51:50.530] Server  LOG      ✓ Compiled in 1300ms
+[48:51:51.384] Browser ERROR   ./app/auth/page.tsx:120:17
+Parsing ecmascript source code failed
+  118 |         const {error} = flow === "login"
+  119 |             ? (
+> 120 |                 const { data: userData} = await supabase
+      |                 ^^^^^
+  121 |                     .from("users")
+  122 |                     .select("login")
+  123 |                     .eq("username", login)
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[48:52:02.372] Browser ERROR   ./app/auth/page.tsx:120:17
+Parsing ecmascript source code failed
+  118 |         const {error} = flow === "login"
+  119 |             ? (
+> 120 |                 const { data: userData} = await supabase
+      |                 ^^^^^
+  121 |                     .from("users")
+  122 |                     .select("login")
+  123 |                     .eq("username", login)
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[48:53:17.633] Server  LOG      ✓ Compiled in 213ms
+[48:53:28.980] Server  LOG      ✓ Compiled in 209ms
+[48:54:08.548] Server  LOG      ✓ Compiled in 164ms
+[48:54:34.433] Server  LOG      ✓ Compiled in 133ms
+[48:56:23.044] Server  LOG      ✓ Compiled in 176ms
+[48:56:23.366] Browser ERROR   ./app/auth/page.tsx:123:77
+Parsing ecmascript source code failed
+  121 |                 .single();
+  122 |
+> 123 |             const {error} = await supabase.auth.signInWithPassword({userData.login, password: pass})
+      |                                                                             ^
+  124 |             
+  125 |             }else {
+  126 |                 const email = `${login}@example.com`
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[48:56:28.374] Browser ERROR   ./app/auth/page.tsx:123:77
+Parsing ecmascript source code failed
+  121 |                 .single();
+  122 |
+> 123 |             const {error} = await supabase.auth.signInWithPassword({userData.login, password: pass})
+      |                                                                             ^
+  124 |
+  125 |             }else {
+  126 |                 const email = `${login}@example.com`
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/auth/page.tsx [Client Component Browser]
+    ./app/auth/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/auth/page.tsx [Client Component SSR]
+    ./app/auth/page.tsx [Server Component]
+[48:56:40.516] Server  LOG      ✓ Compiled in 138ms
+[48:57:54.160] Server  LOG      ✓ Compiled in 381ms
+[48:58:56.052] Server  LOG      ✓ Compiled in 173ms
+[48:59:08.142] Server  LOG      ✓ Compiled in 164ms
+[49:00:07.890] Server  LOG      ✓ Compiled in 150ms
+[49:04:03.689] Server  LOG      ✓ Compiled in 526ms
+[49:04:20.697] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[49:05:38.479] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[49:05:52.957] Browser LOG     {"code":"PGRST116","details":"The result contains 0 rows","hint":null,"message":"Cannot coerce the result to a single JSON object"}
+[49:05:52.957] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of null (reading 'login')
+[49:08:14.798] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[49:08:14.814] Server  LOG      ✓ Compiled in 276ms
+[49:10:03.653] Server  LOG      ✓ Compiled in 819ms
+[49:11:51.969] Server  LOG      ✓ Compiled in 253ms
+[49:14:24.939] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/auth/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[49:14:24.949] Server  LOG      ✓ Compiled in 342ms
+[49:20:44.721] Server  LOG      ✓ Compiled in 358ms
+[49:22:16.229] Server  LOG      ✓ Compiled in 847ms
+[49:22:19.994] Server  LOG      ✓ Compiled in 210ms
+[49:22:32.739] Server  LOG      ✓ Compiled in 164ms
+[49:23:53.462] Server  LOG      ✓ Compiled in 189ms
+[49:23:54.409] Browser ERROR   ./app/things/hooks/useAccountChange.ts:35:22
+Ecmascript file had an error
+  33 |             .eq("id_user", user?.id)
+  34 |
+> 35 |         const {data, error} = await supabase.auth.updateUser({
+     |                      ^^^^^
+  36 |             email: newLogin
+  37 |         })
+  38 |         if(error) console.error(error)
+
+the name `error` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:24:01.632] Server  LOG      ✓ Compiled in 139ms
+[49:24:24.605] Server  LOG      ✓ Compiled in 163ms
+[49:29:22.496] Server  LOG      ✓ Compiled in 648ms
+[49:29:25.146] Server  LOG      ✓ Compiled in 160ms
+[49:29:40.688] Server  LOG      ✓ Compiled in 181ms
+[49:29:42.095] Server  LOG      ✓ Compiled in 171ms
+[49:30:47.098] Server  LOG      ✓ Compiled in 187ms
+[49:31:10.636] Server  LOG      ✓ Compiled in 239ms
+[49:31:59.453] Server  LOG      ✓ Compiled in 194ms
+[49:32:36.740] Server  LOG      ✓ Compiled in 155ms
+[49:33:16.771] Server  LOG      ✓ Compiled in 591ms
+[49:33:23.933] Server  LOG      ✓ Compiled in 140ms
+[49:33:42.164] Server  LOG      ✓ Compiled in 150ms
+[49:33:54.883] Server  LOG      ✓ Compiled in 108ms
+[49:34:20.105] Server  LOG      ✓ Compiled in 117ms
+[49:34:40.572] Server  LOG      ✓ Compiled in 133ms
+[49:35:03.333] Server  LOG      ✓ Compiled in 133ms
+[49:35:07.150] Server  LOG      ✓ Compiled in 245ms
+[49:35:07.627] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[49:35:52.277] Server  LOG      ✓ Compiled in 125ms
+[49:36:01.116] Server  LOG      ✓ Compiled in 109ms
+[49:36:25.177] Server  LOG      ✓ Compiled in 230ms
+[49:36:52.104] Server  LOG      ✓ Compiled in 114ms
+[49:36:53.626] Server  LOG      ✓ Compiled in 174ms
+[49:37:34.102] Server  LOG      ✓ Compiled in 327ms
+[49:37:34.366] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [false] [false, false]
+[49:37:41.262] Server  LOG      ✓ Compiled in 181ms
+[49:38:34.308] Server  LOG      ✓ Compiled in 163ms
+[49:38:38.446] Server  LOG      ✓ Compiled in 146ms
+[49:38:50.445] Server  LOG      ✓ Compiled in 561ms
+[49:39:20.992] Server  LOG      ✓ Compiled in 769ms
+[49:39:35.884] Server  LOG      ✓ Compiled in 125ms
+[49:40:49.327] Server  LOG      ✓ Compiled in 462ms
+[49:41:05.181] Server  LOG      ✓ Compiled in 159ms
+[49:41:19.680] Server  LOG      ✓ Compiled in 388ms
+[49:41:26.000] Server  LOG      ✓ Compiled in 171ms
+[49:41:30.570] Server  LOG      ✓ Compiled in 132ms
+[49:41:33.844] Server  LOG      ✓ Compiled in 199ms
+[49:41:55.543] Server  LOG      ✓ Compiled in 136ms
+[49:41:58.872] Server  LOG      ✓ Compiled in 184ms
+[49:42:33.166] Server  LOG      ✓ Compiled in 103ms
+[49:42:45.449] Server  LOG      ✓ Compiled in 119ms
+[49:42:55.482] Server  LOG      ✓ Compiled in 130ms
+[49:43:03.833] Server  LOG      ✓ Compiled in 117ms
+[49:43:16.609] Server  LOG      ✓ Compiled in 111ms
+[49:45:01.997] Server  LOG      ✓ Compiled in 116ms
+[49:45:28.997] Server  LOG      ✓ Compiled in 152ms
+[49:46:04.536] Server  LOG      ✓ Compiled in 340ms
+[49:46:28.007] Server  LOG      ✓ Compiled in 384ms
+[49:48:12.975] Server  LOG      ✓ Compiled in 225ms
+[49:48:34.474] Server  LOG      ✓ Compiled in 122ms
+[49:48:34.833] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object]] [[object Object], true]
+[49:55:34.041] Server  LOG      ✓ Compiled in 402ms
+[49:56:17.823] Server  LOG      ✓ Compiled in 141ms
+[49:56:42.243] Server  LOG      ✓ Compiled in 168ms
+[49:56:42.385] Browser ERROR   ./app/things/hooks/useAccountChange.ts:40:5
+Parsing ecmascript source code failed
+  38 |             return {succes: true}
+  39 |         }
+> 40 |     }
+     |     ^
+  41 |
+  42 |     return{
+  43 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:56:56.366] Browser ERROR   ./app/things/hooks/useAccountChange.ts:41:5
+Parsing ecmascript source code failed
+  39 |             return {succes: true}
+  40 |         }
+> 41 |     }
+     |     ^
+  42 |
+  43 |     return{
+  44 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:57:07.371] Browser ERROR   ./app/things/hooks/useAccountChange.ts:41:5
+Parsing ecmascript source code failed
+  39 |             return {succes: true}
+  40 |         }
+> 41 |     }
+     |     ^
+  42 |
+  43 |     return{
+  44 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:57:27.365] Browser ERROR   ./app/things/hooks/useAccountChange.ts:42:5
+Parsing ecmascript source code failed
+  40 |             return {succes: true}
+  41 |         }
+> 42 |     }
+     |     ^
+  43 |
+  44 |     return{
+  45 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:57:54.383] Browser ERROR   ./app/things/hooks/useAccountChange.ts:42:5
+Parsing ecmascript source code failed
+  40 |             return {succes: true}
+  41 |         }
+> 42 |     }
+     |     ^
+  43 |
+  44 |     return{
+  45 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:57:58.377] Browser ERROR   ./app/things/hooks/useAccountChange.ts:42:5
+Parsing ecmascript source code failed
+  40 |             return {succes: true}
+  41 |         }
+> 42 |     }
+     |     ^
+  43 |
+  44 |     return{
+  45 |         changePassword, changeLogin
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useAccountChange.ts [Client Component Browser]
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useAccountChange.ts [Client Component SSR]
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[49:58:17.800] Server  LOG      ✓ Compiled in 441ms
+[49:58:42.211] Server  LOG      ✓ Compiled in 943ms
+[49:58:55.253] Server  LOG      ✓ Compiled in 155ms
+[50:00:23.202] Server  LOG      ✓ Compiled in 567ms
+[50:02:42.178] Server  LOG      ✓ Compiled in 274ms
+[50:04:13.037] Server  LOG      ✓ Compiled in 154ms
+[50:04:25.619] Server  LOG      ✓ Compiled in 148ms
+[50:04:38.319] Browser LOG     
+[50:05:09.974] Server  LOG      ✓ Compiled in 165ms
+[50:05:23.476] Browser LOG     undefined
+[50:05:30.342] Server  LOG      ✓ Compiled in 1170ms
+[50:08:16.422] Server  LOG      ✓ Compiled in 294ms
+[50:08:20.945] Server  LOG      ✓ Compiled in 416ms
+[50:08:43.708] Server  LOG      ✓ Compiled in 144ms
+[50:09:30.542] Server  LOG      ✓ Compiled in 167ms
+[50:09:31.374] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[50:09:36.759] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[50:09:36.897] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[50:09:37.124] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[50:09:37.814] Browser ERROR   uncaughtError: Error: ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[50:09:38.375] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[50:09:38.375] Browser ERROR   ./app/anonMain/ProfileMenu.tsx:74:43
+Parsing ecmascript source code failed
+  72 |     }
+  73 |     if(isChangeLogin) {
+> 74 |       const res = await changeLogin(login)s
+     |                                           ^
+  75 |       console.log(res.succes)
+  76 |     }
+  77 |     setIsChangePassword(false)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[50:09:40.316] Server  LOG      ✓ Compiled in 152ms
+[50:09:52.130] Browser LOG     true
+[50:09:57.290] Server  LOG      ✓ Compiled in 191ms
+[50:10:01.305] Server  LOG      ✓ Compiled in 181ms
+[50:12:12.296] Server  LOG      ✓ Compiled in 766ms
+[50:12:13.705] Server  LOG      ✓ Compiled in 241ms
+[50:13:16.939] Server  LOG      ✓ Compiled in 180ms
+[50:14:04.028] Server  LOG      ✓ Compiled in 299ms
+[50:17:11.399] Server  LOG      ✓ Compiled in 166ms
+[50:19:01.924] Server  LOG      ✓ Compiled in 412ms
+[50:19:34.521] Server  LOG      ✓ Compiled in 313ms
+[50:19:54.581] Server  LOG      ✓ Compiled in 193ms
+[50:20:14.454] Server  LOG      ✓ Compiled in 859ms
+[50:20:15.372] Browser ERROR   uncaughtError: ReferenceError: message is not defined
+[50:20:21.582] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:20:21.602] Server  LOG      ✓ Compiled in 126ms
+[50:20:24.022] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:20:25.376] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:20:31.597] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:20:31.633] Server  LOG      ✓ Compiled in 174ms
+[50:20:33.387] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:21:31.739] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:21:31.824] Server  LOG      ✓ Compiled in 168ms
+[50:21:34.374] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:21:44.008] Server  LOG      ✓ Compiled in 206ms
+[50:21:44.023] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:21:46.374] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:21:51.861] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:21:51.891] Server  LOG      ✓ Compiled in 144ms
+[50:21:54.374] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:21:59.397] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:21:59.432] Server  LOG      ✓ Compiled in 226ms
+[50:22:04.372] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:22:57.629] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:22:57.635] Server  LOG      ✓ Compiled in 424ms
+[50:23:01.315] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:23:44.320] Server  LOG      ✓ Compiled in 1041ms
+[50:23:44.346] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:23:53.892] Server  LOG      ✓ Compiled in 515ms
+[50:23:54.368] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:24:41.893] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:24:41.937] Server  LOG      ✓ Compiled in 126ms
+[50:24:44.365] Browser ERROR   uncaughtError: ReferenceError: notifyMessage is not defined
+[50:25:23.151] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:25:23.155] Server  LOG      ✓ Compiled in 128ms
+[50:25:25.365] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:26:30.097] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:26:30.109] Server  LOG      ✓ Compiled in 207ms
+[50:26:35.374] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:26:37.615] Server  LOG      ✓ Compiled in 1641ms
+[50:26:37.635] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:26:43.382] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:26:53.121] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:26:53.154] Server  LOG      ✓ Compiled in 492ms
+[50:26:55.370] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[50:27:13.797] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[50:27:13.835] Server  LOG      ✓ Compiled in 120ms
+[50:28:42.263] Server  LOG      ✓ Compiled in 348ms
+[50:28:59.050] Server  LOG      ✓ Compiled in 294ms
+[50:29:16.342] Server  LOG      ✓ Compiled in 462ms
+[50:29:57.757] Server  LOG      ✓ Compiled in 162ms
+[50:30:08.834] Server  LOG      ✓ Compiled in 161ms
+[50:30:09.378] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[50:30:44.727] Server  LOG      ✓ Compiled in 152ms
+[50:30:49.580] Server  LOG      ✓ Compiled in 145ms
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:30:53.059] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[50:32:23.178] Server  LOG      ✓ Compiled in 218ms
+[50:32:38.621] Server  LOG      ✓ Compiled in 124ms
+[50:33:21.534] Server  LOG      ✓ Compiled in 539ms
+[50:33:22.529] Server  LOG      ✓ Compiled in 246ms
+[50:34:35.135] Server  LOG      ✓ Compiled in 1614ms
+[50:35:17.237] Server  LOG      ✓ Compiled in 254ms
+[50:36:05.583] Server  LOG      ✓ Compiled in 419ms
+[50:38:29.722] Server  LOG      ✓ Compiled in 498ms
+[50:39:51.262] Server  LOG      ✓ Compiled in 365ms
+[50:40:01.092] Server  LOG      ✓ Compiled in 367ms
+[50:40:21.645] Server  LOG      ✓ Compiled in 225ms
+[50:40:55.660] Server  LOG      ✓ Compiled in 1524ms
+[50:42:30.745] Server  LOG      ✓ Compiled in 283ms
+[50:42:54.676] Server  LOG      ✓ Compiled in 209ms
+[50:43:05.567] Server  LOG      ✓ Compiled in 280ms
+[50:43:07.894] Server  LOG      ✓ Compiled in 129ms
+[50:48:51.249] Server  LOG      ✓ Compiled in 540ms
+[50:49:13.709] Server  LOG      ✓ Compiled in 235ms
+[50:49:13.954] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object], async ()=>{
+        if (isChangePassword) {
+            await changePassword(password);
+        }
+        if (isChangeLogin) {
+            const res = await changeLogin(login);
+            setSuccesMessage(res.succes ? "Логин успешно изменен" : "Пользователь с таким логином уже существует");
+        }
+        setIsChangePassword(false);
+        setIsChangeLogin(false);
+    }] [[object Object]]
+[50:51:03.377] Server  LOG      ✓ Compiled in 145ms
+[50:51:03.634] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object]] [[object Object], false, true]
+[51:01:03.454] Server  LOG      ✓ Compiled in 1315ms
+[51:01:27.350] Server  LOG      ✓ Compiled in 463ms
+[51:01:45.473] Server  LOG      ✓ Compiled in 1125ms
+[51:01:55.032] Server  LOG      ✓ Compiled in 147ms
+[51:02:06.265] Server  LOG      ✓ Compiled in 115ms
+[51:02:24.692] Server  LOG      ✓ Compiled in 288ms
+[51:03:11.763] Server  LOG      ✓ Compiled in 816ms
+[51:03:29.538] Server  LOG      ✓ Compiled in 171ms
+[51:03:30.376] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [false, false] [[object Object], true, true]
+[51:03:30.376] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object], true, true] [false, false]
+[51:06:09.969] Server  LOG      ✓ Compiled in 241ms
+[51:07:20.155] Server  LOG      ✓ Compiled in 534ms
+[51:07:23.225] Server  LOG      ✓ Compiled in 146ms
+[51:07:31.511] Server  LOG      ✓ Compiled in 367ms
+[51:07:43.282] Server  LOG      ✓ Compiled in 109ms
+[51:08:02.860] Server  LOG      ✓ Compiled in 209ms
+[51:09:24.496] Server  LOG      ✓ Compiled in 413ms
+[51:09:25.604] Server  LOG      ✓ Compiled in 189ms
+[51:09:29.288] Server  LOG      ✓ Compiled in 226ms
+[51:11:08.111] Server  LOG      ✓ Compiled in 375ms
+[51:11:13.527] Server  LOG      ✓ Compiled in 792ms
+[51:12:47.758] Server  LOG      ✓ Compiled in 164ms
+[51:13:01.833] Server  LOG      ✓ Compiled in 166ms
+[51:13:57.471] Server  LOG      ✓ Compiled in 185ms
+[51:14:02.948] Browser LOG     true
+[51:16:04.113] Server  LOG      ✓ Compiled in 162ms
+[51:16:12.512] Browser LOG     true
+[51:16:17.090] Server  LOG      ✓ Compiled in 181ms
+[51:18:12.170] Server  LOG      ✓ Compiled in 536ms
+[51:18:31.749] Server  LOG      ✓ Compiled in 251ms
+[51:18:42.284] Server  LOG      ✓ Compiled in 331ms
+[51:19:57.602] Server  LOG      ✓ Compiled in 360ms
+[51:19:58.375] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object], true, true] [[object Object]]
+[51:20:01.298] Server  LOG      ✓ Compiled in 485ms
+[59:46:42.899] Server  LOG      ✓ Compiled in 794ms
+[59:49:50.515] Server  LOG      ✓ Compiled in 613ms
+[59:49:58.976] Server  LOG      ✓ Compiled in 351ms
+[59:50:06.736] Server  LOG      ✓ Compiled in 236ms
+[59:50:25.494] Server  LOG      ✓ Compiled in 148ms
+[59:51:32.354] Server  LOG      ✓ Compiled in 300ms
+[59:51:33.382] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `div`.  It was passed a child from ProfilePanel.
+[59:51:39.580] Server  LOG      ✓ Compiled in 134ms
+[59:51:52.499] Server  LOG      ✓ Compiled in 109ms
+[59:52:06.124] Server  LOG      ✓ Compiled in 863ms
+[59:52:38.200] Server  LOG      ✓ Compiled in 759ms
+[59:53:24.310] Server  LOG      ✓ Compiled in 243ms
+[59:53:37.563] Server  LOG      ✓ Compiled in 507ms
+[59:53:45.251] Server  LOG      ✓ Compiled in 357ms
+[59:53:48.681] Server  LOG      ✓ Compiled in 372ms
+[59:53:54.541] Server  LOG      ✓ Compiled in 191ms
+[59:56:37.582] Server  LOG      ✓ Compiled in 181ms
+[60:22:21.714] Server  LOG      ✓ Compiled in 1540ms
+[60:22:30.769] Server  LOG      ✓ Compiled in 139ms
+[60:22:41.651] Server  LOG      ✓ Compiled in 737ms
+[60:23:01.944] Server  LOG      ✓ Compiled in 338ms
+[60:23:12.555] Server  LOG      ✓ Compiled in 220ms
+[60:23:15.266] Server  LOG      ✓ Compiled in 187ms
+[60:24:09.111] Server  LOG      ✓ Compiled in 230ms
+[60:24:18.068] Server  LOG      ✓ Compiled in 159ms
+[60:25:02.374] Server  LOG      ✓ Compiled in 1397ms
+[60:25:23.025] Server  LOG      ✓ Compiled in 182ms
+[60:25:39.546] Server  LOG      ✓ Compiled in 194ms
+[60:27:07.595] Server  LOG      ✓ Compiled in 255ms
+[60:27:53.130] Server  LOG      ✓ Compiled in 186ms
+[60:28:15.565] Server  LOG      ✓ Compiled in 108ms
+[60:28:36.872] Server  LOG      ✓ Compiled in 168ms
+[60:28:54.266] Server  LOG      ✓ Compiled in 136ms
+[60:29:00.316] Server  LOG      ✓ Compiled in 172ms
+[60:30:20.518] Server  LOG      ✓ Compiled in 317ms
+[60:31:02.141] Server  LOG      ✓ Compiled in 184ms
+[60:31:39.809] Server  LOG      ✓ Compiled in 571ms
+[60:31:53.819] Server  LOG      ✓ Compiled in 159ms
+[60:31:59.871] Server  LOG      ✓ Compiled in 181ms
+[60:32:22.852] Server  LOG      ✓ Compiled in 146ms
+[60:33:21.062] Server  LOG      ✓ Compiled in 606ms
+[60:34:02.720] Server  LOG      ✓ Compiled in 320ms
+[60:34:04.220] Server  LOG      ✓ Compiled in 549ms
+[60:34:04.904] Server  LOG      ✓ Compiled in 125ms
+[60:49:06.570] Server  LOG      ✓ Compiled in 702ms
+[60:49:06.578] Browser ERROR   Invalid DOM property `%s`. Did you mean `%s`? fill-rule fillRule
+[60:49:13.689] Server  LOG      ✓ Compiled in 217ms
+[60:49:25.116] Server  LOG      ✓ Compiled in 143ms
+[60:49:38.730] Server  LOG      ✓ Compiled in 152ms
+[60:49:48.858] Server  LOG      ✓ Compiled in 122ms
+[60:49:55.643] Server  LOG      ✓ Compiled in 138ms
+[60:50:07.056] Server  LOG      ✓ Compiled in 462ms
+[60:50:18.390] Server  LOG      ✓ Compiled in 182ms
+[60:50:20.298] Server  LOG      ✓ Compiled in 156ms
+[60:50:25.432] Server  LOG      ✓ Compiled in 355ms
+[60:51:19.487] Server  LOG      ✓ Compiled in 143ms
+[60:51:25.673] Server  LOG      ✓ Compiled in 628ms
+[60:51:37.538] Server  LOG      ✓ Compiled in 138ms
+[60:52:09.337] Server  LOG      ✓ Compiled in 116ms
+[60:52:18.268] Server  LOG      ✓ Compiled in 138ms
+[60:52:24.687] Server  LOG      ✓ Compiled in 186ms
+[60:52:37.753] Server  LOG      ✓ Compiled in 376ms
+[60:52:40.788] Server  LOG      ✓ Compiled in 125ms
+[60:52:43.676] Server  LOG      ✓ Compiled in 147ms
+[60:52:50.351] Server  LOG      ✓ Compiled in 172ms
+[60:53:07.202] Server  LOG      ✓ Compiled in 1296ms
+[60:53:18.093] Server  LOG      ✓ Compiled in 995ms
+[60:53:25.794] Server  LOG      ✓ Compiled in 218ms
+[60:54:29.454] Server  LOG      ✓ Compiled in 1000ms
+[61:00:34.102] Server  LOG      ✓ Compiled in 386ms
+[61:00:36.057] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.070] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.076] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.088] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.117] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.122] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.140] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.144] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.151] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.161] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.165] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.174] Server  ERROR    ⨯ ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:00:36.190] Server  LOG      ✓ Compiled in 553ms
+[61:00:37.418] Browser ERROR   ./app/main.tsx:13:1
+Module not found: Can't resolve './anonMain/ProfileMenu'
+  11 | import { useCheckMobile } from "./things/hooks/checkMobile";
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+> 13 | import { ProfilePanel } from "./anonMain/ProfileMenu";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 |
+  15 |
+  16 |
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[61:00:37.972] Server  LOG      ✓ Compiled in 767ms
+[61:02:21.622] Server  LOG      ✓ Compiled in 2.1s
+[61:03:16.499] Server  LOG      ✓ Compiled in 259ms
+[61:03:36.875] Server  LOG      ✓ Compiled in 267ms
+[61:06:03.037] Server  LOG      ✓ Compiled in 186ms
+[61:07:14.391] Server  LOG      ✓ Compiled in 183ms
+[61:07:51.571] Server  LOG      ✓ Compiled in 180ms
+[61:08:25.474] Server  LOG      ✓ Compiled in 751ms
+[61:10:52.878] Server  LOG      ✓ Compiled in 199ms
+[61:11:38.752] Server  LOG      ✓ Compiled in 1071ms
+[61:12:02.311] Server  LOG      ✓ Compiled in 122ms
+[61:13:31.714] Server  LOG      ✓ Compiled in 225ms
+[61:13:32.380] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[61:16:49.492] Server  LOG      ✓ Compiled in 735ms
+[61:17:15.071] Server  LOG      ✓ Compiled in 234ms
+[61:17:47.455] Server  LOG      ✓ Compiled in 1102ms
+[61:17:47.463] Browser ERROR   A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[61:19:26.342] Server  LOG      ✓ Compiled in 793ms
+[61:20:41.062] Server  LOG      ✓ Compiled in 265ms
+[61:20:45.685] Server  LOG      ✓ Compiled in 205ms
+[61:21:41.955] Server  LOG      ✓ Compiled in 223ms
+[61:21:42.379] Browser ERROR   A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://react.dev/link/controlled-components
+[61:21:52.103] Server  LOG      ✓ Compiled in 1070ms
+[61:24:28.128] Server  LOG      ✓ Compiled in 1631ms
+[61:25:19.325] Server  LOG      ✓ Compiled in 697ms
+[61:25:39.623] Server  LOG      ✓ Compiled in 151ms
+[61:27:07.228] Server  LOG      ✓ Compiled in 254ms
+[61:27:26.567] Server  LOG      ✓ Compiled in 348ms
+[61:28:09.948] Server  LOG      ✓ Compiled in 1016ms
+[61:28:29.476] Server  LOG      ✓ Compiled in 241ms
+[61:28:58.476] Server  LOG      ✓ Compiled in 2.3s
+[61:29:32.527] Server  LOG      ✓ Compiled in 683ms
+[61:29:44.516] Server  LOG      ✓ Compiled in 999ms
+[61:30:16.220] Server  LOG      ✓ Compiled in 378ms
+[61:30:23.647] Server  LOG      ✓ Compiled in 276ms
+[61:30:32.595] Server  LOG      ✓ Compiled in 206ms
+[61:31:02.428] Server  LOG      ✓ Compiled in 151ms
+[61:32:27.788] Server  LOG      ✓ Compiled in 169ms
+[61:32:51.285] Server  LOG      ✓ Compiled in 138ms
+[61:33:04.290] Server  LOG      ✓ Compiled in 220ms
+[61:42:13.667] Server  LOG      ✓ Compiled in 1194ms
+[61:43:06.400] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.414] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.419] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.423] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.451] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.456] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.465] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.470] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.478] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.481] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.485] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.494] Server  ERROR    ⨯ ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[61:43:06.503] Server  LOG      ✓ Compiled in 1019ms
+[61:43:07.385] Browser ERROR   ./app/anonMain/ProfileMenu/ProfileMenu.tsx:5:1
+Module not found: Can't resolve './menus/Menu'
+  3 | import { useAccountChange } from "../../things/hooks/useAccountChange"
+  4 | import { Notify } from "../../things/components/Notify"
+> 5 | import { PersonalMenu } from "./menus/Menu"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | type ProfilePanelProps = {
+  7 |   open: boolean
+  8 |   isMobile?: boolean
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/ProfileMenu/ProfileMenu.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[61:43:49.104] Server  LOG      ✓ Compiled in 1618ms
+[61:44:22.044] Server  LOG      ✓ Compiled in 151ms
+[61:44:45.333] Server  LOG      ✓ Compiled in 600ms
+[61:44:47.943] Server  LOG      ✓ Compiled in 233ms
+[61:45:43.813] Server  LOG      ✓ Compiled in 129ms
+[61:47:32.086] Server  LOG      ✓ Compiled in 218ms
+[61:47:50.633] Server  LOG      ✓ Compiled in 798ms
+[61:47:54.040] Server  LOG      ✓ Compiled in 161ms
+[61:48:04.193] Server  LOG      ✓ Compiled in 227ms
+[61:48:06.304] Server  LOG      ✓ Compiled in 187ms
+[61:48:15.825] Server  LOG      ✓ Compiled in 178ms
+[61:48:33.580] Server  LOG      ✓ Compiled in 588ms
+[61:48:39.182] Server  LOG      ✓ Compiled in 112ms
+[61:49:07.504] Server  LOG      ✓ Compiled in 114ms
+[61:50:27.195] Server  LOG      ✓ Compiled in 1831ms
+[61:50:39.389] Server  LOG      ✓ Compiled in 384ms
+[61:52:03.766] Server  LOG      ✓ Compiled in 606ms
+[61:52:12.066] Server  LOG      ✓ Compiled in 827ms
+[61:52:33.677] Server  LOG      ✓ Compiled in 242ms
+[61:52:49.558] Server  LOG      ✓ Compiled in 154ms
+[61:52:54.793] Server  LOG      ✓ Compiled in 126ms
+[61:52:59.034] Server  LOG      ✓ Compiled in 153ms
+[61:53:04.757] Server  LOG      ✓ Compiled in 152ms
+[61:53:07.655] Server  LOG      ✓ Compiled in 467ms
+[61:53:26.495] Server  LOG      ✓ Compiled in 106ms
+[61:53:31.678] Server  LOG      ✓ Compiled in 219ms
+[61:54:15.258] Server  LOG      ✓ Compiled in 198ms

@@ -322,26 +322,67 @@ function AuthPage() {
         setInputDisabled(true);
         setIsLoading(true);
         typePretty("Проверяю...");
-        const email = `${login}@example.com`;
-        const { error } = flow === "login" ? await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].auth.signInWithPassword({
-            email,
-            password: pass
-        }) : await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].auth.signUp({
-            email,
-            password: pass
-        });
-        setIsLoading(false);
-        if (error) {
-            const msg = flow === "login" ? "Неправильный логин или пароль 😕" : "Ошибка регистрации. Попробуйте еще раз 😕";
-            typePretty("Ошибка");
-            await botSay(msg, 600);
-            await botSay("Попробуйте еще раз", 1000);
-            setCredetial({});
-            setStep(3);
-            setInputDisabled(false);
-            inputRef.current?.focus();
-            return;
+        if (flow === "login") {
+            const { data: userData, error: userError } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("login").eq("username", login).single();
+            if (!userData || userError) {
+                setIsLoading(false);
+                const msg = "Пользователь не найден 😕";
+                typePretty("Ошибка");
+                await botSay(msg, 600);
+                await botSay("Попробуйте еще раз", 1000);
+                setCredetial({});
+                setStep(3);
+                setInputDisabled(false);
+                inputRef.current?.focus();
+                return;
+            }
+            const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].auth.signInWithPassword({
+                email: userData.login,
+                password: pass
+            });
+            if (error) {
+                setIsLoading(false);
+                typePretty("Ошибка");
+                await botSay("Неправильный логин или пароль 😕", 600);
+                await botSay("Попробуйте еще раз", 1000);
+                setCredetial({});
+                setStep(3);
+                setInputDisabled(false);
+                inputRef.current?.focus();
+                return;
+            }
+        } else {
+            const { data: existingUser } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("users").select("login").eq("username", login).single();
+            if (existingUser) {
+                setIsLoading(false);
+                typePretty("Ошибка");
+                await botSay("Этот логин уже занят 😕", 600);
+                await botSay("Попробуйте другой", 1000);
+                setCredetial({});
+                setStep(3);
+                setInputDisabled(false);
+                inputRef.current?.focus();
+                return;
+            }
+            const email = `${login}@example.com`;
+            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].auth.signUp({
+                email,
+                password: pass
+            });
+            if (error || !data.user) {
+                setIsLoading(false);
+                const msg = "Ошибка регистрации. Попробуйте еще раз 😕";
+                typePretty("Ошибка");
+                await botSay(msg, 600);
+                await botSay("Попробуйте еще раз", 1000);
+                setCredetial({});
+                setStep(3);
+                setInputDisabled(false);
+                inputRef.current?.focus();
+                return;
+            }
         }
+        setIsLoading(false);
         await typePretty(flow === "login" ? "Добро пожаловать! 🎉" : "Регистрация прошла успешно! 🎉");
         await botSay(flow === "login" ? "Входим..." : "Регистрация прошла успешно! Входим...", 600);
         setTimeout(()=>{
@@ -410,7 +451,7 @@ function AuthPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$auth$2f$AnimatedBg$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatedBg"], {}, void 0, false, {
                 fileName: "[project]/app/auth/page.tsx",
-                lineNumber: 197,
+                lineNumber: 252,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -430,7 +471,7 @@ function AuthPage() {
                                         children: textBot
                                     }, void 0, false, {
                                         fileName: "[project]/app/auth/page.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 266,
                                         columnNumber: 25
                                     }, this),
                                     (isTyping || isLoading) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -446,18 +487,18 @@ function AuthPage() {
                                                 }
                                             }, i, false, {
                                                 fileName: "[project]/app/auth/page.tsx",
-                                                lineNumber: 215,
+                                                lineNumber: 270,
                                                 columnNumber: 37
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/auth/page.tsx",
-                                        lineNumber: 213,
+                                        lineNumber: 268,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/auth/page.tsx",
-                                lineNumber: 210,
+                                lineNumber: 265,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -473,7 +514,7 @@ function AuthPage() {
                                                     children: msg.text
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/auth/page.tsx",
-                                                    lineNumber: 235,
+                                                    lineNumber: 290,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -481,26 +522,26 @@ function AuthPage() {
                                                     children: msg.time?.toTimeString().slice(0, 5)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/auth/page.tsx",
-                                                    lineNumber: 236,
+                                                    lineNumber: 291,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/app/auth/page.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 284,
                                             columnNumber: 29
                                         }, this)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         ref: messageEndRef
                                     }, void 0, false, {
                                         fileName: "[project]/app/auth/page.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 294,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/auth/page.tsx",
-                                lineNumber: 226,
+                                lineNumber: 281,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -513,18 +554,18 @@ function AuthPage() {
                                         children: btn.text
                                     }, i, false, {
                                         fileName: "[project]/app/auth/page.tsx",
-                                        lineNumber: 249,
+                                        lineNumber: 304,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/auth/page.tsx",
-                                lineNumber: 243,
+                                lineNumber: 298,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/auth/page.tsx",
-                        lineNumber: 206,
+                        lineNumber: 261,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -549,7 +590,7 @@ function AuthPage() {
                                 autoFocus: true
                             }, void 0, false, {
                                 fileName: "[project]/app/auth/page.tsx",
-                                lineNumber: 266,
+                                lineNumber: 321,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -570,35 +611,35 @@ function AuthPage() {
                                         d: "M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"
                                     }, void 0, false, {
                                         fileName: "[project]/app/auth/page.tsx",
-                                        lineNumber: 290,
+                                        lineNumber: 345,
                                         columnNumber: 108
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/auth/page.tsx",
-                                    lineNumber: 290,
+                                    lineNumber: 345,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/auth/page.tsx",
-                                lineNumber: 281,
+                                lineNumber: 336,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/auth/page.tsx",
-                        lineNumber: 261,
+                        lineNumber: 316,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/auth/page.tsx",
-                lineNumber: 199,
+                lineNumber: 254,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/auth/page.tsx",
-        lineNumber: 193,
+        lineNumber: 248,
         columnNumber: 9
     }, this);
 }
