@@ -114,7 +114,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabas
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$telegram$2f$tgSend$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/telegram/tgSend.ts [app-route] (ecmascript)");
 ;
 ;
-async function sendTelegramNotification(userId, text) {
+async function sendTelegramNotification(userId, text, button) {
     const { data: user, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabaseAdmin$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabaseAdmin"].from("users").select("telegram_id, telegram_notifications").eq("id_user", userId).single();
     if (error || !user || !user.telegram_id) {
         console.log('User not found or no Telegram ID:', {
@@ -125,7 +125,7 @@ async function sendTelegramNotification(userId, text) {
     const chatId = user.telegram_id;
     // бот шлет сообщение об уведомлении что пришло сообщение
     if (user.telegram_notifications) {
-        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$telegram$2f$tgSend$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["tgSend"])(chatId, text);
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$telegram$2f$tgSend$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["tgSend"])(chatId, text, "HTML", button);
     }
 }
 }),
@@ -147,9 +147,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 ;
 ;
 async function POST(req) {
-    const { userId, text } = await req.json();
+    const { userId, text, button } = await req.json();
     try {
-        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$telegram$2f$sendTelegramNotification$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendTelegramNotification"])(userId, text);
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$telegram$2f$sendTelegramNotification$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sendTelegramNotification"])(userId, text, button);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             ok: true
         });
