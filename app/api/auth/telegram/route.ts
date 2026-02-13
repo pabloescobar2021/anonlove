@@ -75,13 +75,12 @@ export async function GET(req: NextRequest) {
     userId = newAuthUser.user.id;
 
     // Сохраняем telegram_id в твою таблицу users
-    await supabaseAdmin.from("users").upsert({
-      id_user: userId,
-      login: userEmail,
-      telegram_id: telegramId,
-      telegram_username: username,
-      username: firstName,
-    });
+    await supabaseAdmin.from("users")
+      .update({
+        telegram_id: telegramId,
+        telegram_username: username,
+        username: username,
+      })
   }
 
   // Создаём магическую ссылку для входа (она одноразовая и краткосрочная)

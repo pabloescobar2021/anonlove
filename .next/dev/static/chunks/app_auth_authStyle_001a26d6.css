@@ -507,10 +507,6 @@
     bottom: calc(var(--spacing) * -1.5);
   }
 
-  .-bottom-2 {
-    bottom: calc(var(--spacing) * -2);
-  }
-
   .-bottom-10 {
     bottom: calc(var(--spacing) * -10);
   }
@@ -575,6 +571,10 @@
     left: calc(var(--spacing) * 5);
   }
 
+  .left-10 {
+    left: calc(var(--spacing) * 10);
+  }
+
   .left-full {
     left: 100%;
   }
@@ -605,10 +605,6 @@
 
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
-  }
-
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
   }
 
   .mt-4 {
@@ -858,10 +854,6 @@
     flex: 1;
   }
 
-  .flex-2 {
-    flex: 2;
-  }
-
   .flex-shrink-0, .shrink-0 {
     flex-shrink: 0;
   }
@@ -964,6 +956,10 @@
 
   .transform {
     transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
+  }
+
+  .animate-\[fade-in_0\.2s_ease-in-out\] {
+    animation: .2s ease-in-out fade-in;
   }
 
   .animate-\[menuIn_100ms_ease-out_forwards\] {
@@ -1285,20 +1281,6 @@
   @supports (color: color-mix(in lab, red, red)) {
     .border-white\/30 {
       border-color: color-mix(in oklab, var(--color-white) 30%, transparent);
-    }
-  }
-
-  .border-b-white {
-    border-bottom-color: var(--color-white);
-  }
-
-  .border-b-white\/40 {
-    border-bottom-color: #fff6;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .border-b-white\/40 {
-      border-bottom-color: color-mix(in oklab, var(--color-white) 40%, transparent);
     }
   }
 
@@ -1741,6 +1723,10 @@
     padding-inline: calc(var(--spacing) * 4);
   }
 
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -1751,10 +1737,6 @@
 
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
   }
 
   .py-6 {
@@ -2439,16 +2421,6 @@
 
   .focus\:border-b-white:focus {
     border-bottom-color: var(--color-white);
-  }
-
-  .focus\:border-b-white\/40:focus {
-    border-bottom-color: #fff6;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .focus\:border-b-white\/40:focus {
-      border-bottom-color: color-mix(in oklab, var(--color-white) 40%, transparent);
-    }
   }
 
   .focus\:bg-white\/15:focus {
