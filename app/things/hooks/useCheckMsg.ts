@@ -4,7 +4,7 @@ export function useMessageRead(
 ) {
 
     const markAsRead = async (messageId: string, userId: string) => {
-    console.log("Trying to mark as read:", { messageId, userId });
+    // console.log("Trying to mark as read:", { messageId, userId });
     const { error } = await supabase
         .from("messages")
         .update({ is_checked: true })

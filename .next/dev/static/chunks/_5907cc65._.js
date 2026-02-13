@@ -2844,7 +2844,7 @@ function CreateCardPage({ initialData }) {
                 isRecieve: isRecieve
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 188,
+                lineNumber: 191,
                 columnNumber: 21
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2861,12 +2861,12 @@ function CreateCardPage({ initialData }) {
                     children: `<`
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                    lineNumber: 209,
+                    lineNumber: 212,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 199,
+                lineNumber: 202,
                 columnNumber: 17
             }, this),
             !isMobile ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2890,22 +2890,22 @@ function CreateCardPage({ initialData }) {
                             d: "M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                            lineNumber: 232,
+                            lineNumber: 235,
                             columnNumber: 112
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                        lineNumber: 232,
+                        lineNumber: 235,
                         columnNumber: 29
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                    lineNumber: 229,
+                    lineNumber: 232,
                     columnNumber: 25
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 221,
+                lineNumber: 224,
                 columnNumber: 21
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute bottom-0 right-0 
@@ -2928,22 +2928,22 @@ function CreateCardPage({ initialData }) {
                             d: "M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                            lineNumber: 248,
+                            lineNumber: 251,
                             columnNumber: 112
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                        lineNumber: 248,
+                        lineNumber: 251,
                         columnNumber: 29
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                    lineNumber: 245,
+                    lineNumber: 248,
                     columnNumber: 25
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 237,
+                lineNumber: 240,
                 columnNumber: 21
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$all$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["RightField"], {
@@ -2970,13 +2970,13 @@ function CreateCardPage({ initialData }) {
                 dialogs: dialogs
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 254,
+                lineNumber: 257,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/createcard/CreateCardClient.tsx",
-        lineNumber: 177,
+        lineNumber: 180,
         columnNumber: 13
     }, this);
 }

@@ -1401,10 +1401,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupab
 ;
 function useMessageRead() {
     const markAsRead = async (messageId, userId)=>{
-        console.log("Trying to mark as read:", {
-            messageId,
-            userId
-        });
+        // console.log("Trying to mark as read:", { messageId, userId });
         const { error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("messages").update({
             is_checked: true
         }).eq("id", messageId).eq("to_user", userId);
