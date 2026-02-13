@@ -658,6 +658,10 @@
     display: flex;
   }
 
+  .grid {
+    display: grid;
+  }
+
   .hidden {
     display: none;
   }
@@ -1008,6 +1012,10 @@
 
   .resize {
     resize: both;
+  }
+
+  .grid-cols-\[auto_1fr_auto\] {
+    grid-template-columns: auto 1fr auto;
   }
 
   .flex-col {

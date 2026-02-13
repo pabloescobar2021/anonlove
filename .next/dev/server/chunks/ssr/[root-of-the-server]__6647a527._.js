@@ -2609,10 +2609,10 @@ function PersonalMenu(p) {
         `,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex",
+                className: "flexC w-full relative",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: " btnWP p-1 px-3 flex justify-self-start place-items-start",
+                        className: "btnWP absolute p-1 px-3 left-3 ",
                         onClick: ()=>p.actions.setNameMenuOpen(null),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                             xmlns: "http://www.w3.org/2000/svg",
@@ -2657,7 +2657,7 @@ function PersonalMenu(p) {
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-md",
+                        className: "text-md justify-self-center",
                         children: "Личная информация"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
@@ -2678,7 +2678,7 @@ function PersonalMenu(p) {
                         children: "Логин"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2689,7 +2689,7 @@ function PersonalMenu(p) {
                         children: "Изменить"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2703,13 +2703,13 @@ function PersonalMenu(p) {
                         className: "prettyInput pt-4 px-4"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 11
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2720,7 +2720,7 @@ function PersonalMenu(p) {
                         children: "Пароль"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2731,7 +2731,7 @@ function PersonalMenu(p) {
                         children: "Изменить"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 74,
+                        lineNumber: 75,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2745,13 +2745,13 @@ function PersonalMenu(p) {
                         className: `prettyInput pt-4 px-4 ${p.state.isChangePassword ? "" : ""}`
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 81,
+                        lineNumber: 82,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                lineNumber: 72,
+                lineNumber: 73,
                 columnNumber: 11
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2767,12 +2767,12 @@ function PersonalMenu(p) {
                         children: btn.text
                     }, i, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                        lineNumber: 90,
+                        lineNumber: 91,
                         columnNumber: 15
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/menus/PersonalMenu.tsx",
-                lineNumber: 88,
+                lineNumber: 89,
                 columnNumber: 11
             }, this)
         ]

@@ -42,13 +42,14 @@ export function PersonalMenu(p: PersonalMenuProps) {
         <div className={`flex items-center justify-start flex-col gap-3 px-4 py-3 relative flex-1
             animate-[menuIn_100ms_ease-out_forwards]
         `}>
-          <div className="flex">
+          <div className="flexC w-full relative">
             {/* back */}
-            <button className=" btnWP p-1 px-3 flex justify-self-start place-items-start" onClick={() => p.actions.setNameMenuOpen(null)}>
+            <button className="btnWP absolute p-1 px-3 left-3 " onClick={() => p.actions.setNameMenuOpen(null)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="m8 5l-5 5l5 5"/><path d="M3 10h8c5.523 0 10 4.477 10 10v1"/></g></svg> 
             </button> 
 
-            <p className="text-md">Личная информация</p>
+            <p className="text-md justify-self-center">Личная информация</p>
+
           </div>
 
           {/* LOGIN */}
