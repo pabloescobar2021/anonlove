@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
     // Новый юзер — регистрируем
     // Генерируем email в твоём формате
     const login = username || `tg_${telegramId}`;
-    userEmail = `${login}@example.com`;
+    userEmail = `${login}new@example.com`;
     const tempPassword = crypto.randomBytes(32).toString("hex");
 
     const { data: newAuthUser, error: signUpError } = await supabaseAdmin.auth.admin.createUser({
