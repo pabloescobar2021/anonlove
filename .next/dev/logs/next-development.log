@@ -2,3 +2,110 @@
 [00:00:04.765] Server  LOG      ✓ Ready in 3.1s
 [00:00:07.955] Server  LOG      ○ Compiling / ...
 [00:00:17.065] Server  LOG      ✓ Compiled in 316ms
+[00:57:46.788] Server  LOG      ○ Compiling /createcard ...
+[01:04:24.790] Server  LOG      ✓ Compiled in 680ms
+[01:04:25.290] Browser ERROR   ./app/things/hooks/useMessages.ts:87:17
+Parsing ecmascript source code failed
+  85 |                 userId: receiverId, 
+  86 |                 text: `Новое сообщение от ${userId}` 
+> 87 |                 text: `Новое сообщение от ${https://anonlove.vercel.app/createcard?isMine=false&id=98ef0833-b7ef-42cd-8e59-b3aa199888c7&type=recieve&to=%2344TZUD }` 
+     |                 ^^^^
+  88 |             })
+  89 |         })
+  90 |
+
+Expected ',', got 'text'
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:04:32.290] Browser ERROR   ./app/things/hooks/useMessages.ts:87:17
+Parsing ecmascript source code failed
+  85 |                 userId: receiverId, 
+  86 |                 text: `Новое сообщение от ${userId}` 
+> 87 |                 text: `Новое сообщение от ${https://anonlove.vercel.app/createcard?isMine=false&id=98ef0833-b7ef-42cd-8e59-b3aa199888c7&type=recieve&to=%2344TZUD }` 
+     |                 ^^^^
+  88 |             })
+  89 |         })
+  90 |
+
+Expected ',', got 'text'
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:04:40.287] Browser ERROR   ./app/things/hooks/useMessages.ts:87:17
+Parsing ecmascript source code failed
+  85 |                 userId: receiverId, 
+  86 |                 text: `Новое сообщение от ${userId}` 
+> 87 |                 text: `Новое сообщение от ${https://anonlove.vercel.app/createcard?isMine=false&id=98ef0833-b7ef-42cd-8e59-b3aa199888c7&type=recieve&to=%2344TZUD }` 
+     |                 ^^^^
+  88 |             })
+  89 |         })
+  90 |
+
+Expected ',', got 'text'
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:05:04.278] Browser ERROR   ./app/things/hooks/useMessages.ts:87:17
+Parsing ecmascript source code failed
+  85 |                 userId: receiverId, 
+  86 |                 text: `Новое сообщение от ${userId}` 
+> 87 |                 text: `Новое сообщение от ${ }` 
+     |                 ^^^^
+  88 |                 // https://anonlove.vercel.app/createcard?isMine=false&id=98ef0833-b7ef-42cd-8e59-b3aa199888c7&type=recieve&to=%2344TZUD
+  89 |             })
+  90 |         })
+
+Expected ',', got 'text'
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[01:05:07.315] Server  LOG      ✓ Compiled in 288ms
+[01:06:09.789] Server  LOG      ✓ Compiled in 175ms
+[01:09:39.542] Server  LOG      ✓ Compiled in 183ms
+[01:13:02.995] Server  LOG      ✓ Compiled in 836ms
+[01:15:23.347] Server  LOG      ✓ Compiled in 427ms
+[01:15:33.146] Server  LOG      ✓ Compiled in 203ms
+[01:15:42.190] Server  LOG      ✓ Compiled in 185ms
+[01:17:17.832] Server  LOG      ✓ Compiled in 199ms
+[01:17:32.059] Server  LOG      ✓ Compiled in 181ms

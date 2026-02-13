@@ -155,6 +155,11 @@ function useAuth() {
     const [user, setUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [profile, setProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const refreshProfile = async ()=>{
+        if (!user) return;
+        const profileData = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$utils$2f$auth$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getUserProfile"])(user.id);
+        setProfile(profileData);
+    };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useAuth.useEffect": ()=>{
             const loadUser = {
@@ -195,7 +200,8 @@ function useAuth() {
     return {
         user,
         profile,
-        loading
+        loading,
+        refreshProfile
     };
 }
 _s(useAuth, "DYSpA4ZauWKW8e4CNkO4ayA+RbM=");
@@ -418,11 +424,11 @@ function useMessages(userId) {
             p_is_anon: isAnon
         });
         if (error) throw error;
-        const { error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
+        const { data: messageData, error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
             from_user: userId,
             to_user: receiverId,
             body
-        });
+        }).select("id").single();
         if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
@@ -432,7 +438,7 @@ function useMessages(userId) {
             },
             body: JSON.stringify({
                 userId: receiverId,
-                text: `Новое сообщение от ${userId}`
+                text: `Новое сообщение от ${userId} https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
             })
         });
         await loadMessage();

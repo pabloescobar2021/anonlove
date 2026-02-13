@@ -66,13 +66,15 @@ export function useMessages(userId: string | null) {
         })
         if(error) throw error
 
-        const {error: errorMsg} = await supabase
+        const {data: messageData,error: errorMsg} = await supabase
             .from("messages")
             .insert({
                 from_user: userId, 
                 to_user: receiverId, 
                 body
             })
+            .select("id")
+            .single()
         if(errorMsg) throw errorMsg
 
         // уведомляем о сообщении
@@ -83,7 +85,7 @@ export function useMessages(userId: string | null) {
             },
             body: JSON.stringify({ 
                 userId: receiverId, 
-                text: `Новое сообщение от ${userId}` 
+                text: `Новое сообщение от ${userId} https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}` 
             })
         })
 

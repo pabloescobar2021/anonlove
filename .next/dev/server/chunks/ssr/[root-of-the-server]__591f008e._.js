@@ -330,11 +330,11 @@ function useMessages(userId) {
             p_is_anon: isAnon
         });
         if (error) throw error;
-        const { error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
+        const { data: messageData, error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
             from_user: userId,
             to_user: receiverId,
             body
-        });
+        }).select("id").single();
         if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
@@ -344,7 +344,7 @@ function useMessages(userId) {
             },
             body: JSON.stringify({
                 userId: receiverId,
-                text: `Новое сообщение от ${userId}`
+                text: `Новое сообщение от ${userId} https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
             })
         });
         await loadMessage();
