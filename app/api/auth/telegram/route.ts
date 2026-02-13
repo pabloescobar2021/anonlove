@@ -69,7 +69,7 @@ export async function GET(req: NextRequest) {
     });
 
     if (signUpError || !newAuthUser.user) {
-      return NextResponse.json({ error: "Failed to create user" }, { status: 500 });
+      return NextResponse.json({ error: "Failed to create user", signUpError }, { status: 500 });
     }
 
     userId = newAuthUser.user.id;
