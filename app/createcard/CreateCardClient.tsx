@@ -99,7 +99,7 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
     // Прочтение сообщений
     useEffect(() => {
         if(messageId && type === "recieve") {
-            fetch("/api/messages", { 
+            fetch("/api/mark-read", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
