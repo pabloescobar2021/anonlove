@@ -242,12 +242,8 @@ async function getInboxMessages(userId) {
     return messages;
 }
 async function getCurrentMessage(messageId, userId, isMine) {
-    console.log('Querying message:', {
-        messageId,
-        userId
-    });
     const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("messages_safe").select("*").eq("id", messageId).eq(isMine === "true" ? "from_user" : "to_user", userId).maybeSingle();
-    console.log('Query result:', {
+    console.log('Query result messages.ts:', {
         data,
         error
     });
@@ -418,18 +414,13 @@ function useMessages(userId) {
             }
             receiverId = receiver.id_user;
         }
-        const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("toggle_anonymous", {
+        const { data: messageData, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("send_message", {
             p_from: userId,
             p_to: receiverId,
+            p_body: body,
             p_is_anon: isAnon
         });
         if (error) throw error;
-        const { data: messageData, error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
-            from_user: userId,
-            to_user: receiverId,
-            body
-        }).select("id,from_user").single();
-        if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
             method: "POST",
@@ -450,7 +441,7 @@ function useMessages(userId) {
             })
         });
         await loadMessage();
-        return data;
+        return messageData;
     };
     const deleteMessage = async (ids)=>{
         if (!ids.length) {
@@ -934,7 +925,7 @@ function ResizeHandle({ className, onStart }) {
     }, this);
 }
 _c1 = ResizeHandle;
-function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isReply, anonState, setAnonState, handleSendMessage, idRef, anonRef, isRecieve, routeTo, userError, to, dialogs }) {
+function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isReply, anonState, setAnonState, handleSendMessage, idRef, anonRef, isRecieve, routeTo, userError, to, dialogs, isMine }) {
     _s();
     const [inputValue, setInputValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(userId || "");
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -946,6 +937,7 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
         userId
     ]);
     const [isMsgMenuOpen, setIsMsgMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    if (isMine === 'true') return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: `fixed inset-0 z-20 bg-black/50 transition-all duration-300 overflow-hidden 
                     ${rightPanelOpen ? "backdrop-blur-lg translate-y-0" : "backdrop-blur-none translate-y-full"}
@@ -970,12 +962,12 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/createcard/components/all.tsx",
-                        lineNumber: 263,
+                        lineNumber: 266,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/components/all.tsx",
-                    lineNumber: 260,
+                    lineNumber: 263,
                     columnNumber: 21
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     className: "relative flex flex-col w-full justify-center items-center",
@@ -997,12 +989,12 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                                     children: d.to_display_id
                                 }, index, false, {
                                     fileName: "[project]/app/createcard/components/all.tsx",
-                                    lineNumber: 290,
+                                    lineNumber: 293,
                                     columnNumber: 31
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 282,
+                            lineNumber: 285,
                             columnNumber: 27
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1024,7 +1016,7 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                                 `
                                 }, void 0, false, {
                                     fileName: "[project]/app/createcard/components/all.tsx",
-                                    lineNumber: 309,
+                                    lineNumber: 312,
                                     columnNumber: 29
                                 }, this),
                                 to === null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1035,13 +1027,13 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                                     children: "..."
                                 }, void 0, false, {
                                     fileName: "[project]/app/createcard/components/all.tsx",
-                                    lineNumber: 324,
+                                    lineNumber: 327,
                                     columnNumber: 31
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 308,
+                            lineNumber: 311,
                             columnNumber: 25
                         }, this),
                         userError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1049,7 +1041,7 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                             children: userError
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 337,
+                            lineNumber: 340,
                             columnNumber: 27
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1064,7 +1056,7 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                                     className: "bg-white/10 border rounded-md text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/app/createcard/components/all.tsx",
-                                    lineNumber: 343,
+                                    lineNumber: 346,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1072,13 +1064,13 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                                     children: anonState.canToggle ? "Будешь анонимен? (только 1 раз)" : "Анонимность уже использована"
                                 }, void 0, false, {
                                     fileName: "[project]/app/createcard/components/all.tsx",
-                                    lineNumber: 351,
+                                    lineNumber: 354,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 342,
+                            lineNumber: 345,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1091,13 +1083,13 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                             children: "Отправить"
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 359,
+                            lineNumber: 362,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/createcard/components/all.tsx",
-                    lineNumber: 273,
+                    lineNumber: 276,
                     columnNumber: 21
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1114,28 +1106,28 @@ function RightField({ rightPanelOpen, setRightPanelOpen, userId, setUserId, isRe
                             d: "M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6z"
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/components/all.tsx",
-                            lineNumber: 379,
+                            lineNumber: 382,
                             columnNumber: 136
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/createcard/components/all.tsx",
-                        lineNumber: 379,
+                        lineNumber: 382,
                         columnNumber: 29
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/components/all.tsx",
-                    lineNumber: 372,
+                    lineNumber: 375,
                     columnNumber: 25
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/createcard/components/all.tsx",
-            lineNumber: 250,
+            lineNumber: 253,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/createcard/components/all.tsx",
-        lineNumber: 244,
+        lineNumber: 247,
         columnNumber: 9
     }, this);
 }
@@ -2883,7 +2875,7 @@ function CreateCardPage({ initialData }) {
                 lineNumber: 214,
                 columnNumber: 17
             }, this),
-            !isMobile ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            !isMobile && isMine !== "true" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute right-0 bottom-0 -translate-y-1/2
                         flex justify-center items-center overflow-hidden
                         w-7 h-1/2 rounded-l-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
@@ -2981,7 +2973,8 @@ function CreateCardPage({ initialData }) {
                 },
                 userError: userError,
                 to: to,
-                dialogs: dialogs
+                dialogs: dialogs,
+                isMine: isMine
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
                 lineNumber: 269,

@@ -197,3 +197,315 @@ Import traces:
 [17:34:01.585] Browser LOG     response {"data":{"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
 [17:34:01.586] Browser LOG     success {"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
 [17:36:16.979] Server  LOG      ✓ Compiled in 358ms
+[17:37:36.710] Browser LOG     Querying message: {"messageId":"9e229a18-3b50-4ba0-83ff-a5dc2ce86e91","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:37:36.893] Browser LOG     Query result: {"data":{"body":[],"created_at":"2026-02-14T07:12:48.921243+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e229a18-3b50-4ba0-83ff-a5dc2ce86e91","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:58:38.809] Browser LOG     Querying message: {"messageId":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:58:39.085] Browser LOG     Query result: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T07:38:02.94689+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:59:00.181] Server  LOG      ✓ Compiled in 604ms
+[17:59:01.867] Browser LOG     Querying message: {"messageId":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:59:01.968] Browser LOG     Query result: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T07:38:02.94689+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:59:03.550] Server  LOG      ✓ Compiled in 263ms
+[18:00:26.733] Server  LOG      ✓ Compiled in 201ms
+[18:00:32.165] Browser LOG     Querying message: {"messageId":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[18:00:32.491] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T07:38:02.94689+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[18:00:41.880] Server  LOG      ✓ Compiled in 194ms
+[18:00:43.952] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T07:38:02.94689+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9bfe938b-702c-4cf2-a8d3-55d5651c9778","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[18:08:59.252] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T08:05:11.280404+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"773ab447-5404-4a3f-990d-90c6055af2cb","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[18:20:00.872] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T08:14:27.411951+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"88a01b0f-26eb-481e-8c24-93b114d8c99a","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[18:21:18.455] Server  LOG      ✓ Compiled in 523ms
+[18:21:27.788] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[18:21:43.857] Browser LOG     true
+[18:23:29.656] Server  LOG      ✓ Compiled in 325ms
+[18:54:33.216] Server  LOG      ✓ Compiled in 850ms
+[18:55:22.538] Server  LOG      ✓ Compiled in 241ms
+[18:55:39.383] Server  LOG      ✓ Compiled in 202ms
+[18:55:53.012] Server  LOG      ✓ Compiled in 197ms
+[18:56:26.820] Browser LOG     Could not find the function public.send_message(p_anon, p_body, p_from, p_to) in the schema cache
+[18:57:10.575] Server  LOG      ✓ Compiled in 270ms
+[18:57:14.820] Browser LOG     column "from_user" of relation "user_anonymous_settings" does not exist
+[18:59:06.549] Server  LOG      ✓ Compiled in 275ms
+[18:59:07.872] Browser LOG     column "from_user" of relation "user_anonymous_settings" does not exist
+[18:59:17.492] Server  LOG      ✓ Compiled in 199ms
+[18:59:35.487] Browser LOG     column "from_user" of relation "user_anonymous_settings" does not exist
+[19:01:41.304] Browser LOG     there is no unique or exclusion constraint matching the ON CONFLICT specification
+[19:02:58.805] Browser LOG     there is no unique or exclusion constraint matching the ON CONFLICT specification
+[19:03:06.066] Browser LOG     there is no unique or exclusion constraint matching the ON CONFLICT specification
+[19:04:20.098] Browser LOG     there is no unique or exclusion constraint matching the ON CONFLICT specification
+[19:06:14.422] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T09:02:24.851053+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"75f3e9c2-af5a-4dff-92c6-a615d66f6c7b","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[19:06:27.130] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0},{"content":"new text 2","fontSize":16,"h":50,"id":1,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":20},{"content":"new text 3","fontSize":16,"h":50,"id":2,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":40}],"created_at":"2026-02-14T09:02:41.019116+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"1b425bc7-5366-4e4d-8b4a-024be8c4f1d7","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[19:24:56.129] Browser LOG     Error: {}
+[19:24:56.129] Browser LOG     Error: {}
+[19:24:56.129] Browser LOG     Error: {}
+[19:53:30.544] Browser LOG     Error: {}
+[19:53:30.544] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-13T14:54:10.646767+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"98ef0833-b7ef-42cd-8e59-b3aa199888c7","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[19:53:30.544] Browser LOG     Error: {}
+[19:53:30.544] Browser LOG     Error: {}
+[19:55:39.902] Server  LOG      ✓ Compiled in 858ms
+[19:55:43.655] Server  LOG      ✓ Compiled in 286ms
+[19:57:01.797] Server  LOG      ✓ Compiled in 291ms
+[19:57:06.183] Server  LOG      ✓ Compiled in 171ms
+[19:57:45.508] Server  LOG      ✓ Compiled in 277ms
+[19:58:20.548] Browser LOG     true
+[19:58:20.549] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-13T14:54:10.646767+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"98ef0833-b7ef-42cd-8e59-b3aa199888c7","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     Error: {}
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     Error: {}
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     Error: {}
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.284] Browser LOG     true
+[19:58:25.284] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.285] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.285] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:25.286] Browser LOG     true
+[19:58:25.286] Browser LOG     [2;38;2;124;124;124m%s[0m true
+[19:58:26.708] Server  LOG      ✓ Compiled in 391ms
+[19:58:28.224] Browser LOG     Error: {}
+[19:58:35.320] Browser LOG     Error: {}
+[19:59:15.391] Server  LOG      ✓ Compiled in 257ms
+[19:59:15.974] Browser LOG     Error: {}
+[19:59:20.446] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T09:23:47.101125+00:00","from_display_id":"#MYVJ9N","from_display_name":"bigbobchel","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"45b584c6-b30a-457b-942c-0d0e85375765","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#44TZUD","to_display_name":"zalupa","to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","to_user_rating":1},"error":null}

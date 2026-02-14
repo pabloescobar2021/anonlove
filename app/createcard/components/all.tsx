@@ -209,7 +209,8 @@ export function RightField({
     routeTo,
     userError,
     to,
-    dialogs
+    dialogs,
+    isMine
 
 }: {
     rightPanelOpen: boolean
@@ -231,6 +232,7 @@ export function RightField({
     userError: string | null
     to: string | null
     dialogs: any[]
+    isMine: string | null
 }) {
     const [inputValue, setInputValue] = useState(userId || "");
     useEffect(() => {
@@ -240,6 +242,7 @@ export function RightField({
 
     const [isMsgMenuOpen, setIsMsgMenuOpen] = useState(false)
 
+    if(isMine === 'true') return null
     return (
         <div
             className={`fixed inset-0 z-20 bg-black/50 transition-all duration-300 overflow-hidden 

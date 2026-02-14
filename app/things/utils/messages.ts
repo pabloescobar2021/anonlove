@@ -26,14 +26,13 @@ export async function getInboxMessages(userId: string){
 }
 
 export async function getCurrentMessage(messageId: string, userId: string, isMine?: string | null) {
-    console.log('Querying message:', { messageId, userId })
     const {data, error} = await supabase
     .from("messages_safe")
     .select("*")
     .eq("id", messageId)
     .eq(isMine==="true" ? "from_user" : "to_user", userId)
     .maybeSingle()
-    console.log('Query result:', { data, error })
+    console.log('Query result messages.ts:', { data, error })
     if (error) throw error
     return data || []
 }

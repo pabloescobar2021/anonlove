@@ -231,7 +231,7 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
 
 
                 {/* Кнопка снизу для поля отправить */}
-                {!isMobile 
+                {(!isMobile && isMine!=="true") 
                 ? (
                     <div
                         className={`absolute right-0 bottom-0 -translate-y-1/2
@@ -287,6 +287,7 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                     userError={userError}
                     to={to}
                     dialogs={dialogs}
+                    isMine={isMine}
                 />
 
     

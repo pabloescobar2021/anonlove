@@ -161,12 +161,8 @@ async function getInboxMessages(userId) {
     return messages;
 }
 async function getCurrentMessage(messageId, userId, isMine) {
-    console.log('Querying message:', {
-        messageId,
-        userId
-    });
     const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from("messages_safe").select("*").eq("id", messageId).eq(isMine === "true" ? "from_user" : "to_user", userId).maybeSingle();
-    console.log('Query result:', {
+    console.log('Query result messages.ts:', {
         data,
         error
     });
@@ -324,18 +320,13 @@ function useMessages(userId) {
             }
             receiverId = receiver.id_user;
         }
-        const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].rpc("toggle_anonymous", {
+        const { data: messageData, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].rpc("send_message", {
             p_from: userId,
             p_to: receiverId,
+            p_body: body,
             p_is_anon: isAnon
         });
         if (error) throw error;
-        const { data: messageData, error: errorMsg } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].from("messages").insert({
-            from_user: userId,
-            to_user: receiverId,
-            body
-        }).select("id,from_user").single();
-        if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
             method: "POST",
@@ -356,7 +347,7 @@ function useMessages(userId) {
             })
         });
         await loadMessage();
-        return data;
+        return messageData;
     };
     const deleteMessage = async (ids)=>{
         if (!ids.length) {

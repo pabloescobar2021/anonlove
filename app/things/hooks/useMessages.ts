@@ -59,24 +59,14 @@ export function useMessages(userId: string | null) {
             receiverId = receiver.id_user
         }
         
-        const {data, error} = await supabase.rpc("toggle_anonymous", {
-            p_from: userId, 
-            p_to: receiverId, 
+        const {data: messageData, error} = await supabase.rpc("send_message", {
+            p_from: userId,
+            p_to: receiverId,
+            p_body: body,
             p_is_anon: isAnon
         })
         if(error) throw error
-
-        const {data: messageData,error: errorMsg} = await supabase
-            .from("messages")
-            .insert({
-                from_user: userId, 
-                to_user: receiverId, 
-                body
-            })
-            .select("id,from_user")
-            .single()
-        if(errorMsg) throw errorMsg
-
+        
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
             method: "POST",
@@ -99,7 +89,7 @@ export function useMessages(userId: string | null) {
 
         await loadMessage()
 
-        return data
+        return messageData
     }
 
     const deleteMessage = async (ids: string[] ) => {
