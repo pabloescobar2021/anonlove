@@ -3008,3 +3008,5 @@ Import traces:
 [29:48:21.105] Server  LOG      ✓ Compiled in 362ms
 [29:48:28.212] Server  LOG      ✓ Compiled in 575ms
 [29:49:40.603] Server  LOG      ✓ Compiled in 138ms
+[29:51:02.848] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T11:45:40.170675+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":3},"error":null}
+[29:56:58.605] Server  LOG      ✓ Compiled in 1295ms
