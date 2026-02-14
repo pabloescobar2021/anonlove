@@ -5,9 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { messageId, toUserId } = body;
+        const { messageId } = body;
 
-        console.log("📨 Mark as read request:", { messageId, toUserId, fullBody: body });
+        console.log("📨 Mark as read request:", { messageId, fullBody: body });
 
         if (!messageId) {
             console.error("❌ messageId is missing");
@@ -21,10 +21,7 @@ export async function POST(req: NextRequest) {
             .update({ is_checked: true })
             .eq("id", messageId);
 
-        if (toUserId) {
-            console.log("➕ Adding to_user filter:", toUserId);
-            query = query.eq("to_user", toUserId);
-        }
+        
 
         console.log("📤 Executing query...");
         const { data, error } = await query.select();
@@ -40,7 +37,7 @@ export async function POST(req: NextRequest) {
         }
 
         if (!data || data.length === 0) {
-            console.error("❌ Message not found or already updated:", { messageId, toUserId });
+            console.error("❌ Message not found or already updated:", { messageId });
             
             // Давай проверим существует ли сообщение вообще
             const { data: checkData } = await supabaseAdmin
