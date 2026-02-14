@@ -121,3 +121,29 @@ Import traces:
 [02:16:32.772] Server  LOG      ✓ Compiled in 207ms
 [02:16:58.921] Server  LOG      ✓ Compiled in 182ms
 [02:24:04.641] Server  LOG      ✓ Compiled in 237ms
+[16:40:23.993] Server  LOG      ✓ Compiled in 546ms
+[16:40:24.285] Browser ERROR   ./app/things/hooks/useMessages.ts:93:138
+Parsing ecmascript source code failed
+  91 |                         {
+  92 |                             text: "Открыть",
+> 93 |                             url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${messageData.}`
+     |                                                                                                                                          ^
+  94 |                         }
+  95 |                     ]
+  96 |                 ]
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[16:40:28.606] Server  LOG      ✓ Compiled in 389ms

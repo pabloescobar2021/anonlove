@@ -344,7 +344,7 @@ function useMessages(userId) {
             from_user: userId,
             to_user: receiverId,
             body
-        }).select("id").single();
+        }).select("id,from_user").single();
         if (errorMsg) throw errorMsg;
         // уведомляем о сообщении
         fetch("/api/telegram/sendNotifyTg", {
@@ -359,7 +359,7 @@ function useMessages(userId) {
                     [
                         {
                             text: "Открыть",
-                            url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
+                            url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${messageData.from_user}`
                         }
                     ]
                 ]

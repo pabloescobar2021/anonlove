@@ -73,7 +73,7 @@ export function useMessages(userId: string | null) {
                 to_user: receiverId, 
                 body
             })
-            .select("id")
+            .select("id,from_user")
             .single()
         if(errorMsg) throw errorMsg
 
@@ -90,7 +90,7 @@ export function useMessages(userId: string | null) {
                     [
                         {
                             text: "Открыть",
-                            url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${userId}`
+                            url: `https://anonlove.vercel.app/createcard?isMine=false&id=${messageData.id}&type=recieve&to=${messageData.from_user}`
                         }
                     ]
                 ]

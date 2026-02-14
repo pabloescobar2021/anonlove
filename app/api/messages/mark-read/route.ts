@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     } catch (err) {
         console.error("❌ Error:", err);
         return NextResponse.json({ 
-            error: err instanceof Error ? err.message : "Unknown error" 
+            error: err instanceof Error ? `${err.message} asd` : "Unknown error" 
         }, { status: 500 });
     }
 }
