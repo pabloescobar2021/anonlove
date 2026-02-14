@@ -426,10 +426,8 @@ function useDialogs(inboxMessages, sentMessages, myUserId, myPublicId) {
             for (const msg of allMessages){
                 const dialogUserId = msg.from_user === myUserId ? msg.to_user : msg.from_user;
                 let displayId = '';
-                if (msg.from_display_id === 'A') {
-                    displayId = 'Anon';
-                } else {
-                    displayId = msg.from_display_id === myPublicId ? msg.to_display_id : msg.from_display_id;
+                if (msg.from_user === myUserId) {
+                    displayId = msg.to_display_id;
                 }
                 if (!map.has(dialogUserId)) {
                     map.set(dialogUserId, {
@@ -3873,12 +3871,12 @@ function MainPage() {
                 children: "ЗагруОчка..."
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 150,
+                lineNumber: 151,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/main.tsx",
-            lineNumber: 149,
+            lineNumber: 150,
             columnNumber: 13
         }, this);
     }
@@ -3896,7 +3894,7 @@ function MainPage() {
                 refresh: refresh
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 160,
+                lineNumber: 161,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$ProfileMenu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProfilePanel"], {
@@ -3911,13 +3909,13 @@ function MainPage() {
                 refreshProfile: refreshProfile
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 174,
+                lineNumber: 175,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/main.tsx",
-        lineNumber: 157,
+        lineNumber: 158,
         columnNumber: 9
     }, this);
 }

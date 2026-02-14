@@ -76,32 +76,41 @@ export function itemDtoListToItems(dtos: ItemDto[]): Item[] {
   return dtos.map(itemDtoToItem)
 }
 
-
+export type Dialog = {
+    conversation_id: string,
+    other_user_id: string,
+    other_display_id: string,
+    unread_count: number,
+    last_message_id: string,
+    updated_at: string
+}
 
 export type Message = {
     id: string,
-    body: ItemDto[],
-    created_at: string,
-    is_anon: boolean,
-    is_checked: boolean,
-    to_user_rating: number,
-    
+    conversation_id: string,
     from_user: string,
     to_user: string,
+    body: ItemDto[],
+    created_at: string,
     from_display_id: string,
-    to_display_id: string,
+
+    is_anon?: boolean,
+    is_checked?: boolean,
+    to_user_rating?: number,
+    
+    to_display_id?: string,
 }
 
 export type UiMessage = Omit<Message, "body" | 'created_at'> & {
     body: Item[]
-    created_at: Date
+    created_at: string
 }
 
 export function messageDtoToUiMessage(dto: Message): UiMessage {
     return {
         ...dto,
         body: itemDtoListToItems(dto.body),
-        created_at: parseBackendDate(dto.created_at),
+        // created_at: parseBackendDate(dto.created_at),
     }
 }
 

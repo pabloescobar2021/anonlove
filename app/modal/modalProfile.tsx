@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Dialog } from "../things/hooks/useMessages"
+import { Dialog } from "../things/types/type";
 import { useSetAnon } from "../things/hooks/useSetAnon";
 
 type ModalProfileProps = {
@@ -25,7 +25,7 @@ export function ModalProfile({
         if(!fromUser || !dialog) return
 
         const load = async () => {
-            const data = await checkAnon(fromUser, dialog.userId)
+            const data = await checkAnon(fromUser, dialog.other_user_id)
             if(!data) return
 
             setIsAnon(data.isAnon)
@@ -67,11 +67,11 @@ export function ModalProfile({
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-lg font-bold">
-              {dialog.displayId.charAt(1).toUpperCase()}
+              {dialog.other_display_id.charAt(1).toUpperCase()}
             </div>
 
             <div>
-              <div className="font-semibold">{dialog.displayId}</div>
+              <div className="font-semibold">{dialog.other_display_id}</div>
               <div className="text-xs text-white/50">Профиль пользователя</div>
             </div>
           </div>
@@ -92,7 +92,7 @@ export function ModalProfile({
             try {
                 await setAnon({
                     from_user_id: fromUser,
-                    to_user_id: dialog.userId,
+                    to_user_id: dialog.other_user_id,
                     is_anon: isAnon
                 })
 

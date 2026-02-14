@@ -5,12 +5,13 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect, useRef, use } from "react"
 import { useRouter } from "next/navigation";
 import { useAuth } from "./things/hooks/useAuth";
-import { useMessages, useDialogs, Dialog } from "./things/hooks/useMessages";
+import { useMessages, Dialog } from "./things/hooks/useMessages";
 import { sighOut } from "./things/utils/auth";
 import { useSwipe } from "./things/hooks/useSwipe";
 import { useCheckMobile } from "./things/hooks/checkMobile";
 import { ManagerChat } from "./anonMain/chat/Chat";
 import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+import { useGetDialogs } from './things/hooks/dialog_messages/useGetDialogs';
 
 
 
@@ -22,7 +23,7 @@ export default function MainPage() {
     
     const {inbox, sent, sendMessage: send, loading: messageLoading, refresh, deleteMessage} = useMessages(user?.id || null);
 
-    const dialogs = useDialogs(inbox, sent, user?.id || "", profile?.public_id || "");
+    const {dialogs: dialog, loading, refresh: refreshDialog } = useGetDialogs(user?.id || null)
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
     const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
 
@@ -50,14 +51,14 @@ export default function MainPage() {
     }
     
 
-    useEffect(() => {
-        if (!activeDialogId){
-            setActiveDialog(null)
-            return
-        }
-        const found = dialogs.find(d => d.userId === activeDialogId) || null
-        setActiveDialog(found)
-    }, [dialogs, activeDialogId])
+    // useEffect(() => {
+    //     if (!activeDialogId){
+    //         setActiveDialog(null)
+    //         return
+    //     }
+    //     const found = dialogs.find(d => d.userId === activeDialogId) || null
+    //     setActiveDialog(found)
+    // }, [dialogs, activeDialogId])
 
     // свайп для мобилки
     const chatSwipe = useSwipe({
@@ -159,7 +160,7 @@ export default function MainPage() {
             >
             <ManagerChat 
                 userId={user?.id}
-                dialogs={dialogs}
+                dialog={dialog}
                 setOpenProfile={setOpenProfile}
                 setOpenChat={setOpenChat}
                 openChat={openChat}

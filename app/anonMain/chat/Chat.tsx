@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { Dialog } from "../../things/hooks/useMessages";
-import { parseDate } from "../../things/utils/parseDate";
+import { formatBackendDate, parseDate } from "../../things/utils/parseDate";
 import { ReadIndicator } from "../../createcard/components/ReadIndicator";
-import { Particle, UiMessage } from "../../things/types/type";
+import { Dialog, UiMessage } from "../../things/types/type";
 import { Rating } from "../../createcard/components/Rating";
 import { useRouter } from "next/navigation";
 import { MessageActionRoot } from "../../contextMenu/messagePanel";
@@ -15,9 +14,11 @@ import { useShatterMessage } from "../useShatterMessage";
 import { ModalProfile } from "@/app/modal/modalProfile";
 import { HelperMsg } from "./HelperMsg";
 
+import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+
 export type Props = {
     userId: string | undefined;
-    dialogs: Dialog[];
+    dialog: Dialog[];
     setOpenProfile: (open: boolean) => void;
     setOpenChat: (open: boolean) => void;
     openChat: boolean;
@@ -30,7 +31,7 @@ export function ManagerChat(props: Props) {
     const router = useRouter();
     const {
         userId,
-        dialogs,
+        dialog,
         setOpenProfile,
         setOpenChat,
         openChat,
@@ -38,11 +39,14 @@ export function ManagerChat(props: Props) {
         refresh
     } = props;
     const { markAsRead } = useMessageRead();
-
+    
+    
     const [activeChatUserId, setActiveChatUserId] = useState<string | null>(null);
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
     const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
 
+    const {messages, loading} = useGetMessages(activeDialogId)
+    
     // modalProfileUser
     const [openModalProfile, setOpenModalProfile] = useState<Dialog | null>(null); // state модалка профиля
 
@@ -80,9 +84,9 @@ export function ManagerChat(props: Props) {
             setActiveDialog(null);
             return;
         }
-        const found = dialogs.find((d) => d.userId === activeDialogId) || null;
+        const found = dialog.find((d) => d.conversation_id === activeDialogId) || null;
         setActiveDialog(found);
-    }, [dialogs, activeDialogId]);
+    }, [dialog, activeDialogId]);
 
     const { handleDeleteMessage } = useDeleteMessage({
         setChoosenMsg, setAction,setIsChoose,choosenMsg,
@@ -237,27 +241,29 @@ export function ManagerChat(props: Props) {
                 {/* Resize handler только для desktop */}
                 {!isMobile && <DialogResizehandler dialogPanelRef={dialogPanelRef} />}
                 
+                
+
                 {/* Список диалогов */}
-                {dialogs.map((dialog) => {
-                    const avatar = dialog.displayId.charAt(1).toUpperCase();
-                    const title = dialog.displayId;
-                    const timeSend = parseDate(dialog.lastMessage.created_at);
-                    const unread = dialog.messages.filter((el) => !el.is_checked && el.from_user !== userId).length;
+                {dialog.map((dialog) => {
+                    const avatar = dialog.other_display_id.charAt(1).toUpperCase();
+                    const title = dialog.other_display_id;
+                    const timeSend = formatBackendDate(dialog.updated_at)
+                    const unread = dialog.unread_count
                     return (
                         <button
-                            key={dialog.userId}
+                            key={dialog.conversation_id}
                             className="p-2 rounded-lg w-full"
                             onClick={() => {
-                                setActiveDialogId(dialog.userId);
+                                setActiveDialogId(dialog.conversation_id);
                                 setActiveDialog(dialog);
-                                setActiveChatUserId(dialog.displayId);
+                                setActiveChatUserId(dialog.other_display_id);
                                 if (isMobile) setOpenChat(true);
                             }}
                         >
                             <div
                                 className={`flex p-3 items-center relative gap-2 rounded-2xl transition-colors
                                     ${
-                                        dialog.userId !== activeDialogId && !isMobile
+                                        dialog.conversation_id !== activeDialogId && !isMobile
                                             ? "bg-[#5b5b5ba2]"
                                             : "bg-[#949494a2]"
                                     }
@@ -301,7 +307,7 @@ export function ManagerChat(props: Props) {
                 })}
 
                 {/* StartHelper */}
-                {dialogs.length === 0 && (
+                {dialog.length === 0 && (
                     <HelperMsg
                 />
             )}
@@ -341,7 +347,7 @@ export function ManagerChat(props: Props) {
 
                         <div className="flexC mx-auto text-[15px] prettyBtnChat">
                             {activeChatUserId}
-                            <Rating value={activeDialog?.rating}></Rating>
+                            {/* <Rating value={activeDialog?.rating}></Rating> */}
                         </div>
 
                         <button
@@ -394,15 +400,15 @@ export function ManagerChat(props: Props) {
 
                 {/* Список сообщений */}
                 <div className="relative p-2 space-y-2 ">
-                    {activeDialog?.messages.map((message, i) => {
+                    {messages.map((message, i) => {
                         const avatar = message.from_display_id.charAt(1).toUpperCase();
                         const nameLabel = message.from_display_id;
                         const isMine = message.from_user === userId;
-                        const date = parseDate(message.created_at);
+                        const date = formatBackendDate(message.created_at);
 
                         return (
                             <div
-                                key={message.id}
+                                key={message.id }
                                 ref={el => {(wrapperRef.current[message.id] = el)}}
 
                                 className={`flex flex-col relative w-full transition hover:bg-white/10 select-none
@@ -432,21 +438,6 @@ export function ManagerChat(props: Props) {
                                             });
                                             return;
                                         } else {
-                                            if (!isMine && !message.is_checked) {
-                                                markAsRead(message.id, userId!).then(() => {
-                                                    setActiveDialog(
-                                                        (d) =>
-                                                            d && {
-                                                                ...d,
-                                                                messages: d.messages.map((m) =>
-                                                                    m.id === message.id
-                                                                        ? { ...m, is_checked: true }
-                                                                        : m
-                                                                ),
-                                                            }
-                                                    );
-                                                });
-                                            }
                                             router.push(
                                                 `createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? "")}`
                                             );

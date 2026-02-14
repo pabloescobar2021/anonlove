@@ -278,6 +278,8 @@ async function sendMessage({ fromUserId, toUserId, toPublicId, body, isAnon }) {
 "use strict";
 
 __turbopack_context__.s([
+    "formatBackendDate",
+    ()=>formatBackendDate,
     "parseBackendDate",
     ()=>parseBackendDate,
     "parseDate",
@@ -290,6 +292,17 @@ function parseBackendDate(raw) {
     ;
 }
 function parseDate(date) {
+    return date.toLocaleString("ru-RU", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+}
+function formatBackendDate(raw) {
+    if (!raw) return "";
+    const date = new Date(raw.replace(" ", "T").replace(/\.\d+/, (m)=>m.slice(0, 4)).replace(/\+00:?00$/, "Z"));
     return date.toLocaleString("ru-RU", {
         day: "2-digit",
         month: "2-digit",
@@ -342,8 +355,6 @@ function messageDtoToUiMessage(dto) {
 __turbopack_context__.s([
     "useCurrentMessage",
     ()=>useCurrentMessage,
-    "useDialogs",
-    ()=>useDialogs,
     "useMessages",
     ()=>useMessages
 ]);
@@ -469,49 +480,14 @@ function useCurrentMessage(userId, messageId, isMine) {
         loading
     };
 }
-function useDialogs(inboxMessages, sentMessages, myUserId, myPublicId) {
-    const dialogs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
-        const map = new Map();
-        const allMessages = [
-            ...inboxMessages,
-            ...sentMessages
-        ];
-        for (const msg of allMessages){
-            const dialogUserId = msg.from_user === myUserId ? msg.to_user : msg.from_user;
-            let displayId = '';
-            if (msg.from_display_id === 'A') {
-                displayId = 'Anon';
-            } else {
-                displayId = msg.from_display_id === myPublicId ? msg.to_display_id : msg.from_display_id;
-            }
-            if (!map.has(dialogUserId)) {
-                map.set(dialogUserId, {
-                    userId: dialogUserId,
-                    displayId: displayId,
-                    lastMessage: msg,
-                    messages: [
-                        msg
-                    ],
-                    count: 1,
-                    rating: msg.to_user_rating
-                });
-            } else {
-                const dialog = map.get(dialogUserId);
-                dialog.messages.push(msg);
-                dialog.count++;
-                if (msg.created_at > dialog.lastMessage.created_at) {
-                    dialog.lastMessage = msg;
-                }
-            }
-        }
-        return Array.from(map.values()).sort((a, b)=>b.lastMessage.created_at.getTime() - a.lastMessage.created_at.getTime());
-    }, [
-        inboxMessages,
-        sentMessages,
-        myUserId
-    ]);
-    return dialogs;
-}
+ // export type Dialog = {
+ //     userId: string,
+ //     displayId: string,
+ //     lastMessage: UiMessage,
+ //     messages: UiMessage[],
+ //     count: number,
+ //     rating?: number
+ // }
 }),
 "[project]/app/things/hooks/useSetAnon.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -2686,7 +2662,7 @@ function CreateCardPage({ initialData }) {
                 lineNumber: 214,
                 columnNumber: 17
             }, this),
-            !isMobile && isMine !== "true" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            isMine !== "true" && (!isMobile ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute right-0 bottom-0 -translate-y-1/2
                         flex justify-center items-center overflow-hidden
                         w-7 h-1/2 rounded-l-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
@@ -2722,7 +2698,7 @@ function CreateCardPage({ initialData }) {
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 236,
+                lineNumber: 237,
                 columnNumber: 21
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute bottom-0 right-0 
@@ -2745,24 +2721,24 @@ function CreateCardPage({ initialData }) {
                             d: "M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"
                         }, void 0, false, {
                             fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                            lineNumber: 263,
+                            lineNumber: 262,
                             columnNumber: 112
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                        lineNumber: 263,
+                        lineNumber: 262,
                         columnNumber: 29
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                    lineNumber: 260,
+                    lineNumber: 259,
                     columnNumber: 25
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
                 lineNumber: 252,
                 columnNumber: 21
-            }, this),
+            }, this)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$all$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RightField"], {
                 rightPanelOpen: rightPanelOpen,
                 setRightPanelOpen: setRightPanelOpen,
@@ -2788,7 +2764,7 @@ function CreateCardPage({ initialData }) {
                 isMine: isMine
             }, void 0, false, {
                 fileName: "[project]/app/createcard/CreateCardClient.tsx",
-                lineNumber: 269,
+                lineNumber: 270,
                 columnNumber: 17
             }, this)
         ]

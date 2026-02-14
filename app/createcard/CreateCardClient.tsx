@@ -231,15 +231,15 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
 
 
                 {/* Кнопка снизу для поля отправить */}
-                {(!isMobile && isMine!=="true") 
-                ? (
+                {isMine!=="true" && (
+                    !isMobile 
+                    ? (
                     <div
                         className={`absolute right-0 bottom-0 -translate-y-1/2
                         flex justify-center items-center overflow-hidden
                         w-7 h-1/2 rounded-l-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
                         z-20
                         `}
-                        
                     >
                         <button 
                             onClick={() => {setRightPanelOpen(true)}}
@@ -247,15 +247,14 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"/></svg>                    
                         </button>
                     </div>
-
-                ) :(
+                    )
+                    :(
                     <div
                         className={`absolute bottom-0 right-0 
                         flex justify-center items-center overflow-hidden
                         w-7 h-12 rounded-l-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
                         z-20
                         `}
-                        
                     >
                         <button 
                             onClick={() => {setRightPanelOpen(true)}}
@@ -263,7 +262,9 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"/></svg>                    
                         </button>
                     </div>
+                    )
                 )}
+                
     
                 {/* поле отправить */}
                 <RightField

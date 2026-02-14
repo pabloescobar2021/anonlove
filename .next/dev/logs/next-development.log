@@ -509,3 +509,2502 @@ Import traces:
 [19:59:15.391] Server  LOG      ✓ Compiled in 257ms
 [19:59:15.974] Browser LOG     Error: {}
 [19:59:20.446] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T09:23:47.101125+00:00","from_display_id":"#MYVJ9N","from_display_name":"bigbobchel","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"45b584c6-b30a-457b-942c-0d0e85375765","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#44TZUD","to_display_name":"zalupa","to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","to_user_rating":1},"error":null}
+[20:00:59.554] Browser LOG     Error: {}
+[20:00:59.554] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-13T14:54:10.646767+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"98ef0833-b7ef-42cd-8e59-b3aa199888c7","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[20:00:59.554] Browser LOG     Error: {}
+[20:00:59.680] Browser LOG     Error: {}
+[20:01:14.319] Server  LOG      ✓ Compiled in 224ms
+[20:01:43.138] Server  LOG      ✓ Compiled in 458ms
+[20:01:43.278] Browser ERROR   ./app/createcard/CreateCardClient.tsx:236:18
+Parsing ecmascript source code failed
+  234 |                 {isMine!=="true" && (
+  235 |
+> 236 |                 )}
+      |                  ^
+  237 |                 {!isMobile 
+  238 |                 ? (
+  239 |                     <div
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./app/createcard/CreateCardClient.tsx
+    ./app/createcard/page.tsx
+[20:02:22.287] Browser ERROR   ./app/createcard/CreateCardClient.tsx:236:18
+Parsing ecmascript source code failed
+  234 |                 {isMine!=="true" && (
+  235 |                     
+> 236 |                 )}
+      |                  ^
+  237 |                 {!isMobile 
+  238 |                 ? (
+  239 |                     <div
+
+Expected '</', got '}'
+
+Import trace:
+  Server Component:
+    ./app/createcard/CreateCardClient.tsx
+    ./app/createcard/page.tsx
+[20:02:46.290] Server  LOG      ✓ Compiled in 203ms
+[20:02:47.291] Browser ERROR   ./app/createcard/CreateCardClient.tsx:239:21
+Parsing ecmascript source code failed
+  237 |                         
+  238 |                     )
+> 239 |                     :(
+      |                     ^
+  240 |                         
+  241 |                     )
+  242 |                 )}
+
+Expected '</', got ':'
+
+Import trace:
+  Server Component:
+    ./app/createcard/CreateCardClient.tsx
+    ./app/createcard/page.tsx
+[20:03:04.323] Browser LOG     Error: {}
+[20:03:06.157] Browser LOG     Error: {}
+[20:03:16.207] Server  LOG      ✓ Compiled in 690ms
+[20:03:16.445] Browser LOG     Error: {}
+[20:03:16.821] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-13T14:54:10.646767+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"98ef0833-b7ef-42cd-8e59-b3aa199888c7","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[20:03:16.821] Browser LOG     Error: {}
+[20:03:16.821] Browser LOG     Error: {}
+[20:03:16.821] Browser LOG     Error: {}
+[20:03:21.619] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T09:23:47.101125+00:00","from_display_id":"#MYVJ9N","from_display_name":"bigbobchel","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"45b584c6-b30a-457b-942c-0d0e85375765","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#44TZUD","to_display_name":"zalupa","to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","to_user_rating":1},"error":null}
+[20:03:24.837] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-13T14:54:10.646767+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"98ef0833-b7ef-42cd-8e59-b3aa199888c7","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[20:03:24.837] Browser LOG     Error: {}
+[20:03:24.837] Browser LOG     Error: {}
+[20:03:24.837] Browser LOG     Error: {}
+[20:03:51.443] Server  LOG      ✓ Compiled in 372ms
+[20:03:58.234] Server  LOG      ✓ Compiled in 193ms
+[20:03:59.605] Server  LOG      ✓ Compiled in 245ms
+[20:09:40.061] Server  LOG      ✓ Compiled in 2.7s
+[20:09:48.363] Server  LOG      ✓ Compiled in 566ms
+[20:13:55.787] Server  LOG      ✓ Compiled in 465ms
+[20:14:50.165] Server  LOG      ✓ Compiled in 240ms
+[20:14:55.897] Server  LOG      ✓ Compiled in 520ms
+[20:16:21.955] Server  LOG      ✓ Compiled in 147ms
+[20:16:39.426] Server  LOG      ✓ Compiled in 134ms
+[21:45:43.627] Browser LOG     column reference "conversation_id" is ambiguous
+[21:46:56.363] Browser LOG     column reference "conversation_id" is ambiguous
+[21:49:23.997] Server  LOG     User not found or no Telegram ID: {}
+[23:54:14.427] Server  LOG      ✓ Compiled in 334ms
+[23:58:39.953] Server  LOG      ✓ Compiled in 514ms
+[23:58:46.002] Server  LOG      ✓ Compiled in 271ms
+[23:58:51.840] Server  LOG      ✓ Compiled in 182ms
+[24:05:21.743] Server  LOG      ✓ Compiled in 248ms
+[24:06:15.644] Server  LOG      ✓ Compiled in 166ms
+[24:07:11.989] Server  LOG      ✓ Compiled in 181ms
+[24:07:38.544] Server  LOG      ✓ Compiled in 301ms
+[24:07:53.994] Server  LOG      ✓ Compiled in 138ms
+[24:08:41.486] Server  LOG      ✓ Compiled in 165ms
+[24:09:52.798] Server  LOG      ✓ Compiled in 218ms
+[24:10:32.370] Server  LOG      ✓ Compiled in 230ms
+[24:10:48.164] Server  LOG      ✓ Compiled in 160ms
+[24:12:02.209] Server  LOG      ✓ Compiled in 168ms
+[24:13:01.908] Server  LOG      ✓ Compiled in 335ms
+[24:14:19.031] Server  LOG      ✓ Compiled in 859ms
+[24:14:21.281] Browser LOG     Dialogs: []
+[24:14:29.331] Browser LOG     Dialogs: []
+[24:15:49.527] Server  LOG     User not found or no Telegram ID: {}
+[24:15:50.003] Browser LOG     Dialogs: []
+[24:18:44.353] Server  LOG      ✓ Compiled in 471ms
+[24:18:50.370] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:19:26.434] Server  LOG      ✓ Compiled in 245ms
+[24:19:28.206] Server  LOG      ✓ Compiled in 258ms
+[24:19:30.445] Browser LOG     Dialogs: []
+[24:19:50.711] Server  LOG      ✓ Compiled in 208ms
+[24:19:55.323] Server  LOG      ✓ Compiled in 115ms
+[24:19:58.441] Browser LOG     Dialogs: []
+[24:20:44.473] Server  LOG      ✓ Compiled in 172ms
+[24:20:55.664] Browser LOG     Dialogs: []
+[24:22:00.923] Browser LOG     Dialogs: []
+[24:27:33.900] Server  LOG      ✓ Compiled in 158ms
+[24:27:38.850] Server  LOG      ✓ Compiled in 137ms
+[24:27:48.302] Browser LOG     Dialogs: []
+[24:27:48.303] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:29:43.825] Server  LOG      ✓ Compiled in 516ms
+[24:29:51.654] Server  LOG      ✓ Compiled in 284ms
+[24:30:04.145] Server  LOG      ✓ Compiled in 237ms
+[24:30:13.606] Browser LOG     Dialogs: []
+[24:30:13.606] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:31:25.318] Server  LOG      ✓ Compiled in 161ms
+[24:31:31.650] Browser LOG     Dialogs: []
+[24:31:31.650] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:32:42.396] Server  LOG      ✓ Compiled in 327ms
+[24:33:09.949] Server  LOG      ✓ Compiled in 188ms
+[24:34:16.744] Server  LOG      ✓ Compiled in 198ms
+[24:34:20.580] Server  LOG      ✓ Compiled in 154ms
+[24:34:30.755] Browser LOG     Dialogs: []
+[24:34:30.756] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:17.887] Server  LOG      ✓ Compiled in 497ms
+[24:35:18.296] Browser LOG     Dialogs state updated: []
+[24:35:18.563] Browser LOG     Dialogs state updated: []
+[24:35:18.563] Browser LOG     [2;38;2;124;124;124m%s[0m Dialogs state updated: []
+[24:35:20.466] Browser LOG     Dialogs: []
+[24:35:20.466] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:20.467] Browser LOG     Dialogs state updated: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:21.435] Browser LOG     Dialogs state updated: []
+[24:35:22.400] Browser LOG     Dialogs: []
+[24:35:22.400] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:22.401] Browser LOG     Dialogs state updated: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:28.818] Server  LOG      ✓ Compiled in 270ms
+[24:35:29.976] Browser LOG     Dialogs: []
+[24:35:29.976] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[24:35:41.514] Server  LOG      ✓ Compiled in 346ms
+[24:35:48.545] Server  LOG      ✓ Compiled in 197ms
+[24:36:42.971] Server  LOG      ✓ Compiled in 185ms
+[24:37:22.227] Server  LOG      ✓ Compiled in 135ms
+[24:38:27.775] Server  LOG      ✓ Compiled in 177ms
+[24:38:52.033] Server  LOG      ✓ Compiled in 276ms
+[24:39:56.965] Server  LOG      ✓ Compiled in 151ms
+[24:40:39.030] Server  LOG      ✓ Compiled in 175ms
+[24:40:39.290] Browser ERROR   uncaughtError: TypeError: dialog.map is not a function
+[24:40:49.480] Server  LOG      ✓ Compiled in 422ms
+[24:40:49.499] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:42:43.321] Server  LOG      ✓ Compiled in 626ms
+[24:42:44.292] Browser ERROR   ./app/anonMain/chat/Chat.tsx:247:17
+Parsing ecmascript source code failed
+  245 |                         
+  246 |                     )
+> 247 |                 })}
+      |                 ^
+  248 |
+  249 |                 {/* Список диалогов */}
+  250 |                 {dialogs.map((dialog) => {
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[24:42:50.571] Server  LOG      ✓ Compiled in 388ms
+[24:42:53.014] Browser ERROR   uncaughtError: TypeError: dialog.map is not a function
+[24:42:56.406] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:42:56.428] Server  LOG      ✓ Compiled in 142ms
+[24:43:03.278] Browser ERROR   uncaughtError: TypeError: dialog.map is not a function
+[24:43:08.810] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:43:08.864] Server  LOG      ✓ Compiled in 206ms
+[24:43:11.025] Browser ERROR   uncaughtError: TypeError: dialog.map is not a function
+[24:43:52.916] Server  LOG      ✓ Compiled in 130ms
+[24:43:52.927] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:43:55.221] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[24:44:01.074] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[24:44:21.830] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:44:21.912] Server  LOG      ✓ Compiled in 276ms
+[24:44:23.825] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[24:44:42.302] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:44:42.322] Server  LOG      ✓ Compiled in 196ms
+[24:47:16.174] Server  LOG      ✓ Compiled in 469ms
+[24:48:04.724] Server  LOG      ✓ Compiled in 237ms
+[24:48:05.289] Browser ERROR   ./app/main.tsx:27:12
+Ecmascript file had an error
+  25 |
+  26 |     const dialogs = useDialogs(inbox, sent, user?.id || "", profile?.public_id || "");
+> 27 |     const {dialogs, loading, refresh: refreshDialog } = useGetDialogs(user?.id || null)
+     |            ^^^^^^^
+  28 |     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
+  29 |     const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
+  30 |
+
+the name `dialogs` is defined multiple times
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+[24:48:30.643] Server  LOG      ✓ Compiled in 157ms
+[24:49:18.274] Server  LOG      ✓ Compiled in 278ms
+[24:50:04.573] Server  LOG      ✓ Compiled in 161ms
+[24:50:04.830] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `div`.  It was passed a child from ManagerChat.
+[24:50:30.344] Server  LOG      ✓ Compiled in 113ms
+[24:50:31.279] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[24:51:20.402] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:51:20.409] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:51:20.468] Server  LOG      ✓ Compiled in 211ms
+[24:51:25.281] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[24:51:42.149] Server  LOG      ✓ Compiled in 386ms
+[24:51:42.157] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:51:44.292] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[24:53:12.694] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:53:12.717] Server  LOG      ✓ Compiled in 140ms
+[24:53:16.282] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[24:53:54.822] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:53:54.840] Server  LOG      ✓ Compiled in 173ms
+[24:53:57.285] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'created_at')
+[24:54:02.659] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:54:02.676] Server  LOG      ✓ Compiled in 250ms
+[24:54:05.288] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'created_at')
+[24:54:26.389] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:54:26.414] Server  LOG      ✓ Compiled in 159ms
+[24:54:31.280] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'filter')
+[24:54:42.662] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:54:42.680] Server  LOG      ✓ Compiled in 148ms
+[24:54:45.291] Browser ERROR   Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
+
+Check the render method of `div`.  It was passed a child from ManagerChat.
+[24:54:50.960] Server  LOG      ✓ Compiled in 211ms
+[24:55:04.806] Server  LOG      ✓ Compiled in 149ms
+[24:55:15.393] Server  LOG      ✓ Compiled in 330ms
+[24:55:27.332] Server  LOG      ✓ Compiled in 242ms
+[24:55:40.278] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[24:56:48.729] Server  LOG      ✓ Compiled in 351ms
+[24:56:50.288] Browser ERROR   uncaughtError: ReferenceError: dialogs is not defined
+[24:56:55.441] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:56:55.468] Server  LOG      ✓ Compiled in 151ms
+[24:57:02.323] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'length')
+[24:57:05.576] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:57:05.591] Server  LOG      ✓ Compiled in 261ms
+[24:57:07.857] Browser ERROR   uncaughtError: ReferenceError: dialogs is not defined
+[24:57:18.574] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:57:18.594] Server  LOG      ✓ Compiled in 156ms
+[24:57:21.285] Browser ERROR   uncaughtError: ReferenceError: dialogs is not defined
+[24:57:34.623] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:57:34.634] Server  LOG      ✓ Compiled in 243ms
+[24:57:39.282] Browser ERROR   uncaughtError: ReferenceError: dialogs is not defined
+[24:57:39.857] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:57:39.871] Server  LOG      ✓ Compiled in 204ms
+[24:57:42.282] Browser ERROR   uncaughtError: ReferenceError: dialogs is not defined
+[24:57:51.494] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[24:57:51.556] Server  LOG      ✓ Compiled in 148ms
+[24:58:06.599] Server  LOG      ✓ Compiled in 341ms
+[24:58:49.907] Server  LOG      ✓ Compiled in 171ms
+[24:59:00.609] Server  LOG      ✓ Compiled in 162ms
+[25:02:15.595] Server  LOG      ✓ Compiled in 297ms
+[25:03:10.611] Server  LOG      ✓ Compiled in 180ms
+[25:05:19.679] Server  LOG      ✓ Compiled in 127ms
+[25:07:42.229] Server  LOG      ✓ Compiled in 325ms
+[25:07:43.290] Browser ERROR   ./app/things/hooks/useGetDialogs.ts:38:17
+Parsing ecmascript source code failed
+  36 |
+  37 |         const {data: msgData, error: msgError} = await supabase.rpc('get_conversation_messages', {
+> 38 |             data.map(d => d.conversation_id)
+     |                 ^
+  39 |         })
+  40 |
+  41 |         if(data) setDialogs(data)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useGetDialogs.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useGetDialogs.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[25:08:02.290] Browser ERROR   ./app/things/hooks/useGetDialogs.ts:38:17
+Parsing ecmascript source code failed
+  36 |
+  37 |         const {data: msgData, error: msgError} = await supabase.rpc('get_conversation_messages', {
+> 38 |             data.map(d => d.conversation_id)
+     |                 ^
+  39 |         })
+  40 |
+  41 |         if(data) setDialogs(data)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useGetDialogs.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useGetDialogs.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[25:11:07.876] Server  LOG      ✓ Compiled in 224ms
+[25:11:08.280] Browser ERROR   ./app/things/hooks/useGetDialogs.ts:38:17
+Parsing ecmascript source code failed
+  36 |
+  37 |         const {data: msgData, error: msgError} = await supabase.rpc('get_conversation_messages', {
+> 38 |             data.conversation_id
+     |                 ^
+  39 |         })
+  40 |
+  41 |         if(data) setDialogs(data)
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useGetDialogs.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useGetDialogs.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[25:11:25.765] Server  LOG      ✓ Compiled in 193ms
+[25:11:40.649] Server  LOG      ✓ Compiled in 251ms
+[25:12:36.031] Server  LOG      ✓ Compiled in 187ms
+[25:20:47.227] Server  LOG      ✓ Compiled in 299ms
+[25:21:34.984] Server  LOG      ✓ Compiled in 309ms
+[25:23:30.668] Server  LOG      ✓ Compiled in 321ms
+[25:25:00.246] Server  LOG      ✓ Compiled in 346ms
+[25:25:07.868] Browser LOG     Dialogs: [{"conversation_id":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","last_message_id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","other_user_id":"441afa8c-919d-461f-b871-2ea2e7aec169","unread_count":0,"updated_at":"2026-02-14T14:12:06.518538+00:00"}]
+[25:26:07.971] Server  LOG      ✓ Compiled in 290ms
+[25:27:25.480] Server  LOG      ✓ Compiled in 220ms
+[25:27:29.934] Server  LOG      ✓ Compiled in 287ms
+[25:27:31.972] Server  LOG      ✓ Compiled in 317ms
+[25:28:52.954] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:52.973] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:52.981] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:52.997] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.018] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.026] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.040] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.049] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.058] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.075] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.083] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.099] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.113] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.120] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.135] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.146] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.159] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.168] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.175] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.188] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.195] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.207] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.216] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.226] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.245] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.254] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.262] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.278] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.287] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.320] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.680] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.819] Server  ERROR    ⨯ ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[25:28:53.934] Server  LOG      ✓ Compiled in 706ms
+[25:28:53.988] Server  LOG      ✓ Compiled in 515ms
+[25:28:56.106] Browser ERROR   ./app/main.tsx:14:1
+Module not found: Can't resolve './things/hooks/useGetDialogs'
+  12 | import { ManagerChat } from "./anonMain/chat/Chat";
+  13 | import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
+> 14 | import { useGetDialogs } from './things/hooks/useGetDialogs';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 |
+  16 |
+  17 |
+
+Import trace:
+  Server Component:
+    ./app/main.tsx
+    ./app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+[25:29:16.478] Server  LOG      ✓ Compiled in 718ms
+[25:29:51.946] Server  LOG      ✓ Compiled in 214ms
+[25:30:02.038] Server  LOG      ✓ Compiled in 202ms
+[25:31:15.864] Server  LOG      ✓ Compiled in 225ms
+[25:31:53.787] Server  LOG      ✓ Compiled in 160ms
+[25:31:57.866] Server  LOG      ✓ Compiled in 227ms
+[25:32:15.370] Server  LOG      ✓ Compiled in 160ms
+[25:37:09.629] Server  LOG      ✓ Compiled in 392ms
+[25:38:21.533] Server  LOG      ✓ Compiled in 219ms
+[25:39:30.377] Server  LOG      ✓ Compiled in 619ms
+[25:39:31.293] Browser ERROR   {"code":"PGRST202","details":"Searched for the function public.get_conversation_messages with parameter p_conversation or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":"Perhaps you meant to call the function public.get_conversation_messages(p_conversation_id)","message":"Could not find the function public.get_conversation_messages(p_conversation) in the schema cache"}
+[25:39:53.113] Server  LOG      ✓ Compiled in 155ms
+[25:39:53.306] Browser ERROR   uncaughtError: ReferenceError: Cannot access 'activeDialogId' before initialization
+[25:40:03.547] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[25:40:03.649] Server  LOG      ✓ Compiled in 201ms
+[25:41:10.792] Server  LOG      ✓ Compiled in 484ms
+[25:41:55.295] Server  LOG      ✓ Compiled in 215ms
+[25:42:30.586] Browser ERROR   {"code":"PGRST202","details":"Searched for the function public.get_conversation_messages with parameter p_conversation or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":"Perhaps you meant to call the function public.get_conversation_messages(p_conversation_id)","message":"Could not find the function public.get_conversation_messages(p_conversation) in the schema cache"}
+[25:43:14.109] Browser ERROR   {"code":"PGRST202","details":"Searched for the function public.get_conversation_messages with parameter p_conversation or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":"Perhaps you meant to call the function public.get_conversation_messages(p_conversation_id)","message":"Could not find the function public.get_conversation_messages(p_conversation) in the schema cache"}
+[25:45:08.470] Browser ERROR   {"code":"PGRST202","details":"Searched for the function public.get_conversation_messages with parameter p_conversation or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":"Perhaps you meant to call the function public.get_conversation_messages(p_conversation_id)","message":"Could not find the function public.get_conversation_messages(p_conversation) in the schema cache"}
+[25:48:30.162] Server  LOG      ✓ Compiled in 843ms
+[25:48:42.131] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[25:48:52.525] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[25:49:22.716] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[25:49:22.819] Server  LOG      ✓ Compiled in 342ms
+[25:49:28.973] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[25:49:38.306] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[25:49:38.319] Server  LOG      ✓ Compiled in 297ms
+[25:49:49.425] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[25:50:12.378] Server  LOG      ✓ Compiled in 333ms
+[25:50:12.392] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[25:50:35.982] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T11:45:40.170675+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":3},"error":null}
+[25:50:49.266] Server  LOG      ✓ Compiled in 224ms
+[25:50:50.283] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[25:53:49.787] Server  LOG      ✓ Compiled in 431ms
+[25:53:49.916] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[25:54:07.923] Server  LOG      ✓ Compiled in 259ms
+[25:54:11.689] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T14:12:06.518538+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"1dfa73ec-ef14-4929-aa17-bac0f050fa4a","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":3},"error":null}
+[28:29:36.145] Server  LOG      ✓ Compiled in 1425ms
+[28:32:10.391] Server  LOG      ✓ Compiled in 520ms
+[28:32:48.107] Server  LOG      ✓ Compiled in 573ms
+[28:33:30.023] Server  LOG      ✓ Compiled in 303ms
+[28:34:00.220] Server  LOG      ✓ Compiled in 318ms
+[28:34:52.422] Server  LOG      ✓ Compiled in 416ms
+[28:35:48.322] Server  LOG      ✓ Compiled in 1251ms
+[28:36:08.924] Server  LOG      ✓ Compiled in 215ms
+[28:39:16.839] Server  LOG      ✓ Compiled in 859ms
+[28:39:17.466] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
+[28:40:03.310] Server  LOG      ✓ Compiled in 329ms
+[28:40:03.338] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[28:40:46.499] Server  LOG      ✓ Compiled in 142ms
+[28:41:12.285] Server  LOG      ✓ Compiled in 285ms
+[28:43:52.811] Server  LOG      ✓ Compiled in 2.8s
+[28:44:48.612] Server  LOG      ✓ Compiled in 333ms
+[28:45:24.559] Server  LOG      ✓ Compiled in 466ms
+[28:45:25.289] Browser ERROR   uncaughtError: ReferenceError: parseDate is not defined
+[28:45:40.261] Server  LOG      ✓ Compiled in 227ms
+[28:47:14.188] Server  LOG      ✓ Compiled in 656ms
+[28:48:04.361] Server  LOG      ✓ Compiled in 317ms
+[28:48:22.228] Server  LOG      ✓ Compiled in 185ms
+[28:48:51.795] Server  LOG      ✓ Compiled in 251ms
+[28:49:39.615] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[29:09:41.973] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:09:41.974] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:09:51.552] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:09:51.552] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:11:37.641] Server  LOG      ✓ Compiled in 881ms
+[29:12:53.564] Server  LOG      ✓ Compiled in 1267ms
+[29:12:55.602] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:12:55.602] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:12:56.387] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:12:56.387] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:12:56.777] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:12:56.777] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:13:54.770] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:13:54.770] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:22.070] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:22.071] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:22.273] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:22.273] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:24.578] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:24.578] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:24.711] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:24.711] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:45.208] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:45.208] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:45.989] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:45.989] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:46.354] Server  LOG      ✓ Compiled in 1380ms
+[29:14:46.439] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:46.440] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:14:57.632] Server  LOG      ✓ Compiled in 335ms
+[29:14:58.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:14:58.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:15:32.397] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:15:32.397] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:15:32.714] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:15:32.714] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:15:32.803] Server  LOG      ✓ Compiled in 790ms
+[29:15:32.915] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:15:32.915] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:15:54.994] Server  LOG      ✓ Compiled in 169ms
+[29:15:55.299] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:15:55.300] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:16:57.965] Server  LOG      ✓ Compiled in 203ms
+[29:19:15.061] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:19:15.062] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:19:15.166] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:19:15.166] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:22:32.041] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:22:32.041] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:22:32.245] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:22:32.245] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:22:56.861] Server  LOG      ✓ Compiled in 535ms
+[29:22:57.123] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.123] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.123] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.276] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.276] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.276] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.847] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.847] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:22:57.847] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:23:07.106] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:23:07.108] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:23:07.108] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[29:23:12.646] Server  LOG      ✓ Compiled in 521ms
+[29:23:12.906] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:23:12.906] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:23:12.906] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:23:12.906] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:23:14.350] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:23:14.350] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:23:23.041] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:23:23.041] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:24:27.282] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:24:27.282] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:24:28.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:24:28.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:24:30.401] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:24:30.401] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:45.818] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:45.818] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:46.288] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:46.289] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:46.513] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:46.513] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:47.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:47.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:48.747] Server  LOG      ✓ Compiled in 3.7s
+[29:25:48.926] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:48.926] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:49.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:49.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:58.281] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:58.281] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:25:59.303] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:25:59.303] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:00.191] Server  LOG      ✓ Compiled in 388ms
+[29:26:00.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:00.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:02.290] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:02.290] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:02.290] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:02.290] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:03.832] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:03.832] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:39.635] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:39.635] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:40.050] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:40.050] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:40.266] Server  LOG      ✓ Compiled in 821ms
+[29:26:40.375] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:40.376] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:41.301] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:41.301] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:41.307] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:41.307] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:26:41.307] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:26:41.307] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:27:32.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:27:32.220] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:27:32.618] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:27:32.618] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:27:32.619] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:27:32.619] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:27:33.357] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:27:33.357] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:27:50.671] Server  LOG      ✓ Compiled in 468ms
+[29:35:44.733] Server  LOG      ✓ Compiled in 1321ms
+[29:35:45.810] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:35:45.810] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:35:50.287] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:35:50.288] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:35:51.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:35:51.291] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:36:32.734] Server  LOG      ✓ Compiled in 749ms
+[29:36:33.282] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:36:33.282] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:36:44.324] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:36:44.324] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:36:44.324] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:36:44.324] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:37:57.872] Server  LOG      ✓ Compiled in 1582ms
+[29:37:58.282] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:37:58.282] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:37:59.282] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:37:59.282] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:00.277] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:00.277] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:38:01.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:01.280] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:38:46.822] Server  LOG      ✓ Compiled in 243ms
+[29:38:47.292] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:47.292] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:47.293] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:47.293] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:49.404] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:49.404] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:38:50.287] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:50.288] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:38:51.613] Server  ERROR    ⨯ ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+
+./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[29:38:51.810] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:51.811] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:52.284] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:52.284] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:54.836] Server  LOG      ○ Compiling /_error ...
+[29:38:57.497] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.500] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.503] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.503] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.503] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.503] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.504] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.504] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.599] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:57.599] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:58.329] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:58.329] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:38:58.329] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:58.329] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:38:59.297] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9
+[29:38:59.297] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 1dfa73ec-ef14-4929-aa17-bac0f050fa4a
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:02.425] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:04.542] Browser ERROR   uncaughtError: Error: ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[29:39:04.833] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:04.833] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:04.833] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/createcard/CreateCardClient.tsx [Server Component]
+    ./app/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/createcard/CreateCardClient.tsx [Server Component]
+    ./app/createcard/page.tsx [Server Component]
+[29:39:04.833] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/createcard/CreateCardClient.tsx [Client Component Browser]
+    ./app/createcard/CreateCardClient.tsx [Server Component]
+    ./app/createcard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/createcard/CreateCardClient.tsx [Client Component SSR]
+    ./app/createcard/CreateCardClient.tsx [Server Component]
+    ./app/createcard/page.tsx [Server Component]
+[29:39:05.290] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:05.290] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:05.297] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:05.297] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:21.234] Server  LOG      ✓ Compiled in 399ms
+[29:39:21.241] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:21.241] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:21.285] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-client] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:21.285] Browser ERROR   ./app/things/hooks/useMessages.ts:6:1
+Export messageDtoToUiMessage doesn't exist in target module
+  4 | import { supabase } from "@/utils/supabase/alSupabase"
+  5 | import { getInboxMessages, getSentMessages, sendMessage, getCurrentMessage } from "../utils/messages"
+> 6 | import { ItemDto, Item, Message, UiMessage, itemDtoListToItems, messageDtoToUiMessage } from "../types/type"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { sendTelegramNotification } from "@/app/telegram/sendTelegramNotification"
+  8 |
+  9 |
+
+The export messageDtoToUiMessage was not found in module [project]/app/things/types/type.ts [app-ssr] (ecmascript).
+Did you mean to import itemDtoListToItems?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/useMessages.ts [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/useMessages.ts [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[29:39:55.738] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[29:39:55.828] Server  LOG      ✓ Compiled in 290ms
+[29:39:55.971] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[29:40:04.495] Browser ERROR   Error loading messages: {}
+[29:40:05.289] Browser ERROR   Error loading messages: {}
+[29:41:21.003] Server  LOG      ✓ Compiled in 704ms
+[29:41:22.089] Browser ERROR   uncaughtError: ReferenceError: deleteMessage is not defined
+[29:41:23.279] Browser ERROR   uncaughtError: ReferenceError: deleteMessage is not defined
+[29:42:12.390] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[29:42:12.399] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[29:42:12.412] Server  LOG      ✓ Compiled in 184ms
+[29:42:14.759] Browser ERROR   Error loading messages: {}
+[29:42:17.292] Browser ERROR   Error loading messages: {}
+[29:42:59.936] Browser ERROR   Error loading messages: {}
+[29:43:00.125] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T11:45:40.170675+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":3},"error":null}
+[29:43:00.126] Browser ERROR   Error loading messages: {}
+[29:43:07.909] Browser ERROR   Error loading messages: {}
+[29:44:19.985] Server  LOG      ✓ Compiled in 755ms
+[29:44:38.583] Server  LOG      ✓ Compiled in 202ms
+[29:44:53.759] Server  LOG      ✓ Compiled in 458ms
+[29:45:12.877] Server  LOG      ✓ Compiled in 201ms
+[29:46:02.537] Server  LOG      ✓ Compiled in 167ms
+[29:46:27.584] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[29:47:11.910] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[29:47:11.971] Server  LOG      ✓ Compiled in 272ms
+[29:47:19.283] Browser LOG     Query result messages.ts: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T11:45:40.170675+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e78ad52-5f56-43bd-aa9a-4d42afd0a1c9","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#2F3E5A","to_display_name":"4124124124asd","to_user":"441afa8c-919d-461f-b871-2ea2e7aec169","to_user_rating":3},"error":null}
+[29:47:34.715] Server  LOG      ✓ Compiled in 180ms
+[29:48:21.105] Server  LOG      ✓ Compiled in 362ms
+[29:48:28.212] Server  LOG      ✓ Compiled in 575ms
+[29:49:40.603] Server  LOG      ✓ Compiled in 138ms

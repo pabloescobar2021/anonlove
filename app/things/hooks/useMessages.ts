@@ -154,71 +154,22 @@ export function useCurrentMessage(
     }
 }
 
-
-
 export type Dialog = {
-    userId: string,
-    displayId: string,
-
-    lastMessage: UiMessage,
-    messages: UiMessage[],
-    count: number,
-    rating?: number
+    conversation_id: string,
+    other_user_id: string,
+    unread_count: number,
+    last_message_id: string,
+    updated_at: Date
 }
 
+// export type Dialog = {
+//     userId: string,
+//     displayId: string,
 
-export function useDialogs(
-    inboxMessages: UiMessage[],
-    sentMessages: UiMessage[],
-    myUserId: string,
-    myPublicId: string
-) {
-    const dialogs = useMemo<Dialog[]>(() => {
-        const map = new Map<string, Dialog>()
+//     lastMessage: UiMessage,
+//     messages: UiMessage[],
+//     count: number,
+//     rating?: number
+// }
 
-        const allMessages = [...inboxMessages, ...sentMessages]
 
-        for (const msg of allMessages){
-            const dialogUserId = msg.from_user === myUserId
-                ? msg.to_user
-                : msg.from_user
-
-            let displayId = ''
-            if(msg.from_display_id === 'A'){
-                displayId = 'Anon'
-            } else{ 
-                displayId = msg.from_display_id === myPublicId
-                    ? msg.to_display_id
-                    : msg.from_display_id
-            }
-
-            if(!map.has(dialogUserId)) {
-                map.set(dialogUserId, {
-                    userId: dialogUserId,
-                    displayId: displayId,
-
-                    lastMessage: msg,
-                    messages: [msg],
-                    count: 1,
-                    rating: msg.to_user_rating
-                })
-            } else{
-                const dialog = map.get(dialogUserId)!
-                dialog.messages.push(msg)
-                dialog.count++
-
-                if(msg.created_at > dialog.lastMessage.created_at){
-                    dialog.lastMessage = msg
-                }
-            }
-        }
-
-        return Array.from(map.values()).sort(
-            (a,b) =>
-                b.lastMessage.created_at.getTime() -
-                a.lastMessage.created_at.getTime()
-        )
-    }, [inboxMessages, sentMessages, myUserId])
-
-    return dialogs
-}
