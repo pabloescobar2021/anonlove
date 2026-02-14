@@ -93,9 +93,9 @@ export type Message = {
     body: ItemDto[],
     created_at: string,
     from_display_id: string,
+    is_checked: boolean,
 
     is_anon?: boolean,
-    is_checked?: boolean,
     to_user_rating?: number,
     
     to_display_id?: string,
