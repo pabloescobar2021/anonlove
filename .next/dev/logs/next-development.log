@@ -147,3 +147,53 @@ Import traces:
     ./app/main.tsx [Server Component]
     ./app/page.tsx [Server Component]
 [16:40:28.606] Server  LOG      ✓ Compiled in 389ms
+[17:11:37.959] Browser LOG     start mark as read {"messageId":"6103fc2a-743b-4e8f-8963-4fcdbc808492","type":"recieve"}
+[17:11:37.959] Browser LOG     [2;38;2;124;124;124m%s[0m start mark as read {"messageId":"6103fc2a-743b-4e8f-8963-4fcdbc808492","type":"recieve"}
+[17:11:38.137] Browser LOG     Querying message: {"messageId":"6103fc2a-743b-4e8f-8963-4fcdbc808492","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:11:38.529] Browser LOG     Query result: {"data":{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T06:38:44.040278+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"6103fc2a-743b-4e8f-8963-4fcdbc808492","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:11:40.054] Server  LOG     📨 Mark as read request: {}
+[17:11:40.063] Server  LOG     🔍 Building query...
+[17:11:40.066] Server  LOG     📤 Executing query...
+[17:11:40.111] Server  LOG     📨 Mark as read request: {}
+[17:11:40.121] Server  LOG     🔍 Building query...
+[17:11:40.125] Server  LOG     📤 Executing query...
+[17:11:40.672] Server  LOG     📬 Query result: {}
+[17:11:40.679] Server  LOG     ✅ Message marked as read: [{...}]
+[17:11:40.689] Server  LOG     📬 Query result: {}
+[17:11:40.691] Server  LOG     ✅ Message marked as read: [{...}]
+[17:11:40.795] Browser LOG     response {"data":{"data":[{"body":["[Object]"],"created_at":"2026-02-14T06:38:44.040278+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"6103fc2a-743b-4e8f-8963-4fcdbc808492","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:11:40.796] Browser LOG     success {"data":[{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T06:38:44.040278+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"6103fc2a-743b-4e8f-8963-4fcdbc808492","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:11:40.796] Browser LOG     response {"data":{"data":[{"body":["[Object]"],"created_at":"2026-02-14T06:38:44.040278+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"6103fc2a-743b-4e8f-8963-4fcdbc808492","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:11:40.796] Browser LOG     success {"data":[{"body":[{"content":"new text 1","fontSize":16,"h":50,"id":0,"rotation":0,"scaleX":1,"scaleY":1,"type":"text","w":100,"x":0,"y":0}],"created_at":"2026-02-14T06:38:44.040278+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"6103fc2a-743b-4e8f-8963-4fcdbc808492","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:14:34.576] Server  LOG     📨 Mark as read request: {}
+[17:14:34.584] Server  LOG     🔍 Building query...
+[17:14:34.591] Server  LOG     📤 Executing query...
+[17:14:34.617] Server  LOG     📨 Mark as read request: {}
+[17:14:34.621] Server  LOG     🔍 Building query...
+[17:14:34.624] Server  LOG     📤 Executing query...
+[17:14:34.632] Browser LOG     start mark as read {"messageId":"c4ff25a2-2f09-406b-a425-acacfc8c618d","type":"recieve"}
+[17:14:34.632] Browser LOG     [2;38;2;124;124;124m%s[0m start mark as read {"messageId":"c4ff25a2-2f09-406b-a425-acacfc8c618d","type":"recieve"}
+[17:14:34.768] Browser LOG     Querying message: {"messageId":"c4ff25a2-2f09-406b-a425-acacfc8c618d","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:14:34.847] Server  LOG     📬 Query result: {}
+[17:14:34.859] Server  LOG     ✅ Message marked as read: [{...}]
+[17:14:34.981] Browser LOG     response {"data":{"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:14:34.981] Browser LOG     success {"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:14:35.064] Server  LOG     📬 Query result: {}
+[17:14:35.114] Server  LOG     ✅ Message marked as read: [{...}]
+[17:14:35.237] Browser LOG     Query result: {"data":{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:14:35.237] Browser LOG     response {"data":{"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:14:35.237] Browser LOG     success {"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:16:28.675] Server  LOG      ✓ Compiled in 460ms
+[17:16:35.698] Browser LOG     Querying message: {"messageId":"9e229a18-3b50-4ba0-83ff-a5dc2ce86e91","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:16:35.936] Browser LOG     Query result: {"data":{"body":[],"created_at":"2026-02-14T07:12:48.921243+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"9e229a18-3b50-4ba0-83ff-a5dc2ce86e91","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:16:43.356] Server  LOG      ✓ Compiled in 428ms
+[17:19:51.678] Server  LOG      ✓ Compiled in 303ms
+[17:34:01.053] Browser LOG     Querying message: {"messageId":"c4ff25a2-2f09-406b-a425-acacfc8c618d","userId":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[17:34:01.053] Browser LOG     Query result: {"data":{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_display_id":"#44TZUD","from_display_name":"zalupa","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[17:34:01.469] Server  LOG     ✅ Message marked as read: [{...}]
+[17:34:01.478] Server  LOG     ✅ Message marked as read: [{...}]
+[17:34:01.585] Browser LOG     response {"data":{"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:34:01.585] Browser LOG     success {"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:34:01.585] Browser LOG     response {"data":{"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true},"status":200}
+[17:34:01.586] Browser LOG     success {"data":[{"body":[],"created_at":"2026-02-14T07:10:47.926961+00:00","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"c4ff25a2-2f09-406b-a425-acacfc8c618d","is_anon":false,"is_checked":true,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e"}],"ok":true}
+[17:36:16.979] Server  LOG      ✓ Compiled in 358ms

@@ -98,8 +98,8 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
 
     // Прочтение сообщений
     useEffect(() => {
+        if(isMine) return
         if(messageId && type === "recieve") {
-            console.log("start mark as read", {messageId, type})
 
             fetch("/api/mark-read", { 
                 method: "POST",

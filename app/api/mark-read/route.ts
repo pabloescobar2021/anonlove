@@ -7,26 +7,18 @@ export async function POST(req: NextRequest) {
         const body = await req.json();
         const { messageId } = body;
 
-        console.log("📨 Mark as read request:", { messageId, fullBody: body });
-
         if (!messageId) {
             console.error("❌ messageId is missing");
             return NextResponse.json({ error: "messageId required" }, { status: 400 });
         }
 
-        console.log("🔍 Building query...");
         
         let query = supabaseAdmin
             .from("messages")
             .update({ is_checked: true })
             .eq("id", messageId);
 
-        
-
-        console.log("📤 Executing query...");
         const { data, error } = await query.select();
-
-        console.log("📬 Query result:", { data, error });
 
         if (error) {
             console.error("❌ Database error:", error);
