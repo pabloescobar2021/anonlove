@@ -92,10 +92,10 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/api/messages/mark-read/route.ts
+// Validate ../../../app/api/messages/route.ts
 {
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/messages/mark-read">> = Specific
-  const handler = {} as typeof import("../../../app/api/messages/mark-read/route.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/messages">> = Specific
+  const handler = {} as typeof import("../../../app/api/messages/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

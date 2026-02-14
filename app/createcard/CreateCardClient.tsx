@@ -99,7 +99,7 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
     // Прочтение сообщений
     useEffect(() => {
         if(messageId && type === "recieve") {
-            fetch("/api/messages/mark-read", {
+            fetch("/api/messages", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -107,7 +107,7 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                 body: JSON.stringify({ messageId, toUserId: to })
             }).catch(err => console.log(err,"Failed to mark as read:"))
         }
-    }, [messageId, type,to])
+    }, [messageId, type, to])
 
 
 
