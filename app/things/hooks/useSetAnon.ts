@@ -2,8 +2,7 @@ import { supabase } from "@/utils/supabase/alSupabase";
 import { useState } from "react";
 
 type SetAnonParams = {
-    from_user_id: string,
-    to_user_id: string,
+    conversation_id: string,
     is_anon: boolean
 }
 
@@ -13,25 +12,22 @@ export function useSetAnon() {
 
 
     const setAnon = async ({
-        from_user_id,
-        to_user_id,
+        conversation_id,
         is_anon
     }: SetAnonParams) => {
         try {
             setLoading(true)
             setError(null)
 
-            const {data, error} = await supabase.rpc("toggle_anonymous", {
-                p_from: from_user_id, 
-                p_to: to_user_id, 
+            const {data, error} = await supabase.rpc("toggle_anon", {
+                p_conversation_id:  conversation_id,
                 p_is_anon: is_anon
             })
 
             if(error) throw error
 
-            if (data === false){
-                throw new Error("Анонимность уже была использована")
-            }
+            
+            console.log(data)
             return data
 
         } catch (err) {
@@ -42,16 +38,16 @@ export function useSetAnon() {
         }
     }
 
-    const checkAnon = async (from_user_id: string, to_user_id: string) => {
+    const checkAnon = async (from_user_id: string, conversation_id: string) => {
         try {
             setLoading(true)
             setError(null)
 
             const {data, error} = await supabase
-                .from("user_anonymous_settings")
+                .from("conversation_participants")
                 .select("is_anon, anon_used_once")
-                .eq("from_user_id", from_user_id)
-                .eq("to_user_id", to_user_id)
+                .eq("user_id", from_user_id)
+                .eq("conversation_id", conversation_id)
                 .maybeSingle()
             if(error) throw error
 

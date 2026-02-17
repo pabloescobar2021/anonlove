@@ -25,7 +25,7 @@ export function ModalProfile({
         if(!fromUser || !dialog) return
 
         const load = async () => {
-            const data = await checkAnon(fromUser, dialog.other_user_id)
+            const data = await checkAnon(fromUser, dialog.conversation_id)
             if(!data) return
 
             setIsAnon(data.isAnon)
@@ -91,8 +91,7 @@ export function ModalProfile({
             e.preventDefault()
             try {
                 await setAnon({
-                    from_user_id: fromUser,
-                    to_user_id: dialog.other_user_id,
+                    conversation_id: dialog.conversation_id,
                     is_anon: isAnon
                 })
 

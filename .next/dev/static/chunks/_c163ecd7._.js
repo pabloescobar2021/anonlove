@@ -1548,19 +1548,16 @@ function useSetAnon() {
     _s();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    const setAnon = async ({ from_user_id, to_user_id, is_anon })=>{
+    const setAnon = async ({ conversation_id, is_anon })=>{
         try {
             setLoading(true);
             setError(null);
-            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("toggle_anonymous", {
-                p_from: from_user_id,
-                p_to: to_user_id,
+            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("toggle_anon", {
+                p_conversation_id: conversation_id,
                 p_is_anon: is_anon
             });
             if (error) throw error;
-            if (data === false) {
-                throw new Error("Анонимность уже была использована");
-            }
+            console.log(data);
             return data;
         } catch (err) {
             setError(err);
@@ -1569,11 +1566,11 @@ function useSetAnon() {
             setLoading(false);
         }
     };
-    const checkAnon = async (from_user_id, to_user_id)=>{
+    const checkAnon = async (from_user_id, conversation_id)=>{
         try {
             setLoading(true);
             setError(null);
-            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("user_anonymous_settings").select("is_anon, anon_used_once").eq("from_user_id", from_user_id).eq("to_user_id", to_user_id).maybeSingle();
+            const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].from("conversation_participants").select("is_anon, anon_used_once").eq("user_id", from_user_id).eq("conversation_id", conversation_id).maybeSingle();
             if (error) throw error;
             if (!data) {
                 return {
@@ -1630,7 +1627,7 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
             if (!fromUser || !dialog) return;
             const load = {
                 "ModalProfile.useEffect.load": async ()=>{
-                    const data = await checkAnon(fromUser, dialog.other_user_id);
+                    const data = await checkAnon(fromUser, dialog.conversation_id);
                     if (!data) return;
                     setIsAnon(data.isAnon);
                     setAnonUsedOnce(data.anonUsedOnce);
@@ -1715,8 +1712,7 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                         e.preventDefault();
                         try {
                             await setAnon({
-                                from_user_id: fromUser,
-                                to_user_id: dialog.other_user_id,
+                                conversation_id: dialog.conversation_id,
                                 is_anon: isAnon
                             });
                             refresh();
@@ -1735,7 +1731,7 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                                     onChange: (e)=>setIsAnon(e.target.checked)
                                 }, void 0, false, {
                                     fileName: "[project]/app/modal/modalProfile.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 106,
                                     columnNumber: 21
                                 }, this),
                                 anonUsedOnce && !isAnon ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1747,13 +1743,13 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                                             children: "Применяется только один раз"
                                         }, void 0, false, {
                                             fileName: "[project]/app/modal/modalProfile.tsx",
-                                            lineNumber: 122,
+                                            lineNumber: 121,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/modal/modalProfile.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 119,
                                     columnNumber: 25
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-sm text-white/80",
@@ -1764,26 +1760,26 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                                             children: "Применяется только один раз"
                                         }, void 0, false, {
                                             fileName: "[project]/app/modal/modalProfile.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 129,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/modal/modalProfile.tsx",
-                                    lineNumber: 128,
+                                    lineNumber: 127,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/modal/modalProfile.tsx",
-                            lineNumber: 106,
+                            lineNumber: 105,
                             columnNumber: 17
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "text-sm text-white/80",
                             children: "Загрузка..."
                         }, void 0, false, {
                             fileName: "[project]/app/modal/modalProfile.tsx",
-                            lineNumber: 139,
+                            lineNumber: 138,
                             columnNumber: 17
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1796,7 +1792,7 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                                     children: "Отмена"
                                 }, void 0, false, {
                                     fileName: "[project]/app/modal/modalProfile.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 146,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1805,13 +1801,13 @@ function ModalProfile({ dialog, onClose, fromUser, refresh }) {
                                     children: "Сохранить"
                                 }, void 0, false, {
                                     fileName: "[project]/app/modal/modalProfile.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 158,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/modal/modalProfile.tsx",
-                            lineNumber: 146,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this)
                     ]

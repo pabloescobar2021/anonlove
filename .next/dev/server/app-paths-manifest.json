@@ -1,6 +1,1 @@
-{
-  "/api/mark-read/route": "app/api/mark-read/route.js",
-  "/api/telegram/sendNotifyTg/route": "app/api/telegram/sendNotifyTg/route.js",
-  "/createcard/page": "app/createcard/page.js",
-  "/page": "app/page.js"
-}
+{}
