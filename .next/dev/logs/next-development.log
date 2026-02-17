@@ -1,2 +1,4 @@
 [00:00:03.690] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 [00:00:04.189] Server  LOG      ✓ Ready in 3.3s
+[00:01:02.650] Server  LOG      ○ Compiling / ...
+[00:36:38.783] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T20:21:52.943273+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"ef7057b0-7ad4-449b-a057-38427b5d3b63","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
