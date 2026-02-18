@@ -2357,3 +2357,55 @@ Incoming: %s useEffect [[object Object], [object Object],[object Object]] [[obje
 [10:21:37.417] Browser LOG     channel closed
 [10:21:38.667] Browser LOG     channel closed
 [10:21:39.705] Browser LOG     channel closed
+[10:24:29.589] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:24:29.589] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:24:29.589] Browser ERROR   ⚠️ Realtime channel error: undefined
+[10:24:34.600] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:26:08.673] Server  LOG      ✓ Compiled in 565ms
+[10:26:11.080] Server  LOG      ✓ Compiled in 139ms
+[10:26:20.479] Server  LOG      ✓ Compiled in 361ms
+[10:26:25.476] Server  LOG      ✓ Compiled in 133ms
+[10:27:12.274] Server  LOG      ✓ Compiled in 206ms
+[10:27:22.815] Server  LOG      ✓ Compiled in 139ms
+[10:27:29.810] Server  LOG      ✓ Compiled in 200ms
+[10:27:38.114] Server  LOG      ✓ Compiled in 116ms
+[10:27:43.322] Server  LOG      ✓ Compiled in 215ms
+[10:27:46.033] Server  LOG      ✓ Compiled in 123ms
+[10:27:50.607] Server  LOG      ✓ Compiled in 147ms
+[10:27:54.073] Server  LOG      ✓ Compiled in 147ms
+[10:27:59.365] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:27:59.474] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:28:04.290] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:28:04.290] Browser LOG     channel closed
+[10:28:15.677] Server  LOG      ✓ Compiled in 173ms
+[10:28:20.899] Server  LOG      ✓ Compiled in 137ms
+[10:28:34.703] Server  LOG      ✓ Compiled in 155ms
+[10:28:43.227] Server  LOG      ✓ Compiled in 156ms
+[10:28:55.272] Server  LOG      ✓ Compiled in 157ms
+[10:29:03.404] Server  LOG      ✓ Compiled in 110ms
+[10:29:14.545] Server  LOG      ✓ Compiled in 131ms
+[10:29:20.591] Server  LOG      ✓ Compiled in 125ms
+[10:29:49.859] Server  LOG      ✓ Compiled in 237ms
+[10:30:03.503] Server  LOG      ✓ Compiled in 191ms
+[10:30:06.405] Server  LOG      ✓ Compiled in 204ms
+[10:30:14.755] Server  LOG      ✓ Compiled in 187ms
+[10:30:18.080] Server  LOG      ✓ Compiled in 184ms
+[10:30:37.589] Browser ERROR   Error fetching user: {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/node_modules_8465bfa6._.js:10765:23\n    at http://localhost:3000/_next/static/chunks/node_modules_8465bfa6._.js:10785:16\n    at async getId (http://localhost:3000/_next/static/chunks/_d1229f11._.js:564:50)\n    at async CreateCardPage.useEffect.fetchAnon (http://localhost:3000/_next/static/chunks/_d1229f11._.js?id=%255Bproject%255D%252Fapp%252Fcreatecard%252FCreateCardClient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:142:42)","hint":"","message":"TypeError: Failed to fetch"}
+[10:30:37.590] Browser LOG     Error: {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/node_modules_8465bfa6._.js:10765:23\n    at http://localhost:3000/_next/static/chunks/node_modules_8465bfa6._.js:10785:16\n    at async getId (http://localhost:3000/_next/static/chunks/_d1229f11._.js:564:50)\n    at async CreateCardPage.useEffect.fetchAnon (http://localhost:3000/_next/static/chunks/_d1229f11._.js?id=%255Bproject%255D%252Fapp%252Fcreatecard%252FCreateCardClient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:142:42)","hint":"","message":"TypeError: Failed to fetch"}
+[10:30:40.789] Server  LOG      ✓ Compiled in 180ms
+[10:30:43.728] Server  LOG      ✓ Compiled in 141ms
+[10:30:47.081] Server  LOG      ✓ Compiled in 178ms
+[10:31:23.584] Server  LOG      ✓ Compiled in 299ms
+[10:31:26.767] Server  LOG      ✓ Compiled in 205ms
+[10:31:28.131] Server  LOG      ✓ Compiled in 143ms
+[10:31:33.859] Server  LOG      ✓ Compiled in 157ms
+[10:31:41.787] Server  LOG      ✓ Compiled in 118ms
+[10:31:44.859] Server  LOG      ✓ Compiled in 273ms
+[10:31:48.843] Server  LOG      ✓ Compiled in 182ms
+[10:31:53.012] Server  LOG      ✓ Compiled in 287ms
+[10:32:53.658] Server  LOG      ✓ Compiled in 215ms
+[10:33:23.876] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:33:23.876] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:33:24.075] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:33:27.209] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:33:27.392] Browser LOG     🔌 Статус подписки: SUBSCRIBED 

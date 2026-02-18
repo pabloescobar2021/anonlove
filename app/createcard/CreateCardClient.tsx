@@ -243,9 +243,9 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
                     )
                     :(
                     <div
-                        className={`absolute bottom-0 right-0 
+                        className={`fixed bottom-7 right-3
                         flex justify-center items-center overflow-hidden
-                        w-7 h-12 rounded-l-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
+                        px-4 py-4 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-cursor
                         z-20
                         `}
                     >
