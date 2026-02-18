@@ -834,7 +834,7 @@ function MobileCM({ action, onClose, onDelete, isChose, onChose }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `
-                fixed inset-0 bg-black/50 z-50 duration-250 ease-out
+                fixed inset-0 bg-black/50 z-50 duration-250 blur-sm backdrop-blur-sm transition-all
                 select-auto
                 ${visible ? 'opacity-100 ' : 'opacity-0 '}
             `,
@@ -2188,7 +2188,7 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-const LIMIT = 35;
+const LIMIT = 40;
 function useGetMessages(conversationId) {
     _s();
     const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
@@ -2200,6 +2200,7 @@ function useGetMessages(conversationId) {
     const cacheRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
     const cursorRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const channelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    // Загружает сообщения с сервера, поддерживает пагинацию (курсор), кэширует результаты
     const loadMessages = async (cursor)=>{
         if (!conversationId || loading) return;
         if (cursor && !hasMore) return;
@@ -2233,6 +2234,11 @@ function useGetMessages(conversationId) {
                     ...reversed,
                     ...prev
                 ] : reversed;
+                requestAnimationFrame(()=>{
+                    if (container) {
+                        container.scrollTop = container.scrollHeight - prevScrollHeight;
+                    }
+                });
                 cacheRef.current.set(conversationId, {
                     messages: merged,
                     cursorId: nextCursor,
@@ -2248,6 +2254,7 @@ function useGetMessages(conversationId) {
             setLoadingMore(false);
         }
     };
+    // При первой загрузке прокручивает контейнер в самый низ
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"])({
         "useGetMessages.useLayoutEffect": ()=>{
             if (!isInitialLoad.current) return;
@@ -2264,6 +2271,7 @@ function useGetMessages(conversationId) {
     }["useGetMessages.useLayoutEffect"], [
         messages.length
     ]);
+    // Обработчик прокрутки: загружает старые сообщения при скролле вверх, сохраняет позицию в кэш
     const handleScroll = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useGetMessages.useCallback[handleScroll]": (e)=>{
             const container = e.currentTarget;
@@ -2273,15 +2281,29 @@ function useGetMessages(conversationId) {
                     cache.scrollTop = container.scrollTop;
                 }
             }
-            if (container.scrollTop < 100 && hasMore && !loading) {
+            if (loadingMore && container.scrollTop < 5) {
+                container.scrollTop = 5;
+                return;
+            }
+            if (container.scrollTop < 20 && hasMore && !loading && !loadingMore) {
+                console.log("Loading more messages...");
                 loadMessages(cursorRef.current);
             }
         }
     }["useGetMessages.useCallback[handleScroll]"], [
         hasMore,
         loading,
-        conversationId
+        conversationId,
+        loadingMore
     ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useGetMessages.useEffect": ()=>{
+            console.log(messages.length);
+        }
+    }["useGetMessages.useEffect"], [
+        messages.length
+    ]);
+    // Сохраняет позицию прокрутки в кэш перед выходом из диалога
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useGetMessages.useEffect": ()=>{
             return ({
@@ -2299,6 +2321,7 @@ function useGetMessages(conversationId) {
     }["useGetMessages.useEffect"], [
         conversationId
     ]);
+    // Загружает сообщения при смене диалога, восстанавливает позицию прокрутки из кэша
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useGetMessages.useEffect": ()=>{
             if (!conversationId) return;
@@ -2330,11 +2353,8 @@ function useGetMessages(conversationId) {
     }["useGetMessages.useEffect"], [
         conversationId
     ]);
-    /*
-    ----------------------------------------
-    REALTIME
-    ----------------------------------------
-    */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+    // Подписывается на новые сообщения через Realtime, обновляет список и автоскролл
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useGetMessages.useEffect": ()=>{
             if (!conversationId) return;
             if (channelRef.current) {
@@ -2396,7 +2416,7 @@ function useGetMessages(conversationId) {
         handleScroll
     };
 }
-_s(useGetMessages, "5QqWFOUIRlU/X/2lvj/+oXWfjrk=");
+_s(useGetMessages, "vXqF0Vt/MDBL9OEiQgK9bb9WyDw=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -2944,7 +2964,7 @@ function ManagerChat(props) {
                                     ref: (el)=>{
                                         wrapperRef.current[message.id] = el;
                                     },
-                                    className: `flex flex-col relative w-full transition hover:bg-white/10 select-none
+                                    className: `flex flex-col relative w-full transition hover:bg-white/10 select-none 
                                     ${isMine ? "items-end" : "items-start"} 
                                     message-wrapper ${deletingMsg.includes(message.id) ? "message--collapsing" : ""}
                                 `,
@@ -2955,9 +2975,10 @@ function ManagerChat(props) {
                                         ref: (el)=>{
                                             bubbleRef.current[message.id] = el;
                                         },
-                                        className: `relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
+                                        className: `relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
+                                                transition-all 
                                         ${!isMine ? "bg-linear-to-b from-[#ff00666d] to-[#ec015f5d]" : "bg-linear-to-b from-white/60 to-white/40"}
-                                        ${selectTouched === message.id && isMobile ? "scale-105" : ""}
+                                        ${selectTouched === message.id && isMobile ? "scale-95" : ""}
                                         ${selectTouched === message.id && !isMobile ? isMine ? "border-l" : "border-r" : ""}
                                         message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
                                     `,
@@ -3017,7 +3038,7 @@ function ManagerChat(props) {
                                                         children: avatar
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                        lineNumber: 470,
+                                                        lineNumber: 471,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3028,7 +3049,7 @@ function ManagerChat(props) {
                                                                 children: nameLabel
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                                lineNumber: 475,
+                                                                lineNumber: 476,
                                                                 columnNumber: 45
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3036,19 +3057,19 @@ function ManagerChat(props) {
                                                                 children: ``
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                                lineNumber: 476,
+                                                                lineNumber: 477,
                                                                 columnNumber: 45
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                        lineNumber: 474,
+                                                        lineNumber: 475,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 469,
+                                                lineNumber: 470,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3056,7 +3077,7 @@ function ManagerChat(props) {
                                                 children: date
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 480,
+                                                lineNumber: 481,
                                                 columnNumber: 37
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$ReadIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ReadIndicator"], {
@@ -3064,7 +3085,7 @@ function ManagerChat(props) {
                                                 isMine: isMine
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 482,
+                                                lineNumber: 483,
                                                 columnNumber: 37
                                             }, this),
                                             isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3075,7 +3096,7 @@ function ManagerChat(props) {
                                             `
                                             }, void 0, false, {
                                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 485,
+                                                lineNumber: 486,
                                                 columnNumber: 41
                                             }, this)
                                         ]
@@ -3094,7 +3115,7 @@ function ManagerChat(props) {
                                 ref: bottomRef
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 498,
+                                lineNumber: 499,
                                 columnNumber: 21
                             }, this)
                         ]
@@ -3114,7 +3135,7 @@ function ManagerChat(props) {
                 className: "absolute top-0 left-0 pointer-events-none overflow-visible w-screen h-screen"
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 502,
+                lineNumber: 503,
                 columnNumber: 13
             }, this),
             action && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MessageActionRoot"], {
@@ -3136,7 +3157,7 @@ function ManagerChat(props) {
                         ])
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 511,
+                lineNumber: 512,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ModalProfile"], {
@@ -3148,7 +3169,7 @@ function ManagerChat(props) {
                 refresh: ()=>refresh()
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 526,
+                lineNumber: 527,
                 columnNumber: 13
             }, this)
         ]

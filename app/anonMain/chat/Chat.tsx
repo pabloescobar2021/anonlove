@@ -413,7 +413,7 @@ export function ManagerChat(props: Props) {
                                 key={message.id}
                                 ref={el => {(wrapperRef.current[message.id] = el)}}
 
-                                className={`flex flex-col relative w-full transition hover:bg-white/10 select-none
+                                className={`flex flex-col relative w-full transition hover:bg-white/10 select-none 
                                     ${isMine ? "items-end" : "items-start"} 
                                     message-wrapper ${deletingMsg.includes(message.id)  ? "message--collapsing" : ""}
                                 `}
@@ -421,11 +421,12 @@ export function ManagerChat(props: Props) {
                             >
                                 <div
                                     ref={el => {(bubbleRef.current[message.id] = el)}}
-                                    className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
+                                    className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
+                                                transition-all 
                                         ${!isMine 
                                             ? "bg-linear-to-b from-[#ff00666d] to-[#ec015f5d]" 
                                             : "bg-linear-to-b from-white/60 to-white/40"}
-                                        ${selectTouched === message.id && isMobile ? "scale-105" : ""}
+                                        ${selectTouched === message.id && isMobile ? "scale-95" : ""}
                                         ${selectTouched === message.id && !isMobile ? (isMine ? "border-l" : "border-r") : ""}
                                         message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
                                     `}

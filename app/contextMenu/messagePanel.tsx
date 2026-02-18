@@ -79,7 +79,7 @@ export function MobileCM({
         {/* overlay */}
         <div 
             className={`
-                fixed inset-0 bg-black/50 z-50 duration-250 ease-out
+                fixed inset-0 bg-black/50 z-50 duration-250 blur-sm backdrop-blur-sm transition-all
                 select-auto
                 ${visible
                     ? 'opacity-100 '

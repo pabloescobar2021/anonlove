@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef, useCallback, useLayoutEffect } from "react"
+import { useEffect, useState, useRef, useCallback, useLayoutEffect, use } from "react"
 import { supabase } from "@/utils/supabase/alSupabase"
 import { UiMessage } from "../../types/type"
 
@@ -10,8 +10,9 @@ type CacheEntry = {
     hasMore: boolean
     scrollTop: number
 }
-const LIMIT = 35
+const LIMIT = 40
 
+// Хук для загрузки и управления сообщениями в диалоге с кэшем и прокруткой
 export function useGetMessages(conversationId: string | null) {
 
     const [messages, setMessages] = useState<UiMessage[]>([])
@@ -25,6 +26,7 @@ export function useGetMessages(conversationId: string | null) {
     const cursorRef = useRef<string | null>(null)
     const channelRef = useRef<any>(null)
 
+    // Загружает сообщения с сервера, поддерживает пагинацию (курсор), кэширует результаты
     const loadMessages = async (cursor?: string | null) => {
         if (!conversationId || loading) return
         if(cursor && !hasMore) return
@@ -64,6 +66,12 @@ export function useGetMessages(conversationId: string | null) {
                     ? [...reversed, ...prev]
                     : reversed
 
+                requestAnimationFrame(() => {
+                    if(container){
+                        container.scrollTop = container.scrollHeight - prevScrollHeight 
+                    }
+                }); 
+
                 cacheRef.current.set(conversationId, {
                     messages: merged,
                     cursorId: nextCursor,
@@ -72,6 +80,9 @@ export function useGetMessages(conversationId: string | null) {
                 })
                 return merged
             })
+
+            
+            
             
         } catch (error) {
             console.error("Error loading messages:", error)
@@ -82,6 +93,7 @@ export function useGetMessages(conversationId: string | null) {
 
     }
 
+    // При первой загрузке прокручивает контейнер в самый низ
     useLayoutEffect(() => {
         if (!isInitialLoad.current) return
         if (!messages.length) return
@@ -97,6 +109,7 @@ export function useGetMessages(conversationId: string | null) {
 
 
 
+    // Обработчик прокрутки: загружает старые сообщения при скролле вверх, сохраняет позицию в кэш
     const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
 
         const container = e.currentTarget
@@ -107,13 +120,23 @@ export function useGetMessages(conversationId: string | null) {
                 cache.scrollTop = container.scrollTop
             }
         }
-        if (container.scrollTop < 100 && hasMore && !loading) {
+
+        if (loadingMore && container.scrollTop < 5) {
+            container.scrollTop = 5
+            return
+        }
+
+        if (container.scrollTop < 20 && hasMore && !loading && !loadingMore) {
+            console.log("Loading more messages...")
             loadMessages(cursorRef.current)
         }
-    }, [hasMore, loading, conversationId])
+    }, [hasMore, loading, conversationId, loadingMore])
 
+    useEffect(() => {
+        console.log(messages.length)
+    }, [messages.length])
 
-
+    // Сохраняет позицию прокрутки в кэш перед выходом из диалога
     useEffect(() => {
         return () => {
             if(!conversationId) return
@@ -129,6 +152,7 @@ export function useGetMessages(conversationId: string | null) {
 
 
 
+    // Загружает сообщения при смене диалога, восстанавливает позицию прокрутки из кэша
     useEffect(() => {
         if (!conversationId) return
 
@@ -160,11 +184,7 @@ export function useGetMessages(conversationId: string | null) {
     }, [conversationId])
 
 
-    /*
-    ----------------------------------------
-    REALTIME
-    ----------------------------------------
-    */
+    // Подписывается на новые сообщения через Realtime, обновляет список и автоскролл
     useEffect(() => {
         if (!conversationId) return
         
