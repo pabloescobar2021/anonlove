@@ -291,6 +291,8 @@ export function ManagerChat(props: Props) {
 
             {/* MESSAGES */}
             <div
+                ref={containerRef} 
+                onScroll={handleScroll}
                 className={`overflow-y-auto bg-[#0e0406]
                     ${isMobile
                         ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform 
@@ -378,7 +380,7 @@ export function ManagerChat(props: Props) {
                 <div 
                     ref={containerRef} 
                     onScroll={handleScroll} 
-                    className="relative p-2 space-y-2 h-300 overflow-y-auto"
+                    className="relative p-2 space-y-2 h-screen "
                 >
                     {/* Индикатор загрузки */}
                     {loading && !messages.length && (
