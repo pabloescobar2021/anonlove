@@ -42,7 +42,7 @@ export function useMessages(userId: string | null) {
         isAnon?: boolean 
     ) => {
         if(!userId) throw new Error("User not logged in")
-
+            
         let receiverId = to.userId
 
         if (!receiverId){

@@ -28,37 +28,40 @@ export type Props = {
 }
 
 export function ManagerChat(props: Props) {
-    const router = useRouter();
     const {
-        userId,
-        dialog,
-        setOpenProfile,
-        setOpenChat,
-        openChat,
-        isMobile,
-        refresh
+        userId, dialog,
+        setOpenProfile, setOpenChat,
+        openChat, isMobile,
+        deleteMessage, refresh
     } = props;
-    const { markAsRead } = useMessageRead();
-    
+    const router = useRouter();
     
     const [activeChatUserId, setActiveChatUserId] = useState<string | null>(null);
     const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
     const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
-
-    const {messages, loading} = useGetMessages(activeDialogId)
-    
-    // modalProfileUser
     const [openModalProfile, setOpenModalProfile] = useState<Dialog | null>(null); // state модалка профиля
-
-    // messagePanel
-    const msgRef = useRef<HTMLDivElement>(null);
+    const [action, setAction] = useState<ActionState>(null);
+    const [isChoose, setIsChoose] = useState(false);
+    const [choosenMsg, setChoosenMsg] = useState<any[]>([]);
+    const [selectTouched, setSelectTouched] = useState<string | null>(null);
+    
+    const wrapperRef = useRef<Record<string, HTMLDivElement | null>>({})
+    const bubbleRef = useRef<Record<string, HTMLDivElement | null>>({})
+    
+    const {messages, setMessages, loading, loadingMore, hasMore, refreshMessages, containerRef, handleScroll} = useGetMessages(activeDialogId)
+    const {canvasRef, shatterMessages} = useShatterMessage({})
+    
     let timer = useRef<number | null>(null);
+    const dialogPanelRef = useRef<HTMLDivElement>(null!); // dialogResizeHandler (только для desktop)
+    const bottomRef = useRef<HTMLDivElement>(null) // для скролла к последнему сообщению
+
     type ActionState = {
         message: UiMessage;
         rect: DOMRect;
         type: "desktop" | "mobile";
         isMine: boolean;
-    } | null;
+    } | null; // messagePanel
+
     const closeMenu = () => {
         setAction(null);
         setSelectTouched(null);
@@ -67,16 +70,8 @@ export function ManagerChat(props: Props) {
         clearInterval(timer.current!);
         setSelectTouched(null);
     };
-    const [action, setAction] = useState<ActionState>(null);
-    const [isChoose, setIsChoose] = useState(false);
-    const [choosenMsg, setChoosenMsg] = useState<any[]>([]);
-    const [selectTouched, setSelectTouched] = useState<string | null>(null);
-    ////////
+   
 
-    // dialogResizeHandler (только для desktop)
-    const dialogPanelRef = useRef<HTMLDivElement>(null!);
-
-    const {canvasRef, shatterMessages} = useShatterMessage({})
 
     // синхронизация activeDialog с dialogs
     useEffect(() => {
@@ -88,50 +83,35 @@ export function ManagerChat(props: Props) {
         setActiveDialog(found);
     }, [dialog, activeDialogId]);
 
-    const { handleDeleteMessage } = useDeleteMessage({
-        setChoosenMsg, setAction,setIsChoose,choosenMsg,
-        deleteMessage: props.deleteMessage, refresh: props.refresh,
+    const { hideMessage, deletingMsg } = useDeleteMessage({
+        setAction, 
+        setMessages,
+        bubbleRef: bubbleRef,
+        wrapperRef: wrapperRef,
+        shatterMessages
     });
-
-
-    const [deletingMsg, setDeletingMsg] = useState<string[]>([]);
-    const wrapperRef = useRef<Record<string, HTMLDivElement | null>>({})
-    const bubbleRef = useRef<Record<string, HTMLDivElement | null>>({})
     
-    const handleRemoveMsg = async (ids: string[]) => {
-        if (!ids.length) return
 
-        const bubbles = ids
-            .map((id) => bubbleRef.current[id])
-            .filter((el): el is HTMLDivElement => Boolean(el));
-        const wrappers = ids
-            .map((id) => wrapperRef.current[id])
-            .filter((el): el is HTMLDivElement => Boolean(el));
-
-        wrappers.forEach(el => {
-            el.style.height = `${el.offsetHeight}px`
-        })
-
-        shatterMessages(bubbles, async () => {
-            requestAnimationFrame(() => {
-                setDeletingMsg([...ids])
-            })  
-            await Promise.all(wrappers.map(el =>
-                new Promise<void>(resolve => {
-                    const onEnd = (e: TransitionEvent) => {
-                        if(e.propertyName !== 'height') return
-                        el.removeEventListener('transitionend', onEnd)
-                        resolve()
-                    }
-                    el.addEventListener('transitionend', onEnd)
-                })
-            ))   
-            await handleDeleteMessage(ids)
-            setChoosenMsg([])
-            setIsChoose(false)
-            setDeletingMsg([])       
-        })
-    } 
+    const readMessages = async (dialog: Dialog) => {
+        try{
+            const response = await fetch("/api/read-messages/read-all-messages", { 
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ 
+                    conversation_id: dialog.conversation_id, 
+                    user_id: userId 
+                }),
+                credentials: 'include' // Важно для авторизации
+            })
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to mark messages as read");
+            }
+            refresh()
+        } catch(err){
+            console.error("❌ fetch error:", err)
+        }
+    }
 
     // swipe handlers для mobile
     const profileSwipe = useSwipe({
@@ -244,30 +224,26 @@ export function ManagerChat(props: Props) {
                 
 
                 {/* Список диалогов */}
-                {dialog.map((dialog) => {
-                    const avatar = dialog.other_display_id.charAt(1).toUpperCase();
-                    const title = dialog.other_display_id;
-                    const timeSend = formatBackendDate(dialog.updated_at)
-                    const unread = dialog.unread_count
-                    return (
-                        <button
-                            key={dialog.conversation_id}
-                            className="p-2 rounded-lg w-full"
-                            onClick={() => {
-                                setActiveDialogId(dialog.conversation_id);
-                                setActiveDialog(dialog);
-                                setActiveChatUserId(dialog.other_display_id);
-                                if (isMobile) setOpenChat(true);
-                            }}
-                        >
-                            <div
-                                className={`flex p-3 items-center relative gap-2 rounded-2xl transition-colors
-                                    ${
-                                        dialog.conversation_id !== activeDialogId && !isMobile
-                                            ? "bg-[#5b5b5ba2]"
-                                            : "bg-[#949494a2]"
-                                    }
+                <div className="flex flex-col pt-4 px-2 gap-2">
+                    {dialog.map((dialog) => {
+                        const avatar = dialog.other_display_id.charAt(1).toUpperCase();
+                        const title = dialog.other_display_id;
+                        const timeSend = formatBackendDate(dialog.updated_at)
+                        const unread = dialog.unread_count
+                        return (
+                            <button
+                                key={dialog.conversation_id}
+                                className={`flex w-full p-3 items-center relative gap-2 rounded-2xl transition-colors
+                                ${ dialog.conversation_id !== activeDialogId && !isMobile ? "bg-[#5b5b5ba2]" : "bg-[#949494a2]"}
                                 `}
+                                onClick={() => {
+                                    setActiveDialogId(dialog.conversation_id);
+                                    setActiveDialog(dialog);
+                                    setActiveChatUserId(dialog.other_display_id);
+                                    if (isMobile) setOpenChat(true);
+
+                                    readMessages(dialog)
+                                }}
                             >
                                 {/* AVATAR */}
                                 <div
@@ -301,10 +277,10 @@ export function ManagerChat(props: Props) {
                                         {unread}
                                     </p>
                                 )}
-                            </div>
-                        </button>
-                    );
-                })}
+                            </button>
+                        );
+                    })}
+                </div>
 
                 {/* StartHelper */}
                 {dialog.length === 0 && (
@@ -390,7 +366,7 @@ export function ManagerChat(props: Props) {
 
                         <button className="flexC prettyBtn" 
                             onClick={() => {
-                                handleRemoveMsg(choosenMsg)
+                                hideMessage(choosenMsg)
                             }}
                         >
                             Удалить
@@ -399,7 +375,33 @@ export function ManagerChat(props: Props) {
                 )}
 
                 {/* Список сообщений */}
-                <div className="relative p-2 space-y-2 ">
+                <div 
+                    ref={containerRef} 
+                    onScroll={handleScroll} 
+                    className="relative p-2 space-y-2 h-300 overflow-y-auto"
+                >
+                    {/* Индикатор загрузки */}
+                    {loading && !messages.length && (
+                        <div className="space-y-2 mb-4">
+                            {[1,2,3].map(i => (
+                                <div key={i} className="flex gap-2 animate-pulse ">
+                                    <div className="h-10 bg-white/50 rounded-lg w-1/2 p-10" />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Индикатор загружающийся старых сообщений */}
+                    {loadingMore && hasMore && (
+                        <div className="space-y-2 mb-4">
+                            {[1,2,3].map(i => (
+                                <div key={i} className="flex gap-2 animate-pulse ">
+                                    <div className="h-10 bg-white/50 rounded-lg w-1/2 p-10" />
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
                     {messages.map((message, i) => {
                         const avatar = message.from_display_id.charAt(1).toUpperCase();
                         const nameLabel = message.from_display_id;
@@ -408,16 +410,16 @@ export function ManagerChat(props: Props) {
 
                         return (
                             <div
-                                key={message.id }
+                                key={message.id}
                                 ref={el => {(wrapperRef.current[message.id] = el)}}
 
                                 className={`flex flex-col relative w-full transition hover:bg-white/10 select-none
                                     ${isMine ? "items-end" : "items-start"} 
                                     message-wrapper ${deletingMsg.includes(message.id)  ? "message--collapsing" : ""}
                                 `}
+                                style={{transition: "opacity 0.3s ease-in-out"}}
                             >
                                 <div
-                                    // ref={msgRef}
                                     ref={el => {(bubbleRef.current[message.id] = el)}}
                                     className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer transition-transform
                                         ${!isMine 
@@ -493,6 +495,7 @@ export function ManagerChat(props: Props) {
                             </div>
                         );
                     })}
+                    <div ref={bottomRef}></div>
                 </div>
             </div>
 
@@ -512,7 +515,7 @@ export function ManagerChat(props: Props) {
                         setSelectTouched(null);
                     }}
                     onDelete={(id) => {
-                        handleRemoveMsg([...choosenMsg, id])
+                        hideMessage([...choosenMsg, id])
                     }}
                     isChose={setIsChoose}
                     onChose={(id) => setChoosenMsg((prev) => [...prev, id])}

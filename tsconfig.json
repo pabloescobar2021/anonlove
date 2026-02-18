@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/api/read-messages/read-all-messages"  ],
   "exclude": ["node_modules"]
 }

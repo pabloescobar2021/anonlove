@@ -1,4 +1,2109 @@
-[00:00:03.690] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-[00:00:04.189] Server  LOG      ✓ Ready in 3.3s
-[00:01:02.650] Server  LOG      ○ Compiling / ...
-[00:36:38.783] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-14T20:21:52.943273+00:00","from_display_id":"anon","from_display_name":"Anon","from_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","id":"ef7057b0-7ad4-449b-a057-38427b5d3b63","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#MYVJ9N","to_display_name":"bigbobchel","to_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","to_user_rating":1},"error":null}
+[00:00:03.096] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:03.523] Server  LOG      ✓ Ready in 2.8s
+[00:00:06.699] Server  LOG      ○ Compiling / ...
+[00:00:31.587] Browser ERROR   Error loading messages: {"code":"","details":"TypeError: Failed to fetch","hint":"","message":"TypeError: Failed to fetch"}
+[00:27:36.410] Server  LOG      ✓ Compiled in 1319ms
+[00:28:27.599] Server  LOG      ✓ Compiled in 170ms
+[00:29:50.664] Server  LOG      ✓ Compiled in 507ms
+[00:30:14.162] Server  LOG      ✓ Compiled in 252ms
+[00:30:14.601] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:24:9
+Parsing ecmascript source code failed
+  22 |         }
+  23 |
+> 24 |         const {data, error} = await supabase.rpc("get_conversation_messages", {
+     |         ^
+  25 |             p_conversation_id: converationId
+  26 |         })
+  27 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:30:46.598] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:39:5
+Parsing ecmascript source code failed
+  37 |
+  38 |
+> 39 |     }
+     |     ^
+  40 |     useEffect(() => {
+  41 |         loadMessages()
+  42 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:31:07.592] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:39:5
+Parsing ecmascript source code failed
+  37 |
+  38 |
+> 39 |     }
+     |     ^
+  40 |     useEffect(() => {
+  41 |         loadMessages()
+  42 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:31:58.589] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:41:5
+Parsing ecmascript source code failed
+  39 |
+  40 |
+> 41 |     }
+     |     ^
+  42 |     useEffect(() => {
+  43 |         loadMessages()
+  44 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:32:09.587] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:37:5
+Parsing ecmascript source code failed
+  35 |
+  36 |
+> 37 |     }
+     |     ^
+  38 |     useEffect(() => {
+  39 |         loadMessages()
+  40 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:32:12.587] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:37:5
+Parsing ecmascript source code failed
+  35 |
+  36 |
+> 37 |     }
+     |     ^
+  38 |     useEffect(() => {
+  39 |         loadMessages()
+  40 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:34:35.588] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:40:5
+Parsing ecmascript source code failed
+  38 |
+  39 |
+> 40 |     }
+     |     ^
+  41 |     useEffect(() => {
+  42 |         loadMessages()
+  43 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:35:08.622] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:42:5
+Parsing ecmascript source code failed
+  40 |
+  41 |
+> 42 |     }
+     |     ^
+  43 |     useEffect(() => {
+  44 |         loadMessages()
+  45 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:35:32.590] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:46:5
+Parsing ecmascript source code failed
+  44 |
+  45 |
+> 46 |     }
+     |     ^
+  47 |     useEffect(() => {
+  48 |         loadMessages()
+  49 |     },[converationId])
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[00:36:13.889] Server  LOG      ✓ Compiled in 317ms
+[00:37:51.843] Browser ERROR   Error loading messages: {"code":"PGRST202","details":"Searched for the function public.get_conversation_messages with parameters p_conversation_id, p_cursor, p_limit or with a single unnamed json/jsonb parameter, but no matches were found in the schema cache.","hint":"Perhaps you meant to call the function public.get_conversation_messages(p_conversation_id, p_cursor_id, p_limit)","message":"Could not find the function public.get_conversation_messages(p_conversation_id, p_cursor, p_limit) in the schema cache"}
+[00:38:23.180] Server  LOG      ✓ Compiled in 150ms
+[00:39:21.940] Server  LOG      ✓ Compiled in 130ms
+[00:43:24.618] Server  LOG      ✓ Compiled in 146ms
+[00:45:36.731] Server  LOG      ✓ Compiled in 134ms
+[00:45:47.820] Server  LOG      ✓ Compiled in 108ms
+[00:51:30.519] Server  LOG      ✓ Compiled in 209ms
+[00:56:06.324] Server  LOG      ✓ Compiled in 735ms
+[01:01:42.932] Server  LOG      ✓ Compiled in 122ms
+[01:01:43.592] Browser ERROR   uncaughtError: ReferenceError: useRef is not defined
+[01:02:06.570] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:02:06.594] Server  LOG      ✓ Compiled in 421ms
+[01:02:56.544] Server  LOG      ✓ Compiled in 146ms
+[01:02:58.169] Server  LOG      ✓ Compiled in 181ms
+[01:03:33.623] Server  LOG      ✓ Compiled in 115ms
+[01:06:09.310] Server  LOG      ✓ Compiled in 145ms
+[01:06:51.848] Server  LOG      ✓ Compiled in 117ms
+[01:07:20.877] Server  LOG      ✓ Compiled in 118ms
+[01:07:54.238] Server  LOG      ✓ Compiled in 130ms
+[01:10:44.023] Server  LOG      ✓ Compiled in 263ms
+[01:11:04.961] Server  LOG      ✓ Compiled in 130ms
+[01:11:18.280] Server  LOG      ✓ Compiled in 146ms
+[01:11:33.371] Server  LOG      ✓ Compiled in 140ms
+[01:11:52.264] Server  LOG      ✓ Compiled in 295ms
+[01:12:05.677] Server  LOG      ✓ Compiled in 166ms
+[01:14:06.965] Server  LOG      ✓ Compiled in 151ms
+[01:14:29.358] Server  LOG      ✓ Compiled in 140ms
+[01:20:31.003] Server  LOG      ✓ Compiled in 169ms
+[01:20:37.650] Server  LOG      ✓ Compiled in 180ms
+[01:21:34.484] Server  LOG      ✓ Compiled in 161ms
+[01:24:37.754] Server  LOG      ✓ Compiled in 154ms
+[01:24:52.666] Server  LOG      ✓ Compiled in 252ms
+[01:25:40.787] Server  LOG      ✓ Compiled in 125ms
+[01:26:07.968] Server  LOG      ✓ Compiled in 115ms
+[01:26:54.018] Server  LOG      ✓ Compiled in 141ms
+[01:27:23.419] Server  LOG      ✓ Compiled in 199ms
+[01:27:28.893] Server  LOG      ✓ Compiled in 120ms
+[01:28:28.937] Server  LOG      ✓ Compiled in 121ms
+[01:28:47.653] Server  LOG      ✓ Compiled in 131ms
+[01:29:23.006] Server  LOG      ✓ Compiled in 137ms
+[01:29:30.296] Server  LOG      ✓ Compiled in 135ms
+[01:29:41.737] Server  LOG      ✓ Compiled in 106ms
+[01:29:46.234] Server  LOG      ✓ Compiled in 136ms
+[01:32:13.842] Server  LOG      ✓ Compiled in 657ms
+[01:32:17.492] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[01:32:24.623] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:32:24.641] Server  LOG      ✓ Compiled in 160ms
+[01:32:45.094] Server  LOG      ✓ Compiled in 192ms
+[01:33:12.348] Server  LOG      ✓ Compiled in 130ms
+[01:34:23.235] Server  LOG      ✓ Compiled in 220ms
+[01:39:04.075] Server  LOG      ✓ Compiled in 172ms
+[01:39:11.053] Server  LOG      ✓ Compiled in 202ms
+[01:41:54.710] Server  LOG      ✓ Compiled in 205ms
+[01:49:54.763] Server  LOG      ✓ Compiled in 1031ms
+[01:50:11.653] Server  LOG      ✓ Compiled in 180ms
+[01:50:26.554] Server  LOG      ✓ Compiled in 155ms
+[01:50:30.613] Server  LOG      ✓ Compiled in 129ms
+[01:50:56.072] Server  LOG      ✓ Compiled in 133ms
+[01:51:21.029] Server  LOG      ✓ Compiled in 108ms
+[01:53:29.101] Server  LOG      ✓ Compiled in 748ms
+[01:56:19.230] Server  LOG      ✓ Compiled in 289ms
+[01:56:37.500] Server  LOG      ✓ Compiled in 185ms
+[01:56:50.159] Server  LOG      ✓ Compiled in 145ms
+[01:58:45.901] Server  LOG      ✓ Compiled in 230ms
+[01:58:53.314] Server  LOG      ✓ Compiled in 157ms
+[01:59:20.568] Server  LOG      ✓ Compiled in 125ms
+[01:59:39.249] Server  LOG      ✓ Compiled in 152ms
+[02:01:18.672] Server  LOG      ✓ Compiled in 709ms
+[02:01:22.891] Server  LOG      ✓ Compiled in 225ms
+[02:01:37.453] Server  LOG      ✓ Compiled in 117ms
+[02:02:38.802] Server  LOG      ✓ Compiled in 338ms
+[02:02:53.806] Server  LOG      ✓ Compiled in 162ms
+[02:03:12.397] Server  LOG      ✓ Compiled in 140ms
+[02:03:26.632] Server  LOG      ✓ Compiled in 154ms
+[02:03:36.463] Server  LOG      ✓ Compiled in 115ms
+[02:03:36.589] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useEffect
+[02:03:52.722] Server  LOG      ✓ Compiled in 314ms
+[02:03:53.592] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [508a31cd-d2aa-4b79-8f13-a2d490f8ff80] [508a31cd-d2aa-4b79-8f13-a2d490f8ff80, [object HTMLDivElement]]
+[02:04:23.732] Server  LOG      ✓ Compiled in 670ms
+[02:04:37.892] Server  LOG      ✓ Compiled in 123ms
+[02:05:01.843] Server  LOG      ✓ Compiled in 281ms
+[02:05:39.449] Server  LOG      ✓ Compiled in 258ms
+[02:06:41.072] Server  LOG      ✓ Compiled in 141ms
+[02:06:52.199] Server  LOG      ✓ Compiled in 247ms
+[02:07:50.744] Server  LOG      ✓ Compiled in 192ms
+[02:08:04.786] Server  LOG      ✓ Compiled in 110ms
+[02:08:11.441] Server  LOG      ✓ Compiled in 113ms
+[02:08:15.094] Server  LOG      ✓ Compiled in 174ms
+[02:08:21.708] Server  LOG      ✓ Compiled in 106ms
+[02:09:06.728] Server  LOG      ✓ Compiled in 279ms
+[02:09:33.422] Server  LOG      ✓ Compiled in 329ms
+[02:13:48.380] Server  LOG      ✓ Compiled in 272ms
+[02:14:08.323] Server  LOG      ✓ Compiled in 174ms
+[02:14:23.503] Server  LOG      ✓ Compiled in 274ms
+[02:16:47.068] Server  LOG      ✓ Compiled in 221ms
+[02:17:27.527] Server  LOG      ✓ Compiled in 287ms
+[02:18:30.715] Server  LOG      ✓ Compiled in 173ms
+[02:18:53.734] Server  LOG      ✓ Compiled in 195ms
+[02:19:40.069] Server  LOG      ✓ Compiled in 172ms
+[02:19:49.452] Server  LOG      ✓ Compiled in 122ms
+[02:19:52.924] Server  LOG      ✓ Compiled in 225ms
+[02:19:59.531] Server  LOG      ✓ Compiled in 136ms
+[02:20:45.615] Server  LOG      ✓ Compiled in 190ms
+[02:20:54.417] Server  LOG      ✓ Compiled in 239ms
+[02:20:59.708] Server  LOG      ✓ Compiled in 136ms
+[02:21:05.625] Server  LOG      ✓ Compiled in 193ms
+[02:21:23.315] Server  LOG      ✓ Compiled in 127ms
+[02:21:27.798] Browser ERROR   Error loading messages: {}
+[02:21:34.681] Browser ERROR   Error loading messages: {}
+[02:21:38.078] Server  LOG      ✓ Compiled in 217ms
+[02:25:54.099] Server  LOG      ✓ Compiled in 413ms
+[02:26:02.887] Server  LOG      ✓ Compiled in 182ms
+[02:26:26.824] Server  LOG      ✓ Compiled in 157ms
+[02:27:49.021] Server  LOG      ✓ Compiled in 189ms
+[02:27:57.715] Server  LOG      ✓ Compiled in 115ms
+[02:28:30.096] Server  LOG      ✓ Compiled in 102ms
+[02:28:36.584] Server  LOG      ✓ Compiled in 106ms
+[02:29:02.356] Server  LOG      ✓ Compiled in 166ms
+[02:29:09.505] Server  LOG      ✓ Compiled in 129ms
+[02:29:21.687] Server  LOG      ✓ Compiled in 134ms
+[02:29:27.685] Server  LOG      ✓ Compiled in 102ms
+[02:29:57.093] Server  LOG      ✓ Compiled in 180ms
+[02:29:57.599] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [4f0d46cd-9f6a-4f21-8b22-035d380e8f67] [4f0d46cd-9f6a-4f21-8b22-035d380e8f67, async (cursor)=>{
+            if (!converationId || loading || !hasMore && cursorId) return;
+            const container = containerRef.current;
+            const previousScrollHeight = container?.scrollHeight || 0;
+            const previousScrollTop = container?.scrollTop || 0;
+            setLoading(true);
+            try {
+                const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("get_conversation_messages", {
+                    p_conversation_id: converationId,
+                    p_cursor_id: cursorId || null,
+                    p_limit: 10
+                });
+                if (error) throw error;
+                const newMessages = data;
+                if (!newMessages.length) {
+                    setHasMore(false);
+                    return;
+                }
+                setCursorId(newMessages[newMessages.length - 1].id);
+                const reversed = [
+                    ...newMessages
+                ].reverse();
+                setMessages({
+                    "useGetMessages.useCallback[loadMessages]": (prev)=>cursorId ? [
+                            ...reversed,
+                            ...prev
+                        ] : reversed
+                }["useGetMessages.useCallback[loadMessages]"]);
+            } catch (error) {
+                console.error("Error loading messages:", error);
+            } finally{
+                setLoading(false);
+            }
+        }]
+[02:30:31.543] Server  LOG      ✓ Compiled in 692ms
+[02:30:51.411] Server  LOG      ✓ Compiled in 456ms
+[02:30:54.649] Server  LOG      ✓ Compiled in 220ms
+[02:30:55.592] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [4f0d46cd-9f6a-4f21-8b22-035d380e8f67, async (cursor)=>{
+            if (!converationId || loading || !hasMore && cursorId) return;
+            const container = containerRef.current;
+            const previousScrollHeight = container?.scrollHeight || 0;
+            const previousScrollTop = container?.scrollTop || 0;
+            setLoading(true);
+            try {
+                const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["supabase"].rpc("get_conversation_messages", {
+                    p_conversation_id: converationId,
+                    p_cursor_id: cursorId || null,
+                    p_limit: 10
+                });
+                if (error) throw error;
+                const newMessages = data;
+                if (!newMessages.length) {
+                    setHasMore(false);
+                    return;
+                }
+                setCursorId(newMessages[newMessages.length - 1].id);
+                const reversed = [
+                    ...newMessages
+                ].reverse();
+                setMessages({
+                    "useGetMessages.useCallback[loadMessages]": (prev)=>cursorId ? [
+                            ...reversed,
+                            ...prev
+                        ] : reversed
+                }["useGetMessages.useCallback[loadMessages]"]);
+            } catch (error) {
+                console.error("Error loading messages:", error);
+            } finally{
+                setLoading(false);
+            }
+        }] [4f0d46cd-9f6a-4f21-8b22-035d380e8f67]
+[02:31:36.898] Server  LOG      ✓ Compiled in 218ms
+[02:32:04.954] Server  LOG      ✓ Compiled in 182ms
+[02:32:33.178] Server  LOG      ✓ Compiled in 210ms
+[02:32:53.487] Server  LOG      ✓ Compiled in 115ms
+[02:33:18.791] Server  LOG      ✓ Compiled in 167ms
+[02:33:32.253] Server  LOG      ✓ Compiled in 122ms
+[02:33:56.146] Server  LOG      ✓ Compiled in 415ms
+[02:33:56.597] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:36:56
+Parsing ecmascript source code failed
+  34 |             const newMessages = data as UiMessage[]
+  35 |
+> 36 |             if(!newMessages || newMessages.length === 0{
+     |                                                        ^
+  37 |                 setHasMore(false)
+  38 |                 return
+  39 |             }
+
+Expected ')', got '{'
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[02:34:00.193] Server  LOG      ✓ Compiled in 160ms
+[02:35:56.669] Server  LOG      ✓ Compiled in 248ms
+[02:36:23.755] Server  LOG      ✓ Compiled in 189ms
+[02:36:28.606] Server  LOG      ✓ Compiled in 188ms
+[02:36:39.550] Server  LOG      ✓ Compiled in 226ms
+[02:38:33.895] Server  LOG      ✓ Compiled in 420ms
+[02:38:48.667] Server  LOG      ✓ Compiled in 253ms
+[02:39:44.464] Server  LOG      ✓ Compiled in 258ms
+[02:39:49.341] Server  LOG      ✓ Compiled in 143ms
+[02:40:14.756] Server  LOG      ✓ Compiled in 183ms
+[02:40:19.077] Server  LOG      ✓ Compiled in 207ms
+[02:40:23.563] Server  LOG      ✓ Compiled in 241ms
+[02:40:57.851] Server  LOG      ✓ Compiled in 195ms
+[02:41:24.400] Server  LOG      ✓ Compiled in 229ms
+[02:42:05.178] Server  LOG      ✓ Compiled in 264ms
+[02:42:10.796] Server  LOG      ✓ Compiled in 171ms
+[02:42:22.476] Server  LOG      ✓ Compiled in 178ms
+[02:43:04.815] Server  LOG      ✓ Compiled in 150ms
+[02:43:09.852] Browser ERROR   Error loading messages: {}
+[02:43:18.914] Server  LOG      ✓ Compiled in 149ms
+[02:43:58.322] Server  LOG      ✓ Compiled in 172ms
+[02:47:27.321] Server  LOG      ✓ Compiled in 1329ms
+[02:48:00.864] Server  LOG      ✓ Compiled in 1316ms
+[02:48:33.602] Server  LOG      ✓ Compiled in 324ms
+[02:50:00.617] Server  LOG      ✓ Compiled in 746ms
+[02:50:06.619] Browser LOG     🔄 Conversation changed: null
+[02:50:06.620] Browser LOG     [2;38;2;124;124;124m%s[0m 🔄 Conversation changed: null
+[02:50:07.318] Browser LOG     🔄 Conversation changed: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[02:50:07.318] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":null}
+[02:50:07.439] Browser LOG     ✅ Loaded messages: 10
+[02:50:09.000] Browser LOG     🔼 User scrolled to top, loading more...
+[02:50:09.001] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":"1d17867c-3b78-485b-bb38-2e99fbc60940"}
+[02:50:09.117] Browser LOG     ✅ Loaded messages: 8
+[02:50:12.087] Browser LOG     🔄 Conversation changed: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[02:50:12.087] Browser LOG     📥 Loading messages: {"conversationId":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","cursor":null}
+[02:50:12.210] Browser LOG     ✅ Loaded messages: 2
+[02:50:17.624] Browser LOG     🔄 Conversation changed: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[02:50:17.624] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":null}
+[02:50:17.793] Browser LOG     ✅ Loaded messages: 10
+[02:50:21.284] Browser LOG     🔼 User scrolled to top, loading more...
+[02:50:21.284] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":"1d17867c-3b78-485b-bb38-2e99fbc60940"}
+[02:50:21.417] Browser LOG     ✅ Loaded messages: 8
+[02:50:34.233] Browser LOG     🔄 Conversation changed: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[02:50:34.233] Browser LOG     📥 Loading messages: {"conversationId":"4f0d46cd-9f6a-4f21-8b22-035d380e8f67","cursor":null}
+[02:50:34.459] Browser LOG     ✅ Loaded messages: 2
+[02:51:18.508] Server  LOG      ✓ Compiled in 541ms
+[02:51:52.183] Server  LOG      ✓ Compiled in 336ms
+[02:51:59.526] Server  LOG      ✓ Compiled in 186ms
+[02:52:06.168] Browser LOG     🔄 Conversation changed: null
+[02:52:06.174] Browser LOG     [2;38;2;124;124;124m%s[0m 🔄 Conversation changed: null
+[02:52:06.685] Browser LOG     🔄 Conversation changed: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[02:52:06.685] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":null}
+[02:52:06.951] Browser LOG     ✅ Loaded messages: 10
+[02:52:10.794] Browser ERROR   Error deleting message: {}
+[02:52:16.132] Server  LOG      ✓ Compiled in 219ms
+[02:52:24.289] Browser LOG     🔄 Conversation changed: null
+[02:52:24.289] Browser LOG     [2;38;2;124;124;124m%s[0m 🔄 Conversation changed: null
+[02:52:24.641] Browser LOG     🔄 Conversation changed: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[02:52:24.641] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":null}
+[02:52:24.752] Browser LOG     ✅ Loaded messages: 10
+[02:52:28.051] Browser LOG     📥 Loading messages: {"conversationId":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","cursor":null}
+[02:52:28.157] Browser LOG     ✅ Loaded messages: 10
+[02:52:40.199] Server  LOG      ✓ Compiled in 142ms
+[02:55:59.306] Server  LOG      ✓ Compiled in 419ms
+[02:55:59.599] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:54:8
+Parsing ecmascript source code failed
+  52 |         }
+  53 |
+> 54 |     }, [conversationId, cursorId, loading])
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  55 |
+  56 |     const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
+  57 |         if (
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[02:55:59.599] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:54:43
+Parsing ecmascript source code failed
+  52 |         }
+  53 |
+> 54 |     }, [conversationId, cursorId, loading])
+     |                                           ^
+  55 |
+  56 |     const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
+  57 |         if (
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[02:56:02.599] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:54:8
+Parsing ecmascript source code failed
+  52 |         }
+  53 |
+> 54 |     }, [conversationId, cursorId, loading])
+     |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  55 |
+  56 |     const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
+  57 |         if (
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[02:56:02.599] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:54:43
+Parsing ecmascript source code failed
+  52 |         }
+  53 |
+> 54 |     }, [conversationId, cursorId, loading])
+     |                                           ^
+  55 |
+  56 |     const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
+  57 |         if (
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[02:56:10.233] Server  LOG      ✓ Compiled in 173ms
+[02:56:13.840] Server  LOG      ✓ Compiled in 421ms
+[02:56:14.599] Browser ERROR   uncaughtError: ReferenceError: handleScroll is not defined
+[02:56:16.367] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:56:16.394] Server  LOG      ✓ Compiled in 173ms
+[02:56:19.089] Browser ERROR   uncaughtError: ReferenceError: handleScroll is not defined
+[02:56:22.595] Browser ERROR   uncaughtError: ReferenceError: handleScroll is not defined
+[02:56:25.383] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:56:25.393] Server  LOG      ✓ Compiled in 1219ms
+[02:56:30.735] Server  LOG      ✓ Compiled in 191ms
+[02:56:42.131] Server  LOG      ✓ Compiled in 132ms
+[02:57:31.134] Server  LOG      ✓ Compiled in 130ms
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[02:57:38.219] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[02:57:48.246] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[02:58:04.078] Server  LOG      ✓ Compiled in 243ms
+[02:58:17.221] Server  LOG      ✓ Compiled in 169ms
+[02:58:21.496] Server  LOG      ✓ Compiled in 262ms
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[02:58:22.600] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[02:58:28.455] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[02:58:28.596] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[02:58:28.597] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[02:59:55.754] Server  LOG      ✓ Compiled in 371ms
+[02:59:56.589] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:20:9
+Parsing ecmascript source code failed
+  18 |
+  19 |         setLoading(true)
+> 20 |         containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  21 |
+  22 |         try {
+  23 |             const { data, error } = await supabase.rpc("get_conversation_messages", {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:28.452] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:29.492] Server  ERROR    ⨯ ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[03:00:29.666] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:32.571] Server  LOG      ○ Compiling /_error ...
+[03:00:32.592] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:32.592] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:33.706] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:34.585] Browser ERROR   uncaughtError: Error: ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[03:00:35.655] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:35.656] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:36.604] Browser ERROR   ./app/things/hooks/dialog_messages/useGetMessages.ts:22:13
+Parsing ecmascript source code failed
+  20 |         
+  21 |         if (containerRef.current){
+> 22 |             containerRef.current?.scrollTop = containerRef.current?.scrollHeight 
+     |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  23 |         }
+  24 |
+  25 |         try {
+
+The left-hand side of an assignment expression must be a variable or a property access.
+
+Import traces:
+  Client Component Browser:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/things/hooks/dialog_messages/useGetMessages.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[03:00:59.255] Server  LOG      ✓ Compiled in 820ms
+[03:01:40.082] Server  LOG      ✓ Compiled in 625ms
+[03:01:58.214] Server  LOG      ✓ Compiled in 136ms
+[03:02:08.246] Server  LOG      ✓ Compiled in 117ms
+[03:02:26.292] Server  LOG      ✓ Compiled in 158ms
+[03:03:07.146] Server  LOG      ✓ Compiled in 291ms
+[03:03:29.740] Server  LOG      ✓ Compiled in 202ms
+[03:03:50.436] Server  LOG      ✓ Compiled in 369ms
+[03:04:19.006] Server  LOG      ✓ Compiled in 101ms
+[03:06:09.152] Server  LOG      ✓ Compiled in 170ms
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:10.624] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:13.362] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:13.560] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:25.822] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 44bbe9a4-cabb-4015-8dad-9f7120eaae65
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 46ccab76-466d-48a7-b34b-70bace6a4560
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 05b4923d-a22f-4648-ba5d-89d8c52441fc
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 7e85aa78-e735-4efb-8e9f-4fd03667ebea
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e6702ceb-c9fb-472f-9ac6-e0898d885c26
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. e797ea80-879c-4589-aeee-6984b4279ece
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f58f7471-1a9a-4184-bf2f-513b386a6b1d
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 3a83062d-3dce-481b-8325-8865c4f91de6
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 536b6c0b-4f53-4162-9cc4-3bcdc5b00fd0
+[03:06:32.253] Browser ERROR   Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. f4135ac6-f053-42e5-af7a-50b439d36918
+[03:07:00.750] Server  LOG      ✓ Compiled in 270ms
+[03:13:37.146] Server  LOG      ✓ Compiled in 239ms
+[03:13:59.222] Server  LOG      ✓ Compiled in 174ms
+[03:14:21.158] Server  LOG      ✓ Compiled in 153ms
+[03:14:35.784] Server  LOG      ✓ Compiled in 171ms
+[03:15:04.272] Server  LOG      ✓ Compiled in 217ms
+[03:15:33.162] Server  LOG      ✓ Compiled in 154ms
+[03:16:15.358] Server  LOG      ✓ Compiled in 108ms
+[03:16:33.245] Server  LOG      ✓ Compiled in 194ms
+[03:16:54.743] Server  LOG      ✓ Compiled in 154ms
+[03:16:57.934] Server  LOG      ✓ Compiled in 111ms
+[03:17:23.730] Server  LOG      ✓ Compiled in 141ms
+[03:18:25.785] Server  LOG      ✓ Compiled in 507ms
+[03:19:44.883] Server  LOG      ✓ Compiled in 412ms
+[03:20:10.094] Server  LOG      ✓ Compiled in 214ms
+[03:20:51.599] Server  LOG      ✓ Compiled in 207ms
+[03:23:04.382] Server  LOG      ✓ Compiled in 291ms
+[03:24:07.057] Server  LOG      ✓ Compiled in 287ms
+[03:24:18.356] Server  LOG      ✓ Compiled in 221ms
+[03:25:32.797] Server  LOG      ✓ Compiled in 724ms
+[03:25:48.560] Server  LOG      ✓ Compiled in 215ms
+[03:27:25.187] Server  LOG      ✓ Compiled in 214ms
+[03:27:54.194] Server  LOG      ✓ Compiled in 168ms
+[03:28:19.562] Server  LOG      ✓ Compiled in 321ms
+[03:40:25.414] Server  LOG      ✓ Compiled in 479ms
+[03:42:58.190] Server  LOG      ✓ Compiled in 208ms
+[03:43:55.541] Server  LOG      ✓ Compiled in 121ms
+[03:44:12.234] Server  LOG      ✓ Compiled in 208ms
+[03:44:21.355] Server  LOG      ✓ Compiled in 154ms
+[03:44:48.265] Server  LOG      ✓ Compiled in 157ms
+[03:46:11.417] Server  LOG      ✓ Compiled in 167ms
+[03:46:33.395] Server  LOG      ✓ Compiled in 145ms
+[03:50:38.796] Server  LOG      ✓ Compiled in 205ms
+[03:52:17.603] Server  LOG      ✓ Compiled in 148ms
+[03:52:41.201] Server  LOG      ✓ Compiled in 109ms
+[03:54:55.077] Server  LOG      ✓ Compiled in 114ms
+[03:56:02.387] Server  LOG      ✓ Compiled in 463ms
+[03:57:16.389] Server  LOG      ✓ Compiled in 226ms
+[04:00:12.248] Server  LOG      ✓ Compiled in 361ms
+[04:00:35.700] Server  LOG      ✓ Compiled in 166ms
+[04:01:20.069] Server  LOG      ✓ Compiled in 632ms
+[04:01:20.623] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:80:9
+Parsing ecmascript source code failed
+  78 |                 setDeletingMsg([]) 
+  79 |             }
+> 80 |         })
+     |         ^
+  81 |
+  82 |     },[])
+  83 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:01:23.600] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:80:9
+Parsing ecmascript source code failed
+  78 |                 setDeletingMsg([]) 
+  79 |             }
+> 80 |         })
+     |         ^
+  81 |
+  82 |     },[])
+  83 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:01:50.598] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:81:9
+Parsing ecmascript source code failed
+  79 |                 setDeletingMsg([]) 
+  80 |             }
+> 81 |         })
+     |         ^
+  82 |
+  83 |     },[])
+  84 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:02:10.597] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:82:9
+Parsing ecmascript source code failed
+  80 |                 setDeletingMsg([]) 
+  81 |             }
+> 82 |         })
+     |         ^
+  83 |
+  84 |     },[])
+  85 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:02:22.954] Server  LOG      ✓ Compiled in 153ms
+[04:02:23.599] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:82:9
+Parsing ecmascript source code failed
+  80 |                 setDeletingMsg([]) 
+  81 |             }
+> 82 |         })
+     |         ^
+  83 |
+  84 |     },[])
+  85 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:02:31.205] Server  LOG      ✓ Compiled in 164ms
+[04:02:31.635] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:80:9
+Parsing ecmascript source code failed
+  78 |                 setDeletingMsg([]) 
+  79 |             }
+> 80 |         })
+     |         ^
+  81 |
+  82 |     },[])
+  83 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:02:39.594] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:80:9
+Parsing ecmascript source code failed
+  78 |                 setDeletingMsg([]) 
+  79 |             }
+> 80 |         })
+     |         ^
+  81 |
+  82 |     },[])
+  83 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:02:50.600] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:80:9
+Parsing ecmascript source code failed
+  78 |                 await refresh()
+  79 |             }
+> 80 |         })
+     |         ^
+  81 |
+  82 |     },[])
+  83 |
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:03:12.683] Server  LOG      ✓ Compiled in 511ms
+[04:03:25.129] Server  LOG      ✓ Compiled in 1069ms
+[04:03:38.251] Server  LOG      ✓ Compiled in 113ms
+[04:03:48.625] Server  LOG      ✓ Compiled in 223ms
+[04:04:00.181] Server  LOG      ✓ Compiled in 277ms
+[04:04:35.086] Server  LOG      ✓ Compiled in 243ms
+[04:04:44.719] Server  LOG      ✓ Compiled in 157ms
+[04:05:14.405] Server  LOG      ✓ Compiled in 207ms
+[04:05:25.117] Server  LOG      ✓ Compiled in 143ms
+[04:06:48.387] Server  LOG      ✓ Compiled in 563ms
+[04:08:21.857] Server  LOG      ✓ Compiled in 208ms
+[04:09:32.408] Server  LOG      ✓ Compiled in 201ms
+[04:10:57.181] Server  LOG      ✓ Compiled in 252ms
+[04:11:09.361] Server  LOG      ✓ Compiled in 131ms
+[04:15:34.440] Server  LOG      ✓ Compiled in 175ms
+[04:15:42.792] Server  LOG      ✓ Compiled in 144ms
+[04:15:59.261] Server  LOG      ✓ Compiled in 211ms
+[04:16:03.263] Server  LOG      ✓ Compiled in 117ms
+[04:16:29.090] Server  LOG      ✓ Compiled in 257ms
+[04:16:30.743] Server  LOG      ✓ Compiled in 158ms
+[04:17:43.330] Server  LOG      ✓ Compiled in 218ms
+[04:17:50.646] Server  LOG      ✓ Compiled in 152ms
+[04:18:16.476] Server  LOG      ✓ Compiled in 113ms
+[04:18:18.616] Server  LOG      ✓ Compiled in 129ms
+[04:19:34.722] Server  LOG      ✓ Compiled in 120ms
+[04:19:44.200] Server  LOG      ✓ Compiled in 114ms
+[04:19:58.227] Server  LOG      ✓ Compiled in 226ms
+[04:19:58.598] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:66:21
+Parsing ecmascript source code failed
+  64 |
+  65 |                 setTimeout(() => {
+> 66 |                     await refresh()
+     |                     ^^^^^
+  67 |                 }, 100);
+  68 |                 
+  69 |
+
+await isn't allowed in non-async function
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:20:02.705] Server  LOG      ✓ Compiled in 157ms
+[04:20:03.591] Browser ERROR   ./app/anonMain/useDeleteMessage.ts:66:21
+Parsing ecmascript source code failed
+  64 |
+  65 |                 setTimeout(() => {
+> 66 |                     await refresh()
+     |                     ^^^^^
+  67 |                 }, 500);
+  68 |                 
+  69 |
+
+await isn't allowed in non-async function
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/useDeleteMessage.ts [Client Component Browser]
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/useDeleteMessage.ts [Client Component SSR]
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[04:20:15.410] Server  LOG      ✓ Compiled in 155ms
+[04:20:27.475] Server  LOG      ✓ Compiled in 96ms
+[04:20:28.504] Server  LOG      ✓ Compiled in 165ms
+[04:21:59.413] Server  LOG      ✓ Compiled in 159ms
+[04:26:39.561] Server  LOG      ✓ Compiled in 136ms
+[04:27:21.307] Server  LOG      ✓ Compiled in 144ms
+[04:27:50.083] Server  LOG      ✓ Compiled in 120ms
+[04:28:04.702] Server  LOG      ✓ Compiled in 153ms
+[04:28:59.697] Server  LOG      ✓ Compiled in 126ms
+[04:29:52.700] Server  LOG      ✓ Compiled in 215ms
+[04:30:06.679] Server  LOG      ✓ Compiled in 103ms
+[04:30:07.596] Browser ERROR   uncaughtError: ReferenceError: refresh is not defined
+[04:30:25.250] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[04:30:25.269] Server  LOG      ✓ Compiled in 103ms
+[04:30:38.242] Server  LOG      ✓ Compiled in 99ms
+[04:30:43.033] Server  LOG      ✓ Compiled in 126ms
+[05:36:15.748] Server  LOG      ✓ Compiled in 429ms
+[05:36:22.435] Server  LOG      ✓ Compiled in 134ms
+[05:37:24.163] Server  LOG      ✓ Compiled in 178ms
+[05:39:58.220] Server  LOG      ✓ Compiled in 171ms
+[05:40:24.186] Server  LOG      ✓ Compiled in 184ms
+[05:40:52.950] Server  LOG      ✓ Compiled in 122ms
+[05:41:45.501] Server  LOG      ✓ Compiled in 141ms
+[05:42:50.623] Server  LOG      ✓ Compiled in 104ms
+[05:43:12.821] Server  LOG      ✓ Compiled in 212ms
+[05:43:32.652] Server  LOG      ✓ Compiled in 102ms
+[05:43:51.282] Server  LOG      ✓ Compiled in 160ms
+[05:44:01.283] Server  LOG      ✓ Compiled in 99ms
+[05:45:17.062] Server  LOG      ✓ Compiled in 160ms
+[05:45:21.666] Server  LOG      ✓ Compiled in 140ms
+[05:45:53.859] Server  LOG      ✓ Compiled in 128ms
+[05:46:16.287] Server  LOG      ✓ Compiled in 115ms
+[05:46:33.104] Server  LOG      ✓ Compiled in 114ms
+[05:46:36.064] Server  LOG      ✓ Compiled in 152ms
+[05:47:00.214] Server  LOG      ✓ Compiled in 190ms
+[05:47:15.930] Server  LOG      ✓ Compiled in 124ms
+[05:47:20.723] Server  LOG      ✓ Compiled in 102ms
+[05:47:25.901] Server  LOG      ✓ Compiled in 229ms
+[05:47:35.693] Server  LOG      ✓ Compiled in 126ms
+[05:49:58.209] Server  LOG      ✓ Compiled in 117ms
+[05:51:11.456] Server  LOG      ✓ Compiled in 130ms
+[05:52:09.384] Server  LOG      ✓ Compiled in 161ms
+[05:52:21.467] Server  LOG      ✓ Compiled in 146ms
+[05:54:06.268] Server  LOG      ✓ Compiled in 166ms
+[05:54:47.176] Server  LOG      ✓ Compiled in 128ms
+[05:56:36.922] Server  LOG      ✓ Compiled in 156ms
+[05:57:00.453] Server  LOG      ✓ Compiled in 154ms
+[05:57:10.553] Server  LOG      ✓ Compiled in 139ms
+[05:57:32.355] Server  LOG      ✓ Compiled in 161ms
+[05:57:32.594] Browser ERROR   ./app/anonMain/chat/Chat.tsx:385:22
+Parsing ecmascript source code failed
+  383 |                     {loadingMore && hasMore && (
+  384 |                         
+> 385 |                     )}
+      |                      ^
+  386 |
+  387 |                     {messages.map((message, i) => {
+  388 |                         const avatar = message.from_display_id.charAt(1).toUpperCase();
+
+Expected '</', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[05:57:55.050] Server  LOG      ✓ Compiled in 151ms
+[05:58:15.166] Server  LOG      ✓ Compiled in 134ms
+[05:58:15.589] Browser ERROR   ./app/anonMain/chat/Chat.tsx:387:30
+Parsing ecmascript source code failed
+  385 |                             {[1,2,3].map(i => (
+  386 |                                 
+> 387 |                             ))}
+      |                              ^
+  388 |                         </div>
+  389 |                     )}
+  390 |
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[05:58:49.278] Server  LOG      ✓ Compiled in 165ms
+[05:59:06.868] Server  LOG      ✓ Compiled in 164ms
+[05:59:23.043] Server  LOG      ✓ Compiled in 171ms
+[06:02:40.872] Server  LOG      ✓ Compiled in 217ms
+[06:04:11.235] Server  LOG      ✓ Compiled in 192ms
+[06:04:30.590] Server  LOG      ✓ Compiled in 339ms
+[06:04:31.924] Server  LOG      ✓ Compiled in 614ms
+[06:05:05.220] Server  LOG      ✓ Compiled in 130ms
+[06:07:31.706] Server  LOG      ✓ Compiled in 123ms
+[06:08:09.062] Server  LOG      ✓ Compiled in 188ms
+[06:08:47.688] Server  LOG      ✓ Compiled in 143ms
+[06:08:50.775] Server  LOG      ✓ Compiled in 150ms
+[06:11:44.549] Server  LOG      ✓ Compiled in 163ms
+[06:11:51.721] Server  LOG      ✓ Compiled in 173ms
+[06:13:00.003] Server  LOG      ✓ Compiled in 150ms
+[06:13:53.731] Server  LOG      ✓ Compiled in 276ms
+[06:14:03.081] Server  LOG      ✓ Compiled in 148ms
+[06:14:33.236] Server  LOG      ✓ Compiled in 108ms
+[06:14:44.867] Server  LOG      ✓ Compiled in 139ms
+[06:14:50.132] Server  LOG      ✓ Compiled in 310ms
+[06:14:52.657] Server  LOG      ✓ Compiled in 414ms
+[06:15:00.687] Server  LOG      ✓ Compiled in 194ms
+[06:17:42.871] Server  LOG      ✓ Compiled in 165ms
+[06:18:36.465] Server  LOG      ✓ Compiled in 145ms
+[06:21:49.167] Server  LOG      ✓ Compiled in 108ms
+[06:30:49.929] Server  LOG      ✓ Compiled in 276ms
+[06:33:01.339] Server  LOG      ✓ Compiled in 189ms
+[06:33:19.539] Server  LOG      ✓ Compiled in 110ms
+[06:33:33.664] Server  LOG      ✓ Compiled in 141ms
+[06:35:50.725] Server  LOG      ✓ Compiled in 169ms
+[06:35:54.329] Server  LOG      ✓ Compiled in 197ms
+[06:40:34.343] Server  LOG      ✓ Compiled in 157ms
+[06:45:55.671] Server  LOG      ✓ Compiled in 146ms
+[06:48:16.332] Server  LOG      ✓ Compiled in 130ms
+[06:48:29.083] Server  LOG      ✓ Compiled in 174ms
+[06:50:46.932] Server  LOG      ✓ Compiled in 182ms
+[06:51:48.790] Server  LOG      ✓ Compiled in 119ms
+[06:52:33.161] Server  LOG      ✓ Compiled in 172ms
+[06:52:37.122] Server  LOG      ✓ Compiled in 173ms
+[06:57:58.031] Server  LOG      ✓ Compiled in 130ms
+[06:58:12.643] Server  LOG      ✓ Compiled in 107ms
+[06:58:25.536] Server  LOG      ✓ Compiled in 130ms
+[06:59:28.687] Server  LOG      ✓ Compiled in 155ms
+[06:59:31.209] Server  LOG      ✓ Compiled in 134ms
+[06:59:40.869] Server  LOG      ✓ Compiled in 142ms
+[06:59:54.490] Server  LOG      ✓ Compiled in 147ms
+[07:00:45.990] Server  LOG      ✓ Compiled in 144ms
+[07:01:16.855] Server  LOG      ✓ Compiled in 138ms
+[07:01:29.480] Server  LOG      ✓ Compiled in 132ms
+[07:04:16.590] Server  LOG      ✓ Compiled in 269ms
+[07:04:47.566] Server  LOG      ✓ Compiled in 133ms
+[07:05:13.498] Server  LOG      ✓ Compiled in 246ms
+[07:05:19.089] Server  LOG      ✓ Compiled in 160ms
+[07:05:59.992] Server  LOG      ✓ Compiled in 153ms
+[07:06:20.095] Server  LOG      ✓ Compiled in 139ms
+[07:06:21.751] Server  LOG      ✓ Compiled in 197ms
+[07:06:31.191] Server  LOG      ✓ Compiled in 122ms
+[07:06:35.228] Server  LOG      ✓ Compiled in 137ms
+[07:07:07.521] Server  LOG      ✓ Compiled in 116ms
+[07:07:14.340] Server  LOG      ✓ Compiled in 119ms
+[07:07:16.233] Server  LOG      ✓ Compiled in 133ms
+[07:09:13.298] Server  LOG      ✓ Compiled in 117ms
+[07:10:04.092] Server  LOG      ✓ Compiled in 158ms
+[07:16:19.398] Server  LOG      ✓ Compiled in 196ms
+[07:16:35.234] Server  LOG      ✓ Compiled in 140ms
+[07:16:53.622] Server  LOG      ✓ Compiled in 134ms
+[07:18:31.038] Server  LOG      ✓ Compiled in 505ms
+[07:18:38.148] Server  LOG      ✓ Compiled in 161ms
+[07:20:14.972] Server  LOG      ✓ Compiled in 112ms
+[07:20:15.596] Browser ERROR   uncaughtError: ReferenceError: initialLoad is not defined
+[07:20:21.046] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[07:20:21.050] Server  LOG      ✓ Compiled in 132ms
+[07:20:28.384] Server  LOG      ✓ Compiled in 1290ms
+[07:20:28.674] Browser ERROR   %s received a final argument during this render, but not during the previous render. Even though the final argument is optional, its type cannot change between renders. useLayoutEffect
+[07:21:20.515] Server  LOG      ✓ Compiled in 340ms
+[07:23:16.376] Server  LOG      ✓ Compiled in 168ms
+[07:23:16.538] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useLayoutEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], 508a31cd-d2aa-4b79-8f13-a2d490f8ff80]
+[07:23:25.933] Server  LOG      ✓ Compiled in 176ms
+[07:23:26.156] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useLayoutEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], 508a31cd-d2aa-4b79-8f13-a2d490f8ff80] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]]
+[07:24:22.746] Server  LOG      ✓ Compiled in 207ms
+[07:24:23.595] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:23.595] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:24.352] Server  ERROR    ⨯ ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+
+./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[07:24:24.816] Browser ERROR   uncaughtError: Error: ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[07:24:25.060] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:25.060] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:25.060] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:25.060] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:29.022] Server  ERROR    ⨯ ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+
+./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[07:24:29.291] Browser ERROR   uncaughtError: Error: ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+
+[07:24:29.502] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:29.502] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:29.502] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-client] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:29.502] Browser ERROR   ./app/anonMain/chat/Chat.tsx:17:1
+Export useGetMessages doesn't exist in target module
+  15 | import { HelperMsg } from "./HelperMsg";
+  16 |
+> 17 | import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  18 |
+  19 | export type Props = {
+  20 |     userId: string | undefined;
+
+The export useGetMessages was not found in module [project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript).
+Did you mean to import useChatMessages?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./app/anonMain/chat/Chat.tsx [Client Component Browser]
+    ./app/main.tsx [Client Component Browser]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/anonMain/chat/Chat.tsx [Client Component SSR]
+    ./app/main.tsx [Client Component SSR]
+    ./app/main.tsx [Server Component]
+    ./app/page.tsx [Server Component]
+[07:24:34.015] Server  LOG      ✓ Compiled in 101ms
+[07:25:10.279] Server  LOG      ✓ Compiled in 125ms
+[07:25:10.456] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useLayoutEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], [object HTMLDivElement], 508a31cd-d2aa-4b79-8f13-a2d490f8ff80]
+[07:25:30.237] Server  LOG      ✓ Compiled in 142ms
+[07:26:02.913] Server  LOG      ✓ Compiled in 101ms
+[07:26:28.100] Server  LOG      ✓ Compiled in 194ms
+[07:26:28.597] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useLayoutEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], [object HTMLDivElement], 508a31cd-d2aa-4b79-8f13-a2d490f8ff80] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]]
+[07:26:30.154] Server  LOG      ✓ Compiled in 247ms
+[07:26:43.637] Server  LOG      ✓ Compiled in 163ms
+[07:28:26.961] Server  LOG      ✓ Compiled in 238ms
+[07:29:02.791] Server  LOG      ✓ Compiled in 188ms
+[07:29:16.448] Server  LOG      ✓ Compiled in 136ms
+[07:29:27.244] Server  LOG      ✓ Compiled in 168ms
+[07:30:54.838] Server  LOG      ✓ Compiled in 148ms
+[07:31:31.136] Server  LOG      ✓ Compiled in 166ms
+[07:31:36.669] Server  LOG      ✓ Compiled in 158ms
+[07:31:59.299] Server  LOG      ✓ Compiled in 170ms
+[07:32:08.953] Server  LOG      ✓ Compiled in 151ms
+[07:34:57.198] Server  LOG      ✓ Compiled in 162ms
+[07:35:15.522] Server  LOG      ✓ Compiled in 162ms
+[07:35:33.271] Server  LOG      ✓ Compiled in 189ms
+[07:35:45.715] Server  LOG      ✓ Compiled in 182ms
+[07:36:19.854] Server  LOG      ✓ Compiled in 138ms
+[07:39:24.025] Server  LOG      ✓ Compiled in 155ms
+[07:39:37.630] Server  LOG      ✓ Compiled in 137ms
+[07:40:06.158] Server  LOG      ✓ Compiled in 154ms
+[07:40:23.300] Server  LOG      ✓ Compiled in 162ms
+[07:40:35.902] Server  LOG      ✓ Compiled in 102ms
+[07:44:03.142] Server  LOG      ✓ Compiled in 174ms
+[07:44:08.974] Server  LOG      ✓ Compiled in 144ms
+[07:46:02.325] Server  LOG      ✓ Compiled in 120ms
+[07:47:27.463] Server  LOG      ✓ Compiled in 125ms
+[07:49:09.834] Server  LOG      ✓ Compiled in 354ms
+[07:49:12.043] Server  LOG      ✓ Compiled in 157ms
+[07:49:25.276] Server  LOG      ✓ Compiled in 170ms
+[07:51:37.167] Server  LOG      ✓ Compiled in 180ms
+[07:52:06.857] Server  LOG      ✓ Compiled in 160ms
+[07:52:23.137] Server  LOG      ✓ Compiled in 220ms
+[07:54:36.119] Server  LOG      ✓ Compiled in 156ms
+[07:54:37.933] Server  LOG      ✓ Compiled in 175ms
+[07:56:27.000] Server  LOG      ✓ Compiled in 126ms
+[07:57:26.634] Server  LOG      ✓ Compiled in 110ms
+[07:57:41.540] Server  LOG      ✓ Compiled in 153ms
+[07:58:25.021] Server  LOG      ✓ Compiled in 153ms
+[07:58:30.652] Server  LOG      ✓ Compiled in 178ms
+[08:01:43.711] Server  LOG      ✓ Compiled in 143ms
+[08:02:00.405] Server  LOG      ✓ Compiled in 140ms
+[08:02:34.187] Server  LOG      ✓ Compiled in 107ms
+[08:02:37.643] Server  LOG      ✓ Compiled in 147ms
+[08:02:49.081] Server  LOG      ✓ Compiled in 105ms
+[08:03:44.986] Server  LOG      ✓ Compiled in 139ms
+[08:05:41.007] Server  LOG      ✓ Compiled in 170ms
+[08:07:24.651] Server  LOG      ✓ Compiled in 572ms
+[08:07:35.716] Server  LOG      ✓ Compiled in 173ms

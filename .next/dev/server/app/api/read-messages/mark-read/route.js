@@ -1,0 +1,10 @@
+var R=require("../../../../chunks/[turbopack]_runtime.js")("server/app/api/read-messages/mark-read/route.js")
+R.c("server/chunks/node_modules_next_dac0fe79._.js")
+R.c("server/chunks/node_modules_@supabase_realtime-js_dist_module_306ac729._.js")
+R.c("server/chunks/node_modules_@supabase_storage-js_dist_module_473cf4b8._.js")
+R.c("server/chunks/node_modules_@supabase_auth-js_dist_module_d4605ced._.js")
+R.c("server/chunks/node_modules_861fd42b._.js")
+R.c("server/chunks/[root-of-the-server]__b97c00d9._.js")
+R.c("server/chunks/_next-internal_server_app_api_read-messages_mark-read_route_actions_3f67263c.js")
+R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/read-messages/mark-read/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/read-messages/mark-read/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

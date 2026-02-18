@@ -31,6 +31,7 @@ type TypeData = {
 export default function CreateCardPage({initialData}: {initialData?: MessageData}) {
     const {user, profile, loading: authLoading} = useAuth();
     const router = useRouter()
+    const isMobile = useCheckMobile() // проверка разрешения
 
     const searchParams = useSearchParams()
     //messageId
@@ -50,29 +51,29 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
     const isSend = type === "send"
     const canEdit = isSend
     
-
-    const isMobile = useCheckMobile() // проверка разрешения
-
+   
+    
+    const { dialogs, loading: dialogsLoading, error: dialogsError } = useGetDialogUsers(user?.id || null);
     const {sendMessage: send, loading: messageLoading} = useMessages(user?.id || null);
     const {message, loading} = useCurrentMessage(
         isRecieve ? user?.id || null : null, 
         isRecieve ? messageId : null,
         isMine
     )
-    
-    const [items, setItems] = useState<Item[]>(initialData?.items || [])
-    
     const {checkAnon} = useSetAnon()
-    const [rightPanelOpen, setRightPanelOpen] = useState(false)
+
     const idRef = useRef<HTMLInputElement>(null)
     const anonRef = useRef<HTMLInputElement>(null)
+    
+    const [items, setItems] = useState<Item[]>(initialData?.items || [])
+    const [rightPanelOpen, setRightPanelOpen] = useState(false)
     const [anonState, setAnonState] = useState({
         isAnon: false,
         anonUsedOnce: false,
         canToggle: true
     })
     const [userError, setUserError] = useState<string | null>(null)
-    const { dialogs, loading: dialogsLoading, error: dialogsError } = useGetDialogUsers(user?.id || null);
+    const [readMessages, setReadMessages] = useState(new Set<string>())
 
     
     useEffect(() => {
@@ -100,26 +101,18 @@ export default function CreateCardPage({initialData}: {initialData?: MessageData
     useEffect(() => {
         if(isMine === 'true') return
         if(messageId && type === "recieve") {
+        
+            if(!readMessages.has(messageId)) {
+                setReadMessages(prev => new Set(prev).add(messageId)) // добавляем в состояние, чтобы не отправлять повторно
 
-            fetch("/api/mark-read", { 
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ messageId })
-            })
-            .then(async res => {
-                const data = await res.json()
-                console.log("response", {status: res.status, data})
-                if(!res.ok){
-                    console.error("failed", data)
-                }else{
-                    console.log("success",data)
-                }
-            })
-            .catch(err => console.log("❌ Fetch error:", err))
+                fetch("/api/read-messages/mark-read", { 
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({ messageId })
+                }).catch(err => console.log("❌ Fetch error:", err))
+            }
         }
-    }, [messageId, type, to])
+    }, [messageId, type, to, readMessages])
 
 
 

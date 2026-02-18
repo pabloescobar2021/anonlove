@@ -76,35 +76,9 @@ async function POST(req) {
                 status: 400
             });
         }
-        let query = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabaseAdmin$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabaseAdmin"].from("messages").update({
-            is_checked: true
-        }).eq("id", messageId);
-        const { data, error } = await query.select();
-        if (error) {
-            console.error("❌ Database error:", error);
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: error.message,
-                details: error
-            }, {
-                status: 500
-            });
-        }
-        if (!data || data.length === 0) {
-            console.error("❌ Message not found or already updated:", {
-                messageId
-            });
-            // Давай проверим существует ли сообщение вообще
-            const { data: checkData } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabaseAdmin$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabaseAdmin"].from("messages").select("id, to_user, is_checked").eq("id", messageId);
-            console.log("🔎 Check if message exists:", checkData);
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "Message not found",
-                messageExists: checkData && checkData.length > 0,
-                checkData
-            }, {
-                status: 404
-            });
-        }
-        console.log("✅ Message marked as read:", data);
+        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$supabaseAdmin$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["supabaseAdmin"].rpc('mark_message_as_read', {
+            msg_id: messageId
+        });
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             ok: true,
             data

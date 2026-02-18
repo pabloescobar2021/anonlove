@@ -24,8 +24,6 @@ export default function MainPage() {
     const {inbox, sent, sendMessage: send, loading: messageLoading, refresh, deleteMessage} = useMessages(user?.id || null);
 
     const {dialogs: dialog, loading, refresh: refreshDialog } = useGetDialogs(user?.id || null)
-    const [activeDialogId, setActiveDialogId] = useState<string | null>(null);
-    const [activeDialog, setActiveDialog] = useState<Dialog | null>(null);
 
     const [openChat, setOpenChat] = useState(false);
     const isMobile = useCheckMobile()
@@ -166,7 +164,7 @@ export default function MainPage() {
                 openChat={openChat}
                 isMobile={isMobile}
                 deleteMessage={deleteMessage}
-                refresh={refresh}
+                refresh={refreshDialog}
             />
 
 

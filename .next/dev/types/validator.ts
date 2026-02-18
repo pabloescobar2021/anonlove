@@ -92,10 +92,19 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/api/mark-read/route.ts
+// Validate ../../../app/api/read-messages/mark-read/route.ts
 {
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/mark-read">> = Specific
-  const handler = {} as typeof import("../../../app/api/mark-read/route.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/read-messages/mark-read">> = Specific
+  const handler = {} as typeof import("../../../app/api/read-messages/mark-read/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/api/read-messages/read-all-messages/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/read-messages/read-all-messages">> = Specific
+  const handler = {} as typeof import("../../../app/api/read-messages/read-all-messages/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

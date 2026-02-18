@@ -12,12 +12,10 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "messageId required" }, { status: 400 });
         }
 
+
         const {data} = await supabaseAdmin.rpc('mark_message_as_read', {
             msg_id: messageId
         })
-       
-        console.log("✅ Message marked as read:", { messageId, data });
-
         
 
         return NextResponse.json({ ok: true, data });
