@@ -3640,7 +3640,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
         ...isMobile ? swipeProps : {},
         ref: divPassRef,
         className: `
-        absolute flex flex-col
+        absolute flex flex-col overflow-y-auto
         bg-black/40 backdrop-blur-xl
         transition-transform duration-200 ease-out
         will-change-transform

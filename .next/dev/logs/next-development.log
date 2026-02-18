@@ -2590,3 +2590,25 @@ Incoming: %s useEffect [[object Object], [object Object],[object Object]] [[obje
 [10:58:37.460] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
 [10:58:52.218] Browser LOG     🔌 Статус подписки: CLOSED 
 [10:58:52.515] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:00:21.244] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:00:21.244] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:00:59.462] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:00:59.729] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:01:10.505] Server  LOG      ✓ Compiled in 168ms
+[11:01:10.933] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:01:11.046] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:01:13.743] Browser ERROR   ⚠️ Realtime channel error: undefined
+[11:01:13.743] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[11:01:13.743] Browser ERROR   ⚠️ Ошибка канала: undefined
+[11:01:16.846] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:01:36.586] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T19:24:46.029Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T19:24:46.016056+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"4151adf0-7e16-45cf-b271-21a1e77c05e5","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[11:01:36.586] Browser LOG     New message received via realtime: {"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T19:24:46.016056+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"4151adf0-7e16-45cf-b271-21a1e77c05e5","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[11:01:37.762] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:01:37.762] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:01:45.503] Browser LOG     channel closed
+[11:01:46.566] Browser LOG     channel closed
+[11:01:51.403] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:01:51.403] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:01:51.403] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[11:02:34.294] Browser LOG     🔌 Статус подписки: CLOSED 
+[11:02:34.295] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
