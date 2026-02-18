@@ -186,7 +186,8 @@ export default function MainPage() {
 
     return (
         <div 
-            className="relative bg-black min-h-screen max-h-screen flex flex-col overflow-hidden "
+            className="relative bg-black flex flex-col overflow-hidden "
+            style={{ minHeight: '100dvh', maxHeight: '100dvh' }}
             >
             <ManagerChat 
                 userId={user?.id}

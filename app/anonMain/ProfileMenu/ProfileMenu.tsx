@@ -135,6 +135,7 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
         ${open ? "translate-x-0" : "-translate-x-full"}
         ${isMobile ? "inset-0" : "w-96 h-full rounded-r-2xl"}
       `}
+      
       onClick={(e) => e.stopPropagation()}
     >
       {/* HEADER */}
@@ -240,7 +241,12 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
           
 
       {/* FOOTER */}
-      <div className="mt-auto p-4 border-t border-white/10">
+      <div 
+        className="mt-auto p-4 border-t border-white/10"
+        style={{
+        paddingBottom: `calc(1rem + env(safe-area-inset-bottom))`
+        }}  
+      >
         <button
           onClick={onSignOut}
           className="

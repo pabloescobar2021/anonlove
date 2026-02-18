@@ -3350,7 +3350,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: profile?.public_id?.[0] ?? "?"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 144,
+                        lineNumber: 145,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3358,7 +3358,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: "Профиль"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 148,
+                        lineNumber: 149,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3369,13 +3369,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 152,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 141,
+                lineNumber: 142,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             !nameMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3390,7 +3390,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: "✈️"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 173,
+                                lineNumber: 174,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3401,7 +3401,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Привязать Telegram"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 179,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3409,13 +3409,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Для уведомлений и входа"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 182,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 177,
+                                lineNumber: 178,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3423,13 +3423,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: `>`
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 186,
+                                lineNumber: 187,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 162,
+                        lineNumber: 163,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : profile?.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10   ",
@@ -3439,7 +3439,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: "✓"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 196,
+                                lineNumber: 197,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3453,7 +3453,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 202,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3461,19 +3461,19 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Telegram привязан"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 204,
+                                        lineNumber: 205,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 200,
+                                lineNumber: 201,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 189,
+                        lineNumber: 190,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : null,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3486,18 +3486,18 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: item.t
                             }, i, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 213,
+                                lineNumber: 214,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 211,
+                        lineNumber: 212,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 159,
+                lineNumber: 160,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             nameMenuOpen === "personal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$menus$2f$PersonalMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PersonalMenu"], {
@@ -3505,30 +3505,33 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                 actions: personalActions
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 230,
+                lineNumber: 231,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             nameMenuOpen === "help" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$HelperMsg$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnonLoveGuide"], {
                 onClose: ()=>setNameMenuOpen(null)
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 238,
+                lineNumber: 239,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-auto p-4 border-t border-white/10",
+                style: {
+                    paddingBottom: `calc(1rem + env(safe-area-inset-bottom))`
+                },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     onClick: onSignOut,
                     className: "   w-full p-3 rounded-2xl   text-red-400 hover:bg-red-500/10   transition-colors   active:scale-[0.98]   ",
                     children: "Выйти"
                 }, void 0, false, {
                     fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                    lineNumber: 244,
+                    lineNumber: 250,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 243,
+                lineNumber: 244,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3548,24 +3551,24 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         d: "M2 30L30 2m0 28L2 2"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 269,
+                        lineNumber: 275,
                         columnNumber: 92
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                    lineNumber: 269,
+                    lineNumber: 275,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 258,
+                lineNumber: 264,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$components$2f$Notify$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Notify"], {
                 message: succesMessage
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 276,
+                lineNumber: 282,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -3794,7 +3797,11 @@ function MainPage() {
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "relative bg-black min-h-screen max-h-screen flex flex-col overflow-hidden ",
+        className: "relative bg-black flex flex-col overflow-hidden ",
+        style: {
+            minHeight: '100dvh',
+            maxHeight: '100dvh'
+        },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$Chat$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ManagerChat"], {
                 userId: user?.id,
@@ -3807,7 +3814,7 @@ function MainPage() {
                 refresh: refreshDialog
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 191,
+                lineNumber: 192,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$ProfileMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ProfilePanel"], {
@@ -3822,7 +3829,7 @@ function MainPage() {
                 refreshProfile: refreshProfile
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 205,
+                lineNumber: 206,
                 columnNumber: 13
             }, this)
         ]
