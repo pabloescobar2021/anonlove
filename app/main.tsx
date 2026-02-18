@@ -12,6 +12,7 @@ import { useCheckMobile } from "./things/hooks/checkMobile";
 import { ManagerChat } from "./anonMain/chat/Chat";
 import { ProfilePanel } from "./anonMain/ProfileMenu/ProfileMenu";
 import { useGetDialogs } from './things/hooks/dialog_messages/useGetDialogs';
+import { supabase } from '@/utils/supabase/alSupabase';
 
 
 
@@ -25,10 +26,12 @@ export default function MainPage() {
 
     const {dialogs: dialog, loading, refresh: refreshDialog } = useGetDialogs(user?.id || null)
 
-    const [openChat, setOpenChat] = useState(false);
     const isMobile = useCheckMobile()
-
+    
+    const [openChat, setOpenChat] = useState(false);
     const [openProfile, setOpenProfile] = useState(false); // profile слева
+
+    const globalChannelRef = useRef<any>(null)
 
 
     const styleToNotSwipe: React.CSSProperties = {
@@ -49,14 +52,6 @@ export default function MainPage() {
     }
     
 
-    // useEffect(() => {
-    //     if (!activeDialogId){
-    //         setActiveDialog(null)
-    //         return
-    //     }
-    //     const found = dialogs.find(d => d.userId === activeDialogId) || null
-    //     setActiveDialog(found)
-    // }, [dialogs, activeDialogId])
 
     // свайп для мобилки
     const chatSwipe = useSwipe({
@@ -97,6 +92,43 @@ export default function MainPage() {
     }, [isMobile])
 
     
+    // global realtime
+    useEffect(() => {
+        if(!user) return 
+
+        if(globalChannelRef.current) {
+            supabase.removeChannel(globalChannelRef.current)
+            globalChannelRef.current = null
+        }
+        globalChannelRef.current = supabase
+            .channel(`user-${user.id}-messages`)
+            .on(
+                "postgres_changes",
+                {
+                    event: "INSERT",
+                    schema: "public",
+                    table: "messages",
+                    filter: `to_user=eq.${user.id}`
+                },
+                payload => {
+                    const msg = payload.new as any
+                    console.log("New message received via realtime:", msg)
+                    refreshDialog()
+                }
+            )
+            .subscribe((status, err) => {
+                console.log("🔌 Статус подписки:", status, err || "")
+                if (status === "CHANNEL_ERROR") console.error("⚠️ Ошибка канала:", err)
+            })
+
+            return () => {
+                if (globalChannelRef.current) {
+                    supabase.removeChannel(globalChannelRef.current)
+                    globalChannelRef.current = null
+                }
+            }
+    },[user])
+
     
     const handleSignOut = async () => {
         await sighOut()

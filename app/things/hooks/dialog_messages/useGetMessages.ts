@@ -10,7 +10,7 @@ type CacheEntry = {
     hasMore: boolean
     scrollTop: number
 }
-const LIMIT = 10
+const LIMIT = 35
 
 export function useGetMessages(conversationId: string | null) {
 
@@ -165,50 +165,32 @@ export function useGetMessages(conversationId: string | null) {
     REALTIME
     ----------------------------------------
     */
-
     useEffect(() => {
-
         if (!conversationId) return
+        
 
-        if (channelRef.current)
+        if (channelRef.current) {
+            // console.log("Removing existing channel...")
             supabase.removeChannel(channelRef.current)
+            channelRef.current = null
+        }
+        // console.log("📡 Setting up realtime for conversation:", conversationId)
 
-        channelRef.current =
-            supabase
-                .channel("messages-" + conversationId)
+        channelRef.current = supabase
+                .channel(`messages-${conversationId}`)
                 .on(
                     "postgres_changes",
                     {
                         event: "INSERT",
                         schema: "public",
                         table: "messages",
-                        filter:
-                            `conversation_id=eq.${conversationId}`
+                        filter: `conversation_id=eq.${conversationId}`
                     },
                     payload => {
-
-                        const newMsg =
-                            payload.new as UiMessage
-
-                        setMessages(prev => {
-
-                            if (prev.find(m => m.id === newMsg.id))
-                                return prev
-
-                            const updated = [...prev, newMsg]
-
-                            const cache =
-                                cacheRef.current.get(conversationId)
-
-                            if (cache)
-                                cache.messages = updated
-
-                            return updated
-
-                        })
+                        console.log("📩 New message received:", payload)
+                        loadMessages()
 
                         const container = containerRef.current
-
                         if (!container) return
 
                         const isAtBottom =
@@ -217,23 +199,32 @@ export function useGetMessages(conversationId: string | null) {
                             container.clientHeight
                             < 200
 
-                        if (isAtBottom)
+                        if (isAtBottom) {
                             requestAnimationFrame(() =>
-                                container.scrollTop =
-                                container.scrollHeight
+                                container.scrollTop = container.scrollHeight
                             )
+                        }
 
                     }
                 )
-                .subscribe()
+                .on("system", {}, payload => {
+                    // console.log("⚙️ Realtime system event:", payload)
+                })
+                .subscribe((status, err) => {
+                    // console.log("🔌 Realtime subscription status:", status, err || "")
+
+                    if (status === "CHANNEL_ERROR") console.error("⚠️ Realtime channel error:", err)
+                    if(status === "TIMED_OUT") console.error("⚠️ channel timed out:", err)
+                    if (status === "CLOSED") console.log('channel closed')
+                })
 
         return () => {
 
-            if (channelRef.current)
+            if (channelRef.current){
                 supabase.removeChannel(channelRef.current)
-
+                channelRef.current = null
+            }
         }
-
     }, [conversationId])
 
     return {

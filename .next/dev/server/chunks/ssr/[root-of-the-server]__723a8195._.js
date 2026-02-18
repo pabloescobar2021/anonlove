@@ -1982,7 +1982,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupab
 "use client";
 ;
 ;
-const LIMIT = 10;
+const LIMIT = 35;
 function useGetMessages(conversationId) {
     const [messages, setMessages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [hasMore, setHasMore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
@@ -2113,31 +2113,39 @@ function useGetMessages(conversationId) {
     ----------------------------------------
     */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!conversationId) return;
-        if (channelRef.current) __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(channelRef.current);
-        channelRef.current = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].channel("messages-" + conversationId).on("postgres_changes", {
+        if (channelRef.current) {
+            // console.log("Removing existing channel...")
+            __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(channelRef.current);
+            channelRef.current = null;
+        }
+        // console.log("📡 Setting up realtime for conversation:", conversationId)
+        channelRef.current = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].channel(`messages-${conversationId}`).on("postgres_changes", {
             event: "INSERT",
             schema: "public",
             table: "messages",
             filter: `conversation_id=eq.${conversationId}`
         }, (payload)=>{
-            const newMsg = payload.new;
-            setMessages((prev)=>{
-                if (prev.find((m)=>m.id === newMsg.id)) return prev;
-                const updated = [
-                    ...prev,
-                    newMsg
-                ];
-                const cache = cacheRef.current.get(conversationId);
-                if (cache) cache.messages = updated;
-                return updated;
-            });
+            console.log("📩 New message received:", payload);
+            loadMessages();
             const container = containerRef.current;
             if (!container) return;
             const isAtBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 200;
-            if (isAtBottom) requestAnimationFrame(()=>container.scrollTop = container.scrollHeight);
-        }).subscribe();
+            if (isAtBottom) {
+                requestAnimationFrame(()=>container.scrollTop = container.scrollHeight);
+            }
+        }).on("system", {}, (payload)=>{
+        // console.log("⚙️ Realtime system event:", payload)
+        }).subscribe((status, err)=>{
+            // console.log("🔌 Realtime subscription status:", status, err || "")
+            if (status === "CHANNEL_ERROR") console.error("⚠️ Realtime channel error:", err);
+            if (status === "TIMED_OUT") console.error("⚠️ channel timed out:", err);
+            if (status === "CLOSED") console.log('channel closed');
+        });
         return ()=>{
-            if (channelRef.current) __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(channelRef.current);
+            if (channelRef.current) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(channelRef.current);
+                channelRef.current = null;
+            }
         };
     }, [
         conversationId
@@ -3242,6 +3250,9 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useClickOutside$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useClickOutside"])(divPassRef, ()=>{
         setIsChangePassword(false);
     });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useClickOutside$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useClickOutside"])(divPassRef, ()=>{
+        onClose();
+    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (profile) {
             setLogin(profile.username);
@@ -3339,7 +3350,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: profile?.public_id?.[0] ?? "?"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 141,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3347,7 +3358,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         children: "Профиль"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 145,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3358,13 +3369,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 149,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 138,
+                lineNumber: 141,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             !nameMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3379,7 +3390,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: "✈️"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 170,
+                                lineNumber: 173,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3390,7 +3401,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Привязать Telegram"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 175,
+                                        lineNumber: 178,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3398,13 +3409,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Для уведомлений и входа"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 178,
+                                        lineNumber: 181,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 174,
+                                lineNumber: 177,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3412,13 +3423,13 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: `>`
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 183,
+                                lineNumber: 186,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 159,
+                        lineNumber: 162,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : profile?.telegram_username ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "   flex items-center gap-3   p-3 rounded-2xl   bg-white/10   ",
@@ -3428,7 +3439,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: "✓"
                             }, void 0, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 193,
+                                lineNumber: 196,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3442,7 +3453,7 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 198,
+                                        lineNumber: 201,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3450,19 +3461,19 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                         children: "Telegram привязан"
                                     }, void 0, false, {
                                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 204,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 197,
+                                lineNumber: 200,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 186,
+                        lineNumber: 189,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)) : null,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3475,18 +3486,18 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                                 children: item.t
                             }, i, false, {
                                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                                lineNumber: 210,
+                                lineNumber: 213,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 208,
+                        lineNumber: 211,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 156,
+                lineNumber: 159,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             nameMenuOpen === "personal" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$menus$2f$PersonalMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PersonalMenu"], {
@@ -3494,14 +3505,14 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                 actions: personalActions
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 227,
+                lineNumber: 230,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             nameMenuOpen === "help" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$HelperMsg$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnonLoveGuide"], {
                 onClose: ()=>setNameMenuOpen(null)
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 235,
+                lineNumber: 238,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3512,12 +3523,12 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                     children: "Выйти"
                 }, void 0, false, {
                     fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                    lineNumber: 241,
+                    lineNumber: 244,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 240,
+                lineNumber: 243,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3537,30 +3548,30 @@ const ProfilePanel = ({ open, isMobile = false, swipeProps, profile, user, onClo
                         d: "M2 30L30 2m0 28L2 2"
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                        lineNumber: 266,
+                        lineNumber: 269,
                         columnNumber: 92
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                    lineNumber: 266,
+                    lineNumber: 269,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 255,
+                lineNumber: 258,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$components$2f$Notify$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Notify"], {
                 message: succesMessage
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-                lineNumber: 273,
+                lineNumber: 276,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx",
-        lineNumber: 124,
+        lineNumber: 127,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3626,7 +3637,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$ch
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$Chat$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/chat/Chat.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$ProfileMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/ProfileMenu/ProfileMenu.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$dialog_messages$2f$useGetDialogs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/things/hooks/dialog_messages/useGetDialogs.ts [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/utils/supabase/alSupabase.ts [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -3645,9 +3658,10 @@ function MainPage() {
     const { user, profile, loading: authLoading, refreshProfile } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useAuth$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useAuth"])();
     const { inbox, sent, sendMessage: send, loading: messageLoading, refresh, deleteMessage } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useMessages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMessages"])(user?.id || null);
     const { dialogs: dialog, loading, refresh: refreshDialog } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$dialog_messages$2f$useGetDialogs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useGetDialogs"])(user?.id || null);
-    const [openChat, setOpenChat] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const isMobile = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$checkMobile$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCheckMobile"])();
+    const [openChat, setOpenChat] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [openProfile, setOpenProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false); // profile слева
+    const globalChannelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const styleToNotSwipe = {
         overscrollBehavior: 'contain',
         touchAction: 'pan-y'
@@ -3662,14 +3676,6 @@ function MainPage() {
         const { url } = await res.json();
         window.location.href = url;
     };
-    // useEffect(() => {
-    //     if (!activeDialogId){
-    //         setActiveDialog(null)
-    //         return
-    //     }
-    //     const found = dialogs.find(d => d.userId === activeDialogId) || null
-    //     setActiveDialog(found)
-    // }, [dialogs, activeDialogId])
     // свайп для мобилки
     const chatSwipe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSwipe"])({
         onSwipeRight: ()=>{
@@ -3702,6 +3708,35 @@ function MainPage() {
         }
     }, [
         isMobile
+    ]);
+    // global realtime
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!user) return;
+        if (globalChannelRef.current) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(globalChannelRef.current);
+            globalChannelRef.current = null;
+        }
+        globalChannelRef.current = __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].channel(`user-${user.id}-messages`).on("postgres_changes", {
+            event: "INSERT",
+            schema: "public",
+            table: "messages",
+            filter: `to_user=eq.${user.id}`
+        }, (payload)=>{
+            const msg = payload.new;
+            console.log("New message received via realtime:", msg);
+            refreshDialog();
+        }).subscribe((status, err)=>{
+            console.log("🔌 Статус подписки:", status, err || "");
+            if (status === "CHANNEL_ERROR") console.error("⚠️ Ошибка канала:", err);
+        });
+        return ()=>{
+            if (globalChannelRef.current) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].removeChannel(globalChannelRef.current);
+                globalChannelRef.current = null;
+            }
+        };
+    }, [
+        user
     ]);
     const handleSignOut = async ()=>{
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$utils$2f$auth$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["sighOut"])();
@@ -3749,12 +3784,12 @@ function MainPage() {
                 children: "ЗагруОчка..."
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 149,
+                lineNumber: 181,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/main.tsx",
-            lineNumber: 148,
+            lineNumber: 180,
             columnNumber: 13
         }, this);
     }
@@ -3772,7 +3807,7 @@ function MainPage() {
                 refresh: refreshDialog
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 159,
+                lineNumber: 191,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$ProfileMenu$2f$ProfileMenu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ProfilePanel"], {
@@ -3787,13 +3822,13 @@ function MainPage() {
                 refreshProfile: refreshProfile
             }, void 0, false, {
                 fileName: "[project]/app/main.tsx",
-                lineNumber: 173,
+                lineNumber: 205,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/main.tsx",
-        lineNumber: 156,
+        lineNumber: 188,
         columnNumber: 9
     }, this);
 }

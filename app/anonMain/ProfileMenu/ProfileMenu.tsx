@@ -50,6 +50,9 @@ export const ProfilePanel: React.FC<ProfilePanelProps> = ({
   useClickOutside(divPassRef, () => {
     setIsChangePassword(false)
   })
+  useClickOutside(divPassRef, () => {
+    onClose()
+  })
 
   useEffect(() => {
     if(profile){

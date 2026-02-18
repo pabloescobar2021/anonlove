@@ -1,4 +1,7 @@
 {
+  "/api/read-messages/mark-read/route": "app/api/read-messages/mark-read/route.js",
   "/api/read-messages/read-all-messages/route": "app/api/read-messages/read-all-messages/route.js",
+  "/api/telegram/sendNotifyTg/route": "app/api/telegram/sendNotifyTg/route.js",
+  "/createcard/page": "app/createcard/page.js",
   "/page": "app/page.js"
 }

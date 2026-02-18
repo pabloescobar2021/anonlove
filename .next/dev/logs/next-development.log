@@ -2107,3 +2107,253 @@ Incoming: %s useLayoutEffect [[object Object],[object Object],[object Object],[o
 [08:05:41.007] Server  LOG      ✓ Compiled in 170ms
 [08:07:24.651] Server  LOG      ✓ Compiled in 572ms
 [08:07:35.716] Server  LOG      ✓ Compiled in 173ms
+[08:09:24.867] Browser LOG     Query result messages.ts: {"data":{"body":[],"created_at":"2026-02-18T08:05:54.171995+00:00","from_display_id":"#MYVJ9N","from_display_name":"bigbobchel","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"1d17867c-3b78-485b-bb38-2e99fbc60940","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_display_id":"#44TZUD","to_display_name":"zalupa","to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04","to_user_rating":1},"error":null}
+[08:09:46.382] Server  LOG      ✓ Compiled in 122ms
+[08:15:27.612] Server  LOG      ✓ Compiled in 702ms
+[08:46:42.663] Server  LOG      ✓ Compiled in 539ms
+[08:46:51.081] Server  LOG      ✓ Compiled in 269ms
+[08:47:14.371] Server  LOG      ✓ Compiled in 115ms
+[08:47:34.952] Server  LOG      ✓ Compiled in 195ms
+[08:47:51.290] Server  LOG      ✓ Compiled in 159ms
+[08:48:15.152] Server  LOG      ✓ Compiled in 653ms
+[08:48:41.114] Server  LOG      ✓ Compiled in 164ms
+[08:49:18.909] Server  LOG      ✓ Compiled in 405ms
+[08:50:56.871] Server  LOG      ✓ Compiled in 188ms
+[08:51:04.644] Server  LOG      ✓ Compiled in 174ms
+[08:51:46.821] Server  LOG      ✓ Compiled in 161ms
+[08:52:00.230] Server  LOG      ✓ Compiled in 183ms
+[08:52:22.630] Server  LOG      ✓ Compiled in 153ms
+[08:53:49.635] Server  LOG      ✓ Compiled in 140ms
+[08:53:59.227] Server  LOG      ✓ Compiled in 138ms
+[08:55:06.664] Server  LOG      ✓ Compiled in 155ms
+[08:55:44.218] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[08:55:44.532] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[08:55:44.645] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[08:56:02.590] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:19:11.900Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:19:11.897385+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"0eff7530-dab6-4ce9-a63b-049b5ba806ca","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[08:56:02.590] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[08:56:02.590] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[08:56:02.590] Browser LOG     channel closed
+[09:00:18.241] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:00:18.572] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:00:18.737] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:01:31.534] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:24:40.189Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:24:40.18445+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"fdb80547-7bd4-484e-86da-371e4be5a92d","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:01:31.534] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'charAt')
+[09:01:31.534] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:01:31.534] Browser LOG     channel closed
+[09:30:57.208] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[09:30:57.267] Server  LOG      ✓ Compiled in 574ms
+[09:31:10.379] Server  LOG      ✓ Compiled in 874ms
+[09:31:22.259] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:31:23.875] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:31:26.776] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:31:43.598] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:54:52.879Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:54:52.875307+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"afee55f5-9f5c-461e-b5e7-43ac10f0b4aa","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:33:01.753] Server  LOG      ✓ Compiled in 444ms
+[09:33:05.964] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:33:05.964] Browser LOG     channel closed
+[09:33:14.090] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:33:14.394] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:33:14.573] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:33:32.592] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:56:41.812Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:56:41.80586+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"1329c99b-bfe0-4411-90ea-f2ec07082a8e","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:34:26.598] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:57:35.049Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:57:35.044323+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"205292d6-645e-4801-a90e-309d8099ab65","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:34:48.920] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:34:49.636] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:34:49.637] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:35:09.591] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:58:18.733Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:58:18.731546+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"ffc984fd-8978-4092-b7f9-9848c5024387","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:35:44.236] Browser ERROR   {}
+[09:36:31.770] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:36:32.128] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:36:32.332] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:36:44.589] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T17:59:53.517Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T17:59:53.514303+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"a1a57e9c-ef49-4095-8b22-98635c503036","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:37:13.946] Server  LOG      ✓ Compiled in 713ms
+[09:37:51.877] Server  LOG      ✓ Compiled in 243ms
+[09:38:00.137] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:38:00.431] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:38:00.607] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:38:13.600] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T18:01:21.888Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:01:21.884765+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"4cdb077d-1cd8-4f92-a7ce-34442dbf08a8","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:38:53.597] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T18:02:02.674Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:02:02.671082+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"ea4cdb54-295d-4f83-b5c5-912608bd00bf","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:39:28.589] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T18:02:38.019Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:02:38.01755+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"ffc486ce-ce95-43d5-ac1f-9838dc0d6d42","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:40:16.726] Server  LOG      ✓ Compiled in 406ms
+[09:40:25.566] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:40:26.893] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:40:27.082] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:41:02.588] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T18:04:11.626Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:04:11.620126+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"f256f255-8d34-4867-a74a-03f51f282ebb","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:46:27.597] Browser LOG     🔌 Realtime subscription status: CHANNEL_ERROR 
+[09:46:27.597] Browser ERROR   ⚠️ Realtime channel error: undefined
+[09:46:31.586] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:46:31.586] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:48:09.874] Server  LOG      ✓ Compiled in 172ms
+[09:48:24.186] Server  LOG      ✓ Compiled in 236ms
+[09:48:29.263] Server  LOG      ✓ Compiled in 184ms
+[09:48:36.057] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:48:36.362] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:48:36.598] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:48:47.595] Browser LOG     📩 New message received: {"commit_timestamp":"2026-02-18T18:11:56.301Z","errors":null,"eventType":"INSERT","new":{"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:11:56.297989+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"90696054-d2bb-459b-b0c9-843006f11d8a","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"},"old":{},"schema":"public","table":"messages"}
+[09:48:53.758] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:48:53.758] Browser LOG     channel closed
+[09:48:53.758] Browser LOG     📡 Setting up realtime for conversation: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[09:48:53.911] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:48:54.013] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-4f0d46cd-9f6a-4f21-8b22-035d380e8f67","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:49:05.441] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:49:05.441] Browser LOG     channel closed
+[09:49:05.441] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:49:05.556] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:49:05.750] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:49:13.123] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:49:13.123] Browser LOG     channel closed
+[09:49:13.123] Browser LOG     📡 Setting up realtime for conversation: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[09:49:13.397] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:49:13.397] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-4f0d46cd-9f6a-4f21-8b22-035d380e8f67","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:50:23.391] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:50:23.391] Browser LOG     channel closed
+[09:50:23.391] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:50:23.512] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:50:23.671] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:50:26.136] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:50:26.136] Browser LOG     channel closed
+[09:50:26.136] Browser LOG     📡 Setting up realtime for conversation: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[09:50:26.388] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:50:26.388] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-4f0d46cd-9f6a-4f21-8b22-035d380e8f67","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:50:27.289] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:50:27.289] Browser LOG     channel closed
+[09:50:27.289] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:50:27.677] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:50:27.677] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:50:35.856] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:50:35.856] Browser LOG     channel closed
+[09:50:35.856] Browser LOG     📡 Setting up realtime for conversation: 4f0d46cd-9f6a-4f21-8b22-035d380e8f67
+[09:50:36.104] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:50:36.104] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-4f0d46cd-9f6a-4f21-8b22-035d380e8f67","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:50:37.654] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:50:37.654] Browser LOG     channel closed
+[09:50:37.654] Browser LOG     📡 Setting up realtime for conversation: 508a31cd-d2aa-4b79-8f13-a2d490f8ff80
+[09:50:37.654] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:50:37.654] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:51:18.739] Server  LOG      ✓ Compiled in 170ms
+[09:51:25.837] Server  LOG      ✓ Compiled in 144ms
+[09:52:05.412] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:52:05.412] Browser LOG     channel closed
+[09:52:06.269] Browser LOG     🔌 Realtime subscription status: CHANNEL_ERROR 
+[09:52:06.269] Browser ERROR   ⚠️ Realtime channel error: undefined
+[09:52:06.645] Browser LOG     🔌 Realtime subscription status: CLOSED 
+[09:52:06.645] Browser LOG     channel closed
+[09:52:08.183] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:52:08.294] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:52:14.227] Browser LOG     🔌 Realtime subscription status: SUBSCRIBED 
+[09:52:14.388] Browser LOG     ⚙️ Realtime system event: {"channel":"messages-508a31cd-d2aa-4b79-8f13-a2d490f8ff80","extension":"postgres_changes","message":"Subscribed to PostgreSQL","status":"ok"}
+[09:52:29.141] Server  LOG      ✓ Compiled in 309ms
+[09:56:45.598] Browser ERROR   ⚠️ Realtime channel error: undefined
+[09:58:37.635] Server  LOG      ✓ Compiled in 199ms
+[10:00:10.020] Server  LOG      ✓ Compiled in 187ms
+[10:00:27.256] Server  LOG      ✓ Compiled in 138ms
+[10:00:27.596] Browser LOG     channel closed
+[10:00:55.224] Server  LOG      ✓ Compiled in 137ms
+[10:01:32.818] Server  LOG      ✓ Compiled in 206ms
+[10:02:15.078] Server  LOG      ✓ Compiled in 157ms
+[10:02:15.588] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:03:11.035] Server  LOG      ✓ Compiled in 315ms
+[10:03:11.091] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:03:13.019] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:03:14.592] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:03:25.259] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:03:25.283] Server  LOG      ✓ Compiled in 140ms
+[10:03:26.595] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:03:48.839] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:03:48.864] Server  LOG      ✓ Compiled in 137ms
+[10:03:50.589] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:04:12.861] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:04:12.881] Server  LOG      ✓ Compiled in 121ms
+[10:04:14.590] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:05:41.899] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:05:41.905] Server  LOG      ✓ Compiled in 225ms
+[10:05:43.601] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:07:23.194] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:07:23.672] Server  LOG      ✓ Compiled in 136ms
+[10:07:24.599] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:08:28.044] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:08:28.073] Server  LOG      ✓ Compiled in 120ms
+[10:08:31.082] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:09:08.833] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:08.859] Server  LOG      ✓ Compiled in 155ms
+[10:09:12.594] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:09:23.796] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:24.357] Server  LOG      ✓ Compiled in 126ms
+[10:09:25.452] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:09:39.551] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:39.565] Server  LOG      ✓ Compiled in 145ms
+[10:09:41.195] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'id')
+[10:09:52.797] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:52.820] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[10:09:53.373] Server  LOG      ✓ Compiled in 242ms
+[10:10:26.119] Server  LOG      ✓ Compiled in 169ms
+[10:10:47.680] Server  LOG      ✓ Compiled in 162ms
+[10:15:22.810] Server  LOG      ✓ Compiled in 155ms
+[10:15:32.911] Server  LOG      ✓ Compiled in 163ms
+[10:15:33.596] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [] [[object Object], [object Object],[object Object]]
+[10:15:35.163] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:15:37.208] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:37.208] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:37.473] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:37.729] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:15:41.994] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:41.995] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:42.190] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:42.360] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:15:54.261] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:54.262] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:15:57.311] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:57.312] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:15:59.027] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:15:59.217] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:16:21.587] Browser LOG     New message received via realtime: {"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:39:30.247485+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"066390c9-79f5-4483-b55d-fddf2e9da426","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[10:16:22.145] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:16:22.145] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:15.611] Server  LOG      ✓ Compiled in 178ms
+[10:17:16.182] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:16.182] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:17.954] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:17.954] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:18.125] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:18.826] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:18.826] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:22.209] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:22.209] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:25.143] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:25.143] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:25.143] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:25.143] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:25.143] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:34.605] Browser LOG     New message received via realtime: {"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:40:43.542125+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"1a1666cf-8a9c-4006-8ebc-50bdf1384dfc","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[10:17:34.605] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:34.605] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:36.122] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:36.122] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:46.054] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:17:46.054] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:17:59.709] Browser LOG     channel closed
+[10:18:00.674] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:18:01.025] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:18:25.120] Server  LOG      ✓ Compiled in 146ms
+[10:18:25.494] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [[object Object], [object Object],[object Object]] [[object Object]]
+[10:18:25.639] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:18:26.085] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:18:28.479] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:18:28.480] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:18:28.678] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:20:06.046] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:20:06.046] Browser LOG     channel closed
+[10:20:59.034] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:20:59.034] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:20:59.231] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:21:11.321] Browser LOG     New message received via realtime: {"body":[],"conversation_id":"508a31cd-d2aa-4b79-8f13-a2d490f8ff80","created_at":"2026-02-18T18:44:20.943753+00:00","from_user":"95e76a7f-fb29-4942-905e-2a2c4b4cbe9e","id":"06ed67ab-8555-4c00-b53a-281cf4fbc14a","is_anon":false,"is_checked":false,"is_visible_for_receiver":true,"is_visible_to_sender":true,"to_user":"2f3d4510-709d-41f7-bace-c58f47b10c04"}
+[10:21:31.265] Browser LOG     channel closed
+[10:21:32.505] Browser LOG     channel closed
+[10:21:36.139] Browser LOG     channel closed
+[10:21:37.417] Browser LOG     channel closed
+[10:21:38.667] Browser LOG     channel closed
+[10:21:39.705] Browser LOG     channel closed
