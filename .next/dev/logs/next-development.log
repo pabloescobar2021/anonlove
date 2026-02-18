@@ -2534,3 +2534,59 @@ Incoming: %s useEffect [[object Object], [object Object],[object Object]] [[obje
 [10:49:16.425] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
 [10:49:21.643] Browser LOG     channel closed
 [10:49:22.987] Browser LOG     channel closed
+[10:51:37.596] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:51:37.596] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:51:37.597] Browser ERROR   ⚠️ Realtime channel error: undefined
+[10:51:42.598] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:52:43.596] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:52:43.596] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:52:43.596] Browser ERROR   ⚠️ Realtime channel error: undefined
+[10:52:53.283] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:53:15.708] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:53:15.708] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:53:15.708] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:53:15.708] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:53:20.965] Browser LOG     🔌 Статус подписки: TIMED_OUT 
+[10:53:23.592] Browser ERROR   {}
+[10:53:23.592] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:53:26.902] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:53:28.716] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10765:23\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10785:16\n    at async getDialog (http://localhost:3000/_next/static/chunks/_16680bc6._.js:3921:33)","hint":"","message":"TypeError: Failed to fetch"}
+[10:53:28.716] Browser ERROR   Error loading messages: {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10765:23\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10785:16\n    at async getInboxMessages (http://localhost:3000/_next/static/chunks/_16680bc6._.js:144:29)\n    at async Promise.all (index 0)\n    at async loadMessage (http://localhost:3000/_next/static/chunks/_16680bc6._.js:270:43)","hint":"","message":"TypeError: Failed to fetch"}
+[10:53:28.716] Browser ERROR   {"code":"","details":"TypeError: Failed to fetch\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10765:23\n    at http://localhost:3000/_next/static/chunks/node_modules_9ff038f9._.js:10785:16\n    at async getDialog (http://localhost:3000/_next/static/chunks/_16680bc6._.js:3921:33)","hint":"","message":"TypeError: Failed to fetch"}
+[10:53:28.716] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:53:28.716] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:53:28.716] Browser LOG     🔌 Статус подписки: CHANNEL_ERROR 
+[10:53:28.716] Browser ERROR   ⚠️ Ошибка канала: undefined
+[10:53:30.214] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:53:33.096] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:53:33.096] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:53:33.267] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:55:52.302] Server  LOG      ✓ Compiled in 523ms
+[10:55:53.801] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:55:53.801] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:55:57.066] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:55:57.066] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:55:57.066] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:56:07.427] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:56:07.427] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:56:07.628] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:57:02.858] Server  LOG      ✓ Compiled in 424ms
+[10:57:03.595] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:57:03.775] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:57:05.014] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:57:05.014] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:57:05.195] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:57:19.884] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:57:19.884] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:57:47.777] Server  LOG      ✓ Compiled in 145ms
+[10:58:05.662] Server  LOG      ✓ Compiled in 714ms
+[10:58:12.246] Server  LOG      ✓ Compiled in 189ms
+[10:58:13.442] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:58:13.442] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:58:15.698] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:58:15.698] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:58:16.060] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:58:37.313] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:58:37.460] Browser LOG     🔌 Статус подписки: SUBSCRIBED 
+[10:58:52.218] Browser LOG     🔌 Статус подписки: CLOSED 
+[10:58:52.515] Browser LOG     🔌 Статус подписки: SUBSCRIBED 

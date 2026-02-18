@@ -293,7 +293,7 @@ export function ManagerChat(props: Props) {
             <div
                 ref={containerRef} 
                 onScroll={handleScroll}
-                className={`overflow-y-auto bg-[#0e0406]
+                className={`overflow-y-auto flex-1 bg-[#0e0406]
                     ${isMobile
                         ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform 
                         ${openChat ? "translate-x-0" : "translate-x-full"}`
@@ -378,9 +378,7 @@ export function ManagerChat(props: Props) {
 
                 {/* Список сообщений */}
                 <div 
-                    ref={containerRef} 
-                    onScroll={handleScroll} 
-                    className="relative p-2 space-y-2 h-screen "
+                    className="relative flex flex-col p-2 space-y-2 "
                 >
                     {/* Индикатор загрузки */}
                     {loading && !messages.length && (
