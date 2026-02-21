@@ -1993,15 +1993,29 @@ function useGetMessages(conversationId) {
     const cacheRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(new Map());
     const cursorRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const channelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const scrollStateRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({
+        height: 0,
+        top: 0,
+        isLoading: false
+    });
+    const lastLoadTimeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(0);
+    const LOAD_THROTTLE = 300;
+    const loaderRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     // Загружает сообщения с сервера, поддерживает пагинацию (курсор), кэширует результаты
     const loadMessages = async (cursor)=>{
         if (!conversationId || loading) return;
         if (cursor && !hasMore) return;
         setLoading(true);
         if (cursor) setLoadingMore(true);
+        // ✅ Сохраняем текущее состояние скролла ДО загрузки
         const container = containerRef.current;
-        const prevScrollHeight = container?.scrollHeight || 0;
-        const prevScrollTop = container?.scrollTop || 0;
+        if (container && cursor) {
+            scrollStateRef.current = {
+                height: container.scrollHeight,
+                top: container.scrollTop,
+                isLoading: true
+            };
+        }
         try {
             const { data, error } = await __TURBOPACK__imported__module__$5b$project$5d2f$utils$2f$supabase$2f$alSupabase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["supabase"].rpc("get_conversation_messages", {
                 p_conversation_id: conversationId,
@@ -2016,9 +2030,11 @@ function useGetMessages(conversationId) {
                 if (cache) cache.hasMore = false;
                 return;
             }
+            if (newMessages.length < LIMIT) {
+                setHasMore(false);
+            }
             const nextCursor = newMessages[newMessages.length - 1].id;
             cursorRef.current = nextCursor;
-            setHasMore(true);
             const reversed = [
                 ...newMessages
             ].reverse();
@@ -2027,11 +2043,6 @@ function useGetMessages(conversationId) {
                     ...reversed,
                     ...prev
                 ] : reversed;
-                requestAnimationFrame(()=>{
-                    if (container) {
-                        container.scrollTop = container.scrollHeight - prevScrollHeight;
-                    }
-                });
                 cacheRef.current.set(conversationId, {
                     messages: merged,
                     cursorId: nextCursor,
@@ -2047,6 +2058,21 @@ function useGetMessages(conversationId) {
             setLoadingMore(false);
         }
     };
+    // ✅ КРИТИЧЕСКИЙ useLayoutEffect: Корректируем скролл СРАЗУ после рендера
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useLayoutEffect"])(()=>{
+        const container = containerRef.current;
+        if (!container) return;
+        const scrollState = scrollStateRef.current;
+        if (scrollState.isLoading) {
+            const newHeight = container.scrollHeight;
+            const oldHeight = scrollState.height;
+            const heightDiff = newHeight - oldHeight;
+            container.scrollTop = scrollState.top + heightDiff;
+            scrollStateRef.current.isLoading = false;
+        }
+    }, [
+        messages
+    ]);
     // При первой загрузке прокручивает контейнер в самый низ
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useLayoutEffect"])(()=>{
         if (!isInitialLoad.current) return;
@@ -2069,24 +2095,34 @@ function useGetMessages(conversationId) {
                 cache.scrollTop = container.scrollTop;
             }
         }
-        if (loadingMore && container.scrollTop < 5) {
-            container.scrollTop = 5;
-            return;
-        }
-        if (container.scrollTop < 20 && hasMore && !loading && !loadingMore) {
-            console.log("Loading more messages...");
-            loadMessages(cursorRef.current);
+        const now = Date.now();
+        if (now - lastLoadTimeRef.current < LOAD_THROTTLE) return;
+        if (container.scrollTop < 150 && hasMore && !loading) {
+            lastLoadTimeRef.current = now;
+        // loadMessages(cursorRef.current)
         }
     }, [
         hasMore,
         loading,
-        conversationId,
-        loadingMore
+        conversationId
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        console.log(messages.length);
+        if (!loaderRef.current || !hasMore || loading) return;
+        const observer = new IntersectionObserver((entries)=>{
+            if (entries[0].isIntersecting && !loading) {
+                loadMessages(cursorRef.current);
+            }
+        }, {
+            root: containerRef.current,
+            rootMargin: "50px",
+            threshold: 0
+        });
+        observer.observe(loaderRef.current);
+        return ()=>observer.disconnect();
     }, [
-        messages.length
+        hasMore,
+        loading,
+        conversationId
     ]);
     // Сохраняет позицию прокрутки в кэш перед выходом из диалога
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -2176,754 +2212,16 @@ function useGetMessages(conversationId) {
         hasMore,
         refreshMessages: loadMessages,
         containerRef,
-        handleScroll
+        handleScroll,
+        loaderRef
     };
 }
 }),
-"[project]/app/anonMain/chat/Chat.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
+"[project]/app/anonMain/chat/Chat.tsx [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
-__turbopack_context__.s([
-    "ManagerChat",
-    ()=>ManagerChat
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$utils$2f$parseDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/things/utils/parseDate.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$ReadIndicator$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/createcard/components/ReadIndicator.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/contextMenu/messagePanel.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$AnimatedButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/AnimatedButton.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$useDeleteMessage$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/useDeleteMessage.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/things/hooks/useSwipe.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$DialogResizehandler$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/DialogResizehandler.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$useShatterMessage$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/useShatterMessage.ts [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/modal/modalProfile.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$HelperMsg$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/anonMain/chat/HelperMsg.tsx [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$dialog_messages$2f$useGetMessages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/things/hooks/dialog_messages/useGetMessages.ts [app-ssr] (ecmascript)");
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-;
-function ManagerChat(props) {
-    const { userId, dialog, setOpenProfile, setOpenChat, openChat, isMobile, deleteMessage, refresh } = props;
-    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [activeChatUserId, setActiveChatUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [activeDialogId, setActiveDialogId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [activeDialog, setActiveDialog] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [openModalProfile, setOpenModalProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null); // state модалка профиля
-    const [action, setAction] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [isChoose, setIsChoose] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [choosenMsg, setChoosenMsg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [selectTouched, setSelectTouched] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const wrapperRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({});
-    const bubbleRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({});
-    const { messages, setMessages, loading, loadingMore, hasMore, refreshMessages, containerRef, handleScroll } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$dialog_messages$2f$useGetMessages$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useGetMessages"])(activeDialogId);
-    const { canvasRef, shatterMessages } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$useShatterMessage$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useShatterMessage"])({});
-    let timer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const dialogPanelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null); // dialogResizeHandler (только для desktop)
-    const bottomRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null) // для скролла к последнему сообщению
-    ;
-    const closeMenu = ()=>{
-        setAction(null);
-        setSelectTouched(null);
-    };
-    const cancelTouch = ()=>{
-        clearInterval(timer.current);
-        setSelectTouched(null);
-    };
-    // синхронизация activeDialog с dialogs
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (!activeDialogId) {
-            setActiveDialog(null);
-            return;
-        }
-        const found = dialog.find((d)=>d.conversation_id === activeDialogId) || null;
-        setActiveDialog(found);
-    }, [
-        dialog,
-        activeDialogId
-    ]);
-    const { hideMessage, deletingMsg } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$useDeleteMessage$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useDeleteMessage"])({
-        setAction,
-        setMessages,
-        bubbleRef: bubbleRef,
-        wrapperRef: wrapperRef,
-        shatterMessages
-    });
-    const readMessages = async (dialog)=>{
-        try {
-            const response = await fetch("/api/read-messages/read-all-messages", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    conversation_id: dialog.conversation_id,
-                    user_id: userId
-                }),
-                credentials: 'include' // Важно для авторизации
-            });
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Failed to mark messages as read");
-            }
-            refresh();
-        } catch (err) {
-            console.error("❌ fetch error:", err);
-        }
-    };
-    // swipe handlers для mobile
-    const profileSwipe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSwipe"])({
-        onSwipeLeft: ()=>{
-            if (!isMobile) return;
-            setOpenProfile(false);
-        },
-        onSwipeRight: ()=>{
-            if (!isMobile) return;
-            setOpenProfile(true);
-        }
-    });
-    const chatSwipe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$hooks$2f$useSwipe$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSwipe"])({
-        onSwipeRight: ()=>{
-            if (!isMobile) return;
-            setOpenChat(false);
-        }
-    });
-    // при изменение разрешения автоматический ресайз
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useLayoutEffect"])(()=>{
-        if (!isMobile) {
-            dialogPanelRef.current.style.width = "50%";
-            return;
-        }
-        ;
-        if (isMobile) {
-            dialogPanelRef.current.style.width = "100vw";
-            return;
-        }
-    }, [
-        isMobile
-    ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: `flex overflow-hidden bg-[#12080b] select-none ${isMobile ? "" : "h-screen"}`,
-        ...isMobile && !openChat ? profileSwipe : {},
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                ref: dialogPanelRef,
-                className: `bg-[#12080b] overflow-y-auto overflow-x-hidden
-                    ${isMobile ? `absolute inset-0 transition-transform duration-300 ease-out will-change-transform ${openChat ? "-translate-x-full" : "translate-x-0"}` : "relative w-1/2 border-r border-[#d91c558b]"}
-                `,
-                style: {
-                    overscrollBehavior: "contain",
-                    touchAction: "pan-y"
-                },
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex w-full relative backdrop-blur-md",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: ()=>setOpenProfile(true),
-                                className: "absolute left-2 top-1/2 -translate-y-1/2 prettyBtnChat",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    width: "16",
-                                    height: "16",
-                                    viewBox: "0 0 32 32",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        fill: "none",
-                                        stroke: "currentColor",
-                                        strokeLinecap: "round",
-                                        strokeLinejoin: "round",
-                                        strokeWidth: "2",
-                                        d: "M4 8h24M4 16h24M4 24h24"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 181,
-                                        columnNumber: 29
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 175,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 171,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "p-2 rounded-md w-full text-center flex justify-center items-center",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "medium font-semibold",
-                                    children: "Чаты"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 193,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 192,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute bottom-1/2 translate-y-1/2 right-2 prettyBtnChat",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$AnimatedButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatedButton"], {
-                                    openModal: ()=>{
-                                        router.push(`createcard?type=send`);
-                                    },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        width: "16",
-                                        height: "16",
-                                        viewBox: "0 0 32 32",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                            fill: "none",
-                                            stroke: "currentColor",
-                                            strokeLinecap: "round",
-                                            strokeLinejoin: "round",
-                                            strokeWidth: "2",
-                                            d: "M2 4h28v18H16l-8 7v-7H2Z"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 208,
-                                            columnNumber: 33
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 202,
-                                        columnNumber: 29
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 197,
-                                    columnNumber: 25
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 196,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 170,
-                        columnNumber: 17
-                    }, this),
-                    !isMobile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$DialogResizehandler$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogResizehandler"], {
-                        dialogPanelRef: dialogPanelRef
-                    }, void 0, false, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 222,
-                        columnNumber: 31
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col pt-4 px-2 gap-2",
-                        children: dialog.map((dialog)=>{
-                            const avatar = dialog.other_display_id.charAt(1).toUpperCase();
-                            const title = dialog.other_display_id;
-                            const timeSend = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$utils$2f$parseDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatBackendDate"])(dialog.updated_at);
-                            const unread = dialog.unread_count;
-                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flex w-full p-3 items-center relative gap-2 rounded-2xl transition-colors
-                                ${dialog.conversation_id !== activeDialogId && !isMobile ? "bg-[#5b5b5ba2]" : "bg-[#949494a2]"}
-                                `,
-                                onClick: ()=>{
-                                    setActiveDialogId(dialog.conversation_id);
-                                    setActiveDialog(dialog);
-                                    setActiveChatUserId(dialog.other_display_id);
-                                    if (isMobile) setOpenChat(true);
-                                    readMessages(dialog);
-                                },
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: `flex w-8 h-8 items-center justify-center rounded-full text-lg font-bold transition-all
-                                        bg-linear-to-b from-red-500 to-red-700 backdrop-blur-md
-                                        hover:from-red-600 hover:to-red-800 hover:border hover:border-white/40
-                                    `,
-                                        onClick: (e)=>{
-                                            e.stopPropagation();
-                                            setOpenModalProfile(dialog);
-                                        },
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: avatar
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 259,
-                                            columnNumber: 37
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 249,
-                                        columnNumber: 33
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "font-semibold",
-                                        children: title
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 265,
-                                        columnNumber: 33
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "absolute right-2 top-3 flexC text-center text-gray-400 text-[10px]",
-                                        children: timeSend
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 268,
-                                        columnNumber: 33
-                                    }, this),
-                                    unread > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "absolute right-2 bottom-1 flexC text-center    unreadMsg   ",
-                                        children: unread
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 273,
-                                        columnNumber: 37
-                                    }, this)
-                                ]
-                            }, dialog.conversation_id, true, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 234,
-                                columnNumber: 29
-                            }, this);
-                        })
-                    }, void 0, false, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 227,
-                        columnNumber: 17
-                    }, this),
-                    dialog.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$anonMain$2f$chat$2f$HelperMsg$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HelperMsg"], {}, void 0, false, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 287,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 153,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                ref: containerRef,
-                onScroll: handleScroll,
-                className: `overflow-y-auto flex-1 bg-[#0e0406]
-                    ${isMobile ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform 
-                        ${openChat ? "translate-x-0" : "translate-x-full"}` : "flex-1 flex flex-col"}
-                `,
-                ...isMobile ? chatSwipe : {},
-                children: [
-                    activeChatUserId && !isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "sticky top-0 w-full flexC py-2 z-20",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flexC z-10 prettyBtnChat
-                                ${isMobile ? '' : 'opacity-0 pointer-events-none'}`,
-                                onClick: ()=>setOpenChat(false),
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    width: "16",
-                                    height: "16",
-                                    viewBox: "0 0 24 24",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        fill: "currentColor",
-                                        d: "M16.88 2.88a1.25 1.25 0 0 0-1.77 0L6.7 11.29a.996.996 0 0 0 0 1.41l8.41 8.41c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.54 12l7.35-7.35c.48-.49.48-1.28-.01-1.77"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 319,
-                                        columnNumber: 33
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 313,
-                                    columnNumber: 29
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 308,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flexC mx-auto text-[15px] prettyBtnChat",
-                                children: activeChatUserId
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 326,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flexC prettyBtnChat
-                                ${isMobile ? "justify-self-center" : "justify-self-end w-20"}
-                            `,
-                                onClick: ()=>{
-                                    router.push(`createcard?type=send&to=${encodeURIComponent(activeChatUserId ?? "")}`);
-                                },
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    width: "16",
-                                    height: "16",
-                                    viewBox: "0 0 14 14",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                                        fill: "none",
-                                        stroke: "currentColor",
-                                        strokeLinecap: "round",
-                                        strokeLinejoin: "round",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                d: "M7.5.5h-5a1 1 0 0 0-1 1v9l-1 3l4-1h8a1 1 0 0 0 1-1v-5"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 349,
-                                                columnNumber: 37
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                d: "m8.363 8.137l-3 .54l.5-3.04l4.73-4.71a.999.999 0 0 1 1.42 0l1.06 1.06a1.001 1.001 0 0 1 0 1.42z"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 350,
-                                                columnNumber: 37
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 347,
-                                        columnNumber: 33
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 341,
-                                    columnNumber: 29
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 331,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 307,
-                        columnNumber: 21
-                    }, this),
-                    isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "sticky top-0 w-full flex items-start justify-between z-20 text-[15px] p-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "flexC prettyBtn",
-                                onClick: ()=>{
-                                    setIsChoose(false);
-                                    setChoosenMsg([]);
-                                },
-                                children: "Назад"
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 359,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "flexC prettyBtn",
-                                onClick: ()=>{
-                                    hideMessage(choosenMsg);
-                                },
-                                children: "Удалить"
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 369,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 358,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative flex flex-col p-2 space-y-2 ",
-                        children: [
-                            loading && !messages.length && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-2 mb-4",
-                                children: [
-                                    1,
-                                    2,
-                                    3
-                                ].map((i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-2 animate-pulse ",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-10 bg-white/50 rounded-lg w-1/2 p-10"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 388,
-                                            columnNumber: 37
-                                        }, this)
-                                    }, i, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 387,
-                                        columnNumber: 33
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 385,
-                                columnNumber: 25
-                            }, this),
-                            loadingMore && hasMore && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-2 mb-4",
-                                children: [
-                                    1,
-                                    2,
-                                    3
-                                ].map((i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-2 animate-pulse ",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "h-10 bg-white/50 rounded-lg w-1/2 p-10"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                            lineNumber: 399,
-                                            columnNumber: 37
-                                        }, this)
-                                    }, i, false, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 398,
-                                        columnNumber: 33
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 396,
-                                columnNumber: 25
-                            }, this),
-                            messages.map((message, i)=>{
-                                const avatar = message.from_display_id.charAt(1).toUpperCase();
-                                const nameLabel = message.from_display_id;
-                                const isMine = message.from_user === userId;
-                                const date = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$things$2f$utils$2f$parseDate$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["formatBackendDate"])(message.created_at);
-                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    ref: (el)=>{
-                                        wrapperRef.current[message.id] = el;
-                                    },
-                                    className: `flex flex-col relative w-full transition hover:bg-white/10 select-none 
-                                    ${isMine ? "items-end" : "items-start"} 
-                                    message-wrapper ${deletingMsg.includes(message.id) ? "message--collapsing" : ""}
-                                `,
-                                    style: {
-                                        transition: "opacity 0.3s ease-in-out"
-                                    },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        ref: (el)=>{
-                                            bubbleRef.current[message.id] = el;
-                                        },
-                                        className: `relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
-                                                transition-all 
-                                        ${!isMine ? "bg-linear-to-b from-[#ff00666d] to-[#ec015f5d]" : "bg-linear-to-b from-white/60 to-white/40"}
-                                        ${selectTouched === message.id && isMobile ? "scale-95" : ""}
-                                        ${selectTouched === message.id && !isMobile ? isMine ? "border-l" : "border-r" : ""}
-                                        message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
-                                    `,
-                                        onClick: (e)=>{
-                                            if (isChoose) {
-                                                setChoosenMsg((prev)=>{
-                                                    if (prev.includes(message.id)) {
-                                                        return prev.filter((id)=>id !== message.id);
-                                                    } else {
-                                                        return [
-                                                            ...prev,
-                                                            message.id
-                                                        ];
-                                                    }
-                                                });
-                                                return;
-                                            } else {
-                                                router.push(`createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? "")}`);
-                                            }
-                                        },
-                                        onContextMenu: (e)=>{
-                                            if (isMobile) return;
-                                            e.preventDefault();
-                                            const target = e.currentTarget;
-                                            const rect = target.getBoundingClientRect();
-                                            setSelectTouched(message.id);
-                                            setAction({
-                                                message,
-                                                rect,
-                                                type: "desktop",
-                                                isMine
-                                            });
-                                        },
-                                        onPointerDown: (e)=>{
-                                            if (!isMobile || isChoose) return;
-                                            const target = e.currentTarget;
-                                            if (e.pointerType === "touch") {
-                                                setSelectTouched(message.id);
-                                                timer.current = window.setTimeout(()=>{
-                                                    const rect = target.getBoundingClientRect();
-                                                    setAction({
-                                                        message,
-                                                        rect,
-                                                        type: "mobile",
-                                                        isMine
-                                                    });
-                                                }, 400);
-                                            }
-                                        },
-                                        onPointerCancel: ()=>cancelTouch(),
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flexC gap-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "md:w-6 md:h-6 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-md font-bold shrink-0",
-                                                        children: avatar
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                        lineNumber: 471,
-                                                        columnNumber: 41
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "flex flex-col",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "font-semibold medium",
-                                                                children: nameLabel
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                                lineNumber: 476,
-                                                                columnNumber: 45
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "small line-clamp-2",
-                                                                children: ``
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                                lineNumber: 477,
-                                                                columnNumber: 45
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                        lineNumber: 475,
-                                                        columnNumber: 41
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 470,
-                                                columnNumber: 37
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-[9px] text-[#cdcdcd]",
-                                                children: date
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 481,
-                                                columnNumber: 37
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$createcard$2f$components$2f$ReadIndicator$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ReadIndicator"], {
-                                                isRead: message.is_checked,
-                                                isMine: isMine
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 483,
-                                                columnNumber: 37
-                                            }, this),
-                                            isChoose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: `absolute w-3 h-3 rounded-full border
-                                                ${!isMine ? "-right-10" : "-left-10"}
-                                                ${isChoose ? "opacity-100 " : "opacity-0"}
-                                                ${choosenMsg.map((msg)=>msg).includes(message.id) ? "bg-white" : ""}
-                                            `
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                                lineNumber: 486,
-                                                columnNumber: 41
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                        lineNumber: 422,
-                                        columnNumber: 33
-                                    }, this)
-                                }, message.id, false, {
-                                    fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 412,
-                                    columnNumber: 29
-                                }, this);
-                            }),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                ref: bottomRef
-                            }, void 0, false, {
-                                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 499,
-                                columnNumber: 21
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 380,
-                        columnNumber: 17
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 293,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
-                ref: canvasRef,
-                className: "absolute top-0 left-0 pointer-events-none overflow-visible w-screen h-screen"
-            }, void 0, false, {
-                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 503,
-                columnNumber: 13
-            }, this),
-            action && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MessageActionRoot"], {
-                action: action,
-                onClose: ()=>{
-                    closeMenu();
-                    setSelectTouched(null);
-                },
-                onDelete: (id)=>{
-                    hideMessage([
-                        ...choosenMsg,
-                        id
-                    ]);
-                },
-                isChose: setIsChoose,
-                onChose: (id)=>setChoosenMsg((prev)=>[
-                            ...prev,
-                            id
-                        ])
-            }, void 0, false, {
-                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 512,
-                columnNumber: 17
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ModalProfile"], {
-                dialog: openModalProfile,
-                onClose: ()=>{
-                    setOpenModalProfile(null);
-                },
-                fromUser: userId,
-                refresh: ()=>refresh()
-            }, void 0, false, {
-                fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 527,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-        lineNumber: 147,
-        columnNumber: 9
-    }, this);
-}
+const e = new Error("Could not parse module '[project]/app/anonMain/chat/Chat.tsx'\n\nExpected '</', got 'key'");
+e.code = 'MODULE_UNPARSABLE';
+throw e;
 }),
 "[project]/app/things/hooks/useAccountChange.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";

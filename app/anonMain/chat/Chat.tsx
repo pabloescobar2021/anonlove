@@ -1,12 +1,10 @@
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect, useMemo } from "react";
 import { formatBackendDate, parseDate } from "../../things/utils/parseDate";
-import { ReadIndicator } from "../../createcard/components/ReadIndicator";
 import { Dialog, UiMessage } from "../../things/types/type";
 import { Rating } from "../../createcard/components/Rating";
 import { useRouter } from "next/navigation";
 import { MessageActionRoot } from "../../contextMenu/messagePanel";
 import { AnimatedButton } from "../AnimatedButton";
-import { useMessageRead } from "@/app/things/hooks/useCheckMsg";
 import { useDeleteMessage } from "../useDeleteMessage";
 import { useSwipe } from "@/app/things/hooks/useSwipe";
 import { DialogResizehandler } from "../DialogResizehandler";
@@ -15,6 +13,8 @@ import { ModalProfile } from "@/app/modal/modalProfile";
 import { HelperMsg } from "./HelperMsg";
 
 import { useGetMessages } from "@/app/things/hooks/dialog_messages/useGetMessages";
+import { ChatMessage } from "./ChatMessage";
+import { Virtuoso } from "react-virtuoso";
 
 export type Props = {
     userId: string | undefined;
@@ -43,12 +43,26 @@ export function ManagerChat(props: Props) {
     const [action, setAction] = useState<ActionState>(null);
     const [isChoose, setIsChoose] = useState(false);
     const [choosenMsg, setChoosenMsg] = useState<any[]>([]);
+    const choosenMsgSet = useMemo(() => {return new Set(choosenMsg)}, [choosenMsg])
     const [selectTouched, setSelectTouched] = useState<string | null>(null);
     
     const wrapperRef = useRef<Record<string, HTMLDivElement | null>>({})
     const bubbleRef = useRef<Record<string, HTMLDivElement | null>>({})
     
-    const {messages, setMessages, loading, loadingMore, hasMore, refreshMessages, containerRef, handleScroll} = useGetMessages(activeDialogId)
+    const {
+        messages, 
+        setMessages, 
+        loading, 
+        loadingMore, 
+        hasMore, 
+        initialTopMostItemIndex, 
+        virtuosoRef,
+        startReached, 
+        rangeChanged,
+        firstItemIndex,
+        currentScrollIndex
+    } = useGetMessages(activeDialogId)
+
     const {canvasRef, shatterMessages} = useShatterMessage({})
     
     let timer = useRef<number | null>(null);
@@ -90,6 +104,7 @@ export function ManagerChat(props: Props) {
         wrapperRef: wrapperRef,
         shatterMessages
     });
+    const deletingSet = useMemo(() => new Set(deletingMsg), [deletingMsg])
     
 
     const readMessages = async (dialog: Dialog) => {
@@ -142,6 +157,34 @@ export function ManagerChat(props: Props) {
             return
         }
     },[isMobile])
+
+
+    // стиль сообщений
+    const getMessageStyle = (index: number, startIndex: number, endIndex: number) => {
+        if (endIndex <= startIndex) return {}
+
+        const progress =
+            (index - startIndex) /
+            (endIndex - startIndex)
+
+        const eased = 1 - Math.pow(1 - progress, 2)
+
+        const lightness = 30 + eased * 12
+        const opacity = 0.85 + eased * 0.15
+
+        return [
+            {
+            background: `hsl(340, 75%, ${lightness}%)`,
+            opacity,
+            transition: "all 0.10s linear"
+            },
+            {
+            background: `hsl(330, 41%, ${lightness}%)`,
+            opacity,
+            transition: "all 0.10s linear"
+            }
+        ]
+    }
   
     return (
         <main
@@ -290,21 +333,19 @@ export function ManagerChat(props: Props) {
             </div>
 
             {/* MESSAGES */}
-            <div
-                ref={containerRef} 
-                onScroll={handleScroll}
-                className={`overflow-y-auto flex-1 bg-[#0e0406]
+            <div  
+                className={`flex-1 bg-[#0e0406]
                     ${isMobile
                         ? `absolute inset-0 bg-[#12080b] transition-transform duration-300 ease-in-out will-change-transform 
                         ${openChat ? "translate-x-0" : "translate-x-full"}`
-                        : "flex-1 flex flex-col"
+                        : "flex-1 flex flex-col relative"
                     }
                 `}
                 {...(isMobile ? chatSwipe : {})}
             >
                 {/* Header чата */}
                 {activeChatUserId && !isChoose && (
-                    <div className="sticky top-0 w-full flexC py-2 z-20">
+                    <div className="absolute left-0 top-0 w-full flexC py-2 z-30">
                         <button
                             className={`flexC z-10 prettyBtnChat
                                 ${isMobile ? '': 'opacity-0 pointer-events-none'}`}
@@ -376,10 +417,6 @@ export function ManagerChat(props: Props) {
                     </div>
                 )}
 
-                {/* Список сообщений */}
-                <div 
-                    className="relative flex flex-col p-2 space-y-2 "
-                >
                     {/* Индикатор загрузки */}
                     {loading && !messages.length && (
                         <div className="space-y-2 mb-4">
@@ -391,113 +428,63 @@ export function ManagerChat(props: Props) {
                         </div>
                     )}
 
-                    {/* Индикатор загружающийся старых сообщений */}
-                    {loadingMore && hasMore && (
-                        <div className="space-y-2 mb-4">
-                            {[1,2,3].map(i => (
-                                <div key={i} className="flex gap-2 animate-pulse ">
-                                    <div className="h-10 bg-white/50 rounded-lg w-1/2 p-10" />
+                    
+                    <Virtuoso
+                        ref={virtuosoRef}
+                        data={messages}                   
+                        initialTopMostItemIndex={messages.length - 1}
+                        style={{ height: '100%', width: '100%'}}
+
+                        increaseViewportBy={200}
+                        firstItemIndex={firstItemIndex}  
+                        overscan={100}  
+
+                        startReached={() => {
+                            startReached()
+                        }}
+                        rangeChanged={(range) => {
+                            rangeChanged(range)
+                        }}  
+
+                        itemContent={(index, message) => {
+                            const {startIndex, endIndex} = currentScrollIndex.current
+
+                            const style = getMessageStyle(
+                                index,
+                                startIndex,
+                                endIndex
+                            )
+
+                            return(
+                                <ChatMessage
+                                    key={message.id}
+                                    message={message}
+                                    userId={userId}
+                                    wrapperRef={wrapperRef}
+                                    bubbleRef={bubbleRef}
+                                    setSelectTouched={setSelectTouched}
+                                    isChoose={isChoose}
+                                    setChoosenMsg={setChoosenMsg}
+                                    isSelectTouched={selectTouched === message.id}
+                                    isDeletingMsg={deletingSet.has(message.id)}
+                                    isChoosenMsg={choosenMsgSet.has(message.id)}
+                                    isMobile={isMobile}
+                                    setAction={setAction}
+                                    timer={timer}
+                                    cancelTouch={cancelTouch}
+                                    styleButton={style}
+                                />
+                            )
+                        }}
+                        components={{
+                            Item: ({children, ...props}) => (
+                                <div {...props} style={{padding: '5px'}}>
+                                    {children}
                                 </div>
-                            ))}
-                        </div>
-                    )}
+                            )
+                        }}
+                    />
 
-                    {messages.map((message, i) => {
-                        const avatar = message.from_display_id.charAt(1).toUpperCase();
-                        const nameLabel = message.from_display_id;
-                        const isMine = message.from_user === userId;
-                        const date = formatBackendDate(message.created_at);
-
-                        return (
-                            <div
-                                key={message.id}
-                                ref={el => {(wrapperRef.current[message.id] = el)}}
-
-                                className={`flex flex-col relative w-full transition hover:bg-white/10 select-none 
-                                    ${isMine ? "items-end" : "items-start"} 
-                                    message-wrapper ${deletingMsg.includes(message.id)  ? "message--collapsing" : ""}
-                                `}
-                                style={{transition: "opacity 0.3s ease-in-out"}}
-                            >
-                                <div
-                                    ref={el => {(bubbleRef.current[message.id] = el)}}
-                                    className={`relative flex flex-col items-center justify-center p-2 gap-2 w-1/2 rounded-2xl cursor-pointer 
-                                                transition-all 
-                                        ${!isMine 
-                                            ? "bg-linear-to-b from-[#ff00666d] to-[#ec015f5d]" 
-                                            : "bg-linear-to-b from-white/60 to-white/40"}
-                                        ${selectTouched === message.id && isMobile ? "scale-95" : ""}
-                                        ${selectTouched === message.id && !isMobile ? (isMine ? "border-l" : "border-r") : ""}
-                                        message ${deletingMsg.includes(message.id) ? "message--deleting" : ""}
-                                    `}
-                                    onClick={(e) => {
-                                        if (isChoose) {
-                                            setChoosenMsg((prev) => {
-                                                if (prev.includes(message.id)) {
-                                                    return prev.filter((id) => id !== message.id);
-                                                } else {
-                                                    return [...prev, message.id];
-                                                }
-                                            });
-                                            return;
-                                        } else {
-                                            router.push(
-                                                `createcard?isMine=${isMine}&id=${encodeURIComponent(message.id)}&type=recieve&to=${encodeURIComponent(message?.from_display_id ?? "")}`
-                                            );
-                                        }
-                                    }}
-                                    onContextMenu={(e) => {
-                                        if (isMobile) return;
-                                        e.preventDefault();
-                                        const target = e.currentTarget as HTMLDivElement;
-                                        const rect = target.getBoundingClientRect();
-                                        setSelectTouched(message.id);
-                                        setAction({ message, rect, type: "desktop", isMine });
-                                    }}
-                                    onPointerDown={(e) => {
-                                        if (!isMobile || isChoose) return;
-                                        const target = e.currentTarget as HTMLDivElement;
-                                        if (e.pointerType === "touch") {
-                                            setSelectTouched(message.id);
-                                            timer.current = window.setTimeout(() => {
-                                                const rect = target.getBoundingClientRect();
-                                                setAction({ message, rect, type: "mobile", isMine });
-                                            }, 400);
-                                        }
-                                    }}
-                                    onPointerCancel={() => cancelTouch()}
-                                >
-                                    <div className="flexC gap-2">
-                                        <div className="md:w-6 md:h-6 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-md font-bold shrink-0">
-                                            {avatar}
-                                        </div>
-
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold medium">{nameLabel}</span>
-                                            <span className="small line-clamp-2">{``}</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="text-[9px] text-[#cdcdcd]">{date}</div>
-
-                                    <ReadIndicator isRead={message.is_checked} isMine={isMine} />
-                                    
-                                    {isChoose && (
-                                        <div
-                                            className={`absolute w-3 h-3 rounded-full border
-                                                ${!isMine ? "-right-10" : "-left-10"}
-                                                ${isChoose ? "opacity-100 " : "opacity-0"}
-                                                ${choosenMsg.map((msg) => msg).includes(message.id) ? "bg-white" : ""}
-                                            `}
-                                        ></div>
-                                    )}
-
-                                </div>
-                            </div>
-                        );
-                    })}
-                    <div ref={bottomRef}></div>
-                </div>
             </div>
 
             <canvas

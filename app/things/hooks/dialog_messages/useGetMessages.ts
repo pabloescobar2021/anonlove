@@ -3,14 +3,15 @@
 import { useEffect, useState, useRef, useCallback, useLayoutEffect, use } from "react"
 import { supabase } from "@/utils/supabase/alSupabase"
 import { UiMessage } from "../../types/type"
+import { VirtuosoHandle } from "react-virtuoso"
 
 type CacheEntry = {
     messages: UiMessage[]
     cursorId: string | null
     hasMore: boolean
-    scrollTop: number
+    scrollIndex: number
 }
-const LIMIT = 40
+const LIMIT = 10
 
 // Хук для загрузки и управления сообщениями в диалоге с кэшем и прокруткой
 export function useGetMessages(conversationId: string | null) {
@@ -19,24 +20,33 @@ export function useGetMessages(conversationId: string | null) {
     const [hasMore, setHasMore] = useState(true)
     const [loading, setLoading] = useState(false)
     const [loadingMore, setLoadingMore] = useState(false)
+    const [initialTopMostItemIndex, setInitialTopMostItemIndex] = useState<number | undefined>(undefined)
+    const [firstItemIndex, setFirstItemIndex] = useState(1000000)
+    const [visibleRange, setVisibleRange] = useState({
+        startIndex: 0,
+        endIndex: 0
+    })
 
-    const containerRef = useRef<HTMLDivElement>(null)
-    const isInitialLoad = useRef(true)
+    const virtuosoRef = useRef<VirtuosoHandle>(null)
     const cacheRef = useRef<Map<string, CacheEntry>>(new Map())
     const cursorRef = useRef<string | null>(null)
     const channelRef = useRef<any>(null)
+    const currentScrollIndex = useRef({startIndex: 0, endIndex: 0})
+
+    const hasMoreRef = useRef(true)
+    const loadingRef = useRef(false)
+    
+    
 
     // Загружает сообщения с сервера, поддерживает пагинацию (курсор), кэширует результаты
     const loadMessages = async (cursor?: string | null) => {
-        if (!conversationId || loading) return
-        if(cursor && !hasMore) return
+        if (!conversationId || loadingRef.current) return
+        if(cursor && !hasMoreRef.current) return
 
         setLoading(true)
+        loadingRef.current = true
         if(cursor) setLoadingMore(true)
 
-        const container = containerRef.current
-        const prevScrollHeight = container?.scrollHeight || 0
-        const prevScrollTop = container?.scrollTop || 0
 
         try {
             const { data, error } = await supabase.rpc("get_conversation_messages", {
@@ -51,14 +61,18 @@ export function useGetMessages(conversationId: string | null) {
 
             if (!newMessages || newMessages.length === 0) {
                 setHasMore(false)
+                hasMoreRef.current = false
                 const cache = cacheRef.current.get(conversationId)
                 if(cache) cache.hasMore = false
                 return
             }
+            if(newMessages.length < LIMIT){
+                setHasMore(false)
+                hasMoreRef.current = false
+            }
 
             const nextCursor = newMessages[newMessages.length - 1].id
             cursorRef.current = nextCursor
-            setHasMore(true)
 
             const reversed = [...newMessages].reverse()
             setMessages(prev => {
@@ -66,91 +80,26 @@ export function useGetMessages(conversationId: string | null) {
                     ? [...reversed, ...prev]
                     : reversed
 
-                requestAnimationFrame(() => {
-                    if(container){
-                        container.scrollTop = container.scrollHeight - prevScrollHeight 
-                    }
-                }); 
-
                 cacheRef.current.set(conversationId, {
                     messages: merged,
                     cursorId: nextCursor,
                     hasMore: true,
-                    scrollTop: 0
+                    scrollIndex: merged.length - 1
                 })
                 return merged
             })
+            setFirstItemIndex(prev => prev - newMessages.length)
 
-            
-            
-            
         } catch (error) {
             console.error("Error loading messages:", error)
         } finally {
             setLoading(false)
+            loadingRef.current = false
             setLoadingMore(false)
         }
 
     }
-
-    // При первой загрузке прокручивает контейнер в самый низ
-    useLayoutEffect(() => {
-        if (!isInitialLoad.current) return
-        if (!messages.length) return
-
-        const container = containerRef.current
-        if (!container) return
-        requestAnimationFrame(() => {
-            container.scrollTop = container.scrollHeight
-            isInitialLoad.current = false
-        })
-    }, [messages.length])
-
-
-
-
-    // Обработчик прокрутки: загружает старые сообщения при скролле вверх, сохраняет позицию в кэш
-    const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
-
-        const container = e.currentTarget
-
-        if(conversationId){
-            const cache = cacheRef.current.get(conversationId)
-            if(cache){
-                cache.scrollTop = container.scrollTop
-            }
-        }
-
-        if (loadingMore && container.scrollTop < 5) {
-            container.scrollTop = 5
-            return
-        }
-
-        if (container.scrollTop < 20 && hasMore && !loading && !loadingMore) {
-            console.log("Loading more messages...")
-            loadMessages(cursorRef.current)
-        }
-    }, [hasMore, loading, conversationId, loadingMore])
-
-    useEffect(() => {
-        console.log(messages.length)
-    }, [messages.length])
-
-    // Сохраняет позицию прокрутки в кэш перед выходом из диалога
-    useEffect(() => {
-        return () => {
-            if(!conversationId) return
-            const container = containerRef.current
-            if(!container) return
-            
-            const cache = cacheRef.current.get(conversationId)
-            if(cache){
-                cache.scrollTop = container.scrollTop
-            }
-        }
-    },[conversationId])
-
-
+   
 
     // Загружает сообщения при смене диалога, восстанавливает позицию прокрутки из кэша
     useEffect(() => {
@@ -158,16 +107,16 @@ export function useGetMessages(conversationId: string | null) {
 
         const cached = cacheRef.current.get(conversationId)
         if(cached) {
+
             setMessages(cached.messages)
             setHasMore(cached.hasMore)
             cursorRef.current = cached.cursorId
-            isInitialLoad.current = false
 
             requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const container = containerRef.current
-                    if(!container) return
-                    container.scrollTop = cached.scrollTop ?? container.scrollHeight
+                virtuosoRef.current?.scrollToIndex({
+                    index: cached.scrollIndex,
+                    align: "start",
+                    behavior: "auto"
                 })
             })
 
@@ -177,11 +126,15 @@ export function useGetMessages(conversationId: string | null) {
         cursorRef.current = null
         setMessages([])
         setHasMore(true)
-        isInitialLoad.current = true
+        hasMoreRef.current = true
+        setInitialTopMostItemIndex(undefined)
 
         loadMessages(null)
 
     }, [conversationId])
+
+
+    
 
 
     // Подписывается на новые сообщения через Realtime, обновляет список и автоскролл
@@ -208,23 +161,7 @@ export function useGetMessages(conversationId: string | null) {
                     },
                     payload => {
                         console.log("📩 New message received:", payload)
-                        loadMessages()
-
-                        const container = containerRef.current
-                        if (!container) return
-
-                        const isAtBottom =
-                            container.scrollHeight -
-                            container.scrollTop -
-                            container.clientHeight
-                            < 200
-
-                        if (isAtBottom) {
-                            requestAnimationFrame(() =>
-                                container.scrollTop = container.scrollHeight
-                            )
-                        }
-
+                        loadMessages(null)
                     }
                 )
                 .on("system", {}, payload => {
@@ -247,6 +184,43 @@ export function useGetMessages(conversationId: string | null) {
         }
     }, [conversationId])
 
+    
+
+    // достигаем верха, добавляем сообщенияы
+    const startReached = useCallback(() => {
+        if(hasMoreRef.current && !loadingRef.current) {
+            loadMessages(cursorRef.current)
+        }
+    },[loadMessages])
+    
+
+    // при скроле берем индекс
+    const rangeChanged = (range: {startIndex: number, endIndex: number}) => {
+        currentScrollIndex.current = range
+        // console.log('start', range.startIndex, 'end', range.endIndex )
+    }
+
+   // при смене диалога записываем индекс
+    useEffect(() => {
+        return () => {
+            if(!conversationId) return
+            if(!virtuosoRef.current) return
+
+            const cache = cacheRef.current.get(conversationId!)
+            if(cache){
+                cache.scrollIndex = currentScrollIndex.current.startIndex
+            }
+
+            
+        }
+    },[conversationId])
+
+    
+
+    // useEffect(() => {
+    //     console.log("Messages updated:", messages.length, "Has more:", hasMore)
+    // }, [messages, hasMore])
+
     return {
         messages,
         setMessages,
@@ -254,7 +228,11 @@ export function useGetMessages(conversationId: string | null) {
         loadingMore,
         hasMore,
         refreshMessages: loadMessages,
-        containerRef,
-        handleScroll
+        virtuosoRef,
+        startReached,
+        rangeChanged,
+        initialTopMostItemIndex,
+        firstItemIndex,
+        currentScrollIndex
     }
 }

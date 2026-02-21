@@ -117,8 +117,8 @@ export default function MainPage() {
                 }
             )
             .subscribe((status, err) => {
-                console.log("🔌 Статус подписки:", status, err || "")
-                if (status === "CHANNEL_ERROR") console.error("⚠️ Ошибка канала:", err)
+                // console.log("🔌 Статус подписки:", status, err || "")
+                // if (status === "CHANNEL_ERROR") console.error("⚠️ Ошибка канала:", err)
             })
 
             return () => {
