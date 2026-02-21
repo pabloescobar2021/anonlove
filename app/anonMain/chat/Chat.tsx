@@ -170,13 +170,13 @@ export function ManagerChat(props: Props) {
         const eased = 1 - Math.pow(1 - progress, 2)
 
         const lightness = 30 + eased * 12
-        const opacity = 0.85 + eased * 0.15
+        const opacity = 0.85 + eased * 0.2
 
         return [
             {
             background: `hsl(340, 75%, ${lightness}%)`,
             opacity,
-            transition: "all 0.10s linear"
+            // transition: "all 0.10s linear"
             },
             {
             background: `hsl(330, 41%, ${lightness}%)`,
@@ -185,6 +185,7 @@ export function ManagerChat(props: Props) {
             }
         ]
     }
+
   
     return (
         <main
@@ -428,14 +429,24 @@ export function ManagerChat(props: Props) {
                         </div>
                     )}
 
-                    
+                    <button className="absolute top-20 left-1/2 z-50"
+                        onClick={() => {
+                            virtuosoRef.current?.scrollToIndex({
+                                index: 999972,
+                                align: "start",
+                                behavior: "auto"
+                            })
+                        }}
+                    >
+                        asd
+                    </button>
                     <Virtuoso
                         ref={virtuosoRef}
                         data={messages}                   
                         initialTopMostItemIndex={messages.length - 1}
                         style={{ height: '100%', width: '100%'}}
 
-                        increaseViewportBy={200}
+                        increaseViewportBy={{bottom: 0, top: 200}}
                         firstItemIndex={firstItemIndex}  
                         overscan={100}  
 

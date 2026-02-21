@@ -469,6 +469,10 @@
     top: calc(var(--spacing) * 5);
   }
 
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
+
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }
@@ -599,44 +603,6 @@
 
   .z-50 {
     z-index: 50;
-  }
-
-  .z-59 {
-    z-index: 59;
-  }
-
-  .container {
-    width: 100%;
-  }
-
-  @media (min-width: 40rem) {
-    .container {
-      max-width: 40rem;
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .container {
-      max-width: 48rem;
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .container {
-      max-width: 64rem;
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .container {
-      max-width: 80rem;
-    }
-  }
-
-  @media (min-width: 96rem) {
-    .container {
-      max-width: 96rem;
-    }
   }
 
   .mx-auto {
@@ -1120,12 +1086,6 @@
     margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
 
-  :where(.space-y-10 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
-  }
-
   .self-end {
     align-self: flex-end;
   }
@@ -1568,10 +1528,6 @@
   .bg-gradient-to-r {
     --tw-gradient-position: to right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
-  }
-
-  .bg-none {
-    background-image: none;
   }
 
   .from-\[\#2d0715\] {

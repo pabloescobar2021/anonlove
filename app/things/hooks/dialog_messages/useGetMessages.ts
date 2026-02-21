@@ -11,7 +11,7 @@ type CacheEntry = {
     hasMore: boolean
     scrollIndex: number
 }
-const LIMIT = 10
+const LIMIT = 40
 
 // Хук для загрузки и управления сообщениями в диалоге с кэшем и прокруткой
 export function useGetMessages(conversationId: string | null) {
@@ -107,14 +107,14 @@ export function useGetMessages(conversationId: string | null) {
 
         const cached = cacheRef.current.get(conversationId)
         if(cached) {
-
             setMessages(cached.messages)
             setHasMore(cached.hasMore)
             cursorRef.current = cached.cursorId
 
+            const relativeIndex = cached.scrollIndex - firstItemIndex
             requestAnimationFrame(() => {
                 virtuosoRef.current?.scrollToIndex({
-                    index: cached.scrollIndex,
+                    index: relativeIndex,
                     align: "start",
                     behavior: "auto"
                 })
