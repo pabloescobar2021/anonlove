@@ -471,10 +471,6 @@
     top: calc(var(--spacing) * 5);
   }
 
-  .top-20 {
-    top: calc(var(--spacing) * 20);
-  }
-
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }

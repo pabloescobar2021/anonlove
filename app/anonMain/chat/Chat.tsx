@@ -429,23 +429,15 @@ export function ManagerChat(props: Props) {
                         </div>
                     )}
 
-                    <button className="absolute top-20 left-1/2 z-50"
-                        onClick={() => {
-                            virtuosoRef.current?.scrollToIndex({
-                                index: 999972,
-                                align: "start",
-                                behavior: "auto"
-                            })
-                        }}
-                    >
-                        asd
-                    </button>
+
                     <Virtuoso
+                        className="virtuoso-wrapper"
                         ref={virtuosoRef}
                         data={messages}                   
                         initialTopMostItemIndex={messages.length - 1}
                         style={{ height: '100%', width: '100%'}}
 
+                        alignToBottom={true}
                         increaseViewportBy={{bottom: 0, top: 200}}
                         firstItemIndex={firstItemIndex}  
                         overscan={100}  

@@ -218,6 +218,19 @@ label {
   display: none; /* Safari and Chrome */
 }
 
+.virtuoso-wrapper {
+  mask-image: linear-gradient(
+  to bottom,
+  transparent 0%,
+  rgba(255, 0, 0, 0.5)1%,
+  rgba(255, 0, 0, 0.986) 40%
+);
+}
+
+
+
+
+
 
 
 /* keyFrames */

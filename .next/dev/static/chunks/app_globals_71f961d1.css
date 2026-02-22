@@ -469,10 +469,6 @@
     top: calc(var(--spacing) * 5);
   }
 
-  .top-20 {
-    top: calc(var(--spacing) * 20);
-  }
-
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }
@@ -3104,6 +3100,11 @@ label {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.virtuoso-wrapper {
+  -webkit-mask-image: linear-gradient(#0000 0%, #ff000080 1%, #ff0000fb 40%);
+  mask-image: linear-gradient(#0000 0%, #ff000080 1%, #ff0000fb 40%);
 }
 
 @keyframes menuIn {

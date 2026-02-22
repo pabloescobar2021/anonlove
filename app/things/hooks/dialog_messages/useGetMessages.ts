@@ -197,7 +197,8 @@ export function useGetMessages(conversationId: string | null) {
     // при скроле берем индекс
     const rangeChanged = (range: {startIndex: number, endIndex: number}) => {
         currentScrollIndex.current = range
-        // console.log('start', range.startIndex, 'end', range.endIndex )
+        
+        
     }
 
    // при смене диалога записываем индекс

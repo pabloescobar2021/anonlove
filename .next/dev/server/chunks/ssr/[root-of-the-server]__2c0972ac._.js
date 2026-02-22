@@ -2029,7 +2029,6 @@ function useGetMessages(conversationId) {
     // при скроле берем индекс
     const rangeChanged = (range)=>{
         currentScrollIndex.current = range;
-    // console.log('start', range.startIndex, 'end', range.endIndex )
     };
     // при смене диалога записываем индекс
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -2882,22 +2881,8 @@ function ManagerChat(props) {
                         lineNumber: 423,
                         columnNumber: 25
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "absolute top-20 left-1/2 z-50",
-                        onClick: ()=>{
-                            virtuosoRef.current?.scrollToIndex({
-                                index: 999972,
-                                align: "start",
-                                behavior: "auto"
-                            });
-                        },
-                        children: "asd"
-                    }, void 0, false, {
-                        fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 432,
-                        columnNumber: 21
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$virtuoso$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Virtuoso"], {
+                        className: "virtuoso-wrapper",
                         ref: virtuosoRef,
                         data: messages,
                         initialTopMostItemIndex: messages.length - 1,
@@ -2905,6 +2890,7 @@ function ManagerChat(props) {
                             height: '100%',
                             width: '100%'
                         },
+                        alignToBottom: true,
                         increaseViewportBy: {
                             bottom: 0,
                             top: 200
@@ -2938,7 +2924,7 @@ function ManagerChat(props) {
                                 styleButton: style
                             }, message.id, false, {
                                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                lineNumber: 470,
+                                lineNumber: 462,
                                 columnNumber: 33
                             }, void 0);
                         },
@@ -2951,13 +2937,13 @@ function ManagerChat(props) {
                                     children: children
                                 }, void 0, false, {
                                     fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                                    lineNumber: 492,
+                                    lineNumber: 484,
                                     columnNumber: 33
                                 }, void 0)
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                        lineNumber: 443,
+                        lineNumber: 433,
                         columnNumber: 21
                     }, this)
                 ]
@@ -2971,7 +2957,7 @@ function ManagerChat(props) {
                 className: "absolute top-0 left-0 pointer-events-none overflow-visible w-screen h-screen"
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 501,
+                lineNumber: 493,
                 columnNumber: 13
             }, this),
             action && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$contextMenu$2f$messagePanel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MessageActionRoot"], {
@@ -2993,7 +2979,7 @@ function ManagerChat(props) {
                         ])
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 510,
+                lineNumber: 502,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$modal$2f$modalProfile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ModalProfile"], {
@@ -3005,7 +2991,7 @@ function ManagerChat(props) {
                 refresh: ()=>refresh()
             }, void 0, false, {
                 fileName: "[project]/app/anonMain/chat/Chat.tsx",
-                lineNumber: 525,
+                lineNumber: 517,
                 columnNumber: 13
             }, this)
         ]
